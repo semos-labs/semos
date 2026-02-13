@@ -1,5 +1,5 @@
 ---
-title: List
+title: 'List'
 ---
 ```ts
 const List: ForwardRefExoticComponent<ListProps & RefAttributes<ListHandle>>;

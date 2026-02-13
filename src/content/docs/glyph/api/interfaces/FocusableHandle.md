@@ -1,5 +1,5 @@
 ---
-title: FocusableHandle
+title: 'FocusableHandle'
 ---
 Base handle shared by all focusable elements
 

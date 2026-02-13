@@ -1,5 +1,5 @@
 ---
-title: Portal
+title: 'Portal'
 ---
 ```ts
 function Portal(__namedParameters): Element;

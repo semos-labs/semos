@@ -1,5 +1,5 @@
 ---
-title: ImageState
+title: 'ImageState'
 ---
 ```ts
 type ImageState = "placeholder" | "loading" | "loaded" | "error" | "preview";

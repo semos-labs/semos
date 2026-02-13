@@ -1,5 +1,5 @@
 ---
-title: useInput
+title: 'useInput'
 ---
 ```ts
 function useInput(handler, deps?): void;

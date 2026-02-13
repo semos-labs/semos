@@ -1,5 +1,5 @@
 ---
-title: DialogHostProps
+title: 'DialogHostProps'
 ---
 ## Properties
 

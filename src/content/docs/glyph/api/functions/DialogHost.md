@@ -1,5 +1,5 @@
 ---
-title: DialogHost
+title: 'DialogHost'
 ---
 ```ts
 function DialogHost(__namedParameters): Element;

@@ -1,5 +1,5 @@
 ---
-title: "RadioHandle\<T\>"
+title: 'RadioHandle<T>'
 ---
 Handle for Radio — exposes selected value
 

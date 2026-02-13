@@ -1,5 +1,5 @@
 ---
-title: JumpNavProps
+title: 'JumpNavProps'
 ---
 Props for the [JumpNav](../functions/JumpNav.md) component.
 

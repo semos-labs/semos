@@ -1,5 +1,5 @@
 ---
-title: useToast
+title: 'useToast'
 ---
 ```ts
 function useToast(): (toast) => void;

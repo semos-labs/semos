@@ -1,5 +1,5 @@
 ---
-title: Text
+title: 'Text'
 ---
 ```ts
 const Text: ForwardRefExoticComponent<TextProps & RefAttributes<TextHandle>>;

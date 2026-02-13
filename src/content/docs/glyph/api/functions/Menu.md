@@ -1,5 +1,5 @@
 ---
-title: Menu
+title: 'Menu'
 ---
 ```ts
 function Menu(__namedParameters): Element;

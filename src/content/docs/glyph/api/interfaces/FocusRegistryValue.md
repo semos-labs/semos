@@ -1,5 +1,5 @@
 ---
-title: FocusRegistryValue
+title: 'FocusRegistryValue'
 ---
 Return type of [useFocusRegistry](../functions/useFocusRegistry.md).
 

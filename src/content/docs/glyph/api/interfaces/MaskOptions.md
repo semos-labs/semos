@@ -1,5 +1,5 @@
 ---
-title: MaskOptions
+title: 'MaskOptions'
 ---
 Input mask utilities for Glyph Input component.
 

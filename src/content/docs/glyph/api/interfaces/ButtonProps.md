@@ -1,5 +1,5 @@
 ---
-title: ButtonProps
+title: 'ButtonProps'
 ---
 Props for the [Button](../variables/Button.md) component.
 

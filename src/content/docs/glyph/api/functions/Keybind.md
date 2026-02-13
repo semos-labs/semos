@@ -1,5 +1,5 @@
 ---
-title: Keybind
+title: 'Keybind'
 ---
 ```ts
 function Keybind(__namedParameters): null;

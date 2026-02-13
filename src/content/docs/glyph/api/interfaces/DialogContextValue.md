@@ -1,5 +1,5 @@
 ---
-title: DialogContextValue
+title: 'DialogContextValue'
 ---
 ## Properties
 

@@ -1,5 +1,5 @@
 ---
-title: ImageProps
+title: 'ImageProps'
 ---
 Props for the [Image](../variables/Image.md) component.
 

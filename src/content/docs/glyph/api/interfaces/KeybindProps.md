@@ -1,5 +1,5 @@
 ---
-title: KeybindProps
+title: 'KeybindProps'
 ---
 Props for the [Keybind](../functions/Keybind.md) component.
 

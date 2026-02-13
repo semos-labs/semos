@@ -1,5 +1,5 @@
 ---
-title: useApp
+title: 'useApp'
 ---
 ```ts
 function useApp(): UseAppResult;

@@ -1,5 +1,5 @@
 ---
-title: detectTerminalCapabilities
+title: 'detectTerminalCapabilities'
 ---
 ```ts
 function detectTerminalCapabilities(debug?): TerminalCapabilities;

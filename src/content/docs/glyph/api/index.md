@@ -1,5 +1,5 @@
 ---
-title: "@semos-labs/glyph"
+title: '@semos-labs/glyph'
 ---
 ## Type Aliases
 

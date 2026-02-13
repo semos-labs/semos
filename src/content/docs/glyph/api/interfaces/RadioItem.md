@@ -1,5 +1,5 @@
 ---
-title: "RadioItem\<T\>"
+title: 'RadioItem<T>'
 ---
 A single option inside a [Radio](../variables/Radio.md) group.
 

@@ -1,5 +1,5 @@
 ---
-title: Toast
+title: 'Toast'
 ---
 A single toast notification.
 

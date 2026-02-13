@@ -1,5 +1,5 @@
 ---
-title: ToastHost
+title: 'ToastHost'
 ---
 ```ts
 function ToastHost(__namedParameters): Element;

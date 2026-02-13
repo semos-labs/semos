@@ -1,5 +1,5 @@
 ---
-title: useDialog
+title: 'useDialog'
 ---
 ```ts
 function useDialog(): DialogContextValue;

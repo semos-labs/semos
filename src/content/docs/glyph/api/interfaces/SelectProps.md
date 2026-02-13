@@ -1,5 +1,5 @@
 ---
-title: SelectProps
+title: 'SelectProps'
 ---
 Props for the [Select](../variables/Select.md) component.
 

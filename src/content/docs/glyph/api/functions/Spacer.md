@@ -1,5 +1,5 @@
 ---
-title: Spacer
+title: 'Spacer'
 ---
 ```ts
 function Spacer(__namedParameters): Element;

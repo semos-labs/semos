@@ -1,5 +1,5 @@
 ---
-title: ListItemInfo
+title: 'ListItemInfo'
 ---
 Information passed to each item's render function.
 

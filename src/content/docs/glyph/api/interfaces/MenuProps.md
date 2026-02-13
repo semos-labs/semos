@@ -1,5 +1,5 @@
 ---
-title: MenuProps
+title: 'MenuProps'
 ---
 Props for the [Menu](../functions/Menu.md) component.
 

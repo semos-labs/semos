@@ -1,5 +1,5 @@
 ---
-title: CheckboxHandle
+title: 'CheckboxHandle'
 ---
 Handle for Checkbox — exposes checked state
 

@@ -1,5 +1,5 @@
 ---
-title: HexColor
+title: 'HexColor'
 ---
 ```ts
 type HexColor = `#${string}`;

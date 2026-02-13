@@ -1,5 +1,5 @@
 ---
-title: Button
+title: 'Button'
 ---
 ```ts
 const Button: ForwardRefExoticComponent<ButtonProps & RefAttributes<ButtonHandle>>;

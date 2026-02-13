@@ -1,5 +1,5 @@
 ---
-title: InputProps
+title: 'InputProps'
 ---
 Props for the [Input](../variables/Input.md) component.
 

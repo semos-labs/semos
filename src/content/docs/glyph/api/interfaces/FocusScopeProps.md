@@ -1,5 +1,5 @@
 ---
-title: FocusScopeProps
+title: 'FocusScopeProps'
 ---
 Props for the [FocusScope](../functions/FocusScope.md) component.
 

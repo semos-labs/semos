@@ -1,5 +1,5 @@
 ---
-title: NamedColor
+title: 'NamedColor'
 ---
 ```ts
 type NamedColor = 

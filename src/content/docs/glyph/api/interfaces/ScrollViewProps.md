@@ -1,5 +1,5 @@
 ---
-title: ScrollViewProps
+title: 'ScrollViewProps'
 ---
 Props for the [ScrollView](../functions/ScrollView.md) component.
 

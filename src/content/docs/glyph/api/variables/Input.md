@@ -1,5 +1,5 @@
 ---
-title: Input
+title: 'Input'
 ---
 ```ts
 const Input: ForwardRefExoticComponent<InputProps & RefAttributes<InputHandle>>;

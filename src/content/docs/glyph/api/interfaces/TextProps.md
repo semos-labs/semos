@@ -1,5 +1,5 @@
 ---
-title: TextProps
+title: 'TextProps'
 ---
 Props for the [Text](../variables/Text.md) component.
 

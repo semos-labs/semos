@@ -1,5 +1,5 @@
 ---
-title: parseAnsi
+title: 'parseAnsi'
 ---
 ```ts
 function parseAnsi(input): StyledSegment[];
