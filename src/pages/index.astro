@@ -13,7 +13,7 @@ import "../styles/global.css";
       </a>
       <div class="nav-links">
         <a href="#products">Products</a>
-        <a href="https://github.com/nicholasrq" target="_blank" rel="noopener" class="nav-github">
+        <a href="https://github.com/semos-labs" target="_blank" rel="noopener" class="nav-github">
           GitHub ↗
         </a>
       </div>
@@ -104,6 +104,7 @@ import "../styles/global.css";
             <span class="tag">Terminal</span>
             <span class="tag">Renderer</span>
           </div>
+          <a href="https://github.com/semos-labs/glyph" target="_blank" rel="noopener" class="product-link">View on GitHub ↗</a>
         </div>
       </div>
 
@@ -126,6 +127,7 @@ import "../styles/global.css";
             <span class="tag">Glyph</span>
             <span class="tag">TUI</span>
           </div>
+          <a href="https://github.com/semos-labs/aion" target="_blank" rel="noopener" class="product-link">View on GitHub ↗</a>
         </div>
       </div>
 
@@ -150,6 +152,7 @@ import "../styles/global.css";
             <span class="tag">Glyph</span>
             <span class="tag">TUI</span>
           </div>
+          <a href="https://github.com/semos-labs/epist" target="_blank" rel="noopener" class="product-link">View on GitHub ↗</a>
         </div>
       </div>
     </div>
@@ -471,6 +474,18 @@ import "../styles/global.css";
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+  }
+
+  .product-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    transition: color 0.2s;
+  }
+
+  .product-link:hover {
+    color: var(--white);
   }
 
   .tag {
