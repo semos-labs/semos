@@ -18,4 +18,4 @@ Aion is a full-featured Google Calendar client that runs in your terminal. View,
 
 ## Next Steps
 
-→ [Getting Started](/aion/getting-started) — install and connect your Google account
+→ [Getting Started](/docs/aion/getting-started/) — install and connect your Google account

@@ -19,17 +19,17 @@ export default defineConfig({
                 },
             ],
             sidebar: [
-                { label: "Introduction", link: "/introduction/" },
+                { label: "Introduction", link: "/docs/" },
                 {
                     label: "Glyph",
                     collapsed: true,
                     items: [
-                        { label: "Overview", link: "/glyph/" },
-                        { label: "Getting Started", link: "/glyph/getting-started/" },
+                        { label: "Overview", link: "/docs/glyph/" },
+                        { label: "Getting Started", link: "/docs/glyph/getting-started/" },
                         {
                             label: "API Reference",
                             collapsed: true,
-                            autogenerate: { directory: "glyph/api" },
+                            autogenerate: { directory: "docs/glyph/api" },
                         },
                     ],
                 },
@@ -37,16 +37,16 @@ export default defineConfig({
                     label: "Aion",
                     collapsed: true,
                     items: [
-                        { label: "Overview", link: "/aion/" },
-                        { label: "Getting Started", link: "/aion/getting-started/" },
+                        { label: "Overview", link: "/docs/aion/" },
+                        { label: "Getting Started", link: "/docs/aion/getting-started/" },
                     ],
                 },
                 {
                     label: "Epist",
                     collapsed: true,
                     items: [
-                        { label: "Overview", link: "/epist/" },
-                        { label: "Getting Started", link: "/epist/getting-started/" },
+                        { label: "Overview", link: "/docs/epist/" },
+                        { label: "Getting Started", link: "/docs/epist/getting-started/" },
                     ],
                 },
             ],

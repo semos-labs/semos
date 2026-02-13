@@ -35,4 +35,4 @@ render(<App />);
 
 ## Next Steps
 
-→ [Getting Started](/glyph/getting-started) — set up your first Glyph project
+→ [Getting Started](/docs/glyph/getting-started/) — set up your first Glyph project

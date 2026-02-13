@@ -25,6 +25,6 @@ Everything in Semos is built around **Glyph** — a React-based terminal rendere
 
 Pick a product to dive in:
 
-- [Glyph](/glyph/) — if you want to build your own TUI apps
-- [Aion](/aion/) — if you want Google Calendar in your terminal
-- [Epist](/epist/) — if you want Gmail in your terminal
+- [Glyph](/docs/glyph/) — if you want to build your own TUI apps
+- [Aion](/docs/aion/) — if you want Google Calendar in your terminal
+- [Epist](/docs/epist/) — if you want Gmail in your terminal

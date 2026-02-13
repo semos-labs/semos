@@ -26,7 +26,7 @@ jobs:
       - name: Extract and place docs
         run: |
           PRODUCT="${{ github.event.client_payload.product }}"
-          DOCS_DIR="src/content/docs/${PRODUCT}/api"
+          DOCS_DIR="src/content/docs/docs/${PRODUCT}/api"
           rm -rf "$DOCS_DIR"
           mkdir -p "$DOCS_DIR"
           tar -xzf _artifact/docs.tar.gz -C "$DOCS_DIR"

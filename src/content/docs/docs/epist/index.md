@@ -19,4 +19,4 @@ Epist is a terminal-native Gmail client. Read, compose, and manage your inbox wi
 
 ## Next Steps
 
-→ [Getting Started](/epist/getting-started) — install and connect your Gmail account
+→ [Getting Started](/docs/epist/getting-started/) — install and connect your Gmail account
