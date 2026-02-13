@@ -138,6 +138,44 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </section>
+
+  <!-- Newsletter -->
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-[520px] mx-auto text-center">
+      <h2 class="font-hand text-[2.2rem] md:text-[2.8rem] mb-4">Stay in the loop</h2>
+      <p class="text-[0.9rem] text-gray-400 leading-[1.7] mb-10">
+        Get occasional updates on new releases, features, and tools we're building. No spam, unsubscribe anytime.
+      </p>
+      <div id="subscribe-form">
+        <form
+          action="https://app.kit.com/forms/9086412/subscriptions"
+          method="post"
+          class="flex gap-3 max-w-md mx-auto md:flex-row flex-col"
+        >
+          <input
+            type="email"
+            name="email_address"
+            placeholder="you@example.com"
+            required
+            class="flex-1 px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg font-mono text-[0.85rem] text-white placeholder-gray-500 outline-none focus:border-gray-400 transition-colors"
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-white text-black font-mono text-[0.85rem] font-medium rounded-lg border border-white hover:bg-gray-200 transition-colors cursor-pointer shrink-0"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="mt-4 text-[0.72rem] text-gray-600">
+          Powered by <a href="https://kit.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-gray-300 transition-colors">Kit</a>
+        </p>
+      </div>
+      <div id="subscribe-success" class="hidden">
+        <p class="text-[1.1rem] text-gray-200 mb-2">✓ You're in!</p>
+        <p class="text-[0.85rem] text-gray-400">Check your inbox to confirm your subscription.</p>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <script>
@@ -170,6 +208,12 @@ import Layout from "../layouts/Layout.astro";
       if (el) el.textContent = total.toLocaleString();
       if (badge) { badge.classList.remove('hidden'); badge.classList.add('inline-flex'); }
     } catch { /* silent fail */ }
+  }
+
+  // Show success message if redirected back from Kit
+  if (new URLSearchParams(window.location.search).has('subscription')) {
+    document.getElementById('subscribe-form')?.classList.add('hidden');
+    document.getElementById('subscribe-success')?.classList.remove('hidden');
   }
 
   fetchStars();
