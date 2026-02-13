@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: masks
-
+---
+title: masks
+---
 ```ts
 const masks: {
   creditCard: (newValue, oldValue) => string | false | void;

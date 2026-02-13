@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useFocus()
-
+---
+title: useFocus
+---
 ```ts
 function useFocus(nodeRef?): UseFocusResult;
 ```

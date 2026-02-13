@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: InputType
-
+---
+title: InputType
+---
 ```ts
 type InputType = "text" | "number";
 ```

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: HexColor
-
+---
+title: HexColor
+---
 ```ts
 type HexColor = `#${string}`;
 ```

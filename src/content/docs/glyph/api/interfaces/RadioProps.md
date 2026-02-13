@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: RadioProps\<T\>
-
+---
+title: "RadioProps\<T\>"
+---
 Props for the [Radio](../variables/Radio.md) group component.
 
 ## Type Parameters

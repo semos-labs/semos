@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: FocusRegistryValue
-
+---
+title: FocusRegistryValue
+---
 Return type of [useFocusRegistry](../functions/useFocusRegistry.md).
 
 ## Properties

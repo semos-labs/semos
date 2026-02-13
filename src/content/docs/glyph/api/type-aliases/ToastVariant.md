@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: ToastVariant
-
+---
+title: ToastVariant
+---
 ```ts
 type ToastVariant = "info" | "success" | "warning" | "error";
 ```

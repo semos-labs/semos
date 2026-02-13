@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: FocusScope()
-
+---
+title: FocusScope
+---
 ```ts
 function FocusScope(__namedParameters): Element;
 ```

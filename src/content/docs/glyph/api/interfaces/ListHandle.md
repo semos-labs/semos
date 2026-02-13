@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ListHandle
-
+---
+title: ListHandle
+---
 Handle for List — exposes selected index
 
 ## Extends

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: VisibleRange
-
+---
+title: VisibleRange
+---
 Visible range passed to the render function in virtualized mode.
 Contains the start/end indices and viewport metadata.
 

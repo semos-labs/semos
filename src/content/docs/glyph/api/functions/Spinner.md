@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: Spinner()
-
+---
+title: Spinner
+---
 ```ts
 function Spinner(__namedParameters): Element;
 ```

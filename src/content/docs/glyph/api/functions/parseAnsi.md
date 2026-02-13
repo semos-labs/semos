@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: parseAnsi()
-
+---
+title: parseAnsi
+---
 ```ts
 function parseAnsi(input): StyledSegment[];
 ```

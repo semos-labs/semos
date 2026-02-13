@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: MenuItem
-
+---
+title: MenuItem
+---
 A single item in a [Menu](../functions/Menu.md).
 
 ## Properties

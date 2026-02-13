@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: render()
-
+---
+title: render
+---
 ```ts
 function render(element, opts?): AppHandle;
 ```

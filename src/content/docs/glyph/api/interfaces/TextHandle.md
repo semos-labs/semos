@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: TextHandle
-
+---
+title: TextHandle
+---
 Handle for Text (when focusable)
 
 ## Extends

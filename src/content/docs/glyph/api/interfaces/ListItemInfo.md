@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ListItemInfo
-
+---
+title: ListItemInfo
+---
 Information passed to each item's render function.
 
 ## Properties

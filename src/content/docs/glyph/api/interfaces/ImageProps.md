@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ImageProps
-
+---
+title: ImageProps
+---
 Props for the [Image](../variables/Image.md) component.
 
 ## Properties

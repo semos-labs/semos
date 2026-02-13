@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: stripAnsi()
-
+---
+title: stripAnsi
+---
 ```ts
 function stripAnsi(input): string;
 ```

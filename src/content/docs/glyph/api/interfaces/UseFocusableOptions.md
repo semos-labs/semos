@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: UseFocusableOptions
-
+---
+title: UseFocusableOptions
+---
 ## Properties
 
 | Property | Type | Description |

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: Box
-
+---
+title: Box
+---
 ```ts
 const Box: ForwardRefExoticComponent<BoxProps & RefAttributes<GlyphNode>>;
 ```

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ProgressProps
-
+---
+title: ProgressProps
+---
 Props for the [Progress](../functions/Progress.md) component.
 
 ## Properties

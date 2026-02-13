@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: RenderOptions
-
+---
+title: RenderOptions
+---
 Options for the top-level [render](../functions/render.md) function.
 
 ## Properties

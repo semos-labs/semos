@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ToastHostProps
-
+---
+title: ToastHostProps
+---
 Props for the [ToastHost](../functions/ToastHost.md) component.
 
 ## Properties

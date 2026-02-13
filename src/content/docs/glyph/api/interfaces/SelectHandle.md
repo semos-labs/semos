@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: SelectHandle
-
+---
+title: SelectHandle
+---
 Handle for Select — exposes current selected value
 
 ## Extends

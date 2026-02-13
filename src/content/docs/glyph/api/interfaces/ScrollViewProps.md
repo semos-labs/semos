@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ScrollViewProps
-
+---
+title: ScrollViewProps
+---
 Props for the [ScrollView](../functions/ScrollView.md) component.
 
 ## Properties

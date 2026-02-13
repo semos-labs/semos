@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: MenuProps
-
+---
+title: MenuProps
+---
 Props for the [Menu](../functions/Menu.md) component.
 
 ## Properties

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ListProps
-
+---
+title: ListProps
+---
 Props for the [List](../variables/List.md) component.
 
 ## Properties

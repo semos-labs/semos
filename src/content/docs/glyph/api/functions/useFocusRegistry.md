@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useFocusRegistry()
-
+---
+title: useFocusRegistry
+---
 ```ts
 function useFocusRegistry(): FocusRegistryValue | null;
 ```

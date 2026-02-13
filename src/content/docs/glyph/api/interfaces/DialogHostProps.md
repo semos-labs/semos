@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: DialogHostProps
-
+---
+title: DialogHostProps
+---
 ## Properties
 
 | Property | Type |

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: TerminalCapabilities
-
+---
+title: TerminalCapabilities
+---
 Terminal capability detection for image protocols
 
 ## Properties

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: NamedColor
-
+---
+title: NamedColor
+---
 ```ts
 type NamedColor = 
   | "black"

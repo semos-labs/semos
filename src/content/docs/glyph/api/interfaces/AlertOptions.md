@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: AlertOptions
-
+---
+title: AlertOptions
+---
 ## Extended by
 
 - [`ConfirmOptions`](ConfirmOptions.md)

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: JumpNav()
-
+---
+title: JumpNav
+---
 ```ts
 function JumpNav(__namedParameters): Element;
 ```

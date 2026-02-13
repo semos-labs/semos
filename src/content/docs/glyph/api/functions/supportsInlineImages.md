@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: supportsInlineImages()
-
+---
+title: supportsInlineImages
+---
 ```ts
 function supportsInlineImages(): boolean;
 ```

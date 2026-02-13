@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: FocusableElement
-
+---
+title: FocusableElement
+---
 Descriptor for a single focusable element in the registry.
 
 ## Properties

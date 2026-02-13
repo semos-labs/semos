@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ButtonHandle
-
+---
+title: ButtonHandle
+---
 Handle for Button
 
 ## Extends

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: AppHandle
-
+---
+title: AppHandle
+---
 Handle returned by [render](../functions/render.md), used to control the application lifecycle.
 
 ## Methods

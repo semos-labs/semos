@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: InputHandle
-
+---
+title: InputHandle
+---
 Handle for Input — exposes current value
 
 ## Extends

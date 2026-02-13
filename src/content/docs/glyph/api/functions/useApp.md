@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useApp()
-
+---
+title: useApp
+---
 ```ts
 function useApp(): UseAppResult;
 ```

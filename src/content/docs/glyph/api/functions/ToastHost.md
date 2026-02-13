@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: ToastHost()
-
+---
+title: ToastHost
+---
 ```ts
 function ToastHost(__namedParameters): Element;
 ```

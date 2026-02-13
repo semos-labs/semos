@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: detectTerminalCapabilities()
-
+---
+title: detectTerminalCapabilities
+---
 ```ts
 function detectTerminalCapabilities(debug?): TerminalCapabilities;
 ```
