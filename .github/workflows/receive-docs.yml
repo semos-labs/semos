@@ -1,54 +1,42 @@
 name: Receive Docs Update
 
-# Called from product repos (glyph, aion, epist) via repository_dispatch
 on:
   repository_dispatch:
     types: [docs-update]
-
-# dispatch payload shape:
-#   product: "glyph" | "aion" | "epist"
-#   branch:  source branch/ref name (for PR title)
-#   docs:    array of { path: string, content: string }
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   update-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Apply docs updates
-        uses: actions/github-script@v7
+      - name: Download docs artifact
+        uses: actions/download-artifact@v4
         with:
-          script: |
-            const fs = require('fs');
-            const path = require('path');
-            const payload = context.payload.client_payload;
-            const product = payload.product;
-            const docs = payload.docs;
+          name: ${{ github.event.client_payload.product }}-docs
+          path: _artifact
+          github-token: ${{ github.token }}
+          repository: ${{ github.event.client_payload.repository }}
+          run-id: ${{ github.event.client_payload.run_id }}
 
-            for (const doc of docs) {
-              const filePath = path.join('src/content/docs', product, doc.path);
-              const dir = path.dirname(filePath);
-              fs.mkdirSync(dir, { recursive: true });
-              fs.writeFileSync(filePath, doc.content);
-              console.log(`Wrote ${filePath}`);
-            }
+      - name: Extract and place docs
+        run: |
+          PRODUCT="${{ github.event.client_payload.product }}"
+          DOCS_DIR="src/content/docs/${PRODUCT}/api"
+          rm -rf "$DOCS_DIR"
+          mkdir -p "$DOCS_DIR"
+          tar -xzf _artifact/docs.tar.gz -C "$DOCS_DIR"
+          rm -rf _artifact
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "docs(${{ github.event.client_payload.product }}): update documentation"
-          title: "docs(${{ github.event.client_payload.product }}): update documentation"
+          commit-message: "docs(${{ github.event.client_payload.product }}): update API reference"
+          title: "docs(${{ github.event.client_payload.product }}): update API reference"
           body: |
-            Automated docs update from [`semos-labs/${{ github.event.client_payload.product }}`](https://github.com/semos-labs/${{ github.event.client_payload.product }}).
-
-            Source ref: `${{ github.event.client_payload.branch }}`
-          branch: "docs/${{ github.event.client_payload.product }}-update"
+            Automated API reference update from [`${{ github.event.client_payload.repository }}@${{ github.event.client_payload.sha }}`](https://github.com/${{ github.event.client_payload.repository }}/commit/${{ github.event.client_payload.sha }}).
+          branch: ${{ github.event.client_payload.product }}/docs-update
           delete-branch: true
-          labels: documentation
+          labels: |
+            documentation
+            automated

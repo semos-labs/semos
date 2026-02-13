@@ -2,8 +2,9 @@
 # │  EXAMPLE: Place this workflow in your product repo                 │
 # │  e.g. semos-labs/glyph/.github/workflows/push-docs.yml            │
 # │                                                                    │
-# │  It generates docs from source code and sends them to the semos   │
-# │  website repo, which opens a PR automatically.                     │
+# │  It generates docs from source code, uploads them as a tarball     │
+# │  artifact, and dispatches an event to the semos website repo       │
+# │  which opens a PR with the updated docs.                           │
 # │                                                                    │
 # │  Requirements:                                                     │
 # │  - A repo secret SEMOS_DOCS_TOKEN (a GitHub PAT with repo scope   │
@@ -38,45 +39,30 @@ jobs:
       - name: Generate docs with TypeDoc
         run: bunx typedoc --plugin typedoc-plugin-markdown --out .docs-out
 
-      - name: Send docs to website repo
+      - name: Create tarball
+        run: tar -czf docs.tar.gz -C .docs-out .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: glyph-docs  # Change to: aion-docs, epist-docs, etc.
+          path: docs.tar.gz
+          retention-days: 1
+
+      - name: Dispatch docs update to website repo
         uses: actions/github-script@v7
-        env:
-          PRODUCT_NAME: glyph  # Change to: aion, epist, etc.
         with:
           github-token: ${{ secrets.SEMOS_DOCS_TOKEN }}
           script: |
-            const fs = require('fs');
-            const path = require('path');
-
-            function readDocsRecursive(dir, basePath = '') {
-              const entries = [];
-              for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
-                const fullPath = path.join(dir, item.name);
-                const relativePath = path.join(basePath, item.name);
-                if (item.isDirectory()) {
-                  entries.push(...readDocsRecursive(fullPath, relativePath));
-                } else if (item.name.endsWith('.md')) {
-                  entries.push({
-                    path: `api/${relativePath}`,
-                    content: fs.readFileSync(fullPath, 'utf8'),
-                  });
-                }
-              }
-              return entries;
-            }
-
-            const docs = readDocsRecursive('.docs-out');
-            console.log(`Found ${docs.length} doc files`);
-
             await github.rest.repos.createDispatchEvent({
               owner: 'semos-labs',
               repo: 'semos',
               event_type: 'docs-update',
               client_payload: {
-                product: process.env.PRODUCT_NAME,
-                branch: context.ref,
-                docs: docs,
+                product: 'glyph',  // Change to: aion, epist, etc.
+                repository: '${{ github.repository }}',
+                run_id: '${{ github.run_id }}',
+                sha: '${{ github.sha }}',
               },
             });
-
             console.log('Dispatched docs update to semos-labs/semos');
