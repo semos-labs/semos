@@ -61,6 +61,5 @@ my-tui-app/
 
 ## Next Steps
 
-- Explore the component API *(coming soon)*
-- Learn about layout and styling *(coming soon)*
-- Build a real app with [Aion](/docs/aion/) or [Epist](/docs/epist/) as examples
+- Explore the [API Reference](/docs/glyph/api/)
+- Build a real app with [Aion](/docs/aion/) as an example
