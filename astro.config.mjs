@@ -23,17 +23,31 @@ export default defineConfig({
                 {
                     label: "Glyph",
                     collapsed: true,
-                    autogenerate: { directory: "glyph" },
+                    items: [
+                        { label: "Overview", link: "/glyph/" },
+                        { label: "Getting Started", link: "/glyph/getting-started/" },
+                        {
+                            label: "API Reference",
+                            collapsed: true,
+                            autogenerate: { directory: "glyph/api" },
+                        },
+                    ],
                 },
                 {
                     label: "Aion",
                     collapsed: true,
-                    autogenerate: { directory: "aion" },
+                    items: [
+                        { label: "Overview", link: "/aion/" },
+                        { label: "Getting Started", link: "/aion/getting-started/" },
+                    ],
                 },
                 {
                     label: "Epist",
                     collapsed: true,
-                    autogenerate: { directory: "epist" },
+                    items: [
+                        { label: "Overview", link: "/epist/" },
+                        { label: "Getting Started", link: "/epist/getting-started/" },
+                    ],
                 },
             ],
         }),
