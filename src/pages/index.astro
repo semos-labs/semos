@@ -1,0 +1,576 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+---
+
+<Layout title="Semos Labs — Terminal, Reimagined">
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/logos/Sema.png" alt="Semos Labs" class="nav-logo-img" />
+        <span class="nav-logo-text">semos</span>
+      </a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="https://github.com/nicholasrq" target="_blank" rel="noopener" class="nav-github">
+          GitHub ↗
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-label">open source terminal tools</p>
+      <h1 class="hero-title">
+        The terminal deserves<br />
+        <span class="hero-accent">beautiful software.</span>
+      </h1>
+      <p class="hero-description">
+        Semos Labs builds a family of modern terminal applications and libraries.
+        We believe the command line is not a limitation — it's a canvas.
+      </p>
+      <div class="hero-cta">
+        <a href="#products" class="btn-primary">Explore Products</a>
+      </div>
+    </div>
+    <div class="hero-decoration">
+      <div class="terminal-block">
+        <div class="terminal-bar">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="t-prompt">$</span> <span class="t-cmd">bunx glyph init my-tui-app</span></p>
+          <p class="t-output">✓ Created project structure</p>
+          <p class="t-output">✓ Installed dependencies</p>
+          <p class="t-output">✓ Ready to build something great</p>
+          <p>&nbsp;</p>
+          <p><span class="t-prompt">$</span> <span class="t-cmd">bun dev</span></p>
+          <p class="t-output t-success">▸ Your TUI is alive ✨</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why section -->
+  <section class="why">
+    <div class="container">
+      <h2 class="section-title">Why Semos?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-icon">⌘</span>
+          <h3>Terminal-First</h3>
+          <p>We live in the terminal. Our tools are built for developers who think in keystrokes, not clicks.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">◎</span>
+          <h3>React-Powered</h3>
+          <p>Declarative components meet terminal rendering. Build TUIs the same way you build web apps.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">△</span>
+          <h3>One Ecosystem</h3>
+          <p>Glyph powers everything. Aion, Epist, and your next app — all share the same foundation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section-title">What We Build</h2>
+
+      <!-- Glyph -->
+      <div class="product-card">
+        <div class="product-logo-wrap">
+          <img src="/logos/Glyph.png" alt="Glyph" class="product-logo" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Glyph</h3>
+          <p class="product-tagline">React renderer for the terminal</p>
+          <p class="product-desc">
+            A terminal rendering engine that lets you build rich TUI applications
+            using React components. Flexbox layouts, styling, focus management —
+            everything you'd expect from a UI framework, running entirely in your terminal.
+          </p>
+          <div class="product-tags">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Terminal</span>
+            <span class="tag">Renderer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aion -->
+      <div class="product-card">
+        <div class="product-logo-wrap">
+          <img src="/logos/Aion.png" alt="Aion" class="product-logo" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Aion</h3>
+          <p class="product-tagline">Google Calendar in your terminal</p>
+          <p class="product-desc">
+            A full-featured Google Calendar client that runs in your terminal.
+            View, create, and manage events without leaving the command line.
+            Built with Glyph for a smooth, responsive interface.
+          </p>
+          <div class="product-tags">
+            <span class="tag">Calendar</span>
+            <span class="tag">Google API</span>
+            <span class="tag">Glyph</span>
+            <span class="tag">TUI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Epist -->
+      <div class="product-card">
+        <div class="product-logo-wrap">
+          <div class="product-logo-wrap">
+            <img src="/logos/Epist.png" alt="Aion" class="product-logo" />
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Epist</h3>
+          <p class="product-tagline">Gmail, from the command line</p>
+          <p class="product-desc">
+            A terminal-native Gmail client. Read, compose, and manage your inbox
+            with keyboard-driven efficiency. Powered by Glyph for a clean,
+            fast email experience right where you work.
+          </p>
+          <div class="product-tags">
+            <span class="tag">Email</span>
+            <span class="tag">Gmail API</span>
+            <span class="tag">Glyph</span>
+            <span class="tag">TUI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="/logos/Sema.png" alt="Semos" class="footer-logo" />
+          <span class="footer-name">Semos Labs</span>
+        </div>
+        <p class="footer-copy">
+          Built with obsessive care for the terminal.
+        </p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* Nav */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-800);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+  }
+
+  .nav-logo-text {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: var(--gray-300);
+  }
+
+  .nav-links a {
+    color: var(--gray-300);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--white);
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 560px;
+  }
+
+  .hero-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gray-400);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-hand);
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-accent {
+    color: var(--gray-200);
+    font-style: italic;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    color: var(--gray-300);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 460px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--gray-500);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--white);
+    transition: all 0.25s;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-primary:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+  }
+
+  .hero-decoration {
+    flex: 1;
+    max-width: 440px;
+  }
+
+  .terminal-block {
+    background: var(--gray-900);
+    border: 1px solid var(--gray-700);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 0.82rem;
+  }
+
+  .terminal-bar {
+    display: flex;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--gray-800);
+    border-bottom: 1px solid var(--gray-700);
+  }
+
+  .terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-600);
+  }
+
+  .terminal-body {
+    padding: 1.25rem 1.5rem;
+    line-height: 1.9;
+  }
+
+  .t-prompt {
+    color: var(--gray-400);
+  }
+
+  .t-cmd {
+    color: var(--white);
+  }
+
+  .t-output {
+    color: var(--gray-500);
+  }
+
+  .t-success {
+    color: var(--gray-200);
+  }
+
+  /* Why section */
+  .why {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--gray-800);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: var(--font-hand);
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .why-card {
+    padding: 2rem;
+    border: 1px solid var(--gray-800);
+    border-radius: 12px;
+    transition: border-color 0.3s;
+  }
+
+  .why-card:hover {
+    border-color: var(--gray-600);
+  }
+
+  .why-icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--gray-300);
+  }
+
+  .why-card h3 {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-card p {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+  }
+
+  /* Products */
+  .products {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--gray-800);
+  }
+
+  .product-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 3rem;
+    border: 1px solid var(--gray-800);
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .product-card:hover {
+    border-color: var(--gray-600);
+  }
+
+  .product-logo-wrap {
+    flex-shrink: 0;
+  }
+
+  .product-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+  }
+
+  .placeholder-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    background: var(--gray-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .product-info {
+    flex: 1;
+  }
+
+  .product-name {
+    font-family: var(--font-hand);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-tagline {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .product-desc {
+    font-size: 0.88rem;
+    color: var(--gray-300);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    max-width: 560px;
+  }
+
+  .product-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    letter-spacing: 0.04em;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--gray-800);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+
+  .footer-name {
+    font-family: var(--font-hand);
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      padding-top: 7rem;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-description {
+      max-width: 100%;
+    }
+
+    .hero-decoration {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .product-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .product-desc {
+      max-width: 100%;
+    }
+
+    .product-tags {
+      justify-content: center;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+    }
+  }
+</style>
