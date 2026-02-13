@@ -147,10 +147,15 @@ import Layout from "../layouts/Layout.astro";
         Get occasional updates on new releases, features, and tools we're building. No spam, unsubscribe anytime.
       </p>
       <div id="subscribe-form">
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
         <form
           action="https://app.kit.com/forms/9086412/subscriptions"
           method="post"
-          class="flex gap-3 max-w-md mx-auto md:flex-row flex-col"
+          class="flex gap-3 max-w-md mx-auto md:flex-row flex-col seva-form-formkit-form"
+          data-sv-form="9086412"
+          data-uid="9bc23479a3"
+          data-format="inline"
+          data-version="5"
         >
           <input
             type="email"
