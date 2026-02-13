@@ -1,6 +1,8 @@
 ---
 title: Getting Started with Epist
 description: Install Epist and connect your Gmail.
+sidebar:
+  order: 2
 ---
 
 ## Installation

@@ -1,6 +1,8 @@
 ---
 title: Getting Started with Glyph
 description: Set up your first Glyph TUI project.
+sidebar:
+  order: 2
 ---
 
 ## Installation

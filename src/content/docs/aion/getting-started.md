@@ -1,6 +1,8 @@
 ---
 title: Getting Started with Aion
 description: Install Aion and connect your Google Calendar.
+sidebar:
+  order: 2
 ---
 
 ## Installation

@@ -1,6 +1,9 @@
 ---
 title: Epist
 description: Gmail in your terminal.
+sidebar:
+  label: Overview
+  order: 1
 ---
 
 Epist is a terminal-native Gmail client. Read, compose, and manage your inbox with keyboard-driven efficiency. Powered by Glyph for a clean, fast email experience right where you work.

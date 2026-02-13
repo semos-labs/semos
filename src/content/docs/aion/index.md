@@ -1,6 +1,9 @@
 ---
 title: Aion
 description: Google Calendar in your terminal.
+sidebar:
+  label: Overview
+  order: 1
 ---
 
 Aion is a full-featured Google Calendar client that runs in your terminal. View, create, and manage events without leaving the command line. Built with Glyph for a smooth, responsive interface.

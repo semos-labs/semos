@@ -1,6 +1,9 @@
 ---
 title: Glyph
 description: A React-based terminal renderer for building TUI applications.
+sidebar:
+  label: Overview
+  order: 1
 ---
 
 Glyph is a terminal rendering engine that lets you build rich TUI applications using React components. Flexbox layouts, styling, focus management — everything you'd expect from a UI framework, running entirely in your terminal.
