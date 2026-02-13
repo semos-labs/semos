@@ -74,7 +74,13 @@ import Layout from "../layouts/Layout.astro";
           <img src="/logos/Glyph.png" alt="Glyph" class="w-20 h-20 rounded-2xl" />
         </div>
         <div class="flex-1">
-          <h3 class="font-hand text-[2rem] mb-1">Glyph</h3>
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <h3 class="font-hand text-[2rem] mb-1">Glyph</h3>
+            <a class="stars-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors" data-repo="semos-labs/glyph" href="https://github.com/semos-labs/glyph" target="_blank" rel="noopener">
+              <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+              <span class="stars-count font-mono font-medium">—</span>
+            </a>
+          </div>
           <p class="text-[0.9rem] text-gray-400 mb-4 italic">React renderer for the terminal</p>
           <p class="text-[0.88rem] text-gray-300 leading-[1.8] mb-5 max-w-full md:max-w-[560px]">
             A terminal rendering engine that lets you build rich TUI applications
@@ -97,7 +103,13 @@ import Layout from "../layouts/Layout.astro";
           <img src="/logos/Aion.png" alt="Aion" class="w-20 h-20 rounded-2xl" />
         </div>
         <div class="flex-1">
-          <h3 class="font-hand text-[2rem] mb-1">Aion</h3>
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <h3 class="font-hand text-[2rem] mb-1">Aion</h3>
+            <a class="stars-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors" data-repo="semos-labs/aion" href="https://github.com/semos-labs/aion" target="_blank" rel="noopener">
+              <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+              <span class="stars-count font-mono font-medium">—</span>
+            </a>
+          </div>
           <p class="text-[0.9rem] text-gray-400 mb-4 italic">Google Calendar in your terminal</p>
           <p class="text-[0.88rem] text-gray-300 leading-[1.8] mb-5 max-w-full md:max-w-[560px]">
             A full-featured Google Calendar client that runs in your terminal.
@@ -116,3 +128,23 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 </Layout>
+
+<script>
+  async function fetchStars() {
+    const badges = document.querySelectorAll('.stars-badge');
+    for (const badge of badges) {
+      const repo = badge.getAttribute('data-repo');
+      if (!repo) continue;
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}`);
+        if (!res.ok) continue;
+        const data = await res.json();
+        const count = badge.querySelector('.stars-count');
+        if (count) count.textContent = data.stargazers_count?.toLocaleString() ?? '0';
+        badge.classList.remove('hidden');
+        badge.classList.add('inline-flex');
+      } catch { /* silent fail — badge stays hidden */ }
+    }
+  }
+  fetchStars();
+</script>
