@@ -9,7 +9,7 @@ function useApp(): UseAppResult;
 Access application-level utilities: exit, terminal dimensions.
 
 Must be called inside a Glyph render tree (i.e. inside a component
-passed to [render](../utilities/render.md)).
+passed to [render](../../utilities/render)).
 
 ## Returns
 

@@ -1,7 +1,5 @@
 ---
 title: 'API Reference'
-sidebar:
-  order: 3
 ---
 
 Complete API reference for `@semos-labs/glyph`.

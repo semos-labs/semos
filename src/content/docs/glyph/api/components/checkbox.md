@@ -25,7 +25,7 @@ const [agreed, setAgreed] = useState(false);
 
 ## CheckboxProps
 
-Props for the [Checkbox](checkbox.md) component.
+Props for the [Checkbox](checkbox) component.
 
 ## Properties
 
@@ -34,10 +34,10 @@ Props for the [Checkbox](checkbox.md) component.
 | <a id="checked"></a> `checked` | `boolean` | Whether the checkbox is checked |
 | <a id="checkedchar"></a> `checkedChar?` | `string` | Custom character for checked state (default: "✓") |
 | <a id="disabled"></a> `disabled?` | `boolean` | Whether the checkbox is disabled |
-| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../types/style.md) | Style when focused |
+| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../../types/style) | Style when focused |
 | <a id="label"></a> `label?` | `string` | Label text displayed next to the checkbox |
 | <a id="onchange"></a> `onChange` | (`checked`) => `void` | Called when the checkbox is toggled |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Style for the checkbox container |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Style for the checkbox container |
 | <a id="uncheckedchar"></a> `uncheckedChar?` | `string` | Custom character for unchecked state (default: " ") |
 
 ---
@@ -48,7 +48,7 @@ Handle for Checkbox — exposes checked state
 
 ## Extends
 
-- [`FocusableHandle`](../types/focusable-handle.md)
+- [`FocusableHandle`](../../types/focusable-handle)
 
 ## Methods
 
@@ -66,7 +66,7 @@ Programmatically blur (unfocus) this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`blur`](../types/focusable-handle.md#blur)
+[`FocusableHandle`](../../types/focusable-handle).[`blur`](../../types/focusable-handle#blur)
 
 ***
 
@@ -84,11 +84,11 @@ Programmatically focus this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`focus`](../types/focusable-handle.md#focus)
+[`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ | ------ |
 | <a id="checked"></a> `checked` | `readonly` | `boolean` | Whether the checkbox is currently checked | - |
-| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../types/focusable-handle.md).[`isFocused`](../types/focusable-handle.md#isfocused) |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../types/focusable-handle).[`isFocused`](../../types/focusable-handle#isfocused) |

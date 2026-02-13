@@ -40,30 +40,30 @@ const [color, setColor] = useState<string>();
 
 ## SelectProps
 
-Props for the [Select](select.md) component.
+Props for the [Select](select) component.
 
 ## Properties
 
 | Property | Type | Description |
 | ------ | ------ | ------ |
 | <a id="disabled"></a> `disabled?` | `boolean` | Disabled state |
-| <a id="dropdownstyle"></a> `dropdownStyle?` | [`Style`](../types/style.md) | Dropdown overlay style overrides |
-| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../types/style.md) | Trigger style when focused |
-| <a id="highlightcolor"></a> `highlightColor?` | [`Color`](../types/color.md) | Highlight color for the selected item in the dropdown (default: "cyan") |
-| <a id="items"></a> `items` | [`SelectItem`](select.md#select-item)[] | List of selectable items |
+| <a id="dropdownstyle"></a> `dropdownStyle?` | [`Style`](../../types/style) | Dropdown overlay style overrides |
+| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../../types/style) | Trigger style when focused |
+| <a id="highlightcolor"></a> `highlightColor?` | [`Color`](../../types/color) | Highlight color for the selected item in the dropdown (default: "cyan") |
+| <a id="items"></a> `items` | [`SelectItem`](select#select-item)[] | List of selectable items |
 | <a id="maxvisible"></a> `maxVisible?` | `number` | Max visible items in the dropdown before scrolling (default: 8) |
 | <a id="onchange"></a> `onChange?` | (`value`) => `void` | Callback when selection changes |
 | <a id="opendirection"></a> `openDirection?` | `"auto"` \| `"up"` \| `"down"` | Force dropdown open direction: "up", "down", or "auto" (default: "auto") |
 | <a id="placeholder"></a> `placeholder?` | `string` | Placeholder text when nothing is selected |
 | <a id="searchable"></a> `searchable?` | `boolean` | Enable type-to-filter when dropdown is open (default: true) |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Trigger box style |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Trigger box style |
 | <a id="value"></a> `value?` | `string` | Currently selected value (controlled) |
 
 ---
 
 ## SelectItem
 
-A single option inside a [Select](select.md) dropdown.
+A single option inside a [Select](select) dropdown.
 
 ## Properties
 
@@ -81,7 +81,7 @@ Handle for Select — exposes current selected value
 
 ## Extends
 
-- [`FocusableHandle`](../types/focusable-handle.md)
+- [`FocusableHandle`](../../types/focusable-handle)
 
 ## Methods
 
@@ -99,7 +99,7 @@ Programmatically blur (unfocus) this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`blur`](../types/focusable-handle.md#blur)
+[`FocusableHandle`](../../types/focusable-handle).[`blur`](../../types/focusable-handle#blur)
 
 ***
 
@@ -117,12 +117,12 @@ Programmatically focus this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`focus`](../types/focusable-handle.md#focus)
+[`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../types/focusable-handle.md).[`isFocused`](../types/focusable-handle.md#isfocused) |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../types/focusable-handle).[`isFocused`](../../types/focusable-handle#isfocused) |
 | <a id="isopen"></a> `isOpen` | `readonly` | `boolean` | Whether the dropdown is currently open | - |
 | <a id="value"></a> `value` | `readonly` | `string` \| `undefined` | Currently selected value (undefined if nothing selected) | - |

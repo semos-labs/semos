@@ -16,7 +16,7 @@ and a `priority` flag to run before focused input handlers.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`KeybindProps`](keybind.md#keybind-props) |
+| `__namedParameters` | [`KeybindProps`](keybind#keybind-props) |
 
 ## Returns
 
@@ -43,7 +43,7 @@ and a `priority` flag to run before focused input handlers.
 
 ## KeybindProps
 
-Props for the [Keybind](keybind.md) component.
+Props for the [Keybind](keybind) component.
 
 ## Properties
 

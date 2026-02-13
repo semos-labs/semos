@@ -12,7 +12,7 @@ Horizontal progress bar with determinate and indeterminate modes.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`ProgressProps`](progress.md#progress-props) |
+| `__namedParameters` | [`ProgressProps`](progress#progress-props) |
 
 ## Returns
 
@@ -34,7 +34,7 @@ Horizontal progress bar with determinate and indeterminate modes.
 
 ## ProgressProps
 
-Props for the [Progress](progress.md) component.
+Props for the [Progress](progress) component.
 
 ## Properties
 
@@ -45,6 +45,6 @@ Props for the [Progress](progress.md) component.
 | <a id="indeterminate"></a> `indeterminate?` | `boolean` | Animate as indeterminate (marquee). Default false. |
 | <a id="label"></a> `label?` | `string` | Optional label text displayed before the bar. |
 | <a id="showpercent"></a> `showPercent?` | `boolean` | Show percentage text after the bar. Default false. |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Outer container style. |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Outer container style. |
 | <a id="value"></a> `value?` | `number` | Progress value 0..1. Omit when indeterminate. |
-| <a id="width"></a> `width?` | [`DimensionValue`](../types/style.md#dimension-value) | Width of the progress bar. Default "100%". |
+| <a id="width"></a> `width?` | [`DimensionValue`](../../types/style#dimension-value) | Width of the progress bar. Default "100%". |

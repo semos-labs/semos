@@ -12,11 +12,11 @@ Hook to make any element focusable with keyboard support.
 
 | Parameter | Type |
 | ------ | ------ |
-| `options` | [`UseFocusableOptions`](use-focusable.md#use-focusable-options) |
+| `options` | [`UseFocusableOptions`](use-focusable#use-focusable-options) |
 
 ## Returns
 
-[`UseFocusableResult`](use-focusable.md#use-focusable-result)
+[`UseFocusableResult`](use-focusable#use-focusable-result)
 
 ## Example
 

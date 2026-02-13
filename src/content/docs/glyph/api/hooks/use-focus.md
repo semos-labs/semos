@@ -9,7 +9,7 @@ function useFocus(nodeRef?): UseFocusResult;
 Low-level hook that registers a node in the focus system and tracks
 whether it is currently focused.
 
-For most use-cases, prefer the higher-level [useFocusable](use-focusable.md) hook
+For most use-cases, prefer the higher-level [useFocusable](../use-focusable) hook
 or built-in focusable components (`Button`, `Input`, …).
 
 ## Parameters

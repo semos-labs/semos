@@ -2,7 +2,7 @@
 title: 'LayoutRect'
 ---
 
-Computed layout rectangle for a node (returned by [useLayout](../hooks/use-layout.md)).
+Computed layout rectangle for a node (returned by [useLayout](../../hooks/use-layout)).
 
 `x`, `y`, `width`, `height` are the **outer** bounds (including border).
 `innerX`, `innerY`, `innerWidth`, `innerHeight` are the **content** bounds

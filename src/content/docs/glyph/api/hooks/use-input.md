@@ -9,7 +9,7 @@ function useInput(handler, deps?): void;
 Subscribe to raw keyboard input.
 
 The handler is called for **every** key press that is not consumed by a
-focused input handler or a priority [Keybind](../components/keybind.md). This is the
+focused input handler or a priority [Keybind](../../components/keybind). This is the
 lowest-level input hook — prefer `Keybind` for simple shortcuts and
 component-level handlers for focused input.
 
@@ -17,7 +17,7 @@ component-level handlers for focused input.
 
 | Parameter | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| `handler` | (`key`) => `void` | `undefined` | Callback receiving the parsed [Key](../types/key.md). |
+| `handler` | (`key`) => `void` | `undefined` | Callback receiving the parsed [Key](../../types/key). |
 | `deps` | `any`[] | `[]` | Dependency array (same semantics as `useEffect`). |
 
 ## Returns

@@ -30,7 +30,7 @@ Focusable button that triggers an action on Enter or Space.
 
 ## ButtonProps
 
-Props for the [Button](button.md) component.
+Props for the [Button](button) component.
 
 ## Properties
 
@@ -38,10 +38,10 @@ Props for the [Button](button.md) component.
 | ------ | ------ | ------ |
 | <a id="children"></a> `children?` | `ReactNode` | Custom content. Takes precedence over `label` when both are provided. |
 | <a id="disabled"></a> `disabled?` | `boolean` | When `true`, the button is skipped in the focus order and ignores input. |
-| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../types/style.md) | Style applied when the button is focused (merged with `style`). |
+| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../../types/style) | Style applied when the button is focused (merged with `style`). |
 | <a id="label"></a> `label?` | `string` | Shorthand text label. When provided and `children` is absent, renders the label as text. |
 | <a id="onpress"></a> `onPress?` | () => `void` | Callback fired when the button is activated (Enter or Space). |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Base style for the button container. |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Base style for the button container. |
 
 ---
 
@@ -51,7 +51,7 @@ Handle for Button
 
 ## Extends
 
-- [`FocusableHandle`](../types/focusable-handle.md)
+- [`FocusableHandle`](../../types/focusable-handle)
 
 ## Methods
 
@@ -69,7 +69,7 @@ Programmatically blur (unfocus) this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`blur`](../types/focusable-handle.md#blur)
+[`FocusableHandle`](../../types/focusable-handle).[`blur`](../../types/focusable-handle#blur)
 
 ***
 
@@ -87,10 +87,10 @@ Programmatically focus this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`focus`](../types/focusable-handle.md#focus)
+[`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../types/focusable-handle.md).[`isFocused`](../types/focusable-handle.md#isfocused) |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../types/focusable-handle).[`isFocused`](../../types/focusable-handle#isfocused) |

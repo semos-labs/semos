@@ -33,7 +33,7 @@ with fallback to OS-level preview. Press Escape to unload.
 
 ## ImageProps
 
-Props for the [Image](image.md) component.
+Props for the [Image](image) component.
 
 ## Properties
 
@@ -43,7 +43,7 @@ Props for the [Image](image.md) component.
 | <a id="autosize"></a> `autoSize?` | `boolean` | Auto-size the box to fit the image dimensions (default: false). When true, the box resizes to match the image's aspect ratio. Use maxWidth/maxHeight to constrain the size. |
 | <a id="disabled"></a> `disabled?` | `boolean` | Whether the component is disabled (skipped in tab order, no key handling) |
 | <a id="focusable"></a> `focusable?` | `boolean` | Whether the component is focusable (default: true) |
-| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../types/style.md) | Style when focused |
+| <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../../types/style) | Style when focused |
 | <a id="height"></a> `height?` | `number` | Fixed height in cells (optional, uses flexbox if not set) |
 | <a id="inline"></a> `inline?` | `boolean` | Allow inline rendering in terminal (default: true) |
 | <a id="maxheight"></a> `maxHeight?` | `number` | Maximum height in cells when autoSize is true |
@@ -51,9 +51,9 @@ Props for the [Image](image.md) component.
 | <a id="onerror"></a> `onError?` | (`error`) => `void` | Called on error |
 | <a id="onstatechange"></a> `onStateChange?` | (`state`) => `void` | Called when image state changes |
 | <a id="placeholder"></a> `placeholder?` | `string` | Custom placeholder text (default: image name) |
-| <a id="placeholderstyle"></a> `placeholderStyle?` | [`Style`](../types/style.md) | Style for the placeholder |
+| <a id="placeholderstyle"></a> `placeholderStyle?` | [`Style`](../../types/style) | Style for the placeholder |
 | <a id="src"></a> `src` | `string` | Image source - local path or remote URL |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Container style (flexbox) |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Container style (flexbox) |
 | <a id="unloadtrigger"></a> `unloadTrigger?` | `number` | Force unload trigger - increment this value to force the image to unload. Useful when parent component handles Escape or other close actions. Example: <Image unloadTrigger={unloadCount} ... /> |
 | <a id="width"></a> `width?` | `number` | Fixed width in cells (optional, uses flexbox if not set) |
 
@@ -65,7 +65,7 @@ Props for the [Image](image.md) component.
 type ImageState = "placeholder" | "loading" | "loaded" | "error" | "preview";
 ```
 
-Lifecycle state of the [Image](image.md) component.
+Lifecycle state of the [Image](image) component.
 - `"placeholder"` — waiting for user to press Space to load
 - `"loading"` — image data is being fetched / decoded
 - `"loaded"` — rendered inline via Kitty / iTerm2 protocol
@@ -80,7 +80,7 @@ Handle for Image
 
 ## Extends
 
-- [`FocusableHandle`](../types/focusable-handle.md)
+- [`FocusableHandle`](../../types/focusable-handle)
 
 ## Methods
 
@@ -98,7 +98,7 @@ Programmatically blur (unfocus) this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`blur`](../types/focusable-handle.md#blur)
+[`FocusableHandle`](../../types/focusable-handle).[`blur`](../../types/focusable-handle#blur)
 
 ***
 
@@ -116,10 +116,10 @@ Programmatically focus this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`focus`](../types/focusable-handle.md#focus)
+[`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../types/focusable-handle.md).[`isFocused`](../types/focusable-handle.md#isfocused) |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../types/focusable-handle).[`isFocused`](../../types/focusable-handle#isfocused) |

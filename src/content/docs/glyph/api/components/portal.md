@@ -15,7 +15,7 @@ above all other content.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`PortalProps`](portal.md#portal-props) |
+| `__namedParameters` | [`PortalProps`](portal#portal-props) |
 
 ## Returns
 
@@ -39,7 +39,7 @@ above all other content.
 
 ## PortalProps
 
-Props for the [Portal](portal.md) component.
+Props for the [Portal](portal) component.
 
 ## Properties
 

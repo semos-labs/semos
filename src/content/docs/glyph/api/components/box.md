@@ -42,7 +42,7 @@ out of the box.
 
 ## BoxProps
 
-Props for the [Box](box.md) component.
+Props for the [Box](box) component.
 
 ## Properties
 
@@ -50,4 +50,4 @@ Props for the [Box](box.md) component.
 | ------ | ------ | ------ |
 | <a id="children"></a> `children?` | `ReactNode` | Child elements to render inside the box. |
 | <a id="focusable"></a> `focusable?` | `boolean` | When `true`, the box participates in the focus (Tab) order. |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Flexbox style object controlling layout, colors, borders, and more. |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Flexbox style object controlling layout, colors, borders, and more. |
