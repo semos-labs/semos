@@ -1,0 +1,53 @@
+---
+title: 'Box'
+---
+
+```ts
+const Box: ForwardRefExoticComponent<BoxProps & RefAttributes<GlyphNode>>;
+```
+
+Generic layout container — the building block of every Glyph UI.
+
+`Box` maps directly to a Yoga flexbox node, so all CSS-like flex
+properties (`flexDirection`, `gap`, `padding`, `alignItems`, …) work
+out of the box.
+
+## Examples
+
+```tsx
+<Box style={{ flexDirection: "row", gap: 1, padding: 1 }}>
+  <Text>Hello</Text>
+  <Text>World</Text>
+</Box>
+```
+
+```tsx
+// Centered card with a border
+<Box
+  style={{
+    border: "round",
+    borderColor: "cyan",
+    padding: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 40,
+    height: 10,
+  }}
+>
+  <Text style={{ bold: true }}>Welcome!</Text>
+</Box>
+```
+
+---
+
+## BoxProps
+
+Props for the [Box](box.md) component.
+
+## Properties
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="children"></a> `children?` | `ReactNode` | Child elements to render inside the box. |
+| <a id="focusable"></a> `focusable?` | `boolean` | When `true`, the box participates in the focus (Tab) order. |
+| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Flexbox style object controlling layout, colors, borders, and more. |

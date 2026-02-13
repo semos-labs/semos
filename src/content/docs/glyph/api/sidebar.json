@@ -1,0 +1,182 @@
+[
+  {
+    "label": "Components",
+    "items": [
+      {
+        "label": "Box",
+        "link": "/glyph/api/components/box/"
+      },
+      {
+        "label": "Button",
+        "link": "/glyph/api/components/button/"
+      },
+      {
+        "label": "Checkbox",
+        "link": "/glyph/api/components/checkbox/"
+      },
+      {
+        "label": "DialogHost",
+        "link": "/glyph/api/components/dialog-host/"
+      },
+      {
+        "label": "FocusScope",
+        "link": "/glyph/api/components/focus-scope/"
+      },
+      {
+        "label": "Image",
+        "link": "/glyph/api/components/image/"
+      },
+      {
+        "label": "Input",
+        "link": "/glyph/api/components/input/"
+      },
+      {
+        "label": "JumpNav",
+        "link": "/glyph/api/components/jump-nav/"
+      },
+      {
+        "label": "Keybind",
+        "link": "/glyph/api/components/keybind/"
+      },
+      {
+        "label": "List",
+        "link": "/glyph/api/components/list/"
+      },
+      {
+        "label": "Menu",
+        "link": "/glyph/api/components/menu/"
+      },
+      {
+        "label": "Portal",
+        "link": "/glyph/api/components/portal/"
+      },
+      {
+        "label": "Progress",
+        "link": "/glyph/api/components/progress/"
+      },
+      {
+        "label": "Radio",
+        "link": "/glyph/api/components/radio/"
+      },
+      {
+        "label": "ScrollView",
+        "link": "/glyph/api/components/scroll-view/"
+      },
+      {
+        "label": "Select",
+        "link": "/glyph/api/components/select/"
+      },
+      {
+        "label": "Spacer",
+        "link": "/glyph/api/components/spacer/"
+      },
+      {
+        "label": "Spinner",
+        "link": "/glyph/api/components/spinner/"
+      },
+      {
+        "label": "Text",
+        "link": "/glyph/api/components/text/"
+      },
+      {
+        "label": "ToastHost",
+        "link": "/glyph/api/components/toast-host/"
+      }
+    ]
+  },
+  {
+    "label": "Hooks",
+    "items": [
+      {
+        "label": "useApp",
+        "link": "/glyph/api/hooks/use-app/"
+      },
+      {
+        "label": "useDialog",
+        "link": "/glyph/api/hooks/use-dialog/"
+      },
+      {
+        "label": "useFocus",
+        "link": "/glyph/api/hooks/use-focus/"
+      },
+      {
+        "label": "useFocusable",
+        "link": "/glyph/api/hooks/use-focusable/"
+      },
+      {
+        "label": "useFocusRegistry",
+        "link": "/glyph/api/hooks/use-focus-registry/"
+      },
+      {
+        "label": "useInput",
+        "link": "/glyph/api/hooks/use-input/"
+      },
+      {
+        "label": "useLayout",
+        "link": "/glyph/api/hooks/use-layout/"
+      },
+      {
+        "label": "useToast",
+        "link": "/glyph/api/hooks/use-toast/"
+      }
+    ]
+  },
+  {
+    "label": "Utilities",
+    "items": [
+      {
+        "label": "createMask",
+        "link": "/glyph/api/utilities/create-mask/"
+      },
+      {
+        "label": "detectTerminalCapabilities",
+        "link": "/glyph/api/utilities/detect-terminal-capabilities/"
+      },
+      {
+        "label": "masks",
+        "link": "/glyph/api/utilities/masks/"
+      },
+      {
+        "label": "parseAnsi",
+        "link": "/glyph/api/utilities/parse-ansi/"
+      },
+      {
+        "label": "render",
+        "link": "/glyph/api/utilities/render/"
+      },
+      {
+        "label": "stripAnsi",
+        "link": "/glyph/api/utilities/strip-ansi/"
+      },
+      {
+        "label": "supportsInlineImages",
+        "link": "/glyph/api/utilities/supports-inline-images/"
+      }
+    ]
+  },
+  {
+    "label": "Types",
+    "items": [
+      {
+        "label": "Color",
+        "link": "/glyph/api/types/color/"
+      },
+      {
+        "label": "FocusableHandle",
+        "link": "/glyph/api/types/focusable-handle/"
+      },
+      {
+        "label": "Key",
+        "link": "/glyph/api/types/key/"
+      },
+      {
+        "label": "LayoutRect",
+        "link": "/glyph/api/types/layout-rect/"
+      },
+      {
+        "label": "Style",
+        "link": "/glyph/api/types/style/"
+      }
+    ]
+  }
+]
