@@ -45,19 +45,14 @@ import "../styles/global.css";
           <span class="terminal-dot"></span>
           <span class="terminal-dot"></span>
           <span class="terminal-dot"></span>
+          <button class="copy-btn" data-copy="brew tap semos-labs/tap&#10;brew install aion" aria-label="Copy to clipboard">
+            <span class="copy-icon">⧉</span>
+            <span class="copy-done">✓</span>
+          </button>
         </div>
         <div class="terminal-body">
+          <p><span class="t-prompt">$</span> <span class="t-cmd">brew tap semos-labs/tap</span></p>
           <p><span class="t-prompt">$</span> <span class="t-cmd">brew install aion</span></p>
-          <p class="t-output">✓ Installed aion</p>
-          <p>&nbsp;</p>
-          <p><span class="t-prompt">$</span> <span class="t-cmd">aion</span></p>
-          <p>&nbsp;</p>
-          <p class="t-ui">┌─ Feb 13, Thu ──────────────┐</p>
-          <p class="t-ui">│ <span class="t-event">09:00</span>  Team standup        │</p>
-          <p class="t-ui">│ <span class="t-event">11:00</span>  Design review        │</p>
-          <p class="t-ui">│ <span class="t-highlight">▸14:00  Ship Aion v2 🚀</span>     │</p>
-          <p class="t-ui">│ <span class="t-event">16:30</span>  Coffee with Alex     │</p>
-          <p class="t-ui">└────────────────────────────┘</p>
         </div>
       </div>
     </div>
@@ -305,10 +300,19 @@ import "../styles/global.css";
   .terminal-body { padding: 1.25rem 1.5rem; line-height: 1.9; }
   .t-prompt { color: var(--gray-400); }
   .t-cmd { color: var(--white); }
-  .t-output { color: var(--gray-500); }
-  .t-ui { color: var(--gray-500); font-size: 0.78rem; }
-  .t-event { color: var(--gray-300); }
-  .t-highlight { color: var(--white); font-weight: 600; }
+
+  .copy-btn {
+    margin-left: auto;
+    background: none; border: 1px solid var(--gray-700);
+    border-radius: 4px; padding: 2px 6px;
+    cursor: pointer; color: var(--gray-400);
+    font-size: 0.8rem; transition: all 0.2s;
+    display: flex; align-items: center;
+  }
+  .copy-btn:hover { color: var(--white); border-color: var(--gray-500); }
+  .copy-btn .copy-done { display: none; color: var(--gray-200); }
+  .copy-btn.copied .copy-icon { display: none; }
+  .copy-btn.copied .copy-done { display: inline; }
 
   /* Shared */
   .container { max-width: 1100px; margin: 0 auto; }
@@ -451,3 +455,14 @@ import "../styles/global.css";
     .features-grid { grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy') || '';
+      await navigator.clipboard.writeText(text);
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 2000);
+    });
+  });
+</script>
