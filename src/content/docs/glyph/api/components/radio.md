@@ -21,7 +21,7 @@ Supports both horizontal and vertical layout via `direction`.
 
 | Parameter | Type |
 | ------ | ------ |
-| `props` | [`RadioProps`](radio.md#radio-props)\<`T`\> & `RefAttributes`\<[`RadioHandle`](radio.md#radio-handle)\<`T`\>\> |
+| `props` | [`RadioProps`](radio#radio-props)\<`T`\> & `RefAttributes`\<[`RadioHandle`](radio#radio-handle)\<`T`\>\> |
 
 ## Returns
 
@@ -47,7 +47,7 @@ const [size, setSize] = useState<string>();
 
 ## RadioProps<T>
 
-Props for the [Radio](radio.md) group component.
+Props for the [Radio](radio) group component.
 
 ## Type Parameters
 
@@ -61,14 +61,14 @@ Props for the [Radio](radio.md) group component.
 | ------ | ------ | ------ |
 | <a id="direction"></a> `direction?` | `"row"` \| `"column"` | Layout direction (default: "column") |
 | <a id="disabled"></a> `disabled?` | `boolean` | Whether the entire group is disabled |
-| <a id="focuseditemstyle"></a> `focusedItemStyle?` | [`Style`](../types/style.md) | Style for the focused item |
+| <a id="focuseditemstyle"></a> `focusedItemStyle?` | [`Style`](../../types/style) | Style for the focused item |
 | <a id="gap"></a> `gap?` | `number` | Gap between items (default: 0) |
-| <a id="items"></a> `items` | [`RadioItem`](radio.md#radio-item)\<`T`\>[] | Radio options |
-| <a id="itemstyle"></a> `itemStyle?` | [`Style`](../types/style.md) | Style for each radio item |
+| <a id="items"></a> `items` | [`RadioItem`](radio#radio-item)\<`T`\>[] | Radio options |
+| <a id="itemstyle"></a> `itemStyle?` | [`Style`](../../types/style) | Style for each radio item |
 | <a id="onchange"></a> `onChange` | (`value`) => `void` | Called when selection changes |
 | <a id="selectedchar"></a> `selectedChar?` | `string` | Custom character for selected state (default: "●") |
-| <a id="selecteditemstyle"></a> `selectedItemStyle?` | [`Style`](../types/style.md) | Style for the selected item |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Style for the radio group container |
+| <a id="selecteditemstyle"></a> `selectedItemStyle?` | [`Style`](../../types/style) | Style for the selected item |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Style for the radio group container |
 | <a id="unselectedchar"></a> `unselectedChar?` | `string` | Custom character for unselected state (default: "○") |
 | <a id="value"></a> `value` | `T` \| `undefined` | Currently selected value |
 
@@ -76,7 +76,7 @@ Props for the [Radio](radio.md) group component.
 
 ## RadioItem<T>
 
-A single option inside a [Radio](radio.md) group.
+A single option inside a [Radio](radio) group.
 
 ## Type Parameters
 
@@ -100,7 +100,7 @@ Handle for Radio — exposes selected value
 
 ## Extends
 
-- [`FocusableHandle`](../types/focusable-handle.md)
+- [`FocusableHandle`](../../types/focusable-handle)
 
 ## Type Parameters
 
@@ -124,7 +124,7 @@ Programmatically blur (unfocus) this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`blur`](../types/focusable-handle.md#blur)
+[`FocusableHandle`](../../types/focusable-handle).[`blur`](../../types/focusable-handle#blur)
 
 ***
 
@@ -142,11 +142,11 @@ Programmatically focus this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`focus`](../types/focusable-handle.md#focus)
+[`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../types/focusable-handle.md).[`isFocused`](../types/focusable-handle.md#isfocused) |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../types/focusable-handle).[`isFocused`](../../types/focusable-handle#isfocused) |
 | <a id="value"></a> `value` | `readonly` | `T` \| `undefined` | Currently selected value | - |

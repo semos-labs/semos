@@ -6,7 +6,7 @@ title: 'Menu'
 function Menu(__namedParameters): Element;
 ```
 
-Pre-styled menu built on top of [List](list.md).
+Pre-styled menu built on top of [List](../list).
 
 Renders a vertical list of labeled items with a `>` selection indicator
 and highlight color. Navigation uses the same keyboard shortcuts as
@@ -16,7 +16,7 @@ and highlight color. Navigation uses the same keyboard shortcuts as
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`MenuProps`](menu.md#menu-props) |
+| `__namedParameters` | [`MenuProps`](menu#menu-props) |
 
 ## Returns
 
@@ -40,7 +40,7 @@ and highlight color. Navigation uses the same keyboard shortcuts as
 
 ## MenuProps
 
-Props for the [Menu](menu.md) component.
+Props for the [Menu](menu) component.
 
 ## Properties
 
@@ -48,18 +48,18 @@ Props for the [Menu](menu.md) component.
 | ------ | ------ | ------ |
 | <a id="defaultselectedindex"></a> `defaultSelectedIndex?` | `number` | Initial index for uncontrolled mode |
 | <a id="focusable"></a> `focusable?` | `boolean` | Whether the menu is focusable (default: true) |
-| <a id="highlightcolor"></a> `highlightColor?` | [`Color`](../types/color.md) | Color for the selected item indicator and text (default: "cyan") |
-| <a id="items"></a> `items` | [`MenuItem`](menu.md#menu-item)[] | - |
+| <a id="highlightcolor"></a> `highlightColor?` | [`Color`](../../types/color) | Color for the selected item indicator and text (default: "cyan") |
+| <a id="items"></a> `items` | [`MenuItem`](menu#menu-item)[] | - |
 | <a id="onselect"></a> `onSelect?` | (`value`, `index`) => `void` | Callback when enter is pressed on item |
 | <a id="onselectionchange"></a> `onSelectionChange?` | (`index`) => `void` | Callback when selected index changes |
 | <a id="selectedindex"></a> `selectedIndex?` | `number` | Controlled selected index |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Outer box style |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Outer box style |
 
 ---
 
 ## MenuItem
 
-A single item in a [Menu](menu.md).
+A single item in a [Menu](menu).
 
 ## Properties
 

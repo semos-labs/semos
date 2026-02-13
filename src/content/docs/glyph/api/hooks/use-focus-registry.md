@@ -9,11 +9,11 @@ function useFocusRegistry(): FocusRegistryValue | null;
 Access all registered focusable elements and navigation helpers.
 
 Useful for building custom navigation UIs, accessibility overlays,
-or debug tools. Respects the current [FocusScope](../components/focus-scope.md) trap.
+or debug tools. Respects the current [FocusScope](../../components/focus-scope) trap.
 
 ## Returns
 
-[`FocusRegistryValue`](use-focus-registry.md#focus-registry-value) \| `null`
+[`FocusRegistryValue`](use-focus-registry#focus-registry-value) \| `null`
 
 Registry value, or `null` outside a Glyph render tree.
 
@@ -38,7 +38,7 @@ Descriptor for a single focusable element in the registry.
 | Property | Type | Description |
 | ------ | ------ | ------ |
 | <a id="id"></a> `id` | `string` | Unique focus ID |
-| <a id="layout"></a> `layout` | [`LayoutRect`](../types/layout-rect.md) | Current layout (position, size) |
+| <a id="layout"></a> `layout` | [`LayoutRect`](../../types/layout-rect) | Current layout (position, size) |
 | <a id="node"></a> `node` | [`GlyphNode`](#) | The GlyphNode |
 | <a id="type"></a> `type` | `string` | Node type (box, input, etc.) |
 
@@ -46,13 +46,13 @@ Descriptor for a single focusable element in the registry.
 
 ## FocusRegistryValue
 
-Return type of [useFocusRegistry](use-focus-registry.md).
+Return type of [useFocusRegistry](use-focus-registry).
 
 ## Properties
 
 | Property | Type | Description |
 | ------ | ------ | ------ |
-| <a id="elements"></a> `elements` | [`FocusableElement`](use-focus-registry.md#focusable-element)[] | All currently registered focusable elements |
+| <a id="elements"></a> `elements` | [`FocusableElement`](use-focus-registry#focusable-element)[] | All currently registered focusable elements |
 | <a id="focusedid"></a> `focusedId` | `string` \| `null` | Currently focused element ID |
 | <a id="focusnext"></a> `focusNext` | () => `void` | Move to next focusable element |
 | <a id="focusprev"></a> `focusPrev` | () => `void` | Move to previous focusable element |

@@ -38,7 +38,7 @@ state internally or through controlled props.
 
 ## ListProps
 
-Props for the [List](list.md) component.
+Props for the [List](list) component.
 
 ## Properties
 
@@ -52,7 +52,7 @@ Props for the [List](list.md) component.
 | <a id="onselectionchange"></a> `onSelectionChange?` | (`index`) => `void` | Callback when selected index should change |
 | <a id="renderitem"></a> `renderItem` | (`info`) => `ReactNode` | Render function for each item |
 | <a id="selectedindex"></a> `selectedIndex?` | `number` | Controlled selected index |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Outer box style |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Outer box style |
 
 ---
 
@@ -76,7 +76,7 @@ Handle for List — exposes selected index
 
 ## Extends
 
-- [`FocusableHandle`](../types/focusable-handle.md)
+- [`FocusableHandle`](../../types/focusable-handle)
 
 ## Methods
 
@@ -94,7 +94,7 @@ Programmatically blur (unfocus) this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`blur`](../types/focusable-handle.md#blur)
+[`FocusableHandle`](../../types/focusable-handle).[`blur`](../../types/focusable-handle#blur)
 
 ***
 
@@ -112,11 +112,11 @@ Programmatically focus this element
 
 #### Inherited from
 
-[`FocusableHandle`](../types/focusable-handle.md).[`focus`](../types/focusable-handle.md#focus)
+[`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../types/focusable-handle.md).[`isFocused`](../types/focusable-handle.md#isfocused) |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../types/focusable-handle).[`isFocused`](../../types/focusable-handle#isfocused) |
 | <a id="selectedindex"></a> `selectedIndex` | `readonly` | `number` | Currently selected index | - |

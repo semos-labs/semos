@@ -16,7 +16,7 @@ Detect which terminal we're running in and what image protocols it supports
 
 ## Returns
 
-[`TerminalCapabilities`](detect-terminal-capabilities.md#terminal-capabilities)
+[`TerminalCapabilities`](detect-terminal-capabilities#terminal-capabilities)
 
 ---
 

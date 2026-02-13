@@ -4,8 +4,8 @@ title: 'Key'
 
 Parsed key press information.
 
-Received by [useInput](../hooks/use-input.md) handlers, `onKeyPress` callbacks,
-and [Keybind](../components/keybind.md) matching.
+Received by [useInput](../../hooks/use-input) handlers, `onKeyPress` callbacks,
+and [Keybind](../../components/keybind) matching.
 
 ## Properties
 

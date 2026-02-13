@@ -17,13 +17,13 @@ and begins painting frames.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `element` | `ReactElement` | Root React element to render. |
-| `opts` | [`RenderOptions`](render.md#render-options) | Optional configuration (custom streams, debug mode, cursor). |
+| `opts` | [`RenderOptions`](render#render-options) | Optional configuration (custom streams, debug mode, cursor). |
 
 ## Returns
 
-[`AppHandle`](render.md#app-handle)
+[`AppHandle`](render#app-handle)
 
-An [AppHandle](render.md#app-handle) with `unmount()` and `exit()` methods.
+An [AppHandle](render#app-handle) with `unmount()` and `exit()` methods.
 
 ## Example
 
@@ -45,7 +45,7 @@ render(<App />);
 
 ## RenderOptions
 
-Options for the top-level [render](render.md) function.
+Options for the top-level [render](render) function.
 
 ## Properties
 
@@ -60,7 +60,7 @@ Options for the top-level [render](render.md) function.
 
 ## AppHandle
 
-Handle returned by [render](render.md), used to control the application lifecycle.
+Handle returned by [render](render), used to control the application lifecycle.
 
 ## Methods
 

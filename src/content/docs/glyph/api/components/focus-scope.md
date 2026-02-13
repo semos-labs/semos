@@ -16,7 +16,7 @@ element is restored automatically.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`FocusScopeProps`](focus-scope.md#focus-scope-props) |
+| `__namedParameters` | [`FocusScopeProps`](focus-scope#focus-scope-props) |
 
 ## Returns
 
@@ -37,7 +37,7 @@ element is restored automatically.
 
 ## FocusScopeProps
 
-Props for the [FocusScope](focus-scope.md) component.
+Props for the [FocusScope](focus-scope) component.
 
 ## Properties
 

@@ -9,13 +9,13 @@ function ToastHost(__namedParameters): Element;
 Container that renders toast notifications for its children.
 
 Place `<ToastHost>` near the root of your app. Children call
-[useToast](../hooks/use-toast.md) to push notifications.
+[useToast](../../hooks/use-toast) to push notifications.
 
 ## Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`ToastHostProps`](toast-host.md#toast-host-props) |
+| `__namedParameters` | [`ToastHostProps`](toast-host#toast-host-props) |
 
 ## Returns
 
@@ -37,7 +37,7 @@ function App() {
 
 ## ToastHostProps
 
-Props for the [ToastHost](toast-host.md) component.
+Props for the [ToastHost](toast-host) component.
 
 ## Properties
 
@@ -45,7 +45,7 @@ Props for the [ToastHost](toast-host.md) component.
 | ------ | ------ | ------ |
 | <a id="children"></a> `children?` | `ReactNode` | Application content. |
 | <a id="maxvisible"></a> `maxVisible?` | `number` | Maximum number of toasts visible simultaneously. Default `5`. |
-| <a id="position"></a> `position?` | [`ToastPosition`](toast-host.md#toast-position) | Where toasts appear. Default `"bottom-right"`. |
+| <a id="position"></a> `position?` | [`ToastPosition`](toast-host#toast-position) | Where toasts appear. Default `"bottom-right"`. |
 
 ---
 

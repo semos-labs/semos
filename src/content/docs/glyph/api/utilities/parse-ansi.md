@@ -20,7 +20,7 @@ Handles:
 
 ## Returns
 
-[`StyledSegment`](parse-ansi.md#styled-segment)[]
+[`StyledSegment`](parse-ansi#styled-segment)[]
 
 Array of segments with text and associated style
 
@@ -32,10 +32,10 @@ Array of segments with text and associated style
 
 | Property | Type |
 | ------ | ------ |
-| <a id="bg"></a> `bg?` | [`Color`](../types/color.md) |
+| <a id="bg"></a> `bg?` | [`Color`](../../types/color) |
 | <a id="bold"></a> `bold?` | `boolean` |
 | <a id="dim"></a> `dim?` | `boolean` |
-| <a id="fg"></a> `fg?` | [`Color`](../types/color.md) |
+| <a id="fg"></a> `fg?` | [`Color`](../../types/color) |
 | <a id="italic"></a> `italic?` | `boolean` |
 | <a id="underline"></a> `underline?` | `boolean` |
 
@@ -47,5 +47,5 @@ Array of segments with text and associated style
 
 | Property | Type |
 | ------ | ------ |
-| <a id="style"></a> `style` | [`AnsiStyle`](parse-ansi.md#ansi-style) |
+| <a id="style"></a> `style` | [`AnsiStyle`](parse-ansi#ansi-style) |
 | <a id="text"></a> `text` | `string` |

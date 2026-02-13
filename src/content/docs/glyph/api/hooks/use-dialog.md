@@ -11,7 +11,7 @@ Must be used within a DialogHost.
 
 ## Returns
 
-[`DialogContextValue`](../components/dialog-host.md#dialog-context-value)
+[`DialogContextValue`](../../components/dialog-host#dialog-context-value)
 
 ## Example
 

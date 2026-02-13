@@ -12,7 +12,7 @@ Creates a mask handler for use with Input's onBeforeChange prop.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `maskOrOptions` | `string` \| [`MaskOptions`](create-mask.md#mask-options) | Mask pattern string or options object |
+| `maskOrOptions` | `string` \| [`MaskOptions`](create-mask#mask-options) | Mask pattern string or options object |
 
 ## Returns
 

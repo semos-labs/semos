@@ -13,7 +13,7 @@ Provides the useDialog hook to children.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`DialogHostProps`](dialog-host.md#dialog-host-props) |
+| `__namedParameters` | [`DialogHostProps`](dialog-host#dialog-host-props) |
 
 ## Returns
 
@@ -47,18 +47,18 @@ function App() {
 
 ## Extended by
 
-- [`ConfirmOptions`](dialog-host.md#confirm-options)
+- [`ConfirmOptions`](dialog-host#confirm-options)
 
 ## Properties
 
 | Property | Type | Description |
 | ------ | ------ | ------ |
-| <a id="backdropstyle"></a> `backdropStyle?` | [`Style`](../types/style.md) | Style for the backdrop overlay |
-| <a id="buttonstyle"></a> `buttonStyle?` | [`Style`](../types/style.md) | Base style for buttons |
-| <a id="focusedbuttonstyle"></a> `focusedButtonStyle?` | [`Style`](../types/style.md) | Style for focused button state (merged with button styles) |
-| <a id="okbuttonstyle"></a> `okButtonStyle?` | [`Style`](../types/style.md) | Style for the OK button (merged with buttonStyle) |
+| <a id="backdropstyle"></a> `backdropStyle?` | [`Style`](../../types/style) | Style for the backdrop overlay |
+| <a id="buttonstyle"></a> `buttonStyle?` | [`Style`](../../types/style) | Base style for buttons |
+| <a id="focusedbuttonstyle"></a> `focusedButtonStyle?` | [`Style`](../../types/style) | Style for focused button state (merged with button styles) |
+| <a id="okbuttonstyle"></a> `okButtonStyle?` | [`Style`](../../types/style) | Style for the OK button (merged with buttonStyle) |
 | <a id="oktext"></a> `okText?` | `string` | Text for the OK button (default: "OK") |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Style for the dialog box |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Style for the dialog box |
 
 ---
 
@@ -66,20 +66,20 @@ function App() {
 
 ## Extends
 
-- [`AlertOptions`](dialog-host.md#alert-options)
+- [`AlertOptions`](dialog-host#alert-options)
 
 ## Properties
 
 | Property | Type | Description | Inherited from |
 | ------ | ------ | ------ | ------ |
-| <a id="backdropstyle"></a> `backdropStyle?` | [`Style`](../types/style.md) | Style for the backdrop overlay | [`AlertOptions`](dialog-host.md#alert-options).[`backdropStyle`](dialog-host.md#alert-options) |
-| <a id="buttonstyle"></a> `buttonStyle?` | [`Style`](../types/style.md) | Base style for buttons | [`AlertOptions`](dialog-host.md#alert-options).[`buttonStyle`](dialog-host.md#alert-options) |
-| <a id="cancelbuttonstyle"></a> `cancelButtonStyle?` | [`Style`](../types/style.md) | Style for the Cancel button (merged with buttonStyle) | - |
+| <a id="backdropstyle"></a> `backdropStyle?` | [`Style`](../../types/style) | Style for the backdrop overlay | [`AlertOptions`](dialog-host#alert-options).[`backdropStyle`](dialog-host#alert-options) |
+| <a id="buttonstyle"></a> `buttonStyle?` | [`Style`](../../types/style) | Base style for buttons | [`AlertOptions`](dialog-host#alert-options).[`buttonStyle`](dialog-host#alert-options) |
+| <a id="cancelbuttonstyle"></a> `cancelButtonStyle?` | [`Style`](../../types/style) | Style for the Cancel button (merged with buttonStyle) | - |
 | <a id="canceltext"></a> `cancelText?` | `string` | Text for the Cancel button (default: "Cancel") | - |
-| <a id="focusedbuttonstyle"></a> `focusedButtonStyle?` | [`Style`](../types/style.md) | Style for focused button state (merged with button styles) | [`AlertOptions`](dialog-host.md#alert-options).[`focusedButtonStyle`](dialog-host.md#alert-options) |
-| <a id="okbuttonstyle"></a> `okButtonStyle?` | [`Style`](../types/style.md) | Style for the OK button (merged with buttonStyle) | [`AlertOptions`](dialog-host.md#alert-options).[`okButtonStyle`](dialog-host.md#alert-options) |
-| <a id="oktext"></a> `okText?` | `string` | Text for the OK button (default: "OK") | [`AlertOptions`](dialog-host.md#alert-options).[`okText`](dialog-host.md#alert-options) |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Style for the dialog box | [`AlertOptions`](dialog-host.md#alert-options).[`style`](dialog-host.md#alert-options) |
+| <a id="focusedbuttonstyle"></a> `focusedButtonStyle?` | [`Style`](../../types/style) | Style for focused button state (merged with button styles) | [`AlertOptions`](dialog-host#alert-options).[`focusedButtonStyle`](dialog-host#alert-options) |
+| <a id="okbuttonstyle"></a> `okButtonStyle?` | [`Style`](../../types/style) | Style for the OK button (merged with buttonStyle) | [`AlertOptions`](dialog-host#alert-options).[`okButtonStyle`](dialog-host#alert-options) |
+| <a id="oktext"></a> `okText?` | `string` | Text for the OK button (default: "OK") | [`AlertOptions`](dialog-host#alert-options).[`okText`](dialog-host#alert-options) |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Style for the dialog box | [`AlertOptions`](dialog-host#alert-options).[`style`](dialog-host#alert-options) |
 
 ---
 

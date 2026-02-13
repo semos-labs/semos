@@ -15,7 +15,7 @@ Supply custom `frames` for different animation styles.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`SpinnerProps`](spinner.md#spinner-props) |
+| `__namedParameters` | [`SpinnerProps`](spinner#spinner-props) |
 
 ## Returns
 
@@ -36,7 +36,7 @@ Supply custom `frames` for different animation styles.
 
 ## SpinnerProps
 
-Props for the [Spinner](spinner.md) component.
+Props for the [Spinner](spinner) component.
 
 ## Properties
 
@@ -45,4 +45,4 @@ Props for the [Spinner](spinner.md) component.
 | <a id="frames"></a> `frames?` | `string`[] | Animation frames. Defaults to braille dots. |
 | <a id="intervalms"></a> `intervalMs?` | `number` | Interval between frames in ms. Default 80. |
 | <a id="label"></a> `label?` | `string` | Optional label text next to the spinner. |
-| <a id="style"></a> `style?` | [`Style`](../types/style.md) | Style applied to the spinner character. |
+| <a id="style"></a> `style?` | [`Style`](../../types/style) | Style applied to the spinner character. |

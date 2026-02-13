@@ -8,7 +8,7 @@ function useLayout(nodeRef?): LayoutRect;
 
 Subscribe to the computed layout of a node.
 
-Returns a [LayoutRect](../types/layout-rect.md) that updates whenever the layout engine
+Returns a [LayoutRect](../../types/layout-rect) that updates whenever the layout engine
 recalculates positions (e.g. on resize or content change).
 
 ## Parameters
@@ -20,7 +20,7 @@ recalculates positions (e.g. on resize or content change).
 
 ## Returns
 
-[`LayoutRect`](../types/layout-rect.md)
+[`LayoutRect`](../../types/layout-rect)
 
 Current layout rectangle (outer + inner bounds).
 

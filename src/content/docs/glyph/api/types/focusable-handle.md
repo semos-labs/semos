@@ -6,14 +6,14 @@ Base handle shared by all focusable elements
 
 ## Extended by
 
-- [`ButtonHandle`](../components/button.md#button-handle)
-- [`InputHandle`](../components/input.md#input-handle)
-- [`SelectHandle`](../components/select.md#select-handle)
-- [`CheckboxHandle`](../components/checkbox.md#checkbox-handle)
-- [`RadioHandle`](../components/radio.md#radio-handle)
-- [`ListHandle`](../components/list.md#list-handle)
-- [`ImageHandle`](../components/image.md#image-handle)
-- [`TextHandle`](../components/text.md#text-handle)
+- [`ButtonHandle`](../../components/button#button-handle)
+- [`InputHandle`](../../components/input#input-handle)
+- [`SelectHandle`](../../components/select#select-handle)
+- [`CheckboxHandle`](../../components/checkbox#checkbox-handle)
+- [`RadioHandle`](../../components/radio#radio-handle)
+- [`ListHandle`](../../components/list#list-handle)
+- [`ImageHandle`](../../components/image#image-handle)
+- [`TextHandle`](../../components/text#text-handle)
 
 ## Methods
 
