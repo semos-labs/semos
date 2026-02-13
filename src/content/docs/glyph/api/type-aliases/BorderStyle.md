@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: BorderStyle
-
+---
+title: BorderStyle
+---
 ```ts
 type BorderStyle = "none" | "single" | "double" | "round" | "ascii";
 ```

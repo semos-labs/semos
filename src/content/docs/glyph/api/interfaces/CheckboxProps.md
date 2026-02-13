@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: CheckboxProps
-
+---
+title: CheckboxProps
+---
 Props for the [Checkbox](../variables/Checkbox.md) component.
 
 ## Properties

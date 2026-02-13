@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useDialog()
-
+---
+title: useDialog
+---
 ```ts
 function useDialog(): DialogContextValue;
 ```

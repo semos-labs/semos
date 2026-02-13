@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: Text
-
+---
+title: Text
+---
 ```ts
 const Text: ForwardRefExoticComponent<TextProps & RefAttributes<TextHandle>>;
 ```

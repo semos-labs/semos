@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: AnsiStyle
-
+---
+title: AnsiStyle
+---
 ## Properties
 
 | Property | Type |

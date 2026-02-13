@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useInput()
-
+---
+title: useInput
+---
 ```ts
 function useInput(handler, deps?): void;
 ```

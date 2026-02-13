@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: ToastPosition
-
+---
+title: ToastPosition
+---
 ```ts
 type ToastPosition = "top-right" | "top-left" | "bottom-right" | "bottom-left";
 ```

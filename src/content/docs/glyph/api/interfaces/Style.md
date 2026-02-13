@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: Style
-
+---
+title: Style
+---
 Unified style object for all Glyph elements.
 
 Combines CSS-like flexbox layout, positioning, paint (colors, borders),

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useFocusable()
-
+---
+title: useFocusable
+---
 ```ts
 function useFocusable(options?): UseFocusableResult;
 ```

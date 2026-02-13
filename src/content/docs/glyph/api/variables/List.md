@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: List
-
+---
+title: List
+---
 ```ts
 const List: ForwardRefExoticComponent<ListProps & RefAttributes<ListHandle>>;
 ```

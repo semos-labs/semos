@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: TextAlign
-
+---
+title: TextAlign
+---
 ```ts
 type TextAlign = "left" | "center" | "right";
 ```

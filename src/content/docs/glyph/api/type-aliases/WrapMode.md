@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: WrapMode
-
+---
+title: WrapMode
+---
 ```ts
 type WrapMode = "wrap" | "truncate" | "ellipsis" | "none";
 ```

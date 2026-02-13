@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: ScrollView()
-
+---
+title: ScrollView
+---
 ```ts
 function ScrollView(__namedParameters): Element;
 ```

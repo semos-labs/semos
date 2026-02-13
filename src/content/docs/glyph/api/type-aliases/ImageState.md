@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: ImageState
-
+---
+title: ImageState
+---
 ```ts
 type ImageState = "placeholder" | "loading" | "loaded" | "error" | "preview";
 ```

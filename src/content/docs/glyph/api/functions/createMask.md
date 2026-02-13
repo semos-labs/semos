@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: createMask()
-
+---
+title: createMask
+---
 ```ts
 function createMask(maskOrOptions): (newValue, oldValue) => string | false | void;
 ```

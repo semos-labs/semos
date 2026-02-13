@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: Keybind()
-
+---
+title: Keybind
+---
 ```ts
 function Keybind(__namedParameters): null;
 ```

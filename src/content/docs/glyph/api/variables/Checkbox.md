@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: Checkbox
-
+---
+title: Checkbox
+---
 ```ts
 const Checkbox: ForwardRefExoticComponent<CheckboxProps & RefAttributes<CheckboxHandle>>;
 ```

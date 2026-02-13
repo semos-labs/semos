@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: Radio()
-
+---
+title: Radio
+---
 ```ts
 const Radio: <T>(props) => Element;
 ```

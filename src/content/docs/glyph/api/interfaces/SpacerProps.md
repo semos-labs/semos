@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: SpacerProps
-
+---
+title: SpacerProps
+---
 Props for the [Spacer](../functions/Spacer.md) component.
 
 ## Properties

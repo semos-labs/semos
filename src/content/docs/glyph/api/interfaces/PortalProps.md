@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: PortalProps
-
+---
+title: PortalProps
+---
 Props for the [Portal](../functions/Portal.md) component.
 
 ## Properties

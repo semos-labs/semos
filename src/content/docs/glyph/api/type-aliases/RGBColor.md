@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: RGBColor
-
+---
+title: RGBColor
+---
 ```ts
 type RGBColor = {
   b: number;

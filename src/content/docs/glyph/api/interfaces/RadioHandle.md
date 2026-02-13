@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: RadioHandle\<T\>
-
+---
+title: "RadioHandle\<T\>"
+---
 Handle for Radio — exposes selected value
 
 ## Extends

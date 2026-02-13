@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: SpinnerProps
-
+---
+title: SpinnerProps
+---
 Props for the [Spinner](../functions/Spinner.md) component.
 
 ## Properties

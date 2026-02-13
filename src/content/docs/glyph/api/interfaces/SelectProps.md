@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: SelectProps
-
+---
+title: SelectProps
+---
 Props for the [Select](../variables/Select.md) component.
 
 ## Properties

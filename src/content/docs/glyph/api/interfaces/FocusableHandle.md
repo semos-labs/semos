@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: FocusableHandle
-
+---
+title: FocusableHandle
+---
 Base handle shared by all focusable elements
 
 ## Extended by

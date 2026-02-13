@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: BoxProps
-
+---
+title: BoxProps
+---
 Props for the [Box](../variables/Box.md) component.
 
 ## Properties

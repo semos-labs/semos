@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: KeybindProps
-
+---
+title: KeybindProps
+---
 Props for the [Keybind](../functions/Keybind.md) component.
 
 ## Properties

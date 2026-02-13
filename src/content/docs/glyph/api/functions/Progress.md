@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: Progress()
-
+---
+title: Progress
+---
 ```ts
 function Progress(__namedParameters): Element;
 ```

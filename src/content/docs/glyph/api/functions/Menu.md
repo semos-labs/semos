@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: Menu()
-
+---
+title: Menu
+---
 ```ts
 function Menu(__namedParameters): Element;
 ```

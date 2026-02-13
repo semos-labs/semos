@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: DialogHost()
-
+---
+title: DialogHost
+---
 ```ts
 function DialogHost(__namedParameters): Element;
 ```

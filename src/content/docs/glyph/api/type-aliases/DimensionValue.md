@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Type Alias: DimensionValue
-
+---
+title: DimensionValue
+---
 ```ts
 type DimensionValue = number | `${number}%`;
 ```

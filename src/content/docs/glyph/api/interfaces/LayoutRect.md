@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: LayoutRect
-
+---
+title: LayoutRect
+---
 Computed layout rectangle for a node (returned by [useLayout](../functions/useLayout.md)).
 
 `x`, `y`, `width`, `height` are the **outer** bounds (including border).

@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ImageHandle
-
+---
+title: ImageHandle
+---
 Handle for Image
 
 ## Extends

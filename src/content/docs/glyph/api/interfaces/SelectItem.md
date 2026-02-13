@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: SelectItem
-
+---
+title: SelectItem
+---
 A single option inside a [Select](../variables/Select.md) dropdown.
 
 ## Properties

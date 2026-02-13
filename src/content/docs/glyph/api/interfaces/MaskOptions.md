@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: MaskOptions
-
+---
+title: MaskOptions
+---
 Input mask utilities for Glyph Input component.
 
 Mask pattern characters:

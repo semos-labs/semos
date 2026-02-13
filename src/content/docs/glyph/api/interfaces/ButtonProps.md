@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: ButtonProps
-
+---
+title: ButtonProps
+---
 Props for the [Button](../variables/Button.md) component.
 
 ## Properties

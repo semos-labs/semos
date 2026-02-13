@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: InputProps
-
+---
+title: InputProps
+---
 Props for the [Input](../variables/Input.md) component.
 
 ## Properties

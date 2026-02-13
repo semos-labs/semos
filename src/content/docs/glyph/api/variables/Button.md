@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: Button
-
+---
+title: Button
+---
 ```ts
 const Button: ForwardRefExoticComponent<ButtonProps & RefAttributes<ButtonHandle>>;
 ```

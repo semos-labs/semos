@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: Portal()
-
+---
+title: Portal
+---
 ```ts
 function Portal(__namedParameters): Element;
 ```

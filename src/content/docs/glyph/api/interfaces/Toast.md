@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: Toast
-
+---
+title: Toast
+---
 A single toast notification.
 
 ## Properties

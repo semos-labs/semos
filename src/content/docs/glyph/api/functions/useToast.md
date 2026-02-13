@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useToast()
-
+---
+title: useToast
+---
 ```ts
 function useToast(): (toast) => void;
 ```

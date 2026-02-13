@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Function: useLayout()
-
+---
+title: useLayout
+---
 ```ts
 function useLayout(nodeRef?): LayoutRect;
 ```

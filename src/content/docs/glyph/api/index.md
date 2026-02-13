@@ -1,9 +1,6 @@
-**@semos-labs/glyph**
-
-***
-
-# @semos-labs/glyph
-
+---
+title: "@semos-labs/glyph"
+---
 ## Type Aliases
 
 | Type Alias | Description |

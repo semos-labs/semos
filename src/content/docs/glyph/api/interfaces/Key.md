@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: Key
-
+---
+title: Key
+---
 Parsed key press information.
 
 Received by [useInput](../functions/useInput.md) handlers, `onKeyPress` callbacks,

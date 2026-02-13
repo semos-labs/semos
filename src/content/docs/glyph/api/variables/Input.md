@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Variable: Input
-
+---
+title: Input
+---
 ```ts
 const Input: ForwardRefExoticComponent<InputProps & RefAttributes<InputHandle>>;
 ```

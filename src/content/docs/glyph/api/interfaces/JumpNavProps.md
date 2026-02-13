@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: JumpNavProps
-
+---
+title: JumpNavProps
+---
 Props for the [JumpNav](../functions/JumpNav.md) component.
 
 ## Properties

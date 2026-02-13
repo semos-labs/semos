@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: CheckboxHandle
-
+---
+title: CheckboxHandle
+---
 Handle for Checkbox — exposes checked state
 
 ## Extends

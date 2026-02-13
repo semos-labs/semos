@@ -1,9 +1,6 @@
-[**@semos-labs/glyph**](../index.md)
-
-***
-
-# Interface: StyledSegment
-
+---
+title: StyledSegment
+---
 ## Properties
 
 | Property | Type |
