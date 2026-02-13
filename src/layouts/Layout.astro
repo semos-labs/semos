@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import PostHog from '../components/posthog.astro'
 
 interface Props {
   title: string;
@@ -37,6 +38,7 @@ const { title, description = "A family of terminal apps and tools" } = Astro.pro
       rel="stylesheet"
     />
     <title>{title}</title>
+    <PostHog/>
   </head>
   <body>
     <!-- Nav -->
