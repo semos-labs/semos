@@ -63,4 +63,4 @@ my-tui-app/
 
 - Explore the component API *(coming soon)*
 - Learn about layout and styling *(coming soon)*
-- Build a real app with [Aion](/aion/overview) or [Epist](/epist/overview) as examples
+- Build a real app with [Aion](/aion/) or [Epist](/epist/) as examples

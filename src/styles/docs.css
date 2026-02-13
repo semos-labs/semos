@@ -17,3 +17,8 @@
   --sl-color-gray-6: #1a1a1a;
   --sl-color-black: #0a0a0a;
 }
+
+/* Hide light/dark theme toggle */
+starlight-theme-select {
+  display: none;
+}

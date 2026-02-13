@@ -19,32 +19,21 @@ export default defineConfig({
                 },
             ],
             sidebar: [
-                {
-                    label: "Getting Started",
-                    items: [
-                        { label: "Introduction", slug: "introduction" },
-                    ],
-                },
+                { label: "Introduction", link: "/introduction/" },
                 {
                     label: "Glyph",
-                    items: [
-                        { label: "Overview", slug: "glyph/overview" },
-                        { label: "Getting Started", slug: "glyph/getting-started" },
-                    ],
+                    collapsed: true,
+                    autogenerate: { directory: "glyph" },
                 },
                 {
                     label: "Aion",
-                    items: [
-                        { label: "Overview", slug: "aion/overview" },
-                        { label: "Getting Started", slug: "aion/getting-started" },
-                    ],
+                    collapsed: true,
+                    autogenerate: { directory: "aion" },
                 },
                 {
                     label: "Epist",
-                    items: [
-                        { label: "Overview", slug: "epist/overview" },
-                        { label: "Getting Started", slug: "epist/getting-started" },
-                    ],
+                    collapsed: true,
+                    autogenerate: { directory: "epist" },
                 },
             ],
         }),
