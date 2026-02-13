@@ -1,0 +1,19 @@
+/* Import Google Font first (must precede all other statements) */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+
+/* Custom Starlight theme to match Semos black & white aesthetic */
+:root {
+  --sl-font: "JetBrains Mono", monospace;
+  --sl-font-system-mono: "JetBrains Mono", monospace;
+  --sl-color-accent-low: #1a1a1a;
+  --sl-color-accent: #808080;
+  --sl-color-accent-high: #e0e0e0;
+  --sl-color-white: #f0f0f0;
+  --sl-color-gray-1: #e0e0e0;
+  --sl-color-gray-2: #c0c0c0;
+  --sl-color-gray-3: #808080;
+  --sl-color-gray-4: #404040;
+  --sl-color-gray-5: #2a2a2a;
+  --sl-color-gray-6: #1a1a1a;
+  --sl-color-black: #0a0a0a;
+}

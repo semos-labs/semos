@@ -1,0 +1,54 @@
+name: Receive Docs Update
+
+# Called from product repos (glyph, aion, epist) via repository_dispatch
+on:
+  repository_dispatch:
+    types: [docs-update]
+
+# dispatch payload shape:
+#   product: "glyph" | "aion" | "epist"
+#   branch:  source branch/ref name (for PR title)
+#   docs:    array of { path: string, content: string }
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply docs updates
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const payload = context.payload.client_payload;
+            const product = payload.product;
+            const docs = payload.docs;
+
+            for (const doc of docs) {
+              const filePath = path.join('src/content/docs', product, doc.path);
+              const dir = path.dirname(filePath);
+              fs.mkdirSync(dir, { recursive: true });
+              fs.writeFileSync(filePath, doc.content);
+              console.log(`Wrote ${filePath}`);
+            }
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "docs(${{ github.event.client_payload.product }}): update documentation"
+          title: "docs(${{ github.event.client_payload.product }}): update documentation"
+          body: |
+            Automated docs update from [`semos-labs/${{ github.event.client_payload.product }}`](https://github.com/semos-labs/${{ github.event.client_payload.product }}).
+
+            Source ref: `${{ github.event.client_payload.branch }}`
+          branch: "docs/${{ github.event.client_payload.product }}-update"
+          delete-branch: true
+          labels: documentation
