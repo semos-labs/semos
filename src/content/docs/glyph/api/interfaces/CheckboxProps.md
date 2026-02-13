@@ -1,5 +1,5 @@
 ---
-title: CheckboxProps
+title: 'CheckboxProps'
 ---
 Props for the [Checkbox](../variables/Checkbox.md) component.
 

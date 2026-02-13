@@ -1,5 +1,5 @@
 ---
-title: ListProps
+title: 'ListProps'
 ---
 Props for the [List](../variables/List.md) component.
 

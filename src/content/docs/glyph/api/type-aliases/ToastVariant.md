@@ -1,5 +1,5 @@
 ---
-title: ToastVariant
+title: 'ToastVariant'
 ---
 ```ts
 type ToastVariant = "info" | "success" | "warning" | "error";

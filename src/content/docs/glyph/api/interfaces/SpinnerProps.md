@@ -1,5 +1,5 @@
 ---
-title: SpinnerProps
+title: 'SpinnerProps'
 ---
 Props for the [Spinner](../functions/Spinner.md) component.
 

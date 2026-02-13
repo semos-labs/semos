@@ -1,5 +1,5 @@
 ---
-title: Checkbox
+title: 'Checkbox'
 ---
 ```ts
 const Checkbox: ForwardRefExoticComponent<CheckboxProps & RefAttributes<CheckboxHandle>>;

@@ -1,5 +1,5 @@
 ---
-title: BorderStyle
+title: 'BorderStyle'
 ---
 ```ts
 type BorderStyle = "none" | "single" | "double" | "round" | "ascii";

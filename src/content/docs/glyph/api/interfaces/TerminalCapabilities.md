@@ -1,5 +1,5 @@
 ---
-title: TerminalCapabilities
+title: 'TerminalCapabilities'
 ---
 Terminal capability detection for image protocols
 

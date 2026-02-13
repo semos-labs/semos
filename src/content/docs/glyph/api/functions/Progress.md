@@ -1,5 +1,5 @@
 ---
-title: Progress
+title: 'Progress'
 ---
 ```ts
 function Progress(__namedParameters): Element;

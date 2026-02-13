@@ -1,5 +1,5 @@
 ---
-title: PortalProps
+title: 'PortalProps'
 ---
 Props for the [Portal](../functions/Portal.md) component.
 

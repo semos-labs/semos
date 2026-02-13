@@ -1,5 +1,5 @@
 ---
-title: ImageHandle
+title: 'ImageHandle'
 ---
 Handle for Image
 

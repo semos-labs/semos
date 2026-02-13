@@ -1,5 +1,5 @@
 ---
-title: FocusScope
+title: 'FocusScope'
 ---
 ```ts
 function FocusScope(__namedParameters): Element;

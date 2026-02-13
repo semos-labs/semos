@@ -1,5 +1,5 @@
 ---
-title: RenderOptions
+title: 'RenderOptions'
 ---
 Options for the top-level [render](../functions/render.md) function.
 

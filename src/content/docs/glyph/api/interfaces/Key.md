@@ -1,5 +1,5 @@
 ---
-title: Key
+title: 'Key'
 ---
 Parsed key press information.
 

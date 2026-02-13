@@ -1,5 +1,5 @@
 ---
-title: RGBColor
+title: 'RGBColor'
 ---
 ```ts
 type RGBColor = {

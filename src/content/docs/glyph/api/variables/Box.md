@@ -1,5 +1,5 @@
 ---
-title: Box
+title: 'Box'
 ---
 ```ts
 const Box: ForwardRefExoticComponent<BoxProps & RefAttributes<GlyphNode>>;

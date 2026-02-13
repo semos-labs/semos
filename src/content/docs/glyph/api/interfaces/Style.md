@@ -1,5 +1,5 @@
 ---
-title: Style
+title: 'Style'
 ---
 Unified style object for all Glyph elements.
 

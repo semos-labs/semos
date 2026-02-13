@@ -1,5 +1,5 @@
 ---
-title: SelectHandle
+title: 'SelectHandle'
 ---
 Handle for Select — exposes current selected value
 

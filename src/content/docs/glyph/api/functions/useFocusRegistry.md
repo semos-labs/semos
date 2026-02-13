@@ -1,5 +1,5 @@
 ---
-title: useFocusRegistry
+title: 'useFocusRegistry'
 ---
 ```ts
 function useFocusRegistry(): FocusRegistryValue | null;

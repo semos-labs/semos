@@ -1,5 +1,5 @@
 ---
-title: supportsInlineImages
+title: 'supportsInlineImages'
 ---
 ```ts
 function supportsInlineImages(): boolean;

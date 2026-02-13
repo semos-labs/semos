@@ -1,5 +1,5 @@
 ---
-title: WrapMode
+title: 'WrapMode'
 ---
 ```ts
 type WrapMode = "wrap" | "truncate" | "ellipsis" | "none";

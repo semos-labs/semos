@@ -1,5 +1,5 @@
 ---
-title: ConfirmOptions
+title: 'ConfirmOptions'
 ---
 ## Extends
 

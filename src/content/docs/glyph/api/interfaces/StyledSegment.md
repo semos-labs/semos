@@ -1,5 +1,5 @@
 ---
-title: StyledSegment
+title: 'StyledSegment'
 ---
 ## Properties
 

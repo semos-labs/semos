@@ -1,5 +1,5 @@
 ---
-title: AnsiStyle
+title: 'AnsiStyle'
 ---
 ## Properties
 

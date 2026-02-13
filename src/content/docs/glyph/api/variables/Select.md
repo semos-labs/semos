@@ -1,5 +1,5 @@
 ---
-title: Select
+title: 'Select'
 ---
 ```ts
 const Select: ForwardRefExoticComponent<SelectProps & RefAttributes<SelectHandle>>;

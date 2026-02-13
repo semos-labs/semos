@@ -1,5 +1,5 @@
 ---
-title: masks
+title: 'masks'
 ---
 ```ts
 const masks: {

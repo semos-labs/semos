@@ -1,5 +1,5 @@
 ---
-title: render
+title: 'render'
 ---
 ```ts
 function render(element, opts?): AppHandle;

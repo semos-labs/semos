@@ -1,5 +1,5 @@
 ---
-title: UseFocusableOptions
+title: 'UseFocusableOptions'
 ---
 ## Properties
 

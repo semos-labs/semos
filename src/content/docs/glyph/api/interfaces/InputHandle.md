@@ -1,5 +1,5 @@
 ---
-title: InputHandle
+title: 'InputHandle'
 ---
 Handle for Input — exposes current value
 

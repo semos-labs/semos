@@ -1,5 +1,5 @@
 ---
-title: LayoutRect
+title: 'LayoutRect'
 ---
 Computed layout rectangle for a node (returned by [useLayout](../functions/useLayout.md)).
 

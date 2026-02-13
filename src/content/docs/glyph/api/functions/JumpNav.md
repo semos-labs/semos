@@ -1,5 +1,5 @@
 ---
-title: JumpNav
+title: 'JumpNav'
 ---
 ```ts
 function JumpNav(__namedParameters): Element;

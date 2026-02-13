@@ -1,5 +1,5 @@
 ---
-title: useFocus
+title: 'useFocus'
 ---
 ```ts
 function useFocus(nodeRef?): UseFocusResult;

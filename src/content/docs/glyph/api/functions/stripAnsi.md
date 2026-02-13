@@ -1,5 +1,5 @@
 ---
-title: stripAnsi
+title: 'stripAnsi'
 ---
 ```ts
 function stripAnsi(input): string;

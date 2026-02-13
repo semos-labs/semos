@@ -1,5 +1,5 @@
 ---
-title: useFocusable
+title: 'useFocusable'
 ---
 ```ts
 function useFocusable(options?): UseFocusableResult;

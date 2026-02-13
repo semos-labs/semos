@@ -1,5 +1,5 @@
 ---
-title: Spinner
+title: 'Spinner'
 ---
 ```ts
 function Spinner(__namedParameters): Element;

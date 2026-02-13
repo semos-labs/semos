@@ -1,5 +1,5 @@
 ---
-title: Image
+title: 'Image'
 ---
 ```ts
 const Image: ForwardRefExoticComponent<ImageProps & RefAttributes<ImageHandle>>;

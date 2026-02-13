@@ -1,5 +1,5 @@
 ---
-title: InputType
+title: 'InputType'
 ---
 ```ts
 type InputType = "text" | "number";

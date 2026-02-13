@@ -1,5 +1,5 @@
 ---
-title: AlertOptions
+title: 'AlertOptions'
 ---
 ## Extended by
 

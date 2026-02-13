@@ -1,5 +1,5 @@
 ---
-title: FocusableElement
+title: 'FocusableElement'
 ---
 Descriptor for a single focusable element in the registry.
 

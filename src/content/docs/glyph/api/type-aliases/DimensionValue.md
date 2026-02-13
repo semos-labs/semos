@@ -1,5 +1,5 @@
 ---
-title: DimensionValue
+title: 'DimensionValue'
 ---
 ```ts
 type DimensionValue = number | `${number}%`;

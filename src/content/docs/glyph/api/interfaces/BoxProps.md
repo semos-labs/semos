@@ -1,5 +1,5 @@
 ---
-title: BoxProps
+title: 'BoxProps'
 ---
 Props for the [Box](../variables/Box.md) component.
 
