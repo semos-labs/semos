@@ -1,8 +1,6 @@
 ---
 title: Getting Started with Glyph
 description: Set up your first Glyph TUI project.
-sidebar:
-  order: 2
 ---
 
 ## Installation
@@ -65,4 +63,4 @@ my-tui-app/
 
 - Explore the component API *(coming soon)*
 - Learn about layout and styling *(coming soon)*
-- Build a real app with [Aion](/aion/) or [Epist](/epist/) as examples
+- Build a real app with [Aion](/docs/aion/) or [Epist](/docs/epist/) as examples
