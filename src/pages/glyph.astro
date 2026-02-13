@@ -1,86 +1,68 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
 ---
 
 <Layout title="Glyph — React Renderer for Terminal UIs" description="Build real terminal applications with React. Flexbox layout, focus management, keyboard input, and efficient diff-based rendering.">
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/logos/Sema.png" alt="Semos Labs" class="nav-logo-img" />
-        <span class="nav-logo-text">semos</span>
-      </a>
-      <div class="nav-links">
-        <a href="/#products">Products</a>
-        <a href="/docs/">Docs</a>
-        <a href="https://github.com/semos-labs/glyph" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <img src="/logos/Glyph.png" alt="Glyph" class="hero-logo" />
-        <span class="hero-product-name">Glyph</span>
+  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-28 md:pt-32 pb-16 px-8 gap-12 md:gap-16 max-w-content mx-auto text-center md:text-left">
+    <div class="flex-1 max-w-full md:max-w-[520px]">
+      <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
+        <img src="/logos/Glyph.png" alt="Glyph" class="w-12 h-12 rounded-xl" />
+        <span class="font-hand text-[1.8rem]">Glyph</span>
       </div>
-      <h1 class="hero-title">
+      <h1 class="font-hand text-[2rem] md:text-[2.6rem] leading-[1.3] mb-6">
         React renderer<br />
-        <span class="hero-accent">for terminal UIs</span>
+        <span class="text-gray-200 italic">for terminal UIs</span>
       </h1>
-      <p class="hero-description">
+      <p class="text-[0.92rem] text-gray-300 leading-[1.8] mb-10 max-w-full md:max-w-[460px]">
         Build real terminal applications with React. Full component model with flexbox layout,
         focus management, keyboard input, and efficient diff-based rendering.
         Write TUIs the same way you write web apps.
       </p>
-      <div class="hero-cta">
+      <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a href="/docs/glyph/" class="btn-primary">Documentation</a>
         <a href="https://github.com/semos-labs/glyph" target="_blank" rel="noopener" class="btn-secondary">GitHub ↗</a>
       </div>
     </div>
-    <div class="hero-decoration">
-      <div class="terminal-block">
-        <div class="terminal-bar">
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
+    <div class="flex-1 max-w-full md:max-w-[480px] w-full md:w-auto">
+      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-[0.78rem]">
+        <div class="flex gap-1.5 px-4 py-3 bg-gray-800 border-b border-gray-700">
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
         </div>
-        <div class="terminal-body">
-          <p><span class="t-comment">// app.tsx</span></p>
-          <p><span class="t-keyword">import</span> {'{ render, Box, Text }'} <span class="t-keyword">from</span> <span class="t-string">"@semos-labs/glyph"</span>;</p>
-          <p>&nbsp;</p>
-          <p><span class="t-keyword">function</span> <span class="t-fn">App</span>() {'{'}</p>
-          <p>  <span class="t-keyword">return</span> (</p>
-          <p>    &lt;<span class="t-tag">Box</span> <span class="t-attr">border</span>=<span class="t-string">"round"</span> <span class="t-attr">padding</span>={'{1}'}&gt;</p>
-          <p>      &lt;<span class="t-tag">Text</span> <span class="t-attr">bold</span>&gt;Hello, Glyph!&lt;/<span class="t-tag">Text</span>&gt;</p>
-          <p>    &lt;/<span class="t-tag">Box</span>&gt;</p>
-          <p>  );</p>
-          <p>{'}'}</p>
-          <p>&nbsp;</p>
-          <p><span class="t-fn">render</span>(&lt;<span class="t-tag">App</span> /&gt;);</p>
-        </div>
+        <pre class="px-6 py-5 leading-relaxed m-0 font-mono text-[0.78rem]"><span class="text-gray-500 italic">// app.tsx</span>
+<span class="text-gray-300">import</span> {'{ render, Box, Text }'} <span class="text-gray-300">from</span> <span class="text-gray-200">"@semos-labs/glyph"</span>;
+
+<span class="text-gray-300">function</span> <span class="text-white">App</span>() {'{'}
+  <span class="text-gray-300">return</span> (
+    &lt;<span class="text-gray-100">Box</span> <span class="text-gray-300">border</span>=<span class="text-gray-200">"round"</span> <span class="text-gray-300">padding</span>={'{1}'}&gt;
+      &lt;<span class="text-gray-100">Text</span> <span class="text-gray-300">bold</span>&gt;Hello, Glyph!&lt;/<span class="text-gray-100">Text</span>&gt;
+    &lt;/<span class="text-gray-100">Box</span>&gt;
+  );
+{'}'}
+
+<span class="text-white">render</span>(&lt;<span class="text-gray-100">App</span> /&gt;);</pre>
       </div>
     </div>
   </section>
 
   <!-- Quick Start -->
-  <section class="quickstart">
-    <div class="container">
-      <h2 class="section-title">Quick Start</h2>
-      <div class="install-grid">
-        <div class="install-card">
-          <h3>Create a new project</h3>
-          <div class="code-block">
-            <code>$ bun create @semos-labs/glyph my-app</code>
-            <code>$ cd my-app && bun dev</code>
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Quick Start</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 border border-gray-800 rounded-xl">
+          <h3 class="font-hand text-[1.3rem] mb-5">Create a new project</h3>
+          <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
+            <code class="font-mono text-[0.82rem] text-gray-200">$ bun create @semos-labs/glyph my-app</code>
+            <code class="font-mono text-[0.82rem] text-gray-200">$ cd my-app && bun dev</code>
           </div>
         </div>
-        <div class="install-card">
-          <h3>Add to existing project</h3>
-          <div class="code-block">
-            <code>$ bun add @semos-labs/glyph react</code>
+        <div class="p-8 border border-gray-800 rounded-xl">
+          <h3 class="font-hand text-[1.3rem] mb-5">Add to existing project</h3>
+          <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
+            <code class="font-mono text-[0.82rem] text-gray-200">$ bun add @semos-labs/glyph react</code>
           </div>
         </div>
       </div>
@@ -88,380 +70,127 @@ import "../styles/global.css";
   </section>
 
   <!-- Features -->
-  <section class="features">
-    <div class="container">
-      <h2 class="section-title">Features</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">⊞</span>
-          <h3>Flexbox Layout</h3>
-          <p>Full CSS-like flexbox via Yoga — rows, columns, wrapping, alignment, gaps, padding.</p>
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Features</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">⊞</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Flexbox Layout</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Full CSS-like flexbox via Yoga — rows, columns, wrapping, alignment, gaps, padding.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">◧</span>
-          <h3>Rich Components</h3>
-          <p>Box, Text, Input, Button, Checkbox, Radio, Select, ScrollView, List, Menu, Progress, Spinner, Image, Toasts, Dialogs, and more.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">◧</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Rich Components</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Box, Text, Input, Button, Checkbox, Radio, Select, ScrollView, List, Menu, Progress, Spinner, Image, Toasts, Dialogs, and more.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">⎆</span>
-          <h3>Focus System</h3>
-          <p>Tab navigation, focus scopes, focus trapping for modals, JumpNav quick-jump hints.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">⎆</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Focus System</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Tab navigation, focus scopes, focus trapping for modals, JumpNav quick-jump hints.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">⌨</span>
-          <h3>Keyboard Input</h3>
-          <p>useInput hook, declarative &lt;Keybind&gt; component, vim-style bindings, priority keybinds.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">⌨</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Keyboard Input</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">useInput hook, declarative &lt;Keybind&gt; component, vim-style bindings, priority keybinds.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">▦</span>
-          <h3>Smart Rendering</h3>
-          <p>Double-buffered framebuffer with character-level diffing — only changed cells are written.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">▦</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Smart Rendering</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Double-buffered framebuffer with character-level diffing — only changed cells are written.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">◉</span>
-          <h3>True Colors</h3>
-          <p>Named colors, hex, RGB, 256-palette. Auto-contrast text on colored backgrounds.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">◉</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">True Colors</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Named colors, hex, RGB, 256-palette. Auto-contrast text on colored backgrounds.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">▢</span>
-          <h3>Borders & Styling</h3>
-          <p>Single, double, rounded, and ASCII border styles. Bold, dim, italic, underline text.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">▢</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Borders & Styling</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Single, double, rounded, and ASCII border styles. Bold, dim, italic, underline text.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">◇</span>
-          <h3>TypeScript First</h3>
-          <p>Full type coverage. Every prop, style, and hook is typed.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3 text-gray-300">◇</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">TypeScript First</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Full type coverage. Every prop, style, and hook is typed.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Components Preview -->
-  <section class="components-section">
-    <div class="container">
-      <h2 class="section-title">Components</h2>
-      <div class="components-grid">
-        <div class="component-card">
-          <h4>&lt;Box&gt;</h4>
-          <p>Flexbox container — the fundamental building block</p>
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Components</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Box&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Flexbox container — the fundamental building block</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Text&gt;</h4>
-          <p>Styled text with ANSI escape code support</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Text&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Styled text with ANSI escape code support</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Input&gt;</h4>
-          <p>Text input with masks, multiline, and validation</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Input&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Text input with masks, multiline, and validation</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Button&gt;</h4>
-          <p>Focusable button with press handling</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Button&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Focusable button with press handling</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Select&gt;</h4>
-          <p>Dropdown with type-to-filter search</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Select&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Dropdown with type-to-filter search</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;List&gt;</h4>
-          <p>Keyboard-navigable selection list</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;List&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Keyboard-navigable selection list</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;ScrollView&gt;</h4>
-          <p>Scrollable container with virtualization</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;ScrollView&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Scrollable container with virtualization</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Image&gt;</h4>
-          <p>Inline images via Kitty/iTerm2 protocol</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Image&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Inline images via Kitty/iTerm2 protocol</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Menu&gt;</h4>
-          <p>Styled menu with labels and disabled items</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Menu&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Styled menu with labels and disabled items</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;Portal&gt;</h4>
-          <p>Fullscreen overlay for modals</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Portal&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Fullscreen overlay for modals</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;JumpNav&gt;</h4>
-          <p>Vimium-style quick navigation hints</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;JumpNav&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Vimium-style quick navigation hints</p>
         </div>
-        <div class="component-card">
-          <h4>&lt;DialogHost&gt;</h4>
-          <p>Imperative alert() and confirm() dialogs</p>
+        <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
+          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;DialogHost&gt;</h4>
+          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Imperative alert() and confirm() dialogs</p>
         </div>
       </div>
-      <div class="components-cta">
+      <div class="text-center mt-12">
         <a href="/docs/glyph/api/" class="btn-primary">Full API Reference →</a>
       </div>
     </div>
   </section>
 
   <!-- Who Uses -->
-  <section class="uses">
-    <div class="container">
-      <h2 class="section-title">Built with Glyph</h2>
-      <div class="uses-grid">
-        <a href="/aion" class="uses-card">
-          <img src="/logos/Aion.png" alt="Aion" class="uses-logo" />
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Built with Glyph</h2>
+      <div class="flex justify-center gap-8">
+        <a href="/aion" class="flex items-center gap-5 py-6 px-10 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <img src="/logos/Aion.png" alt="Aion" class="w-12 h-12 rounded-xl" />
           <div>
-            <h4>Aion</h4>
-            <p>Google Calendar TUI client</p>
+            <h4 class="font-hand text-[1.3rem] mb-0.5">Aion</h4>
+            <p class="text-[0.8rem] text-gray-400">Google Calendar TUI client</p>
           </div>
         </a>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="/logos/Sema.png" alt="Semos" class="footer-logo" />
-          <span class="footer-name">Semos Labs</span>
-        </div>
-        <p class="footer-copy">
-          Built with obsessive care for the terminal.
-        </p>
-      </div>
-    </div>
-  </footer>
 </Layout>
-
-<style>
-  /* Nav (shared) */
-  .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1rem 2rem;
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-800);
-  }
-  .nav-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
-  .nav-logo-img { width: 32px; height: 32px; border-radius: 6px; }
-  .nav-logo-text {
-    font-family: var(--font-hand); font-size: 1.5rem;
-    font-weight: 400; letter-spacing: 0.01em;
-  }
-  .nav-links {
-    display: flex; align-items: center; gap: 2rem;
-    font-size: 0.85rem; color: var(--gray-300);
-  }
-  .nav-links a { color: var(--gray-300); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--white); }
-
-  /* Hero */
-  .hero {
-    min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    padding: 8rem 2rem 4rem; gap: 4rem;
-    max-width: 1100px; margin: 0 auto;
-  }
-  .hero-content { flex: 1; max-width: 520px; }
-
-  .hero-badge {
-    display: flex; align-items: center; gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .hero-logo { width: 48px; height: 48px; border-radius: 12px; }
-  .hero-product-name {
-    font-family: var(--font-hand);
-    font-size: 1.8rem; font-weight: 400;
-  }
-
-  .hero-title {
-    font-family: var(--font-hand);
-    font-size: 2.6rem; font-weight: 400;
-    line-height: 1.3; margin-bottom: 1.5rem;
-  }
-  .hero-accent { color: var(--gray-200); font-style: italic; }
-
-  .hero-description {
-    font-size: 0.92rem; color: var(--gray-300);
-    line-height: 1.8; margin-bottom: 2.5rem; max-width: 460px;
-  }
-
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-block; padding: 0.8rem 2rem;
-    border: 1px solid var(--gray-500); border-radius: 6px;
-    font-family: var(--font-mono); font-size: 0.85rem;
-    color: var(--white); transition: all 0.25s; letter-spacing: 0.03em;
-  }
-  .btn-primary:hover {
-    background: var(--white); color: var(--black); border-color: var(--white);
-  }
-  .btn-secondary {
-    display: inline-block; padding: 0.8rem 2rem;
-    border: 1px solid var(--gray-700); border-radius: 6px;
-    font-family: var(--font-mono); font-size: 0.85rem;
-    color: var(--gray-300); transition: all 0.25s; letter-spacing: 0.03em;
-  }
-  .btn-secondary:hover { color: var(--white); border-color: var(--gray-500); }
-
-  .hero-decoration { flex: 1; max-width: 480px; }
-
-  .terminal-block {
-    background: var(--gray-900); border: 1px solid var(--gray-700);
-    border-radius: 12px; overflow: hidden; font-size: 0.78rem;
-  }
-  .terminal-bar {
-    display: flex; gap: 6px; padding: 12px 16px;
-    background: var(--gray-800); border-bottom: 1px solid var(--gray-700);
-  }
-  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gray-600); }
-  .terminal-body { padding: 1.25rem 1.5rem; line-height: 1.9; white-space: pre; }
-  .t-keyword { color: var(--gray-300); }
-  .t-string { color: var(--gray-200); }
-  .t-comment { color: var(--gray-500); font-style: italic; }
-  .t-fn { color: var(--white); }
-  .t-tag { color: var(--gray-100); }
-  .t-attr { color: var(--gray-300); }
-
-  /* Shared */
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-title {
-    font-family: var(--font-hand); font-size: 2.4rem;
-    font-weight: 400; text-align: center; margin-bottom: 3.5rem;
-  }
-
-  /* Quick Start */
-  .quickstart {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .install-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-  }
-  .install-card {
-    padding: 2rem; border: 1px solid var(--gray-800); border-radius: 12px;
-  }
-  .install-card h3 {
-    font-family: var(--font-hand); font-size: 1.3rem;
-    font-weight: 400; margin-bottom: 1.25rem;
-  }
-  .code-block {
-    background: var(--gray-900); border-radius: 8px; padding: 1.25rem;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .code-block code {
-    font-family: var(--font-mono); font-size: 0.82rem;
-    color: var(--gray-200);
-  }
-
-  /* Features */
-  .features {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .features-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-  }
-  .feature-card {
-    padding: 1.75rem; border: 1px solid var(--gray-800);
-    border-radius: 12px; transition: border-color 0.3s;
-  }
-  .feature-card:hover { border-color: var(--gray-600); }
-  .feature-icon {
-    display: block; font-size: 1.3rem;
-    margin-bottom: 0.75rem; color: var(--gray-300);
-  }
-  .feature-card h3 {
-    font-family: var(--font-hand); font-size: 1.2rem;
-    font-weight: 400; margin-bottom: 0.5rem;
-  }
-  .feature-card p {
-    font-size: 0.8rem; color: var(--gray-400); line-height: 1.7;
-  }
-
-  /* Components */
-  .components-section {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .components-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-  }
-  .component-card {
-    padding: 1.25rem 1.5rem; border: 1px solid var(--gray-800);
-    border-radius: 10px; transition: border-color 0.3s;
-  }
-  .component-card:hover { border-color: var(--gray-600); }
-  .component-card h4 {
-    font-family: var(--font-mono); font-size: 0.85rem;
-    font-weight: 500; margin-bottom: 0.4rem; color: var(--white);
-  }
-  .component-card p {
-    font-size: 0.75rem; color: var(--gray-400); line-height: 1.6;
-  }
-  .components-cta { text-align: center; margin-top: 3rem; }
-
-  /* Who Uses */
-  .uses {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .uses-grid {
-    display: flex; justify-content: center; gap: 2rem;
-  }
-  .uses-card {
-    display: flex; align-items: center; gap: 1.25rem;
-    padding: 1.5rem 2.5rem; border: 1px solid var(--gray-800);
-    border-radius: 12px; transition: border-color 0.3s;
-  }
-  .uses-card:hover { border-color: var(--gray-600); }
-  .uses-logo { width: 48px; height: 48px; border-radius: 12px; }
-  .uses-card h4 {
-    font-family: var(--font-hand); font-size: 1.3rem;
-    font-weight: 400; margin-bottom: 0.15rem;
-  }
-  .uses-card p { font-size: 0.8rem; color: var(--gray-400); }
-
-  /* Footer */
-  .footer {
-    padding: 3rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .footer-inner {
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
-  .footer-logo { width: 24px; height: 24px; border-radius: 4px; }
-  .footer-name {
-    font-family: var(--font-hand); font-size: 1.3rem; font-weight: 400;
-  }
-  .footer-copy { font-size: 0.78rem; color: var(--gray-500); }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column; padding-top: 7rem;
-      text-align: center; gap: 3rem;
-    }
-    .hero-content { max-width: 100%; }
-    .hero-badge { justify-content: center; }
-    .hero-description { max-width: 100%; }
-    .hero-decoration { max-width: 100%; width: 100%; }
-    .hero-title { font-size: 2rem; }
-    .hero-cta { justify-content: center; }
-    .install-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr 1fr; }
-    .components-grid { grid-template-columns: 1fr 1fr; }
-    .section-title { font-size: 2rem; }
-    .footer-inner {
-      flex-direction: column; gap: 1rem; text-align: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .features-grid { grid-template-columns: 1fr; }
-    .components-grid { grid-template-columns: 1fr; }
-  }
-</style>

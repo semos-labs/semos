@@ -1,191 +1,179 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
 ---
 
 <Layout title="Aion — Terminal Calendar with Vim-Style Keybindings" description="A full-featured Google Calendar TUI client. Beautiful, fast, keyboard-driven.">
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/logos/Sema.png" alt="Semos Labs" class="nav-logo-img" />
-        <span class="nav-logo-text">semos</span>
-      </a>
-      <div class="nav-links">
-        <a href="/#products">Products</a>
-        <a href="/docs/">Docs</a>
-        <a href="https://github.com/semos-labs/aion" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <img src="/logos/Aion.png" alt="Aion" class="hero-logo" />
-        <span class="hero-product-name">Aion</span>
+  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-28 md:pt-32 pb-16 px-8 gap-12 md:gap-16 max-w-content mx-auto text-center md:text-left">
+    <div class="flex-1 max-w-full md:max-w-[520px]">
+      <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
+        <img src="/logos/Aion.png" alt="Aion" class="w-12 h-12 rounded-xl" />
+        <span class="font-hand text-[1.8rem]">Aion</span>
       </div>
-      <h1 class="hero-title">
+      <h1 class="font-hand text-[2rem] md:text-[2.6rem] leading-[1.3] mb-6">
         Google Calendar<br />
-        <span class="hero-accent">in your terminal</span>
+        <span class="text-gray-200 italic">in your terminal</span>
       </h1>
-      <p class="hero-description">
+      <p class="text-[0.92rem] text-gray-300 leading-[1.8] mb-10 max-w-full md:max-w-[460px]">
         A full-featured calendar client with vim-style keybindings. View, create, and manage
         events without leaving the command line. Beautiful, fast, keyboard-driven.
       </p>
-      <div class="hero-cta">
+      <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a href="/docs/aion/" class="btn-primary">Documentation</a>
         <a href="https://github.com/semos-labs/aion" target="_blank" rel="noopener" class="btn-secondary">GitHub ↗</a>
       </div>
     </div>
-    <div class="hero-decoration">
-      <div class="terminal-block">
-        <div class="terminal-bar">
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <button class="copy-btn" data-copy="brew tap semos-labs/tap&#10;brew install aion" aria-label="Copy to clipboard">
-            <span class="copy-icon">⧉</span>
-            <span class="copy-done">✓</span>
+    <div class="flex-1 max-w-full md:max-w-[400px] w-full md:w-auto">
+      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-[0.82rem]">
+        <div class="flex gap-1.5 px-4 py-3 bg-gray-800 border-b border-gray-700">
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          <button
+            class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-[0.8rem] transition-all hover:text-white hover:border-gray-500"
+            data-copy="brew tap semos-labs/tap&#10;brew install aion"
+            aria-label="Copy to clipboard"
+          >
+            <span class="group-[.copied]:hidden">⧉</span>
+            <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
           </button>
         </div>
-        <div class="terminal-body">
-          <p><span class="t-prompt">$</span> <span class="t-cmd">brew tap semos-labs/tap</span></p>
-          <p><span class="t-prompt">$</span> <span class="t-cmd">brew install aion</span></p>
+        <div class="px-6 py-5 leading-[1.9]">
+          <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
+          <p><span class="text-gray-400">$</span> <span class="text-white">brew install aion</span></p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Install -->
-  <section class="quickstart">
-    <div class="container">
-      <h2 class="section-title">Install</h2>
-      <div class="install-grid">
-        <div class="install-card">
-          <h3>Homebrew</h3>
-          <div class="code-block">
-            <code>$ brew tap nick-skriabin/tap</code>
-            <code>$ brew install aion</code>
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Install</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 border border-gray-800 rounded-xl">
+          <h3 class="font-hand text-[1.3rem] mb-5">Homebrew</h3>
+          <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
+            <code class="font-mono text-[0.82rem] text-gray-200">$ brew tap nick-skriabin/tap</code>
+            <code class="font-mono text-[0.82rem] text-gray-200">$ brew install aion</code>
           </div>
         </div>
-        <div class="install-card">
-          <h3>Binary download</h3>
-          <div class="code-block">
-            <code>$ curl -L https://github.com/semos-labs/aion/releases/latest</code>
-            <code>$ chmod +x aion && sudo mv aion /usr/local/bin/</code>
+        <div class="p-8 border border-gray-800 rounded-xl">
+          <h3 class="font-hand text-[1.3rem] mb-5">Binary download</h3>
+          <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
+            <code class="font-mono text-[0.82rem] text-gray-200">$ curl -L https://github.com/semos-labs/aion/releases/latest</code>
+            <code class="font-mono text-[0.82rem] text-gray-200">$ chmod +x aion && sudo mv aion /usr/local/bin/</code>
           </div>
         </div>
       </div>
-      <p class="install-platforms">
+      <p class="text-center mt-8 text-[0.8rem] text-gray-500">
         macOS (Apple Silicon &amp; Intel) · Linux (x64 &amp; ARM64)
       </p>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="features">
-    <div class="container">
-      <h2 class="section-title">Features</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">⌨️</span>
-          <h3>Vim Keybindings</h3>
-          <p>Navigate with j/k, gg/G, h/l — feels like home for terminal users.</p>
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Features</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">⌨️</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Vim Keybindings</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Navigate with j/k, gg/G, h/l — feels like home for terminal users.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">📅</span>
-          <h3>Visual Timeline</h3>
-          <p>Day view with 15-minute precision and overlap handling. Multi-column support.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">📅</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Visual Timeline</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Day view with 15-minute precision and overlap handling. Multi-column support.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🔗</span>
-          <h3>Google Calendar Sync</h3>
-          <p>Multi-account OAuth with PKCE. Background sync every 30 seconds.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">🔗</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Google Calendar Sync</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Multi-account OAuth with PKCE. Background sync every 30 seconds.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">👥</span>
-          <h3>Meet With</h3>
-          <p>Find free slots across multiple people's calendars instantly.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">👥</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Meet With</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Find free slots across multiple people's calendars instantly.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">📹</span>
-          <h3>Google Meet</h3>
-          <p>Auto-generate Meet links when creating events.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">📹</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Google Meet</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Auto-generate Meet links when creating events.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">📁</span>
-          <h3>Multi-Calendar</h3>
-          <p>Toggle calendars on/off, each with its own color.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">📁</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Multi-Calendar</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Toggle calendars on/off, each with its own color.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🌍</span>
-          <h3>Timezone Support</h3>
-          <p>Events display in local time, toggle to see original timezone.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">🌍</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Timezone Support</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Events display in local time, toggle to see original timezone.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🗓️</span>
-          <h3>Natural Language</h3>
-          <p>Type "tomorrow 3pm" or "next friday for 2 hours" — it just works.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">🗓️</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Natural Language</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Type "tomorrow 3pm" or "next friday for 2 hours" — it just works.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🔁</span>
-          <h3>Recurring Events</h3>
-          <p>Create and edit events with daily, weekly, monthly, or yearly recurrence.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">🔁</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Recurring Events</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Create and edit events with daily, weekly, monthly, or yearly recurrence.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🔍</span>
-          <h3>Event Search</h3>
-          <p>Find events by title or description with /.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">🔍</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Event Search</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Find events by title or description with /.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">📝</span>
-          <h3>Command Palette</h3>
-          <p>Quick access to all actions with fuzzy search. Type : to open.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">📝</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Command Palette</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Quick access to all actions with fuzzy search. Type : to open.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🎨</span>
-          <h3>Themeable</h3>
-          <p>Customize every color via TOML configuration.</p>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-[1.3rem] mb-3">🎨</span>
+          <h3 class="font-hand text-[1.2rem] mb-2">Themeable</h3>
+          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Customize every color via TOML configuration.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Keybindings Preview -->
-  <section class="keybindings">
-    <div class="container">
-      <h2 class="section-title">Keybindings</h2>
-      <div class="kb-grid">
-        <div class="kb-group">
-          <h3>Navigation</h3>
-          <div class="kb-list">
-            <div class="kb-item"><kbd>j</kbd> / <kbd>k</kbd> <span>Move down / up</span></div>
-            <div class="kb-item"><kbd>h</kbd> / <kbd>l</kbd> <span>Previous / next day</span></div>
-            <div class="kb-item"><kbd>gg</kbd> / <kbd>G</kbd> <span>First / last item</span></div>
-            <div class="kb-item"><kbd>n</kbd> <span>Jump to now</span></div>
-            <div class="kb-item"><kbd>Ctrl+G</kbd> <span>Go to date</span></div>
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Keybindings</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="font-hand text-[1.4rem] mb-5 pb-3 border-b border-gray-800">Navigation</h3>
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">j</kbd> / <kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">k</kbd> <span class="text-gray-400">Move down / up</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">h</kbd> / <kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">l</kbd> <span class="text-gray-400">Previous / next day</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">gg</kbd> / <kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">G</kbd> <span class="text-gray-400">First / last item</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">n</kbd> <span class="text-gray-400">Jump to now</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Ctrl+G</kbd> <span class="text-gray-400">Go to date</span></div>
           </div>
         </div>
-        <div class="kb-group">
-          <h3>Events</h3>
-          <div class="kb-list">
-            <div class="kb-item"><kbd>Ctrl+N</kbd> <span>Create event</span></div>
-            <div class="kb-item"><kbd>e</kbd> <span>Edit event</span></div>
-            <div class="kb-item"><kbd>D</kbd> <span>Delete event</span></div>
-            <div class="kb-item"><kbd>Enter</kbd> <span>View details</span></div>
-            <div class="kb-item"><kbd>o</kbd> <span>Open meeting link</span></div>
+        <div>
+          <h3 class="font-hand text-[1.4rem] mb-5 pb-3 border-b border-gray-800">Events</h3>
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Ctrl+N</kbd> <span class="text-gray-400">Create event</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">e</kbd> <span class="text-gray-400">Edit event</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">D</kbd> <span class="text-gray-400">Delete event</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Enter</kbd> <span class="text-gray-400">View details</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">o</kbd> <span class="text-gray-400">Open meeting link</span></div>
           </div>
         </div>
-        <div class="kb-group">
-          <h3>General</h3>
-          <div class="kb-list">
-            <div class="kb-item"><kbd>/</kbd> <span>Search events</span></div>
-            <div class="kb-item"><kbd>:</kbd> <span>Command palette</span></div>
-            <div class="kb-item"><kbd>?</kbd> <span>Context help</span></div>
-            <div class="kb-item"><kbd>Shift+C</kbd> <span>Toggle calendars</span></div>
-            <div class="kb-item"><kbd>q</kbd> <span>Quit</span></div>
+        <div>
+          <h3 class="font-hand text-[1.4rem] mb-5 pb-3 border-b border-gray-800">General</h3>
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">/</kbd> <span class="text-gray-400">Search events</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">:</kbd> <span class="text-gray-400">Command palette</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">?</kbd> <span class="text-gray-400">Context help</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Shift+C</kbd> <span class="text-gray-400">Toggle calendars</span></div>
+            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">q</kbd> <span class="text-gray-400">Quit</span></div>
           </div>
         </div>
       </div>
@@ -193,268 +181,14 @@ import "../styles/global.css";
   </section>
 
   <!-- Built With -->
-  <section class="built-with">
-    <div class="container">
-      <p class="built-with-text">
-        Built with <a href="/glyph">Glyph</a> — the React renderer for terminal UIs
+  <section class="py-16 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <p class="text-center text-[0.9rem] text-gray-400">
+        Built with <a href="/glyph" class="text-gray-200 border-b border-gray-600 hover:text-white hover:border-white transition-colors">Glyph</a> — the React renderer for terminal UIs
       </p>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="/logos/Sema.png" alt="Semos" class="footer-logo" />
-          <span class="footer-name">Semos Labs</span>
-        </div>
-        <p class="footer-copy">
-          Built with obsessive care for the terminal.
-        </p>
-      </div>
-    </div>
-  </footer>
 </Layout>
-
-<style>
-  /* Nav (shared) */
-  .nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1rem 2rem;
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-800);
-  }
-  .nav-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
-  .nav-logo-img { width: 32px; height: 32px; border-radius: 6px; }
-  .nav-logo-text {
-    font-family: var(--font-hand); font-size: 1.5rem;
-    font-weight: 400; letter-spacing: 0.01em;
-  }
-  .nav-links {
-    display: flex; align-items: center; gap: 2rem;
-    font-size: 0.85rem; color: var(--gray-300);
-  }
-  .nav-links a { color: var(--gray-300); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--white); }
-
-  /* Hero */
-  .hero {
-    min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    padding: 8rem 2rem 4rem; gap: 4rem;
-    max-width: 1100px; margin: 0 auto;
-  }
-  .hero-content { flex: 1; max-width: 520px; }
-  .hero-badge {
-    display: flex; align-items: center; gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .hero-logo { width: 48px; height: 48px; border-radius: 12px; }
-  .hero-product-name {
-    font-family: var(--font-hand); font-size: 1.8rem; font-weight: 400;
-  }
-  .hero-title {
-    font-family: var(--font-hand); font-size: 2.6rem;
-    font-weight: 400; line-height: 1.3; margin-bottom: 1.5rem;
-  }
-  .hero-accent { color: var(--gray-200); font-style: italic; }
-  .hero-description {
-    font-size: 0.92rem; color: var(--gray-300);
-    line-height: 1.8; margin-bottom: 2.5rem; max-width: 460px;
-  }
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-block; padding: 0.8rem 2rem;
-    border: 1px solid var(--gray-500); border-radius: 6px;
-    font-family: var(--font-mono); font-size: 0.85rem;
-    color: var(--white); transition: all 0.25s; letter-spacing: 0.03em;
-  }
-  .btn-primary:hover {
-    background: var(--white); color: var(--black); border-color: var(--white);
-  }
-  .btn-secondary {
-    display: inline-block; padding: 0.8rem 2rem;
-    border: 1px solid var(--gray-700); border-radius: 6px;
-    font-family: var(--font-mono); font-size: 0.85rem;
-    color: var(--gray-300); transition: all 0.25s; letter-spacing: 0.03em;
-  }
-  .btn-secondary:hover { color: var(--white); border-color: var(--gray-500); }
-
-  .hero-decoration { flex: 1; max-width: 400px; }
-  .terminal-block {
-    background: var(--gray-900); border: 1px solid var(--gray-700);
-    border-radius: 12px; overflow: hidden; font-size: 0.82rem;
-  }
-  .terminal-bar {
-    display: flex; gap: 6px; padding: 12px 16px;
-    background: var(--gray-800); border-bottom: 1px solid var(--gray-700);
-  }
-  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gray-600); }
-  .terminal-body { padding: 1.25rem 1.5rem; line-height: 1.9; }
-  .t-prompt { color: var(--gray-400); }
-  .t-cmd { color: var(--white); }
-
-  .copy-btn {
-    margin-left: auto;
-    background: none; border: 1px solid var(--gray-700);
-    border-radius: 4px; padding: 2px 6px;
-    cursor: pointer; color: var(--gray-400);
-    font-size: 0.8rem; transition: all 0.2s;
-    display: flex; align-items: center;
-  }
-  .copy-btn:hover { color: var(--white); border-color: var(--gray-500); }
-  .copy-btn .copy-done { display: none; color: var(--gray-200); }
-  .copy-btn.copied .copy-icon { display: none; }
-  .copy-btn.copied .copy-done { display: inline; }
-
-  /* Shared */
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-title {
-    font-family: var(--font-hand); font-size: 2.4rem;
-    font-weight: 400; text-align: center; margin-bottom: 3.5rem;
-  }
-
-  /* Install */
-  .quickstart {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .install-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-  }
-  .install-card {
-    padding: 2rem; border: 1px solid var(--gray-800); border-radius: 12px;
-  }
-  .install-card h3 {
-    font-family: var(--font-hand); font-size: 1.3rem;
-    font-weight: 400; margin-bottom: 1.25rem;
-  }
-  .code-block {
-    background: var(--gray-900); border-radius: 8px; padding: 1.25rem;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .code-block code {
-    font-family: var(--font-mono); font-size: 0.82rem; color: var(--gray-200);
-  }
-  .install-platforms {
-    text-align: center; margin-top: 2rem;
-    font-size: 0.8rem; color: var(--gray-500);
-  }
-
-  /* Features */
-  .features {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .features-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-  }
-  .feature-card {
-    padding: 1.75rem; border: 1px solid var(--gray-800);
-    border-radius: 12px; transition: border-color 0.3s;
-  }
-  .feature-card:hover { border-color: var(--gray-600); }
-  .feature-icon {
-    display: block; font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-  }
-  .feature-card h3 {
-    font-family: var(--font-hand); font-size: 1.2rem;
-    font-weight: 400; margin-bottom: 0.5rem;
-  }
-  .feature-card p {
-    font-size: 0.8rem; color: var(--gray-400); line-height: 1.7;
-  }
-
-  /* Keybindings */
-  .keybindings {
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .kb-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
-  }
-  .kb-group h3 {
-    font-family: var(--font-hand); font-size: 1.4rem;
-    font-weight: 400; margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem; border-bottom: 1px solid var(--gray-800);
-  }
-  .kb-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .kb-item {
-    display: flex; align-items: center; gap: 0.75rem;
-    font-size: 0.82rem;
-  }
-  .kb-item kbd {
-    font-family: var(--font-mono); font-size: 0.75rem;
-    background: var(--gray-800); border: 1px solid var(--gray-700);
-    border-radius: 4px; padding: 0.15rem 0.5rem;
-    color: var(--gray-200); min-width: fit-content;
-  }
-  .kb-item span { color: var(--gray-400); }
-
-  /* Built With */
-  .built-with {
-    padding: 4rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .built-with-text {
-    text-align: center; font-size: 0.9rem; color: var(--gray-400);
-  }
-  .built-with-text a {
-    color: var(--gray-200); border-bottom: 1px solid var(--gray-600);
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .built-with-text a:hover {
-    color: var(--white); border-color: var(--white);
-  }
-
-  /* Footer */
-  .footer {
-    padding: 3rem 2rem;
-    border-top: 1px solid var(--gray-800);
-  }
-  .footer-inner {
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
-  .footer-logo { width: 24px; height: 24px; border-radius: 4px; }
-  .footer-name {
-    font-family: var(--font-hand); font-size: 1.3rem; font-weight: 400;
-  }
-  .footer-copy { font-size: 0.78rem; color: var(--gray-500); }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column; padding-top: 7rem;
-      text-align: center; gap: 3rem;
-    }
-    .hero-content { max-width: 100%; }
-    .hero-badge { justify-content: center; }
-    .hero-description { max-width: 100%; }
-    .hero-decoration { max-width: 100%; width: 100%; }
-    .hero-title { font-size: 2rem; }
-    .hero-cta { justify-content: center; }
-    .install-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr 1fr; }
-    .kb-grid { grid-template-columns: 1fr; }
-    .section-title { font-size: 2rem; }
-    .footer-inner {
-      flex-direction: column; gap: 1rem; text-align: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .features-grid { grid-template-columns: 1fr; }
-  }
-</style>
 
 <script>
   document.querySelectorAll('.copy-btn').forEach((btn) => {

@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
   title: string;
   description?: string;
@@ -31,64 +33,48 @@ const { title, description = "A family of terminal apps and tools" } = Astro.pro
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <!-- Nav -->
+    <nav class="fixed top-0 inset-x-0 z-[100] px-8 py-4 bg-black/85 backdrop-blur-md border-b border-gray-800">
+      <div class="max-w-content mx-auto flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/logos/Sema.png" alt="Semos Labs" class="w-8 h-8 rounded-md" />
+          <span>
+            <span class="font-hand text-2xl tracking-[0.01em]">semos</span>
+            <span class="block font-hand text-[0.5rem] tracking-[0.01em] text-gray-400">A constellation of terminal-native tools.</span>
+          </span>
+        </a>
+        <div class="flex items-center gap-8 text-[0.85rem] text-gray-300">
+          <a href="/#products" class="hover:text-white transition-colors">Products</a>
+          <a href="/docs/" class="hover:text-white transition-colors">Docs</a>
+          <a href="https://github.com/semos-labs" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-8 border-t border-gray-800">
+      <div class="max-w-content mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <img src="/logos/Sema.png" alt="Semos" class="w-6 h-6 rounded" />
+          <span class="font-hand text-[1.3rem]">Semos Labs</span>
+        </div>
+        <p class="text-[0.78rem] text-gray-500">
+          Built with obsessive care for the terminal.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
-
-<style is:global>
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :root {
-    --black: #0a0a0a;
-    --white: #f0f0f0;
-    --gray-100: #e0e0e0;
-    --gray-200: #c0c0c0;
-    --gray-300: #a0a0a0;
-    --gray-400: #808080;
-    --gray-500: #606060;
-    --gray-600: #404040;
-    --gray-700: #2a2a2a;
-    --gray-800: #1a1a1a;
-    --gray-900: #111111;
-
-    --font-mono: "JetBrains Mono", monospace;
-    --font-hand: "Architects Daughter", cursive;
-  }
-
-  html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: var(--font-mono);
-    background-color: var(--black);
-    color: var(--white);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-
-  a {
-    color: var(--white);
-    text-decoration: none;
-  }
-
-  img {
-    max-width: 100%;
-    display: block;
-  }
-</style>

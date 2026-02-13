@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.6",
+    "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.2",
     "starlight-typedoc": "^0.21.5",
+    "tailwindcss": "^4.1.18",
     "typedoc": "^0.28.16",
     "typedoc-plugin-markdown": "^4.10.0"
   }
