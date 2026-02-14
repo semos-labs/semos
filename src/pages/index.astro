@@ -215,10 +215,42 @@ import Layout from "../layouts/Layout.astro";
     } catch { /* silent fail */ }
   }
 
-  // Show success message if redirected back from Kit
+  // Newsletter form
+  const form = document.querySelector('#subscribe-form form') as HTMLFormElement;
+  const formWrap = document.getElementById('subscribe-form')!;
+  const successEl = document.getElementById('subscribe-success')!;
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = new FormData(form).get('email_address') as string;
+    if (!email) return;
+
+    submitBtn.textContent = 'Sending…';
+    submitBtn.classList.add('opacity-60', 'pointer-events-none');
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email_address: email }),
+      });
+      if (res.ok) {
+        formWrap.classList.add('hidden');
+        successEl.classList.remove('hidden');
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      // Fallback: submit the form normally so Kit handles it
+      form.submit();
+    }
+  });
+
+  // Also handle redirect back from Kit (fallback)
   if (new URLSearchParams(window.location.search).has('subscription')) {
-    document.getElementById('subscribe-form')?.classList.add('hidden');
-    document.getElementById('subscribe-success')?.classList.remove('hidden');
+    formWrap?.classList.add('hidden');
+    successEl?.classList.remove('hidden');
   }
 
   fetchStars();
