@@ -44,11 +44,11 @@ import Layout from "../layouts/Layout.astro";
             <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
           </button>
         </div>
-        <div class="install-panel px-6 py-5 leading-[1.9]" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install aion">
+        <div class="install-panel px-6 py-5 leading-[1.9] text-left" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install aion">
           <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
           <p><span class="text-gray-400">$</span> <span class="text-white">brew install aion</span></p>
         </div>
-        <div class="install-panel px-6 py-5 leading-[1.9] hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/aion/releases/latest/download/aion-darwin-arm64 -o aion&#10;chmod +x aion && sudo mv aion /usr/local/bin/">
+        <div class="install-panel px-6 py-5 leading-[1.9] text-left hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/aion/releases/latest/download/aion-darwin-arm64 -o aion&#10;chmod +x aion && sudo mv aion /usr/local/bin/">
           <p><span class="text-gray-400">$</span> <span class="text-white">curl -L https://github.com/semos-labs/aion/</span></p>
           <p><span class="text-white pl-4">releases/latest/download/aion-darwin-arm64 -o aion</span></p>
           <p><span class="text-gray-400">$</span> <span class="text-white">chmod +x aion && sudo mv aion /usr/local/bin/</span></p>
