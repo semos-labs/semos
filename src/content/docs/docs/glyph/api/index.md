@@ -36,6 +36,7 @@ Complete API reference for `@semos-labs/glyph`.
 - [useFocusRegistry](hooks/use-focus-registry/)
 - [useInput](hooks/use-input/)
 - [useLayout](hooks/use-layout/)
+- [useScrollIntoView](hooks/use-scroll-into-view/)
 - [useToast](hooks/use-toast/)
 
 ## Utilities
@@ -54,4 +55,5 @@ Complete API reference for `@semos-labs/glyph`.
 - [FocusableHandle](types/focusable-handle/)
 - [Key](types/key/)
 - [LayoutRect](types/layout-rect/)
+- [ScrollIntoViewOptions](types/scroll-into-view-options/)
 - [Style](types/style/)

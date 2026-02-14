@@ -43,6 +43,40 @@ Programmatically focus this element
 
 `void`
 
+***
+
+### scrollIntoView()
+
+```ts
+scrollIntoView(options?): void;
+```
+
+Scroll the nearest parent [ScrollView](../../components/scroll-view) to make this element visible.
+Behaves like the DOM `Element.scrollIntoView()` method.
+No-op if the element is not inside a ScrollView.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `options?` | [`ScrollIntoViewOptions`](../scroll-into-view-options) | Alignment options (default: `{ block: "nearest" }`) |
+
+#### Returns
+
+`void`
+
+#### Example
+
+```tsx
+const inputRef = useRef<InputHandle>(null);
+
+// Minimal scroll — just enough to make it visible
+inputRef.current?.scrollIntoView();
+
+// Center the element in the viewport
+inputRef.current?.scrollIntoView({ block: "center" });
+```
+
 ## Properties
 
 | Property | Modifier | Type | Description |
