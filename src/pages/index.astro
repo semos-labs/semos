@@ -247,12 +247,6 @@ import Layout from "../layouts/Layout.astro";
     }
   });
 
-  // Also handle redirect back from Kit (fallback)
-  if (new URLSearchParams(window.location.search).has('subscription')) {
-    formWrap?.classList.add('hidden');
-    successEl?.classList.remove('hidden');
-  }
-
   fetchStars();
   fetchDownloads();
 </script>
