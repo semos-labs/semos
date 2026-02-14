@@ -179,17 +179,22 @@ import ProductCard from "../components/ProductCard.astro";
   }
 
   async function fetchDownloads() {
-    try {
-      const res = await fetch('https://api.github.com/repos/semos-labs/aion/releases');
-      if (!res.ok) return;
-      const releases = await res.json();
-      const total = releases.reduce((sum: number, r: any) =>
-        sum + r.assets.reduce((a: number, asset: any) => a + (asset.download_count || 0), 0), 0);
-      const el = document.getElementById('aion-dl-count');
-      const badge = document.getElementById('aion-downloads');
-      if (el) el.textContent = total.toLocaleString();
-      if (badge) { badge.classList.remove('hidden'); badge.classList.add('inline-flex'); }
-    } catch { /* silent fail */ }
+    const badges = document.querySelectorAll('.downloads-badge');
+    for (const badge of badges) {
+      const repo = badge.getAttribute('data-repo');
+      if (!repo) continue;
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}/releases`);
+        if (!res.ok) continue;
+        const releases = await res.json();
+        const total = releases.reduce((sum: number, r: any) =>
+          sum + r.assets.reduce((a: number, asset: any) => a + (asset.download_count || 0), 0), 0);
+        const count = badge.querySelector('.dl-count');
+        if (count) count.textContent = total.toLocaleString();
+        badge.classList.remove('hidden');
+        badge.classList.add('inline-flex');
+      } catch { /* silent fail — badge stays hidden */ }
+    }
   }
 
   // Newsletter form
