@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
 ---
 
 <Layout title="Semos Labs — Terminal, Reimagined">
@@ -68,74 +69,34 @@ import Layout from "../layouts/Layout.astro";
     <div class="max-w-content mx-auto">
       <h2 class="font-hand text-[2.2rem] md:text-[2.8rem] text-center mb-16">What We Build</h2>
 
-      <!-- Glyph -->
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12 p-8 md:p-12 border border-gray-800 rounded-2xl mb-10 transition-colors hover:border-gray-600 text-center md:text-left">
-        <div class="shrink-0">
-          <img src="/logos/Glyph.png" alt="Glyph" class="w-20 h-20 rounded-2xl" />
-        </div>
-        <div class="flex-1">
-          <div class="flex items-center gap-3 justify-center md:justify-start">
-            <h3 class="font-hand text-[2rem] mb-1">Glyph</h3>
-            <a class="stars-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors" data-repo="semos-labs/glyph" href="https://github.com/semos-labs/glyph" target="_blank" rel="noopener" data-ph-cta="glyph_stars">
-              <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
-              <span class="stars-count font-mono font-medium">—</span>
-            </a>
-          </div>
-          <p class="text-[0.9rem] text-gray-400 mb-4 italic">React renderer for the terminal</p>
-          <p class="text-[0.88rem] text-gray-300 leading-[1.8] mb-5 max-w-full md:max-w-[560px]">
-            A terminal rendering engine that lets you build rich TUI applications
-            using React components. Flexbox layouts, styling, focus management —
-            everything you'd expect from a UI framework, running entirely in your terminal.
-          </p>
-          <div class="flex gap-2 flex-wrap justify-center md:justify-start">
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">React</span>
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">TypeScript</span>
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">Terminal</span>
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">Renderer</span>
-          </div>
-          <div class="flex items-center gap-5 mt-4 justify-center md:justify-start">
-            <a href="/glyph" class="text-[0.82rem] text-gray-400 hover:text-white transition-colors" data-ph-cta="glyph_learn_more">Learn more →</a>
-            <a href="https://github.com/semos-labs/glyph" target="_blank" rel="noopener" class="text-[0.82rem] text-gray-400 hover:text-white transition-colors" data-ph-cta="glyph_github">GitHub ↗</a>
-            <a href="https://www.npmjs.com/package/@semos-labs/glyph" target="_blank" rel="noopener" class="text-[0.82rem] text-gray-400 hover:text-white transition-colors" data-ph-cta="glyph_npm">npm ↗</a>
-          </div>
-        </div>
-      </div>
+      <ProductCard
+        name="Glyph"
+        logo="/logos/Glyph.png"
+        repo="semos-labs/glyph"
+        tagline="React renderer for the terminal"
+        description="A terminal rendering engine that lets you build rich TUI applications using React components. Flexbox layouts, styling, focus management — everything you'd expect from a UI framework, running entirely in your terminal."
+        tags={["React", "TypeScript", "Terminal", "Renderer"]}
+        links={[
+          { href: "/glyph", label: "Learn more →", cta: "glyph_learn_more" },
+          { href: "https://github.com/semos-labs/glyph", label: "GitHub ↗", cta: "glyph_github", external: true },
+          { href: "https://www.npmjs.com/package/@semos-labs/glyph", label: "npm ↗", cta: "glyph_npm", external: true },
+        ]}
+      />
 
-      <!-- Aion -->
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12 p-8 md:p-12 border border-gray-800 rounded-2xl mb-10 transition-colors hover:border-gray-600 text-center md:text-left">
-        <div class="shrink-0">
-          <img src="/logos/Aion.png" alt="Aion" class="w-20 h-20 rounded-2xl" />
-        </div>
-        <div class="flex-1">
-          <div class="flex items-center gap-3 justify-center md:justify-start">
-            <h3 class="font-hand text-[2rem] mb-1">Aion</h3>
-            <a class="stars-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors" data-repo="semos-labs/aion" href="https://github.com/semos-labs/aion" target="_blank" rel="noopener" data-ph-cta="aion_stars">
-              <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
-              <span class="stars-count font-mono font-medium">—</span>
-            </a>
-            <a id="aion-downloads" class="hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors" href="https://github.com/semos-labs/aion/releases" target="_blank" rel="noopener" data-ph-cta="aion_downloads">
-              <svg class="w-3.5 h-3.5 fill-gray-300" viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14ZM7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>
-              <span id="aion-dl-count" class="font-mono font-medium">—</span>
-            </a>
-          </div>
-          <p class="text-[0.9rem] text-gray-400 mb-4 italic">Google Calendar in your terminal</p>
-          <p class="text-[0.88rem] text-gray-300 leading-[1.8] mb-5 max-w-full md:max-w-[560px]">
-            A full-featured Google Calendar client that runs in your terminal.
-            View, create, and manage events without leaving the command line.
-            Built with Glyph for a smooth, responsive interface.
-          </p>
-          <div class="flex gap-2 flex-wrap justify-center md:justify-start">
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">Calendar</span>
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">Google API</span>
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">Glyph</span>
-            <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">TUI</span>
-          </div>
-          <div class="flex items-center gap-5 mt-4 justify-center md:justify-start">
-            <a href="/aion" class="text-[0.82rem] text-gray-400 hover:text-white transition-colors" data-ph-cta="aion_learn_more">Learn more →</a>
-            <a href="https://github.com/semos-labs/aion" target="_blank" rel="noopener" class="text-[0.82rem] text-gray-400 hover:text-white transition-colors" data-ph-cta="aion_github">GitHub ↗</a>
-          </div>
-        </div>
-      </div>
+      <ProductCard
+        name="Aion"
+        logo="/logos/Aion.png"
+        repo="semos-labs/aion"
+        tagline="Google Calendar in your terminal"
+        description="A full-featured Google Calendar client that runs in your terminal. View, create, and manage events without leaving the command line. Built with Glyph for a smooth, responsive interface."
+        tags={["Calendar", "Google API", "Glyph", "TUI"]}
+        showDownloads
+        downloadsHref="https://github.com/semos-labs/aion/releases"
+        links={[
+          { href: "/aion", label: "Learn more →", cta: "aion_learn_more" },
+          { href: "https://github.com/semos-labs/aion", label: "GitHub ↗", cta: "aion_github", external: true },
+        ]}
+      />
     </div>
   </section>
 

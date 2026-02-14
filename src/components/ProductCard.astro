@@ -1,0 +1,92 @@
+---
+interface Link {
+  href: string;
+  label: string;
+  cta: string;
+  external?: boolean;
+}
+
+interface Props {
+  name: string;
+  logo: string;
+  tagline: string;
+  description: string;
+  tags: string[];
+  repo: string;
+  links: Link[];
+  npmPackage?: string;
+  showDownloads?: boolean;
+  downloadsHref?: string;
+}
+
+const {
+  name,
+  logo,
+  tagline,
+  description,
+  tags,
+  repo,
+  links,
+  npmPackage,
+  showDownloads = false,
+  downloadsHref,
+} = Astro.props;
+
+const slug = name.toLowerCase();
+---
+
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12 p-8 md:p-12 border border-gray-800 rounded-2xl mb-10 transition-colors hover:border-gray-600 text-center md:text-left">
+  <div class="shrink-0">
+    <img src={logo} alt={name} class="w-20 h-20 rounded-2xl" />
+  </div>
+  <div class="flex-1">
+    <div class="flex items-center gap-3 justify-center md:justify-start">
+      <h3 class="font-hand text-[2rem] mb-1">{name}</h3>
+      <a
+        class="stars-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors"
+        data-repo={repo}
+        href={`https://github.com/${repo}`}
+        target="_blank"
+        rel="noopener"
+        data-ph-cta={`${slug}_stars`}
+      >
+        <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+        <span class="stars-count font-mono font-medium">—</span>
+      </a>
+      {showDownloads && downloadsHref && (
+        <a
+          id={`${slug}-downloads`}
+          class="hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors"
+          href={downloadsHref}
+          target="_blank"
+          rel="noopener"
+          data-ph-cta={`${slug}_downloads`}
+        >
+          <svg class="w-3.5 h-3.5 fill-gray-300" viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14ZM7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>
+          <span id={`${slug}-dl-count`} class="font-mono font-medium">—</span>
+        </a>
+      )}
+    </div>
+    <p class="text-[0.9rem] text-gray-400 mb-4 italic">{tagline}</p>
+    <p class="text-[0.88rem] text-gray-300 leading-[1.8] mb-5 max-w-full md:max-w-[560px]">
+      {description}
+    </p>
+    <div class="flex gap-2 flex-wrap justify-center md:justify-start">
+      {tags.map((tag) => (
+        <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">{tag}</span>
+      ))}
+    </div>
+    <div class="flex items-center gap-5 mt-4 justify-center md:justify-start">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="text-[0.82rem] text-gray-400 hover:text-white transition-colors"
+          data-ph-cta={link.cta}
+          {...(link.external ? { target: "_blank", rel: "noopener" } : {})}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
