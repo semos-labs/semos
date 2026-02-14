@@ -24,14 +24,19 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="flex-1 max-w-full md:max-w-[400px] w-full md:w-auto">
-      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-[0.82rem]">
-        <div class="flex gap-1.5 px-4 py-3 bg-gray-800 border-b border-gray-700">
-          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+      <div class="install-block bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-[0.82rem]">
+        <div class="flex items-center px-4 py-2.5 bg-gray-800 border-b border-gray-700 gap-3">
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          </div>
+          <div class="flex gap-1 ml-2">
+            <button class="install-tab active text-[0.7rem] px-2.5 py-1 rounded bg-gray-700 text-gray-200 border-none cursor-pointer transition-all hover:text-white" data-tab="brew">Homebrew</button>
+            <button class="install-tab text-[0.7rem] px-2.5 py-1 rounded bg-transparent text-gray-500 border-none cursor-pointer transition-all hover:text-gray-300" data-tab="curl">curl</button>
+          </div>
           <button
             class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-[0.8rem] transition-all hover:text-white hover:border-gray-500"
-            data-copy="brew tap semos-labs/tap&#10;brew install aion"
             aria-label="Copy to clipboard"
             data-ph-cta="aion_copy_install"
           >
@@ -39,37 +44,17 @@ import Layout from "../layouts/Layout.astro";
             <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
           </button>
         </div>
-        <div class="px-6 py-5 leading-[1.9]">
+        <div class="install-panel px-6 py-5 leading-[1.9]" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install aion">
           <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
           <p><span class="text-gray-400">$</span> <span class="text-white">brew install aion</span></p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Install -->
-  <section class="py-24 px-8 border-t border-gray-800">
-    <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Install</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-8 border border-gray-800 rounded-xl">
-          <h3 class="font-hand text-[1.3rem] mb-5">Homebrew</h3>
-          <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
-            <code class="font-mono text-[0.82rem] text-gray-200">$ brew tap nick-skriabin/tap</code>
-            <code class="font-mono text-[0.82rem] text-gray-200">$ brew install aion</code>
-          </div>
-        </div>
-        <div class="p-8 border border-gray-800 rounded-xl">
-          <h3 class="font-hand text-[1.3rem] mb-5">Binary download</h3>
-          <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
-            <code class="font-mono text-[0.82rem] text-gray-200">$ curl -L https://github.com/semos-labs/aion/releases/latest</code>
-            <code class="font-mono text-[0.82rem] text-gray-200">$ chmod +x aion && sudo mv aion /usr/local/bin/</code>
-          </div>
+        <div class="install-panel px-6 py-5 leading-[1.9] hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/aion/releases/latest/download/aion-darwin-arm64 -o aion&#10;chmod +x aion && sudo mv aion /usr/local/bin/">
+          <p><span class="text-gray-400">$</span> <span class="text-white">curl -L https://github.com/semos-labs/aion/</span></p>
+          <p><span class="text-white pl-4">releases/latest/download/aion-darwin-arm64 -o aion</span></p>
+          <p><span class="text-gray-400">$</span> <span class="text-white">chmod +x aion && sudo mv aion /usr/local/bin/</span></p>
         </div>
       </div>
-      <p class="text-center mt-8 text-[0.8rem] text-gray-500">
-        macOS (Apple Silicon &amp; Intel) · Linux (x64 &amp; ARM64)
-      </p>
+      <p class="text-center mt-3 text-[0.7rem] text-gray-600">macOS (Apple Silicon & Intel) · Linux (x64 & ARM64)</p>
     </div>
   </section>
 
@@ -192,12 +177,33 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
-  document.querySelectorAll('.copy-btn').forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      const text = btn.getAttribute('data-copy') || '';
+  document.querySelectorAll('.install-block').forEach((block) => {
+    const tabs = block.querySelectorAll('.install-tab');
+    const panels = block.querySelectorAll('.install-panel');
+    const copyBtn = block.querySelector('.copy-btn');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        tabs.forEach((t) => {
+          t.classList.toggle('active', t === tab);
+          t.classList.toggle('bg-gray-700', t === tab);
+          t.classList.toggle('text-gray-200', t === tab);
+          t.classList.toggle('bg-transparent', t !== tab);
+          t.classList.toggle('text-gray-500', t !== tab);
+        });
+        panels.forEach((p) => {
+          p.classList.toggle('hidden', p.getAttribute('data-panel') !== target);
+        });
+      });
+    });
+
+    copyBtn?.addEventListener('click', async () => {
+      const active = block.querySelector('.install-panel:not(.hidden)');
+      const text = active?.getAttribute('data-copy') || '';
       await navigator.clipboard.writeText(text);
-      btn.classList.add('copied');
-      setTimeout(() => btn.classList.remove('copied'), 2000);
+      copyBtn.classList.add('copied');
+      setTimeout(() => copyBtn.classList.remove('copied'), 2000);
     });
   });
 </script>
