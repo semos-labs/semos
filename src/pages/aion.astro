@@ -19,8 +19,8 @@ import Layout from "../layouts/Layout.astro";
         events without leaving the command line. Beautiful, fast, keyboard-driven.
       </p>
       <div class="flex gap-4 flex-wrap justify-center md:justify-start">
-        <a href="/docs/aion/" class="btn-primary">Documentation</a>
-        <a href="https://github.com/semos-labs/aion" target="_blank" rel="noopener" class="btn-secondary">GitHub ↗</a>
+        <a href="/docs/aion/" class="btn-primary" data-ph-cta="aion_hero_docs">Documentation</a>
+        <a href="https://github.com/semos-labs/aion" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="aion_hero_github">GitHub ↗</a>
       </div>
     </div>
     <div class="flex-1 max-w-full md:max-w-[400px] w-full md:w-auto">
@@ -33,6 +33,7 @@ import Layout from "../layouts/Layout.astro";
             class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-[0.8rem] transition-all hover:text-white hover:border-gray-500"
             data-copy="brew tap semos-labs/tap&#10;brew install aion"
             aria-label="Copy to clipboard"
+            data-ph-cta="aion_copy_install"
           >
             <span class="group-[.copied]:hidden">⧉</span>
             <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
@@ -184,7 +185,7 @@ import Layout from "../layouts/Layout.astro";
   <section class="py-16 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
       <p class="text-center text-[0.9rem] text-gray-400">
-        Built with <a href="/glyph" class="text-gray-200 border-b border-gray-600 hover:text-white hover:border-white transition-colors">Glyph</a> — the React renderer for terminal UIs
+        Built with <a href="/glyph" class="text-gray-200 border-b border-gray-600 hover:text-white hover:border-white transition-colors" data-ph-cta="aion_built_with_glyph">Glyph</a> — the React renderer for terminal UIs
       </p>
     </div>
   </section>
