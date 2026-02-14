@@ -50,15 +50,14 @@ export default defineConfig({
                       { label: "Getting Started", link: "/docs/aion/getting-started/" },
                   ],
               },
-              // Epist — hidden until ready
-              // {
-              //     label: "Epist",
-              //     collapsed: true,
-              //     items: [
-              //         { label: "Overview", link: "/docs/epist/" },
-              //         { label: "Getting Started", link: "/docs/epist/getting-started/" },
-              //     ],
-              // },
+              {
+                  label: "Epist",
+                  collapsed: true,
+                  items: [
+                      { label: "Overview", link: "/docs/epist/" },
+                      { label: "Getting Started", link: "/docs/epist/getting-started/" },
+                  ],
+              },
           ],
       }),
   ],
