@@ -127,6 +127,44 @@ Programmatically focus this element
 
 [`FocusableHandle`](../../types/focusable-handle).[`focus`](../../types/focusable-handle#focus)
 
+***
+
+### scrollIntoView()
+
+```ts
+scrollIntoView(options?): void;
+```
+
+Scroll the nearest parent [ScrollView](../scroll-view) to make this element visible.
+Behaves like the DOM `Element.scrollIntoView()` method.
+No-op if the element is not inside a ScrollView.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `options?` | [`ScrollIntoViewOptions`](../../types/scroll-into-view-options) | Alignment options (default: `{ block: "nearest" }`) |
+
+#### Returns
+
+`void`
+
+#### Example
+
+```tsx
+const inputRef = useRef<InputHandle>(null);
+
+// Minimal scroll — just enough to make it visible
+inputRef.current?.scrollIntoView();
+
+// Center the element in the viewport
+inputRef.current?.scrollIntoView({ block: "center" });
+```
+
+#### Inherited from
+
+[`FocusableHandle`](../../types/focusable-handle).[`scrollIntoView`](../../types/focusable-handle#scrollintoview)
+
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |

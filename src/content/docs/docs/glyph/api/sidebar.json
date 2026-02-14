@@ -116,6 +116,10 @@
         "link": "/glyph/api/hooks/use-layout/"
       },
       {
+        "label": "useScrollIntoView",
+        "link": "/glyph/api/hooks/use-scroll-into-view/"
+      },
+      {
         "label": "useToast",
         "link": "/glyph/api/hooks/use-toast/"
       }
@@ -172,6 +176,10 @@
       {
         "label": "LayoutRect",
         "link": "/glyph/api/types/layout-rect/"
+      },
+      {
+        "label": "ScrollIntoViewOptions",
+        "link": "/glyph/api/types/scroll-into-view-options/"
       },
       {
         "label": "Style",
