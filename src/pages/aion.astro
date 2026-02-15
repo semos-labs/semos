@@ -8,13 +8,13 @@ import Layout from "../layouts/Layout.astro";
     <div class="flex-1 max-w-full md:max-w-[520px]">
       <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
         <img src="/logos/Aion.png" alt="Aion" class="w-12 h-12 rounded-xl" />
-        <span class="font-hand text-[1.8rem]">Aion</span>
+        <span class="font-hand text-title-xl">Aion</span>
       </div>
-      <h1 class="font-hand text-[1.6rem] md:text-[2.3rem] leading-[1.3] mb-6">
+      <h1 class="font-hand heading-page mb-6">
         Google Calendar<br />
         <span class="text-gray-200 italic">in your terminal</span>
       </h1>
-      <p class="text-[0.92rem] text-gray-300 leading-[1.8] mb-10 max-w-full md:max-w-[460px]">
+      <p class="text-body-lg text-gray-300 leading-copy mb-10 max-w-full md:max-w-[460px]">
         A full-featured calendar client with vim-style keybindings. View, create, and manage
         events without leaving the command line. Beautiful, fast, keyboard-driven.
       </p>
@@ -24,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="flex-1 max-w-full md:max-w-[400px] w-full md:w-auto">
-      <div class="install-block bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-[0.82rem]">
+      <div class="install-block bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-label">
         <div class="flex items-center px-4 py-2.5 bg-gray-800 border-b border-gray-700 gap-3">
           <div class="flex gap-1.5">
             <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
@@ -36,7 +36,7 @@ import Layout from "../layouts/Layout.astro";
             <button class="install-tab text-[0.7rem] px-2.5 py-1 rounded bg-transparent text-gray-500 border-none cursor-pointer transition-all hover:text-gray-300" data-tab="curl">curl</button>
           </div>
           <button
-            class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-[0.8rem] transition-all hover:text-white hover:border-gray-500"
+            class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-small transition-all hover:text-white hover:border-gray-500"
             aria-label="Copy to clipboard"
             data-ph-cta="aion_copy_install"
           >
@@ -44,11 +44,11 @@ import Layout from "../layouts/Layout.astro";
             <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
           </button>
         </div>
-        <div class="install-panel px-6 py-5 leading-[1.9] text-left" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install aion">
+        <div class="install-panel px-6 py-5 leading-prose text-left" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install aion">
           <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
           <p><span class="text-gray-400">$</span> <span class="text-white">brew install aion</span></p>
         </div>
-        <div class="install-panel px-6 py-5 leading-[1.9] text-left hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/aion/releases/latest/download/aion-darwin-arm64 -o aion&#10;chmod +x aion && sudo mv aion /usr/local/bin/">
+        <div class="install-panel px-6 py-5 leading-prose text-left hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/aion/releases/latest/download/aion-darwin-arm64 -o aion&#10;chmod +x aion && sudo mv aion /usr/local/bin/">
           <p><span class="text-gray-400">$</span> <span class="text-white">curl -L https://github.com/semos-labs/aion/</span></p>
           <p><span class="text-white pl-4">releases/latest/download/aion-darwin-arm64 -o aion</span></p>
           <p><span class="text-gray-400">$</span> <span class="text-white">chmod +x aion && sudo mv aion /usr/local/bin/</span></p>
@@ -61,9 +61,7 @@ import Layout from "../layouts/Layout.astro";
   <!-- Screenshot -->
   <section class="px-4 md:px-8 pb-24 -mt-20 md:-mt-40">
     <div class="relative max-w-[960px] mx-auto">
-      <!-- Glow -->
       <div class="absolute -inset-8 bg-gradient-to-b from-white/[0.03] via-white/[0.06] to-transparent rounded-3xl blur-2xl pointer-events-none"></div>
-      <!-- Window chrome -->
       <div class="relative bg-gray-900 border border-gray-700/60 rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]">
         <div class="flex items-center gap-2 px-4 py-3 bg-gray-800/80 border-b border-gray-700/60">
           <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
@@ -71,11 +69,7 @@ import Layout from "../layouts/Layout.astro";
           <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
           <span class="ml-3 text-[0.7rem] text-gray-500 font-mono">aion</span>
         </div>
-        <img
-          src="/images/aion.jpg"
-          alt="Aion — Google Calendar in the terminal"
-          class="w-full block"
-        />
+        <img src="/images/aion.jpg" alt="Aion — Google Calendar in the terminal" class="w-full block" />
       </div>
     </div>
   </section>
@@ -83,67 +77,67 @@ import Layout from "../layouts/Layout.astro";
   <!-- Features -->
   <section class="py-24 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Features</h2>
+      <h2 class="heading-section-lg text-center mb-14">Features</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">⌨️</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Vim Keybindings</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Navigate with j/k, gg/G, h/l — feels like home for terminal users.</p>
+          <span class="block text-title-md mb-3">⌨️</span>
+          <h3 class="font-hand text-title mb-2">Vim Keybindings</h3>
+          <p class="text-small text-gray-400 leading-body">Navigate with j/k, gg/G, h/l — feels like home for terminal users.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">📅</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Visual Timeline</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Day view with 15-minute precision and overlap handling. Multi-column support.</p>
+          <span class="block text-title-md mb-3">📅</span>
+          <h3 class="font-hand text-title mb-2">Visual Timeline</h3>
+          <p class="text-small text-gray-400 leading-body">Day view with 15-minute precision and overlap handling. Multi-column support.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">🔗</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Google Calendar Sync</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Multi-account OAuth with PKCE. Background sync every 30 seconds.</p>
+          <span class="block text-title-md mb-3">🔗</span>
+          <h3 class="font-hand text-title mb-2">Google Calendar Sync</h3>
+          <p class="text-small text-gray-400 leading-body">Multi-account OAuth with PKCE. Background sync every 30 seconds.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">👥</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Meet With</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Find free slots across multiple people's calendars instantly.</p>
+          <span class="block text-title-md mb-3">👥</span>
+          <h3 class="font-hand text-title mb-2">Meet With</h3>
+          <p class="text-small text-gray-400 leading-body">Find free slots across multiple people's calendars instantly.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">📹</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Google Meet</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Auto-generate Meet links when creating events.</p>
+          <span class="block text-title-md mb-3">📹</span>
+          <h3 class="font-hand text-title mb-2">Google Meet</h3>
+          <p class="text-small text-gray-400 leading-body">Auto-generate Meet links when creating events.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">📁</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Multi-Calendar</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Toggle calendars on/off, each with its own color.</p>
+          <span class="block text-title-md mb-3">📁</span>
+          <h3 class="font-hand text-title mb-2">Multi-Calendar</h3>
+          <p class="text-small text-gray-400 leading-body">Toggle calendars on/off, each with its own color.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">🌍</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Timezone Support</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Events display in local time, toggle to see original timezone.</p>
+          <span class="block text-title-md mb-3">🌍</span>
+          <h3 class="font-hand text-title mb-2">Timezone Support</h3>
+          <p class="text-small text-gray-400 leading-body">Events display in local time, toggle to see original timezone.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">🗓️</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Natural Language</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Type "tomorrow 3pm" or "next friday for 2 hours" — it just works.</p>
+          <span class="block text-title-md mb-3">🗓️</span>
+          <h3 class="font-hand text-title mb-2">Natural Language</h3>
+          <p class="text-small text-gray-400 leading-body">Type "tomorrow 3pm" or "next friday for 2 hours" — it just works.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">🔁</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Recurring Events</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Create and edit events with daily, weekly, monthly, or yearly recurrence.</p>
+          <span class="block text-title-md mb-3">🔁</span>
+          <h3 class="font-hand text-title mb-2">Recurring Events</h3>
+          <p class="text-small text-gray-400 leading-body">Create and edit events with daily, weekly, monthly, or yearly recurrence.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">🔍</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Event Search</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Find events by title or description with /.</p>
+          <span class="block text-title-md mb-3">🔍</span>
+          <h3 class="font-hand text-title mb-2">Event Search</h3>
+          <p class="text-small text-gray-400 leading-body">Find events by title or description with /.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">📝</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Command Palette</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Quick access to all actions with fuzzy search. Type : to open.</p>
+          <span class="block text-title-md mb-3">📝</span>
+          <h3 class="font-hand text-title mb-2">Command Palette</h3>
+          <p class="text-small text-gray-400 leading-body">Quick access to all actions with fuzzy search. Type : to open.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3">🎨</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Themeable</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Customize every color via TOML configuration.</p>
+          <span class="block text-title-md mb-3">🎨</span>
+          <h3 class="font-hand text-title mb-2">Themeable</h3>
+          <p class="text-small text-gray-400 leading-body">Customize every color via TOML configuration.</p>
         </div>
       </div>
     </div>
@@ -152,36 +146,36 @@ import Layout from "../layouts/Layout.astro";
   <!-- Keybindings Preview -->
   <section class="py-24 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Keybindings</h2>
+      <h2 class="heading-section-lg text-center mb-14">Keybindings</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <h3 class="font-hand text-[1.4rem] mb-5 pb-3 border-b border-gray-800">Navigation</h3>
+          <h3 class="font-hand text-title-lg mb-5 pb-3 border-b border-gray-800">Navigation</h3>
           <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">j</kbd> / <kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">k</kbd> <span class="text-gray-400">Move down / up</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">h</kbd> / <kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">l</kbd> <span class="text-gray-400">Previous / next day</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">gg</kbd> / <kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">G</kbd> <span class="text-gray-400">First / last item</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">n</kbd> <span class="text-gray-400">Jump to now</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Ctrl+G</kbd> <span class="text-gray-400">Go to date</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">j</kbd> / <kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">k</kbd> <span class="text-gray-400">Move down / up</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">h</kbd> / <kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">l</kbd> <span class="text-gray-400">Previous / next day</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">gg</kbd> / <kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">G</kbd> <span class="text-gray-400">First / last item</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">n</kbd> <span class="text-gray-400">Jump to now</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Ctrl+G</kbd> <span class="text-gray-400">Go to date</span></div>
           </div>
         </div>
         <div>
-          <h3 class="font-hand text-[1.4rem] mb-5 pb-3 border-b border-gray-800">Events</h3>
+          <h3 class="font-hand text-title-lg mb-5 pb-3 border-b border-gray-800">Events</h3>
           <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Ctrl+N</kbd> <span class="text-gray-400">Create event</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">e</kbd> <span class="text-gray-400">Edit event</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">D</kbd> <span class="text-gray-400">Delete event</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Enter</kbd> <span class="text-gray-400">View details</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">o</kbd> <span class="text-gray-400">Open meeting link</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Ctrl+N</kbd> <span class="text-gray-400">Create event</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">e</kbd> <span class="text-gray-400">Edit event</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">D</kbd> <span class="text-gray-400">Delete event</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Enter</kbd> <span class="text-gray-400">View details</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">o</kbd> <span class="text-gray-400">Open meeting link</span></div>
           </div>
         </div>
         <div>
-          <h3 class="font-hand text-[1.4rem] mb-5 pb-3 border-b border-gray-800">General</h3>
+          <h3 class="font-hand text-title-lg mb-5 pb-3 border-b border-gray-800">General</h3>
           <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">/</kbd> <span class="text-gray-400">Search events</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">:</kbd> <span class="text-gray-400">Command palette</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">?</kbd> <span class="text-gray-400">Context help</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Shift+C</kbd> <span class="text-gray-400">Toggle calendars</span></div>
-            <div class="flex items-center gap-3 text-[0.82rem]"><kbd class="font-mono text-[0.75rem] bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">q</kbd> <span class="text-gray-400">Quit</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">/</kbd> <span class="text-gray-400">Search events</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">:</kbd> <span class="text-gray-400">Command palette</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">?</kbd> <span class="text-gray-400">Context help</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">Shift+C</kbd> <span class="text-gray-400">Toggle calendars</span></div>
+            <div class="flex items-center gap-3 text-label"><kbd class="font-mono text-fine bg-gray-800 border border-gray-700 rounded px-2 py-0.5 text-gray-200 shrink-0">q</kbd> <span class="text-gray-400">Quit</span></div>
           </div>
         </div>
       </div>
@@ -191,7 +185,7 @@ import Layout from "../layouts/Layout.astro";
   <!-- Built With -->
   <section class="py-16 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <p class="text-center text-[0.9rem] text-gray-400">
+      <p class="text-center text-body-sm text-gray-400">
         Built with <a href="/glyph" class="text-gray-200 border-b border-gray-600 hover:text-white hover:border-white transition-colors" data-ph-cta="aion_built_with_glyph">Glyph</a> — the React renderer for terminal UIs
       </p>
     </div>

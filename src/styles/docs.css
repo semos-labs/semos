@@ -1,10 +1,10 @@
 /* Import Google Font first (must precede all other statements) */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /* Custom Starlight theme to match Semos black & white aesthetic */
 :root {
-  --sl-font: "JetBrains Mono", monospace;
-  --sl-font-system-mono: "JetBrains Mono", monospace;
+  --sl-font: "Space Mono", monospace;
+  --sl-font-system-mono: "Space Mono", monospace;
   --sl-color-accent-low: #1a1a1a;
   --sl-color-accent: #808080;
   --sl-color-accent-high: #e0e0e0;

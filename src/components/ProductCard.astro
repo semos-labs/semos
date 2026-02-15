@@ -27,7 +27,6 @@ const {
   tags,
   repo,
   links,
-  npmPackage,
   showDownloads = false,
   downloadsHref,
 } = Astro.props;
@@ -35,58 +34,76 @@ const {
 const slug = name.toLowerCase();
 ---
 
-<div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12 p-8 md:p-12 border border-gray-800 rounded-2xl mb-10 transition-colors hover:border-gray-600 text-center md:text-left">
-  <div class="shrink-0">
-    <img src={logo} alt={name} class="w-20 h-20 rounded-2xl" />
-  </div>
-  <div class="flex-1">
-    <div class="flex items-center gap-3 justify-center md:justify-start">
-      <h3 class="font-hand text-[2rem] mb-1">{name}</h3>
+<div class="bg-gray-900 border border-gray-700/60 rounded-xl overflow-hidden mb-8 transition-colors hover:border-gray-600">
+  <!-- Terminal header -->
+  <div class="flex items-center gap-2 px-5 py-3 bg-gray-800/80 border-b border-gray-700/60">
+    <div class="flex gap-1.5">
+      <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+    </div>
+    <span class="ml-2 text-fine text-gray-500 font-mono">$ semos info {slug}</span>
+    <div class="ml-auto flex items-center gap-2">
       <a
-        class="stars-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors"
+        class="stars-badge hidden data-[loaded]:inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-gray-800 border border-gray-600 rounded-full text-small text-gray-300 hover:border-gray-400 hover:text-white transition-colors"
         data-repo={repo}
         href={`https://github.com/${repo}`}
         target="_blank"
         rel="noopener"
         data-ph-cta={`${slug}_stars`}
       >
-        <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+        <svg class="w-3 h-3 fill-amber-400" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
         <span class="stars-count font-mono font-medium">—</span>
       </a>
       {showDownloads && downloadsHref && (
         <a
-          class="downloads-badge hidden items-center gap-1.5 px-3 py-1 bg-gray-800 border border-gray-600 rounded-full text-[0.8rem] text-gray-200 translate-y-[-2px] hover:border-gray-400 hover:text-white transition-colors"
+          class="downloads-badge hidden data-[loaded]:inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-gray-800 border border-gray-600 rounded-full text-small text-gray-300 hover:border-gray-400 hover:text-white transition-colors"
           data-repo={repo}
           href={downloadsHref}
           target="_blank"
           rel="noopener"
           data-ph-cta={`${slug}_downloads`}
         >
-          <svg class="w-3.5 h-3.5 fill-gray-300" viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14ZM7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>
+          <svg class="w-3 h-3 fill-gray-300" viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14ZM7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>
           <span class="dl-count font-mono font-medium">—</span>
         </a>
       )}
     </div>
-    <p class="text-[0.9rem] text-gray-400 mb-4 italic">{tagline}</p>
-    <p class="text-[0.88rem] text-gray-300 leading-[1.8] mb-5 max-w-full md:max-w-[560px]">
+  </div>
+
+  <!-- Content -->
+  <div class="px-6 md:px-10 py-8 md:py-10">
+    <!-- Name + tagline -->
+    <div class="flex items-center gap-5 mb-6">
+      <img src={logo} alt={name} class="w-14 h-14 rounded-xl shrink-0" />
+      <div>
+        <h3 class="font-hand text-title-xl mb-0.5">{name}</h3>
+        <p class="text-body-lg text-gray-400 italic">{tagline}</p>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <p class="text-base text-gray-300 leading-copy mb-8 max-w-[640px]">
       {description}
     </p>
-    <div class="flex gap-2 flex-wrap justify-center md:justify-start">
-      {tags.map((tag) => (
-        <span class="py-1 px-3 border border-gray-700 rounded-full text-[0.72rem] text-gray-400 tracking-[0.04em]">{tag}</span>
-      ))}
-    </div>
-    <div class="flex items-center gap-5 mt-4 justify-center md:justify-start">
-      {links.map((link) => (
-        <a
-          href={link.href}
-          class="text-[0.82rem] text-gray-400 hover:text-white transition-colors"
-          data-ph-cta={link.cta}
-          {...(link.external ? { target: "_blank", rel: "noopener" } : {})}
-        >
-          {link.label}
-        </a>
-      ))}
+
+    <!-- Metadata grid -->
+    <div class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 text-body-sm">
+      <span class="text-gray-500">stack</span>
+      <span class="text-gray-300">{tags.join(" · ")}</span>
+      <span class="text-gray-500">links</span>
+      <div class="flex items-center gap-5 flex-wrap">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="text-gray-400 hover:text-white transition-colors"
+            data-ph-cta={link.cta}
+            {...(link.external ? { target: "_blank", rel: "noopener" } : {})}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </div>

@@ -8,13 +8,13 @@ import Layout from "../layouts/Layout.astro";
     <div class="flex-1 max-w-full md:max-w-[520px]">
       <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
         <img src="/logos/Glyph.png" alt="Glyph" class="w-12 h-12 rounded-xl" />
-        <span class="font-hand text-[1.8rem]">Glyph</span>
+        <span class="font-hand text-title-xl">Glyph</span>
       </div>
-      <h1 class="font-hand text-[1.6rem] md:text-[2.3rem] leading-[1.3] mb-6">
+      <h1 class="font-hand heading-page mb-6">
         React renderer<br />
         <span class="text-gray-200 italic">for terminal UIs</span>
       </h1>
-      <p class="text-[0.92rem] text-gray-300 leading-[1.8] mb-10 max-w-full md:max-w-[460px]">
+      <p class="text-body-lg text-gray-300 leading-copy mb-10 max-w-full md:max-w-[460px]">
         Build real terminal applications with React. Full component model with flexbox layout,
         focus management, keyboard input, and efficient diff-based rendering.
         Write TUIs the same way you write web apps.
@@ -25,13 +25,13 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="flex-1 max-w-full md:max-w-[480px] w-full md:w-auto">
-      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-[0.78rem]">
+      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-fine">
         <div class="flex gap-1.5 px-4 py-3 bg-gray-800 border-b border-gray-700">
           <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
           <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
           <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
         </div>
-        <pre class="px-6 py-5 leading-relaxed m-0 font-mono text-[0.78rem]"><span class="text-gray-500 italic">// app.tsx</span>
+        <pre class="px-6 py-5 leading-relaxed m-0 font-mono text-fine"><span class="text-gray-500 italic">// app.tsx</span>
 <span class="text-gray-300">import</span> {'{ render, Box, Text }'} <span class="text-gray-300">from</span> <span class="text-gray-200">"@semos-labs/glyph"</span>;
 
 <span class="text-gray-300">function</span> <span class="text-white">App</span>() {'{'}
@@ -50,19 +50,19 @@ import Layout from "../layouts/Layout.astro";
   <!-- Quick Start -->
   <section class="py-24 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Quick Start</h2>
+      <h2 class="heading-section-lg text-center mb-14">Quick Start</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="p-8 border border-gray-800 rounded-xl">
-          <h3 class="font-hand text-[1.3rem] mb-5">Create a new project</h3>
+          <h3 class="font-hand text-title-md mb-5">Create a new project</h3>
           <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
-            <code class="font-mono text-[0.82rem] text-gray-200">$ bun create @semos-labs/glyph my-app</code>
-            <code class="font-mono text-[0.82rem] text-gray-200">$ cd my-app && bun dev</code>
+            <code class="font-mono text-label text-gray-200">$ bun create @semos-labs/glyph my-app</code>
+            <code class="font-mono text-label text-gray-200">$ cd my-app && bun dev</code>
           </div>
         </div>
         <div class="p-8 border border-gray-800 rounded-xl">
-          <h3 class="font-hand text-[1.3rem] mb-5">Add to existing project</h3>
+          <h3 class="font-hand text-title-md mb-5">Add to existing project</h3>
           <div class="bg-gray-900 rounded-lg p-5 flex flex-col gap-2">
-            <code class="font-mono text-[0.82rem] text-gray-200">$ bun add @semos-labs/glyph react</code>
+            <code class="font-mono text-label text-gray-200">$ bun add @semos-labs/glyph react</code>
           </div>
         </div>
       </div>
@@ -72,47 +72,47 @@ import Layout from "../layouts/Layout.astro";
   <!-- Features -->
   <section class="py-24 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Features</h2>
+      <h2 class="heading-section-lg text-center mb-14">Features</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">⊞</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Flexbox Layout</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Full CSS-like flexbox via Yoga — rows, columns, wrapping, alignment, gaps, padding.</p>
+          <span class="block text-title-md mb-3 text-gray-300">⊞</span>
+          <h3 class="font-hand text-title mb-2">Flexbox Layout</h3>
+          <p class="text-small text-gray-400 leading-body">Full CSS-like flexbox via Yoga — rows, columns, wrapping, alignment, gaps, padding.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">◧</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Rich Components</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Box, Text, Input, Button, Checkbox, Radio, Select, ScrollView, List, Menu, Progress, Spinner, Image, Toasts, Dialogs, and more.</p>
+          <span class="block text-title-md mb-3 text-gray-300">◧</span>
+          <h3 class="font-hand text-title mb-2">Rich Components</h3>
+          <p class="text-small text-gray-400 leading-body">Box, Text, Input, Button, Checkbox, Radio, Select, ScrollView, List, Menu, Progress, Spinner, Image, Toasts, Dialogs, and more.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">⎆</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Focus System</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Tab navigation, focus scopes, focus trapping for modals, JumpNav quick-jump hints.</p>
+          <span class="block text-title-md mb-3 text-gray-300">⎆</span>
+          <h3 class="font-hand text-title mb-2">Focus System</h3>
+          <p class="text-small text-gray-400 leading-body">Tab navigation, focus scopes, focus trapping for modals, JumpNav quick-jump hints.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">⌨</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Keyboard Input</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">useInput hook, declarative &lt;Keybind&gt; component, vim-style bindings, priority keybinds.</p>
+          <span class="block text-title-md mb-3 text-gray-300">⌨</span>
+          <h3 class="font-hand text-title mb-2">Keyboard Input</h3>
+          <p class="text-small text-gray-400 leading-body">useInput hook, declarative &lt;Keybind&gt; component, vim-style bindings, priority keybinds.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">▦</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Smart Rendering</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Double-buffered framebuffer with character-level diffing — only changed cells are written.</p>
+          <span class="block text-title-md mb-3 text-gray-300">▦</span>
+          <h3 class="font-hand text-title mb-2">Smart Rendering</h3>
+          <p class="text-small text-gray-400 leading-body">Double-buffered framebuffer with character-level diffing — only changed cells are written.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">◉</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">True Colors</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Named colors, hex, RGB, 256-palette. Auto-contrast text on colored backgrounds.</p>
+          <span class="block text-title-md mb-3 text-gray-300">◉</span>
+          <h3 class="font-hand text-title mb-2">True Colors</h3>
+          <p class="text-small text-gray-400 leading-body">Named colors, hex, RGB, 256-palette. Auto-contrast text on colored backgrounds.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">▢</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">Borders & Styling</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Single, double, rounded, and ASCII border styles. Bold, dim, italic, underline text.</p>
+          <span class="block text-title-md mb-3 text-gray-300">▢</span>
+          <h3 class="font-hand text-title mb-2">Borders & Styling</h3>
+          <p class="text-small text-gray-400 leading-body">Single, double, rounded, and ASCII border styles. Bold, dim, italic, underline text.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
-          <span class="block text-[1.3rem] mb-3 text-gray-300">◇</span>
-          <h3 class="font-hand text-[1.2rem] mb-2">TypeScript First</h3>
-          <p class="text-[0.8rem] text-gray-400 leading-[1.7]">Full type coverage. Every prop, style, and hook is typed.</p>
+          <span class="block text-title-md mb-3 text-gray-300">◇</span>
+          <h3 class="font-hand text-title mb-2">TypeScript First</h3>
+          <p class="text-small text-gray-400 leading-body">Full type coverage. Every prop, style, and hook is typed.</p>
         </div>
       </div>
     </div>
@@ -121,55 +121,55 @@ import Layout from "../layouts/Layout.astro";
   <!-- Components Preview -->
   <section class="py-24 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Components</h2>
+      <h2 class="heading-section-lg text-center mb-14">Components</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Box&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Flexbox container — the fundamental building block</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Box&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Flexbox container — the fundamental building block</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Text&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Styled text with ANSI escape code support</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Text&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Styled text with ANSI escape code support</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Input&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Text input with masks, multiline, and validation</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Input&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Text input with masks, multiline, and validation</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Button&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Focusable button with press handling</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Button&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Focusable button with press handling</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Select&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Dropdown with type-to-filter search</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Select&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Dropdown with type-to-filter search</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;List&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Keyboard-navigable selection list</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;List&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Keyboard-navigable selection list</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;ScrollView&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Scrollable container with virtualization</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;ScrollView&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Scrollable container with virtualization</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Image&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Inline images via Kitty/iTerm2 protocol</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Image&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Inline images via Kitty/iTerm2 protocol</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Menu&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Styled menu with labels and disabled items</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Menu&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Styled menu with labels and disabled items</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;Portal&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Fullscreen overlay for modals</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;Portal&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Fullscreen overlay for modals</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;JumpNav&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Vimium-style quick navigation hints</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;JumpNav&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Vimium-style quick navigation hints</p>
         </div>
         <div class="py-5 px-6 border border-gray-800 rounded-[10px] transition-colors hover:border-gray-600">
-          <h4 class="font-mono text-[0.85rem] font-medium mb-1.5 text-white">&lt;DialogHost&gt;</h4>
-          <p class="text-[0.75rem] text-gray-400 leading-[1.6]">Imperative alert() and confirm() dialogs</p>
+          <h4 class="font-mono text-caption font-medium mb-1.5 text-white">&lt;DialogHost&gt;</h4>
+          <p class="text-fine text-gray-400 leading-[1.6]">Imperative alert() and confirm() dialogs</p>
         </div>
       </div>
       <div class="text-center mt-12">
@@ -181,20 +181,20 @@ import Layout from "../layouts/Layout.astro";
   <!-- Who Uses -->
   <section class="py-24 px-8 border-t border-gray-800">
     <div class="max-w-content mx-auto">
-      <h2 class="font-hand text-[2rem] md:text-[2.4rem] text-center mb-14">Built with Glyph</h2>
+      <h2 class="heading-section-lg text-center mb-14">Built with Glyph</h2>
       <div class="flex justify-center gap-8 flex-wrap">
         <a href="/aion" class="flex items-center gap-5 py-6 px-10 border border-gray-800 rounded-xl transition-colors hover:border-gray-600" data-ph-cta="glyph_built_with_aion">
           <img src="/logos/Aion.png" alt="Aion" class="w-12 h-12 rounded-xl" />
           <div>
-            <h4 class="font-hand text-[1.3rem] mb-0.5">Aion</h4>
-            <p class="text-[0.8rem] text-gray-400">Google Calendar TUI client</p>
+            <h4 class="font-hand text-title-md mb-0.5">Aion</h4>
+            <p class="text-small text-gray-400">Google Calendar TUI client</p>
           </div>
         </a>
         <a href="/epist" class="flex items-center gap-5 py-6 px-10 border border-gray-800 rounded-xl transition-colors hover:border-gray-600" data-ph-cta="glyph_built_with_epist">
           <img src="/logos/Epist.png" alt="Epist" class="w-12 h-12 rounded-xl" />
           <div>
-            <h4 class="font-hand text-[1.3rem] mb-0.5">Epist</h4>
-            <p class="text-[0.8rem] text-gray-400">Terminal email client</p>
+            <h4 class="font-hand text-title-md mb-0.5">Epist</h4>
+            <p class="text-small text-gray-400">Terminal email client</p>
           </div>
         </a>
       </div>
