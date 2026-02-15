@@ -364,6 +364,25 @@ import ProductCard from "../components/ProductCard.astro";
     }
   }
 
+  // === Latest Version ===
+  async function fetchVersions() {
+    const badges = document.querySelectorAll<HTMLElement>('.version-badge');
+    for (const badge of badges) {
+      const repo = badge.getAttribute('data-repo');
+      if (!repo) continue;
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+        if (!res.ok) continue;
+        const data = await res.json();
+        const tag = data.tag_name;
+        if (!tag) continue;
+        const label = badge.querySelector('.version-tag');
+        if (label) label.textContent = tag;
+        badge.dataset.loaded = '';
+      } catch { /* silent fail */ }
+    }
+  }
+
   // === Newsletter Form ===
   const form = document.querySelector('#subscribe-form form') as HTMLFormElement;
   const formWrap = document.getElementById('subscribe-form')!;
@@ -400,4 +419,5 @@ import ProductCard from "../components/ProductCard.astro";
   }
   fetchStars();
   fetchDownloads();
+  fetchVersions();
 </script>
