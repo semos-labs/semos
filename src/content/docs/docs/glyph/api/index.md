@@ -16,6 +16,7 @@ Complete API reference for `@semos-labs/glyph`.
 - [JumpNav](components/jump-nav/)
 - [Keybind](components/keybind/)
 - [List](components/list/)
+- [Match](components/match/)
 - [Menu](components/menu/)
 - [Portal](components/portal/)
 - [Progress](components/progress/)
@@ -36,6 +37,7 @@ Complete API reference for `@semos-labs/glyph`.
 - [useFocusRegistry](hooks/use-focus-registry/)
 - [useInput](hooks/use-input/)
 - [useLayout](hooks/use-layout/)
+- [useMediaQuery](hooks/use-media-query/)
 - [useScrollIntoView](hooks/use-scroll-into-view/)
 - [useToast](hooks/use-toast/)
 
@@ -46,14 +48,19 @@ Complete API reference for `@semos-labs/glyph`.
 - [masks](utilities/masks/)
 - [parseAnsi](utilities/parse-ansi/)
 - [render](utilities/render/)
+- [resolveResponsiveValue](utilities/resolve-responsive-value/)
+- [resolveStyle](utilities/resolve-style/)
 - [stripAnsi](utilities/strip-ansi/)
 - [supportsInlineImages](utilities/supports-inline-images/)
 
 ## Types
 
+- [Breakpoint](types/breakpoint/)
 - [Color](types/color/)
 - [FocusableHandle](types/focusable-handle/)
 - [Key](types/key/)
 - [LayoutRect](types/layout-rect/)
+- [MediaQueryInput](types/media-query-input/)
+- [ResolvedStyle](types/resolved-style/)
 - [ScrollIntoViewOptions](types/scroll-into-view-options/)
 - [Style](types/style/)
