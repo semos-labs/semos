@@ -1,0 +1,250 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About — Nick Skriabin" description="Principal Software Engineer building terminal-native tools. The mind behind Semos Labs.">
+  <!-- Hero -->
+  <section class="pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-8">
+    <div class="max-w-content mx-auto">
+      <p class="text-body-lg text-gray-500 mb-6">
+        <span class="text-gray-400">$</span> whoami
+      </p>
+      <h1 class="heading-display mb-6">
+        Nick Skriabin
+      </h1>
+      <p class="text-title-lg text-gray-300 italic mb-0">
+        Principal Software Engineer
+      </p>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="pb-20 md:pb-28 px-6 md:px-8">
+    <div class="max-w-content mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20">
+      <!-- Main bio -->
+      <div class="flex-1">
+        <p class="text-label uppercase tracking-caps text-gray-500 mb-4">Bio</p>
+        <div class="space-y-5 text-base text-gray-300 leading-copy max-w-[640px]">
+          <p>
+            Principal software engineer, terminal nerd, TypeScript enthusiast. I build TUI apps, tinker with Neovim, and craft custom keyboard firmware.
+          </p>
+          <p>
+            Semos Labs is my open-source home — terminal-native tools built with obsessive care for the developer experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Info panel -->
+      <div class="lg:w-[340px] shrink-0">
+        <div class="bg-gray-900 border border-gray-700/60 rounded-xl overflow-hidden">
+          <div class="flex items-center gap-2 px-5 py-3 bg-gray-800/80 border-b border-gray-700/60">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+            </div>
+            <span class="ml-2 text-fine text-gray-500 font-mono">nick.toml</span>
+          </div>
+          <div class="px-6 py-5 font-mono text-small leading-loose">
+            <p class="text-gray-500 italic mb-3"># contact &amp; links</p>
+            <div class="grid grid-cols-[auto_auto_1fr] gap-x-3 gap-y-1.5">
+              <span class="text-gray-400">github</span>
+              <span class="text-gray-600">=</span>
+              <a href="https://github.com/nick-skriabin" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition-colors">"nick-skriabin"</a>
+
+              <span class="text-gray-400">x</span>
+              <span class="text-gray-600">=</span>
+              <a href="https://x.com/nick_skriabin" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition-colors">"@nick_skriabin"</a>
+
+              <span class="text-gray-400">youtube</span>
+              <span class="text-gray-600">=</span>
+              <a href="https://youtube.com/@nick-skriabin" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition-colors">"@nick-skriabin"</a>
+
+              <span class="text-gray-400">linkedin</span>
+              <span class="text-gray-600">=</span>
+              <a href="https://www.linkedin.com/in/nick-skriabin-054b1868/" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition-colors">"nick-skriabin"</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Story -->
+  <section class="py-20 md:py-28 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <p class="text-label uppercase tracking-caps text-gray-500 mb-4">The Story</p>
+      <p class="text-body-lg text-gray-500 mb-12">
+        <span class="text-gray-400">$</span> git log --oneline --reverse
+      </p>
+
+      <div class="space-y-16 max-w-[720px]">
+        <!-- Glyph -->
+        <div class="flex gap-6">
+          <div class="hidden md:flex flex-col items-center pt-1">
+            <img src="/logos/Glyph.png" alt="Glyph" class="w-10 h-10 rounded-xl shrink-0" />
+            <div class="w-px flex-1 bg-gray-800 mt-4"></div>
+          </div>
+          <div>
+            <h3 class="font-hand text-title-lg mb-4">
+              <img src="/logos/Glyph.png" alt="" class="w-7 h-7 rounded-lg inline md:hidden mr-2 -mt-1" />
+              It started as an experiment
+            </h3>
+            <div class="space-y-4 text-base text-gray-300 leading-copy">
+              <p>
+                <a href="/glyph" class="text-white hover:text-gray-200 underline underline-offset-4 decoration-gray-600 hover:decoration-gray-400 transition-colors">Glyph</a>
+                began as a curiosity — how far can React go as a rendering engine? Turns out, far enough to power a full terminal UI framework with flexbox, focus management, and efficient diffing.
+              </p>
+              <p>
+                Once it worked, I realized I had everything I needed to build the apps I'd always wanted.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aion -->
+        <div class="flex gap-6">
+          <div class="hidden md:flex flex-col items-center pt-1">
+            <img src="/logos/Aion.png" alt="Aion" class="w-10 h-10 rounded-xl shrink-0" />
+            <div class="w-px flex-1 bg-gray-800 mt-4"></div>
+          </div>
+          <div>
+            <h3 class="font-hand text-title-lg mb-4">
+              <img src="/logos/Aion.png" alt="" class="w-7 h-7 rounded-lg inline md:hidden mr-2 -mt-1" />
+              Then came the calendar
+            </h3>
+            <div class="space-y-4 text-base text-gray-300 leading-copy">
+              <p>
+                I always wanted Google Calendar in my terminal. Existing solutions were either too complex, too ugly, or just didn't feel right.
+              </p>
+              <p>
+                With Glyph in hand, I finally had the tools to build
+                <a href="/aion" class="text-white hover:text-gray-200 underline underline-offset-4 decoration-gray-600 hover:decoration-gray-400 transition-colors">Aion</a>
+                exactly the way I envisioned it. It's now the first app I open every morning.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Epist -->
+        <div class="flex gap-6">
+          <div class="hidden md:flex flex-col items-center pt-1">
+            <img src="/logos/Epist.png" alt="Epist" class="w-10 h-10 rounded-xl shrink-0" />
+          </div>
+          <div>
+            <h3 class="font-hand text-title-lg mb-4">
+              <img src="/logos/Epist.png" alt="" class="w-7 h-7 rounded-lg inline md:hidden mr-2 -mt-1" />
+              And then email
+            </h3>
+            <div class="space-y-4 text-base text-gray-300 leading-copy">
+              <p>
+                Same story — every terminal email client I tried felt like it was built in a different era. I wanted something fast, pretty, and keyboard-driven.
+              </p>
+              <p>
+                <a href="/epist" class="text-white hover:text-gray-200 underline underline-offset-4 decoration-gray-600 hover:decoration-gray-400 transition-colors">Epist</a>
+                is that — Gmail with vim keybindings, threads, attachments, and calendar invites. All in the terminal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing thought -->
+      <div class="mt-16 max-w-[720px] pl-0 md:pl-16">
+        <p class="text-base text-gray-400 leading-copy italic">
+          The pattern is simple — I build what I want to use and open-source everything.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source -->
+  <section class="py-20 md:py-28 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <p class="text-label uppercase tracking-caps text-gray-500 mb-4">Open Source</p>
+      <p class="text-body-lg text-gray-500 mb-12">
+        <span class="text-gray-400">$</span> ls ~/projects --all
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Semos family -->
+        <a href="/glyph" class="group p-6 bg-gray-900 border border-gray-700/60 rounded-xl transition-colors hover:border-gray-500 shadow-[0_2px_16px_rgba(0,0,0,0.3)]">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/logos/Glyph.png" alt="Glyph" class="w-8 h-8 rounded-lg" />
+            <span class="font-hand text-title text-white group-hover:text-gray-100">Glyph</span>
+          </div>
+          <p class="text-small text-gray-400 leading-body">React renderer for terminal UIs. Full flexbox, focus system, and rich component library.</p>
+        </a>
+        <a href="/aion" class="group p-6 bg-gray-900 border border-gray-700/60 rounded-xl transition-colors hover:border-gray-500 shadow-[0_2px_16px_rgba(0,0,0,0.3)]">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/logos/Aion.png" alt="Aion" class="w-8 h-8 rounded-lg" />
+            <span class="font-hand text-title text-white group-hover:text-gray-100">Aion</span>
+          </div>
+          <p class="text-small text-gray-400 leading-body">Keyboard-driven Google Calendar in the terminal. Built with Glyph.</p>
+        </a>
+        <a href="/epist" class="group p-6 bg-gray-900 border border-gray-700/60 rounded-xl transition-colors hover:border-gray-500 shadow-[0_2px_16px_rgba(0,0,0,0.3)]">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/logos/Epist.png" alt="Epist" class="w-8 h-8 rounded-lg" />
+            <span class="font-hand text-title text-white group-hover:text-gray-100">Epist</span>
+          </div>
+          <p class="text-small text-gray-400 leading-body">Terminal email client with vim-style keybindings. Gmail, threads, attachments.</p>
+        </a>
+
+        <!-- Other projects -->
+        <a href="https://github.com/nick-skriabin/enva" target="_blank" rel="noopener" class="group p-6 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-title-md">🌿</span>
+            <span class="font-hand text-title text-white group-hover:text-gray-100">enva</span>
+          </div>
+          <p class="text-small text-gray-400 leading-body">Per-directory env variables with auto load/unload and a nice TUI.</p>
+        </a>
+        <a href="https://github.com/nick-skriabin/relic" target="_blank" rel="noopener" class="group p-6 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-title-md">🔐</span>
+            <span class="font-hand text-title text-white group-hover:text-gray-100">relic</span>
+          </div>
+          <p class="text-small text-gray-400 leading-body">JS/TS secret manager for Edge and Node runtimes. Inspired by Rails Secrets.</p>
+        </a>
+        <a href="https://github.com/nick-skriabin/commitment.nvim" target="_blank" rel="noopener" class="group p-6 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-title-md">💾</span>
+            <span class="font-hand text-title text-white group-hover:text-gray-100">commitment.nvim</span>
+          </div>
+          <p class="text-small text-gray-400 leading-body">Neovim plugin that reminds you to commit. Never lose work again.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="py-20 md:py-28 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto max-w-[720px]">
+      <p class="text-label uppercase tracking-caps text-gray-500 mb-4">Philosophy</p>
+      <p class="text-body-lg text-gray-500 mb-10">
+        <span class="text-gray-400">$</span> cat ~/manifesto.md
+      </p>
+      <blockquote class="pl-5 border-l-2 border-gray-700 space-y-5 text-base text-gray-300 leading-copy">
+        <p>
+          The terminal is the most efficient interface ever designed. No mouse, no distractions — just keystrokes.
+        </p>
+        <p>
+          Terminal apps deserve the same polish as graphical UIs. Beautiful doesn't mean bloated, fast doesn't mean ugly.
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Connect -->
+  <section class="py-20 md:py-28 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto text-center">
+      <p class="text-label uppercase tracking-caps text-gray-500 mb-4">Connect</p>
+      <h2 class="heading-section mb-10">Let's build something together</h2>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="https://github.com/nick-skriabin" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="about_github">GitHub ↗</a>
+        <a href="https://x.com/nick_skriabin" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="about_x">X (Twitter) ↗</a>
+        <a href="https://youtube.com/@nick-skriabin" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="about_youtube">YouTube ↗</a>
+        <a href="https://www.linkedin.com/in/nick-skriabin-054b1868/" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="about_linkedin">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</Layout>
