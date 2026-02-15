@@ -6,48 +6,67 @@ import ProductCard from "../components/ProductCard.astro";
 <Layout title="Semos Labs — Terminal, Reimagined">
   <!-- Hero -->
   <section class="min-h-screen flex items-center justify-center pt-24 pb-20 px-6 md:px-8">
-    <div class="w-full max-w-[720px] text-left">
-      <!-- Prompt -->
-      <p id="hero-prompt" class="text-body-lg text-gray-500 mb-6 opacity-0 transition-opacity duration-500">
-        <span class="text-gray-400">$</span> semos --init
-      </p>
-
-      <!-- Heading with typewriter -->
-      <h1 class="heading-display mb-0 min-h-[3.5rem] md:min-h-[7rem]">
-        <span id="hero-line1" data-text="The terminal deserves">The terminal deserves</span><span id="hero-cursor" class="cursor-blink text-gray-400 text-title-sm md:text-heading-sm">█</span>
-        <br />
-        <span id="hero-line2" data-text="beautiful software." class="text-gray-300 italic">beautiful software.</span>
-      </h1>
-
-      <!-- Body (hidden until typewriter completes) -->
-      <div id="hero-body" class="opacity-0 transition-opacity duration-700 mt-8">
-        <p class="text-base text-gray-400 leading-copy mb-10 max-w-[540px]">
-          A constellation of open-source terminal applications. Built for
-          developers who think in keystrokes, not clicks.
+    <div class="w-full max-w-[1280px] flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <!-- Left: Text -->
+      <div class="w-full lg:w-1/2 text-left">
+        <!-- Prompt -->
+        <p id="hero-prompt" class="text-body-lg text-gray-500 mb-6 opacity-0 transition-opacity duration-500">
+          <span class="text-gray-400">$</span> semos --init
         </p>
 
-        <!-- Product listing -->
-        <div class="mb-10">
-          <p class="text-body-lg text-gray-500 mb-3">
-            <span class="text-gray-400">$</span> ls ./tools
+        <!-- Heading with typewriter -->
+        <h1 class="heading-display mb-0 min-h-[3.5rem] md:min-h-[7rem]">
+          <span id="hero-line1" data-text="The terminal deserves">The terminal deserves</span><span id="hero-cursor" class="cursor-blink text-gray-400 text-title-sm md:text-heading-sm">█</span>
+          <br />
+          <span id="hero-line2" data-text="beautiful software." class="text-gray-300 italic">beautiful software.</span>
+        </h1>
+
+        <!-- Body (hidden until typewriter completes) -->
+        <div id="hero-body" class="opacity-0 transition-opacity duration-700 mt-8">
+          <p class="text-base text-gray-400 leading-copy mb-10 max-w-[540px]">
+            A constellation of open-source terminal applications. Built for
+            developers who think in keystrokes, not clicks.
           </p>
-          <div class="grid grid-cols-[auto_auto_1fr] gap-x-3 gap-y-2 text-body-lg pl-2">
-            <a href="/glyph" class="text-white hover:text-gray-200 transition-colors">glyph</a>
-            <span class="text-gray-600">—</span>
-            <span class="text-gray-400">React renderer for terminal UIs</span>
-            <a href="/aion" class="text-white hover:text-gray-200 transition-colors">aion</a>
-            <span class="text-gray-600">—</span>
-            <span class="text-gray-400">Google Calendar in your terminal</span>
-            <a href="/epist" class="text-white hover:text-gray-200 transition-colors">epist</a>
-            <span class="text-gray-600">—</span>
-            <span class="text-gray-400">Email with vim-style keybindings</span>
+
+          <!-- Product listing -->
+          <div class="mb-10">
+            <p class="text-body-lg text-gray-500 mb-3">
+              <span class="text-gray-400">$</span> ls ./tools
+            </p>
+            <div class="grid grid-cols-[auto_auto_1fr] gap-x-3 gap-y-2 text-body-lg pl-2">
+              <a href="/glyph" class="text-white hover:text-gray-200 transition-colors">glyph</a>
+              <span class="text-gray-600">—</span>
+              <span class="text-gray-400">React renderer for terminal UIs</span>
+              <a href="/aion" class="text-white hover:text-gray-200 transition-colors">aion</a>
+              <span class="text-gray-600">—</span>
+              <span class="text-gray-400">Google Calendar in your terminal</span>
+              <a href="/epist" class="text-white hover:text-gray-200 transition-colors">epist</a>
+              <span class="text-gray-600">—</span>
+              <span class="text-gray-400">Email with vim-style keybindings</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex gap-4 items-center flex-wrap">
+            <a href="#products" class="btn-primary" data-ph-cta="hero_explore_products">Explore Products</a>
+            <a href="https://github.com/semos-labs" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="hero_github">GitHub ↗</a>
           </div>
         </div>
+      </div>
 
-        <!-- CTAs -->
-        <div class="flex gap-4 items-center flex-wrap">
-          <a href="#products" class="btn-primary" data-ph-cta="hero_explore_products">Explore Products</a>
-          <a href="https://github.com/semos-labs" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="hero_github">GitHub ↗</a>
+      <!-- Right: Screenshot -->
+      <div class="hidden lg:block w-full lg:w-1/2">
+        <div class="rounded-xl overflow-hidden border border-gray-700/60 shadow-[0_4px_40px_rgba(0,0,0,0.5)]">
+          <!-- Window chrome -->
+          <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-800/80 border-b border-gray-700/60">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+            </div>
+            <span class="ml-2 text-[0.7rem] text-gray-500 font-mono">epist</span>
+          </div>
+          <img src="/images/epist.jpg" alt="Epist — Terminal email client" class="w-full block" />
         </div>
       </div>
     </div>
