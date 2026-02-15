@@ -19,8 +19,8 @@ const fontRegular = readFileSync(
 const fontBold = readFileSync(
   join(ROOT, "scripts/fonts/SpaceMono-Bold.ttf")
 );
-const fontSerif = readFileSync(
-  join(ROOT, "scripts/fonts/InstrumentSerif-Regular.ttf")
+const fontInter = readFileSync(
+  join(ROOT, "scripts/fonts/Inter-Regular.ttf")
 );
 
 // Load Semos logo as base64
@@ -188,11 +188,11 @@ function buildOgMarkup(opts: {
                       type: "div" as const,
                       props: {
                         style: {
-                          fontSize: 54,
-                          fontWeight: 400,
-                          fontFamily: "InstrumentSerif",
+                          fontSize: 48,
+                          fontWeight: 700,
+                          fontFamily: "SpaceMonoBold",
                           color: "#ffffff",
-                          lineHeight: 1.15,
+                          lineHeight: 1.2,
                           letterSpacing: "-0.02em",
                         },
                         children: truncate(title, 80),
@@ -205,7 +205,7 @@ function buildOgMarkup(opts: {
                           fontSize: 20,
                           color: "#9ca3af",
                           lineHeight: 1.6,
-                          fontFamily: "SpaceMono",
+                          fontFamily: "Inter",
                         },
                         children: truncate(description, 140),
                       },
@@ -298,8 +298,8 @@ async function generateOgImage(
         style: "normal",
       },
       {
-        name: "InstrumentSerif",
-        data: fontSerif,
+        name: "Inter",
+        data: fontInter,
         weight: 400,
         style: "normal",
       },
