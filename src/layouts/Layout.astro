@@ -5,9 +5,26 @@ import PostHog from '../components/posthog.astro'
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: "website" | "article";
+  canonical?: string;
+  publishedTime?: string;
+  author?: string;
 }
 
-const { title, description = "A family of terminal apps and tools" } = Astro.props;
+const {
+  title,
+  description = "A family of terminal apps and tools",
+  image,
+  type = "website",
+  canonical,
+  publishedTime,
+  author,
+} = Astro.props;
+
+const siteUrl = "https://semos.sh";
+const ogImage = image?.startsWith("http") ? image : `${siteUrl}${image || "/cover.png"}`;
+const pageUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -16,25 +33,35 @@ const { title, description = "A family of terminal apps and tools" } = Astro.pro
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://semos.sh/cover.png" />
-    <meta property="og:url" content="https://semos.sh" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
     <meta property="og:site_name" content="Semos Labs" />
+    <meta property="og:locale" content="en_US" />
+    {type === "article" && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
+    {type === "article" && author && (
+      <meta property="article:author" content={author} />
+    )}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://semos.sh/cover.png" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@nick_skriabin" />
+    <meta name="twitter:creator" content="@nick_skriabin" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
@@ -53,6 +80,7 @@ const { title, description = "A family of terminal apps and tools" } = Astro.pro
         </a>
         <div class="flex items-center gap-4 md:gap-8 text-label md:text-body-sm text-gray-300 shrink-0">
           <a href="/#products" class="hidden sm:inline hover:text-white transition-colors" data-ph-cta="nav_products">Products</a>
+          <a href="/blog" class="hover:text-white transition-colors" data-ph-cta="nav_blog">Blog</a>
           <a href="/about" class="hover:text-white transition-colors" data-ph-cta="nav_about">About</a>
           <a href="/docs/" class="hover:text-white transition-colors" data-ph-cta="nav_docs">Docs</a>
           <a href="https://github.com/semos-labs" target="_blank" rel="noopener" class="hover:text-white transition-colors" data-ph-cta="nav_github">

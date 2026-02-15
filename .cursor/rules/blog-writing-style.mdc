@@ -1,0 +1,27 @@
+---
+description: Style and formatting rules for writing Semos blog posts.
+globs: "src/content/blog/**"
+---
+
+# Blog writing style
+
+## Voice
+
+- first person, casual, direct — like telling a story to a friend over drinks, but cleaned up for a blog
+- short sentences. no fluff. get to the point
+- opinionated — it's a personal blog, not docs. have strong takes
+- technical but conversational, not academic
+- occasional cursing is fine (shit, damn, hell) but don't overdo it — once or twice per post max
+- use contractions (it's, don't, wasn't, couldn't)
+- rhetorical questions are good. they keep the reader engaged
+- show genuine excitement when something is cool. don't be robotic
+- em dashes are great — use them freely
+- avoid corporate speak, marketing language, or anything that sounds like a press release
+
+## Structure
+
+- blog posts live in `src/content/blog/` as `.md` or `.mdx` files
+- filenames should be short and slug-friendly (e.g. `why-glyph.md`, not `why-i-built-a-react-renderer-for-the-terminal.md`)
+- frontmatter schema: title, description, date, tags (optional), cover (optional), draft (optional)
+- cover images go in `public/images/` and are referenced as `/images/filename.jpg`
+- OG images are auto-generated at build time from the frontmatter — no need to create them manually

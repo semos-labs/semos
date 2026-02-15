@@ -17,6 +17,7 @@
   /* Fonts */
   --font-mono: "Space Mono", monospace;
   --font-hand: "Space Mono", monospace;
+  --font-prose: "Inter", sans-serif;
 
   /* Layout */
   --max-width-content: 1100px;
