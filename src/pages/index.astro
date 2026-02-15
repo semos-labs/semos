@@ -286,7 +286,7 @@ import ProductCard from "../components/ProductCard.astro";
     el.after(cursor);
     for (const char of text) {
       el.textContent += char;
-      await sleep(speed + Math.random() * 25);
+      await sleep(speed + Math.random() * 15);
     }
   }
 
@@ -305,16 +305,16 @@ import ProductCard from "../components/ProductCard.astro";
     line1.textContent = '';
     line2.textContent = '';
 
-    await sleep(400);
+    await sleep(200);
     prompt.classList.remove('opacity-0');
     prompt.classList.add('opacity-100');
 
-    await sleep(500);
-    await typeText(line1, text1, cursor, 42);
-    await sleep(180);
-    await typeText(line2, text2, cursor, 42);
+    await sleep(250);
+    await typeText(line1, text1, cursor, 25);
+    await sleep(80);
+    await typeText(line2, text2, cursor, 25);
 
-    await sleep(350);
+    await sleep(150);
     body.classList.remove('opacity-0');
     body.classList.add('opacity-100');
   }
