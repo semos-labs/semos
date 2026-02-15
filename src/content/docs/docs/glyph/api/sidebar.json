@@ -43,6 +43,10 @@
         "link": "/glyph/api/components/list/"
       },
       {
+        "label": "Match",
+        "link": "/glyph/api/components/match/"
+      },
+      {
         "label": "Menu",
         "link": "/glyph/api/components/menu/"
       },
@@ -116,6 +120,10 @@
         "link": "/glyph/api/hooks/use-layout/"
       },
       {
+        "label": "useMediaQuery",
+        "link": "/glyph/api/hooks/use-media-query/"
+      },
+      {
         "label": "useScrollIntoView",
         "link": "/glyph/api/hooks/use-scroll-into-view/"
       },
@@ -149,6 +157,14 @@
         "link": "/glyph/api/utilities/render/"
       },
       {
+        "label": "resolveResponsiveValue",
+        "link": "/glyph/api/utilities/resolve-responsive-value/"
+      },
+      {
+        "label": "resolveStyle",
+        "link": "/glyph/api/utilities/resolve-style/"
+      },
+      {
         "label": "stripAnsi",
         "link": "/glyph/api/utilities/strip-ansi/"
       },
@@ -161,6 +177,10 @@
   {
     "label": "Types",
     "items": [
+      {
+        "label": "Breakpoint",
+        "link": "/glyph/api/types/breakpoint/"
+      },
       {
         "label": "Color",
         "link": "/glyph/api/types/color/"
@@ -176,6 +196,14 @@
       {
         "label": "LayoutRect",
         "link": "/glyph/api/types/layout-rect/"
+      },
+      {
+        "label": "MediaQueryInput",
+        "link": "/glyph/api/types/media-query-input/"
+      },
+      {
+        "label": "ResolvedStyle",
+        "link": "/glyph/api/types/resolved-style/"
       },
       {
         "label": "ScrollIntoViewOptions",

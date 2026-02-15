@@ -40,7 +40,7 @@ Props for the [Text](text) component.
 | <a id="focusable"></a> `focusable?` | `boolean` | When `true`, the text element participates in the focus (Tab) order. |
 | <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../../types/style) | Style applied when this element is focused (merged with `style`). |
 | <a id="style"></a> `style?` | [`Style`](../../types/style) | Text style (color, bold, dim, italic, underline, etc.). |
-| <a id="wrap"></a> `wrap?` | [`WrapMode`](../../types/style#wrap-mode) | Text wrapping mode. Overrides `style.wrap`. - `"wrap"` — soft-wrap at the container edge (default) - `"truncate"` — cut off with no indicator - `"ellipsis"` — cut off with `…` - `"none"` — no wrapping at all |
+| <a id="wrap"></a> `wrap?` | [`Responsive`](../../types/breakpoint#responsive)\<[`WrapMode`](../../types/style#wrap-mode)\> | Text wrapping mode. Overrides `style.wrap`. - `"wrap"` — soft-wrap at the container edge (default) - `"truncate"` — cut off with no indicator - `"ellipsis"` — cut off with `…` - `"none"` — no wrapping at all |
 
 ---
 

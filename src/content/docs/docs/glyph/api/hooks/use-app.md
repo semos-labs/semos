@@ -11,6 +11,12 @@ Access application-level utilities: exit, terminal dimensions.
 Must be called inside a Glyph render tree (i.e. inside a component
 passed to [render](../../utilities/render)).
 
+The returned `columns` and `rows` are reactive — components that
+destructure them will automatically re-render when the terminal is
+resized.  This is implemented via `useSyncExternalStore` under the
+hood, subscribing to the same resize event that drives
+[useMediaQuery](../use-media-query).
+
 ## Returns
 
 [`UseAppResult`](#)
