@@ -6,43 +6,11 @@ interface Props {
 const { path } = Astro.props;
 ---
 
-<span class="view-count" data-gc-path={path}>
-  <span class="view-count-number"></span>
-  <span class="view-count-label"> views</span>
+<span class="view-count" data-goatcounter-visits={path}>
 </span>
 
 <style>
-  .view-count {
+  .view-count:empty {
     display: none;
   }
-  .view-count.loaded {
-    display: inline;
-  }
 </style>
-
-<script>
-  function initViewCounts() {
-    document.querySelectorAll<HTMLElement>('.view-count').forEach(async (el) => {
-      const path = el.dataset.gcPath;
-      if (!path) return;
-
-      try {
-        const encoded = encodeURIComponent(path);
-        const res = await fetch(`https://semos.goatcounter.com/counter/${encoded}.json`);
-        if (!res.ok) return;
-        const data = await res.json();
-        const numberEl = el.querySelector('.view-count-number');
-        if (numberEl) {
-          numberEl.textContent = data.count_unique ?? data.count ?? '0';
-          el.classList.add('loaded');
-        }
-      } catch {
-        // Silently fail — no count is fine
-      }
-    });
-  }
-
-  // Run on initial load and on Astro page transitions
-  initViewCounts();
-  document.addEventListener('astro:after-swap', initViewCounts);
-</script>
