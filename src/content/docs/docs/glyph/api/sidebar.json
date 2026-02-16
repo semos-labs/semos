@@ -7,28 +7,12 @@
         "link": "/glyph/api/layout/box/"
       },
       {
-        "label": "defaultBreakpoints",
-        "link": "/glyph/api/layout/default-breakpoints/"
-      },
-      {
         "label": "Image",
         "link": "/glyph/api/layout/image/"
       },
       {
-        "label": "MediaQueryInput",
-        "link": "/glyph/api/layout/media-query-input/"
-      },
-      {
         "label": "Portal",
         "link": "/glyph/api/layout/portal/"
-      },
-      {
-        "label": "resolveResponsiveValue",
-        "link": "/glyph/api/layout/resolve-responsive-value/"
-      },
-      {
-        "label": "resolveStyle",
-        "link": "/glyph/api/layout/resolve-style/"
       },
       {
         "label": "ScrollView",
@@ -49,6 +33,22 @@
       {
         "label": "useMediaQuery",
         "link": "/glyph/api/layout/use-media-query/"
+      },
+      {
+        "label": "defaultBreakpoints",
+        "link": "/glyph/api/layout/default-breakpoints/"
+      },
+      {
+        "label": "resolveResponsiveValue",
+        "link": "/glyph/api/layout/resolve-responsive-value/"
+      },
+      {
+        "label": "resolveStyle",
+        "link": "/glyph/api/layout/resolve-style/"
+      },
+      {
+        "label": "MediaQueryInput",
+        "link": "/glyph/api/layout/media-query-input/"
       }
     ]
   },
@@ -64,16 +64,8 @@
         "link": "/glyph/api/form/checkbox/"
       },
       {
-        "label": "createMask",
-        "link": "/glyph/api/form/create-mask/"
-      },
-      {
         "label": "Input",
         "link": "/glyph/api/form/input/"
-      },
-      {
-        "label": "masks",
-        "link": "/glyph/api/form/masks/"
       },
       {
         "label": "Radio",
@@ -82,6 +74,14 @@
       {
         "label": "Select",
         "link": "/glyph/api/form/select/"
+      },
+      {
+        "label": "createMask",
+        "link": "/glyph/api/form/create-mask/"
+      },
+      {
+        "label": "masks",
+        "link": "/glyph/api/form/masks/"
       }
     ]
   },
@@ -105,10 +105,6 @@
         "link": "/glyph/api/navigation/menu/"
       },
       {
-        "label": "ScrollIntoViewOptions",
-        "link": "/glyph/api/navigation/scroll-into-view-options/"
-      },
-      {
         "label": "useFocus",
         "link": "/glyph/api/navigation/use-focus/"
       },
@@ -123,16 +119,16 @@
       {
         "label": "useScrollIntoView",
         "link": "/glyph/api/navigation/use-scroll-into-view/"
+      },
+      {
+        "label": "ScrollIntoViewOptions",
+        "link": "/glyph/api/navigation/scroll-into-view-options/"
       }
     ]
   },
   {
     "label": "Keybindings",
     "items": [
-      {
-        "label": "createKeybindRegistry",
-        "link": "/glyph/api/keybindings/create-keybind-registry/"
-      },
       {
         "label": "Keybind",
         "link": "/glyph/api/keybindings/keybind/"
@@ -144,6 +140,10 @@
       {
         "label": "useInput",
         "link": "/glyph/api/keybindings/use-input/"
+      },
+      {
+        "label": "createKeybindRegistry",
+        "link": "/glyph/api/keybindings/create-keybind-registry/"
       }
     ]
   },
@@ -188,28 +188,16 @@
     "label": "Core",
     "items": [
       {
-        "label": "Color",
-        "link": "/glyph/api/core/color/"
+        "label": "Match",
+        "link": "/glyph/api/core/match/"
+      },
+      {
+        "label": "useApp",
+        "link": "/glyph/api/core/use-app/"
       },
       {
         "label": "detectTerminalCapabilities",
         "link": "/glyph/api/core/detect-terminal-capabilities/"
-      },
-      {
-        "label": "FocusableHandle",
-        "link": "/glyph/api/core/focusable-handle/"
-      },
-      {
-        "label": "Key",
-        "link": "/glyph/api/core/key/"
-      },
-      {
-        "label": "LayoutRect",
-        "link": "/glyph/api/core/layout-rect/"
-      },
-      {
-        "label": "Match",
-        "link": "/glyph/api/core/match/"
       },
       {
         "label": "parseAnsi",
@@ -224,16 +212,28 @@
         "link": "/glyph/api/core/strip-ansi/"
       },
       {
-        "label": "Style",
-        "link": "/glyph/api/core/style/"
-      },
-      {
         "label": "supportsInlineImages",
         "link": "/glyph/api/core/supports-inline-images/"
       },
       {
-        "label": "useApp",
-        "link": "/glyph/api/core/use-app/"
+        "label": "Color",
+        "link": "/glyph/api/core/color/"
+      },
+      {
+        "label": "FocusableHandle",
+        "link": "/glyph/api/core/focusable-handle/"
+      },
+      {
+        "label": "Key",
+        "link": "/glyph/api/core/key/"
+      },
+      {
+        "label": "LayoutRect",
+        "link": "/glyph/api/core/layout-rect/"
+      },
+      {
+        "label": "Style",
+        "link": "/glyph/api/core/style/"
       }
     ]
   }
