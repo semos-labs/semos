@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ViewCount from "../../components/ViewCount.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
@@ -52,6 +53,10 @@ function formatDate(date: Date) {
               <time class="text-small text-gray-500 font-mono shrink-0">
                 {formatDate(post.data.date)}
               </time>
+              <span class="text-small text-gray-600 font-mono shrink-0">·</span>
+              <span class="text-small text-gray-500 font-mono shrink-0">
+                <ViewCount path={`/blog/${post.id}`} />
+              </span>
               {post.data.tags && (
                 <div class="flex gap-2 flex-wrap">
                   {post.data.tags.map((tag: string) => (
