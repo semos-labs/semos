@@ -4,63 +4,72 @@ title: 'API Reference'
 
 Complete API reference for `@semos-labs/glyph`.
 
-## Components
+## Layout
 
-- [Box](components/box/)
-- [Button](components/button/)
-- [Checkbox](components/checkbox/)
-- [DialogHost](components/dialog-host/)
-- [FocusScope](components/focus-scope/)
-- [Image](components/image/)
-- [Input](components/input/)
-- [JumpNav](components/jump-nav/)
-- [Keybind](components/keybind/)
-- [List](components/list/)
-- [Match](components/match/)
-- [Menu](components/menu/)
-- [Portal](components/portal/)
-- [Progress](components/progress/)
-- [Radio](components/radio/)
-- [ScrollView](components/scroll-view/)
-- [Select](components/select/)
-- [Spacer](components/spacer/)
-- [Spinner](components/spinner/)
-- [Text](components/text/)
-- [ToastHost](components/toast-host/)
+- [Box](layout/box/)
+- [defaultBreakpoints](layout/default-breakpoints/)
+- [Image](layout/image/)
+- [MediaQueryInput](layout/media-query-input/)
+- [Portal](layout/portal/)
+- [resolveResponsiveValue](layout/resolve-responsive-value/)
+- [resolveStyle](layout/resolve-style/)
+- [ScrollView](layout/scroll-view/)
+- [Spacer](layout/spacer/)
+- [Text](layout/text/)
+- [useLayout](layout/use-layout/)
+- [useMediaQuery](layout/use-media-query/)
 
-## Hooks
+## Form
 
-- [useApp](hooks/use-app/)
-- [useDialog](hooks/use-dialog/)
-- [useFocus](hooks/use-focus/)
-- [useFocusable](hooks/use-focusable/)
-- [useFocusRegistry](hooks/use-focus-registry/)
-- [useInput](hooks/use-input/)
-- [useLayout](hooks/use-layout/)
-- [useMediaQuery](hooks/use-media-query/)
-- [useScrollIntoView](hooks/use-scroll-into-view/)
-- [useToast](hooks/use-toast/)
+- [Button](form/button/)
+- [Checkbox](form/checkbox/)
+- [createMask](form/create-mask/)
+- [Input](form/input/)
+- [masks](form/masks/)
+- [Radio](form/radio/)
+- [Select](form/select/)
 
-## Utilities
+## Navigation
 
-- [createMask](utilities/create-mask/)
-- [detectTerminalCapabilities](utilities/detect-terminal-capabilities/)
-- [masks](utilities/masks/)
-- [parseAnsi](utilities/parse-ansi/)
-- [render](utilities/render/)
-- [resolveResponsiveValue](utilities/resolve-responsive-value/)
-- [resolveStyle](utilities/resolve-style/)
-- [stripAnsi](utilities/strip-ansi/)
-- [supportsInlineImages](utilities/supports-inline-images/)
+- [FocusScope](navigation/focus-scope/)
+- [JumpNav](navigation/jump-nav/)
+- [List](navigation/list/)
+- [Menu](navigation/menu/)
+- [ScrollIntoViewOptions](navigation/scroll-into-view-options/)
+- [useFocus](navigation/use-focus/)
+- [useFocusable](navigation/use-focusable/)
+- [useFocusRegistry](navigation/use-focus-registry/)
+- [useScrollIntoView](navigation/use-scroll-into-view/)
 
-## Types
+## Keybindings
 
-- [Breakpoint](types/breakpoint/)
-- [Color](types/color/)
-- [FocusableHandle](types/focusable-handle/)
-- [Key](types/key/)
-- [LayoutRect](types/layout-rect/)
-- [MediaQueryInput](types/media-query-input/)
-- [ResolvedStyle](types/resolved-style/)
-- [ScrollIntoViewOptions](types/scroll-into-view-options/)
-- [Style](types/style/)
+- [createKeybindRegistry](keybindings/create-keybind-registry/)
+- [Keybind](keybindings/keybind/)
+- [ScopedKeybinds](keybindings/scoped-keybinds/)
+- [useInput](keybindings/use-input/)
+
+## Feedback
+
+- [DialogHost](feedback/dialog-host/)
+- [Progress](feedback/progress/)
+- [Spinner](feedback/spinner/)
+- [StatusBar](feedback/status-bar/)
+- [ToastHost](feedback/toast-host/)
+- [useDialog](feedback/use-dialog/)
+- [useStatusBar](feedback/use-status-bar/)
+- [useToast](feedback/use-toast/)
+
+## Core
+
+- [Color](core/color/)
+- [detectTerminalCapabilities](core/detect-terminal-capabilities/)
+- [FocusableHandle](core/focusable-handle/)
+- [Key](core/key/)
+- [LayoutRect](core/layout-rect/)
+- [Match](core/match/)
+- [parseAnsi](core/parse-ansi/)
+- [render](core/render/)
+- [stripAnsi](core/strip-ansi/)
+- [Style](core/style/)
+- [supportsInlineImages](core/supports-inline-images/)
+- [useApp](core/use-app/)
