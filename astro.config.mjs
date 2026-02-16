@@ -1,7 +1,24 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import { readFileSync } from "fs";
 
 import tailwindcss from "@tailwindcss/vite";
+
+function loadSidebar(jsonPath, linkPrefix = "/docs") {
+  const raw = JSON.parse(readFileSync(jsonPath, "utf-8"));
+  function prefixLinks(items) {
+    return items.map((item) => {
+      if (item.link) {
+        return { ...item, link: linkPrefix + item.link };
+      }
+      if (item.items) {
+        return { ...item, items: prefixLinks(item.items) };
+      }
+      return item;
+    });
+  }
+  return prefixLinks(raw);
+}
 
 export default defineConfig({
   site: "https://semos.sh",
@@ -38,7 +55,7 @@ export default defineConfig({
                       {
                           label: "API Reference",
                           collapsed: true,
-                          autogenerate: { directory: "docs/glyph/api" },
+                          items: loadSidebar("./src/content/docs/docs/glyph/api/sidebar.json"),
                       },
                   ],
               },
