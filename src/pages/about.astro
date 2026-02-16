@@ -1,8 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Nick Skriabin",
+  url: "https://semos.sh/about",
+  jobTitle: "Principal Software Engineer",
+  description: "Principal Software Engineer building terminal-native tools. Founder of Semos Labs.",
+  sameAs: [
+    "https://github.com/nick-skriabin",
+    "https://x.com/nick_skriabin",
+    "https://youtube.com/@nick-skriabin",
+    "https://www.linkedin.com/in/nick-skriabin-054b1868/",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Semos Labs",
+    url: "https://semos.sh",
+  },
+};
 ---
 
-<Layout title="About — Nick Skriabin" description="Principal Software Engineer building terminal-native tools. The mind behind Semos Labs.">
+<Layout title="About — Nick Skriabin" description="Principal Software Engineer building terminal-native tools. Creator of Glyph, Aion, and Epist. The mind behind Semos Labs." jsonLd={jsonLd}>
   <!-- Hero -->
   <section class="pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-8">
     <div class="max-w-content mx-auto">

@@ -1,9 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Semos Labs",
+  url: "https://semos.sh",
+  logo: "https://semos.sh/logos/Sema.png",
+  description: "Open-source terminal apps and libraries. Build beautiful TUIs with React.",
+  founder: {
+    "@type": "Person",
+    name: "Nick Skriabin",
+    url: "https://semos.sh/about",
+  },
+  sameAs: [
+    "https://github.com/semos-labs",
+    "https://x.com/nick_skriabin",
+  ],
+};
 ---
 
-<Layout title="Semos Labs — Terminal, Reimagined">
+<Layout title="Semos Labs — Terminal, Reimagined" description="Open-source terminal apps and libraries. Glyph (React terminal renderer), Aion (terminal calendar), and Epist (terminal email client). Built for developers who think in keystrokes." jsonLd={jsonLd}>
   <script is:inline>
     (function(){
       var k='semos_hero_seen',t=7*24*60*60*1e3;

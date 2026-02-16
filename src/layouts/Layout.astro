@@ -10,16 +10,18 @@ interface Props {
   canonical?: string;
   publishedTime?: string;
   author?: string;
+  jsonLd?: Record<string, any>;
 }
 
 const {
   title,
-  description = "A family of terminal apps and tools",
+  description = "Open-source terminal apps and libraries by Semos Labs. Build beautiful TUIs with React.",
   image,
   type = "website",
   canonical,
   publishedTime,
   author,
+  jsonLd,
 } = Astro.props;
 
 const siteUrl = "https://semos.sh";
@@ -67,6 +69,9 @@ const pageUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
       rel="stylesheet"
     />
     <title>{title}</title>
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
     <PostHog/>
     <script data-goatcounter="https://semos.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
