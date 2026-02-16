@@ -8,6 +8,15 @@ function Progress(__namedParameters): Element;
 
 Horizontal progress bar with determinate and indeterminate modes.
 
+In **determinate** mode the filled / empty proportions are rendered
+as two [Box](../box) elements whose widths are controlled by Yoga
+(percentage + flexGrow).  This means the bar resizes instantly on
+terminal resize with no extra React render cycle.
+
+In **indeterminate** mode the marquee animation uses [useLayout](../../hooks/use-layout)
+to read the exact track width.  The 100 ms animation timer provides
+frequent re-renders so any stale value is corrected quickly.
+
 ## Parameters
 
 | Parameter | Type |

@@ -66,10 +66,10 @@ Props for the [Radio](radio) group component.
 | <a id="items"></a> `items` | [`RadioItem`](radio#radio-item)\<`T`\>[] | Radio options |
 | <a id="itemstyle"></a> `itemStyle?` | [`Style`](../../types/style) | Style for each radio item |
 | <a id="onchange"></a> `onChange` | (`value`) => `void` | Called when selection changes |
-| <a id="selectedchar"></a> `selectedChar?` | `string` | Custom character for selected state (default: "●") |
+| <a id="selectedchar"></a> `selectedChar?` | `string` | Custom character for selected state (default: "(●)") |
 | <a id="selecteditemstyle"></a> `selectedItemStyle?` | [`Style`](../../types/style) | Style for the selected item |
 | <a id="style"></a> `style?` | [`Style`](../../types/style) | Style for the radio group container |
-| <a id="unselectedchar"></a> `unselectedChar?` | `string` | Custom character for unselected state (default: "○") |
+| <a id="unselectedchar"></a> `unselectedChar?` | `string` | Custom character for unselected state (default: "(○)") |
 | <a id="value"></a> `value` | `T` \| `undefined` | Currently selected value |
 
 ---
