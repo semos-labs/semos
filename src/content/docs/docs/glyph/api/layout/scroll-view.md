@@ -26,7 +26,7 @@ Auto-scrolls to keep the focused child visible when `scrollToFocus` is `true` (d
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`ScrollViewProps`](#scroll-view-props) |
+| `__namedParameters` | [`ScrollViewProps`](#properties) |
 
 ## Returns
 

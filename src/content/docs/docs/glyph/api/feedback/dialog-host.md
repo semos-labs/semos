@@ -13,7 +13,7 @@ Provides the useDialog hook to children.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`DialogHostProps`](#dialog-host-props) |
+| `__namedParameters` | [`DialogHostProps`](#properties) |
 
 ## Returns
 

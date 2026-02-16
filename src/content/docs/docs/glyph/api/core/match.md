@@ -19,7 +19,7 @@ be satisfied for `children` to render.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`MatchProps`](#match-props) |
+| `__namedParameters` | [`MatchProps`](#properties) |
 
 ## Returns
 

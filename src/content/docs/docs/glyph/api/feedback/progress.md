@@ -21,7 +21,7 @@ frequent re-renders so any stale value is corrected quickly.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`ProgressProps`](#progress-props) |
+| `__namedParameters` | [`ProgressProps`](#properties) |
 
 ## Returns
 

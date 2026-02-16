@@ -26,7 +26,7 @@ tree to display temporary status messages (success, error, progress, etc.).
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`StatusBarProps`](#status-bar-props) |
+| `__namedParameters` | [`StatusBarProps`](#properties) |
 
 ## Returns
 

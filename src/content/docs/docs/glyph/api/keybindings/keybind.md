@@ -16,7 +16,7 @@ and a `priority` flag to run before focused input handlers.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`KeybindProps`](#keybind-props) |
+| `__namedParameters` | [`KeybindProps`](#properties) |
 
 ## Returns
 

@@ -21,7 +21,7 @@ Supports both horizontal and vertical layout via `direction`.
 
 | Parameter | Type |
 | ------ | ------ |
-| `props` | [`RadioProps`](#radio-props)\<`T`\> & `RefAttributes`\<[`RadioHandle`](#radio-handle)\<`T`\>\> |
+| `props` | [`RadioProps`](#properties)\<`T`\> & `RefAttributes`\<[`RadioHandle`](#radio-handle)\<`T`\>\> |
 
 ## Returns
 

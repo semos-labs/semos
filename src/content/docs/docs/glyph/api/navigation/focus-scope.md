@@ -16,7 +16,7 @@ element is restored automatically.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`FocusScopeProps`](#focus-scope-props) |
+| `__namedParameters` | [`FocusScopeProps`](#properties) |
 
 ## Returns
 

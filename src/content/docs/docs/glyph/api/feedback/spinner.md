@@ -15,7 +15,7 @@ Supply custom `frames` for different animation styles.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`SpinnerProps`](#spinner-props) |
+| `__namedParameters` | [`SpinnerProps`](#properties) |
 
 ## Returns
 

@@ -15,7 +15,7 @@ Place `<ToastHost>` near the root of your app. Children call
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`ToastHostProps`](#toast-host-props) |
+| `__namedParameters` | [`ToastHostProps`](#properties) |
 
 ## Returns
 

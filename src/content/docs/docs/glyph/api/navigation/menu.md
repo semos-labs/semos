@@ -16,7 +16,7 @@ and highlight color. Navigation uses the same keyboard shortcuts as
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`MenuProps`](#menu-props) |
+| `__namedParameters` | [`MenuProps`](#properties) |
 
 ## Returns
 
