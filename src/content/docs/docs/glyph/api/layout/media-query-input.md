@@ -19,7 +19,7 @@ const isMedium = useMediaQuery({ minColumns: 40, maxColumns: 120, minRows: 20 })
 
 ## Extended by
 
-- [`MatchProps`](../../core/match#match-props)
+- [`MatchProps`](../../core/match#properties)
 
 ## Properties
 

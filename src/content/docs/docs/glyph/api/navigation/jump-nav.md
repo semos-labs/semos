@@ -19,7 +19,7 @@ trap (e.g. a modal). Place a single `<JumpNav>` at the root of your app.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`JumpNavProps`](#jump-nav-props) |
+| `__namedParameters` | [`JumpNavProps`](#properties) |
 
 ## Returns
 

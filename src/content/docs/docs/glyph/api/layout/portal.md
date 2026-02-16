@@ -15,7 +15,7 @@ above all other content.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`PortalProps`](#portal-props) |
+| `__namedParameters` | [`PortalProps`](#properties) |
 
 ## Returns
 

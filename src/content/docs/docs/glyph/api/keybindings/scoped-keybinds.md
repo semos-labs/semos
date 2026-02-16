@@ -23,7 +23,7 @@ them override duplicate keys from other scopes.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`ScopedKeybindsProps`](#scoped-keybinds-props)\<`S`\> |
+| `__namedParameters` | [`ScopedKeybindsProps`](#properties)\<`S`\> |
 
 ## Returns
 

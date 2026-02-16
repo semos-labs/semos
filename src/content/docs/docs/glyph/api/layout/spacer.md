@@ -16,7 +16,7 @@ spacers to distribute space evenly.
 
 | Parameter | Type |
 | ------ | ------ |
-| `__namedParameters` | [`SpacerProps`](#spacer-props) |
+| `__namedParameters` | [`SpacerProps`](#properties) |
 
 ## Returns
 
