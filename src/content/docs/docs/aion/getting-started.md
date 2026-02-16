@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Aion
-description: Install Aion and connect your Google Calendar.
+description: Install Aion and connect your calendar — Google Calendar or CalDAV.
 sidebar:
   order: 2
 ---
@@ -51,11 +51,62 @@ bun run build
 # Binary will be at ./dist/aion
 ```
 
-## Set Up Google Cloud Credentials
+## Connect a Calendar
+
+Aion supports **Google Calendar** and **CalDAV** (iCloud, Fastmail, Nextcloud, Radicale, etc.). You can use both at the same time with multiple accounts.
+
+---
+
+### Option A: CalDAV (iCloud, Fastmail, Nextcloud, etc.)
+
+Add your CalDAV account to `~/.config/aion/config.toml`:
+
+```toml
+[[caldav]]
+name = "iCloud"
+email = "me@icloud.com"
+serverUrl = "https://caldav.icloud.com"
+username = "me@icloud.com"
+passwordCommand = "security find-generic-password -a me@icloud.com -s aion-caldav -w"
+```
+
+Or use the interactive dialog:
+
+```
+:caldav
+```
+
+#### Provider URLs
+
+| Provider | Server URL |
+|----------|-----------|
+| **iCloud** | `https://caldav.icloud.com` |
+| **Fastmail** | `https://caldav.fastmail.com/dav/calendars` |
+| **Nextcloud** | `https://your-server.com/remote.php/dav` |
+| **Radicale** | `https://your-server.com/radicale` |
+| **Google** (via CalDAV) | `https://apidata.googleusercontent.com/caldav/v2` |
+
+> **Tip:** For iCloud, use an [app-specific password](https://support.apple.com/en-us/102654) — not your Apple ID password.
+
+#### Password commands
+
+`passwordCommand` runs via `sh -c` and uses the trimmed stdout as the password:
+
+| Method | Example |
+|--------|---------|
+| macOS Keychain | `passwordCommand = "security find-generic-password -a me@icloud.com -s aion-caldav -w"` |
+| `pass` (GPG) | `passwordCommand = "pass show calendar/icloud"` |
+| 1Password CLI | `passwordCommand = "op read op://Personal/iCloud/password"` |
+| Bitwarden CLI | `passwordCommand = "bw get password icloud-caldav"` |
+| Environment var | `passwordCommand = "echo $CALDAV_PASSWORD"` |
+
+---
+
+### Option B: Google Calendar (OAuth)
+
+#### Set Up Google Cloud Credentials
 
 Aion requires your own Google Cloud credentials to access Google Calendar.
-
-### Create a Google Cloud Project
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com)
 2. Create a new project (or select an existing one)
@@ -64,7 +115,7 @@ Aion requires your own Google Cloud credentials to access Google Calendar.
    - Search for "Google Calendar API"
    - Click "Enable"
 
-### Create OAuth Credentials
+#### Create OAuth Credentials
 
 1. Go to "APIs & Services" → "Credentials"
 2. Click "Create Credentials" → "OAuth client ID"
@@ -81,7 +132,7 @@ Aion requires your own Google Cloud credentials to access Google Calendar.
    - Name: "Aion" (or anything you like)
 5. Copy the **Client ID** and **Client Secret**
 
-### Configure Aion
+#### Configure Aion
 
 Add your credentials to `~/.config/aion/config.toml`:
 
@@ -98,7 +149,7 @@ export AION_GOOGLE_CLIENT_ID="your-client-id.apps.googleusercontent.com"
 export AION_GOOGLE_CLIENT_SECRET="your-client-secret"
 ```
 
-## Connect Google Calendar
+#### Connect Google Calendar
 
 Launch Aion and run the login command:
 

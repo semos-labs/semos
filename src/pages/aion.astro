@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Aion — Terminal Calendar with Vim-Style Keybindings" description="A full-featured Google Calendar TUI client. Beautiful, fast, keyboard-driven.">
+<Layout title="Aion — Terminal Calendar with Vim-Style Keybindings" description="A terminal calendar client with Google Calendar and CalDAV support. Beautiful, fast, keyboard-driven.">
   <!-- Hero -->
   <section class="min-h-dvh flex flex-col md:flex-row items-center justify-center pt-20 md:pt-32 pb-6 md:pb-16 px-6 md:px-8 gap-2 md:gap-16 max-w-content mx-auto text-center md:text-left">
     <div class="flex-1 max-w-full md:max-w-[520px]">
@@ -11,12 +11,11 @@ import Layout from "../layouts/Layout.astro";
         <span class="font-hand text-title-xl">Aion</span>
       </div>
       <h1 class="font-hand heading-page mb-3 md:mb-6">
-        Google Calendar<br />
+        Your calendar<br />
         <span class="text-gray-200 italic">in your terminal</span>
       </h1>
       <p class="text-body-lg text-gray-300 leading-copy mb-6 md:mb-10 max-w-full md:max-w-[460px]">
-        A full-featured calendar client with vim-style keybindings. View, create, and manage
-        events without leaving the command line.
+        A full-featured calendar client with vim-style keybindings. Google Calendar and CalDAV — view, create, and manage events without leaving the command line.
       </p>
       <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a href="/docs/aion/" class="btn-primary" data-ph-cta="aion_hero_docs">Documentation</a>
@@ -69,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
           <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
           <span class="ml-3 text-[0.7rem] text-gray-500 font-mono">aion</span>
         </div>
-        <img src="/images/aion.jpg" alt="Aion — Google Calendar in the terminal" class="w-full block" />
+        <img src="/images/aion.jpg" alt="Aion — Calendar client in the terminal" class="w-full block" />
       </div>
     </div>
   </section>
@@ -91,8 +90,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">🔗</span>
-          <h3 class="font-hand text-title mb-2">Google Calendar Sync</h3>
-          <p class="text-small text-gray-400 leading-body">Multi-account OAuth with PKCE. Background sync every 30 seconds.</p>
+          <h3 class="font-hand text-title mb-2">Calendar Sync</h3>
+          <p class="text-small text-gray-400 leading-body">Google Calendar (OAuth) and CalDAV (iCloud, Fastmail, Nextcloud, and more). Background sync every 30 seconds.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">👥</span>

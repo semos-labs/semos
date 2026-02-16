@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "generate:og": "bun run scripts/generate-og.ts",
+    "generate:og:force": "bun run scripts/generate-og.ts --force",
     "build": "bun run generate:og && astro build",
     "preview": "astro preview"
   },

@@ -1,18 +1,63 @@
 import satori from "satori";
 import sharp from "sharp";
-import { readFileSync, mkdirSync, existsSync, readdirSync } from "fs";
+import { readFileSync, mkdirSync, existsSync, readdirSync, statSync } from "fs";
 import { join, resolve } from "path";
 import matter from "gray-matter";
+import { createHash } from "crypto";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const BLOG_DIR = join(ROOT, "src/content/blog");
 const PUBLIC_DIR = join(ROOT, "public");
 const OUT_DIR = join(PUBLIC_DIR, "og");
+const MANIFEST_PATH = join(OUT_DIR, ".manifest.json");
 
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-// Load fonts
+const force = process.argv.includes("--force");
+
+// ── Manifest ────────────────────────────────────────────────
+
+type Manifest = Record<string, string>; // slug → content hash
+
+function loadManifest(): Manifest {
+  if (!existsSync(MANIFEST_PATH)) return {};
+  try {
+    return JSON.parse(readFileSync(MANIFEST_PATH, "utf-8"));
+  } catch {
+    return {};
+  }
+}
+
+function saveManifest(manifest: Manifest) {
+  Bun.write(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
+}
+
+function hashInputs(data: {
+  title: string;
+  description: string;
+  cover?: string;
+  tags?: string[];
+}): string {
+  const h = createHash("sha256");
+  h.update(data.title);
+  h.update(data.description);
+  h.update(data.cover || "");
+  h.update((data.tags || []).join(","));
+
+  // Include cover image mtime so changes to the image itself trigger regeneration
+  if (data.cover) {
+    const coverPath = join(PUBLIC_DIR, data.cover.replace(/^\//, ""));
+    if (existsSync(coverPath)) {
+      h.update(String(statSync(coverPath).mtimeMs));
+    }
+  }
+
+  return h.digest("hex").slice(0, 16);
+}
+
+// ── Fonts ───────────────────────────────────────────────────
+
 const fontRegular = readFileSync(
   join(ROOT, "scripts/fonts/SpaceMono-Regular.ttf")
 );
@@ -27,12 +72,12 @@ const fontInter = readFileSync(
 const logoPath = join(PUBLIC_DIR, "logos/Sema.png");
 const logoBase64 = `data:image/png;base64,${readFileSync(logoPath).toString("base64")}`;
 
+// ── Helpers ─────────────────────────────────────────────────
+
 async function loadCoverBase64(coverPath: string): Promise<string | null> {
-  // coverPath is like "/images/epist.jpg"
   const absPath = join(PUBLIC_DIR, coverPath.replace(/^\//, ""));
   if (!existsSync(absPath)) return null;
 
-  // Resize cover to fill OG dimensions and convert to PNG buffer
   const buf = await sharp(absPath)
     .resize(WIDTH, HEIGHT, { fit: "cover" })
     .png()
@@ -45,6 +90,8 @@ function truncate(text: string, maxLen: number): string {
   if (text.length <= maxLen) return text;
   return text.slice(0, maxLen - 1) + "…";
 }
+
+// ── Markup ──────────────────────────────────────────────────
 
 function buildOgMarkup(opts: {
   title: string;
@@ -261,6 +308,8 @@ function buildOgMarkup(opts: {
   };
 }
 
+// ── Generate ────────────────────────────────────────────────
+
 async function generateOgImage(
   slug: string,
   data: {
@@ -310,15 +359,26 @@ async function generateOgImage(
 
   const outPath = join(OUT_DIR, `${slug}.png`);
   await Bun.write(outPath, png);
-  console.log(`  ✓ /og/${slug}.png (${(png.length / 1024).toFixed(0)}kb)`);
+  return png.length;
 }
 
+// ── Main ────────────────────────────────────────────────────
+
 async function main() {
-  console.log("\n🖼  Generating OG images…\n");
+  console.log(`\n🖼  Generating OG images${force ? " (force)" : ""}…\n`);
 
   mkdirSync(OUT_DIR, { recursive: true });
 
-  // Read all blog posts
+  const oldManifest = loadManifest();
+  const newManifest: Manifest = {};
+
+  let generated = 0;
+  let skipped = 0;
+
+  // Collect all posts
+  type PostEntry = { slug: string; data: { title: string; description: string; cover?: string; tags?: string[] } };
+  const entries: PostEntry[] = [];
+
   const files = readdirSync(BLOG_DIR).filter(
     (f) => f.endsWith(".md") || f.endsWith(".mdx")
   );
@@ -326,28 +386,49 @@ async function main() {
   for (const file of files) {
     const raw = readFileSync(join(BLOG_DIR, file), "utf-8");
     const { data } = matter(raw);
-
     if (data.draft) continue;
 
-    const slug = file.replace(/\.mdx?$/, "");
-
-    await generateOgImage(slug, {
-      title: data.title,
-      description: data.description,
-      cover: data.cover,
-      tags: data.tags,
+    entries.push({
+      slug: file.replace(/\.mdx?$/, ""),
+      data: {
+        title: data.title,
+        description: data.description,
+        cover: data.cover,
+        tags: data.tags,
+      },
     });
   }
 
-  // Generate default OG image for the blog index
-  await generateOgImage("blog", {
-    title: "Semos Blog",
-    description:
-      "Thoughts on terminal UIs, developer tools, and building open-source software.",
-    tags: ["terminal", "react", "open source"],
+  // Add the blog index card
+  entries.push({
+    slug: "blog",
+    data: {
+      title: "Semos Blog",
+      description: "Thoughts on terminal UIs, developer tools, and building open-source software.",
+      tags: ["terminal", "react", "open source"],
+    },
   });
 
-  console.log("\n✅ Done.\n");
+  for (const { slug, data } of entries) {
+    const hash = hashInputs(data);
+    newManifest[slug] = hash;
+
+    const imageExists = existsSync(join(OUT_DIR, `${slug}.png`));
+
+    if (!force && imageExists && oldManifest[slug] === hash) {
+      console.log(`  · /og/${slug}.png (unchanged)`);
+      skipped++;
+      continue;
+    }
+
+    const size = await generateOgImage(slug, data);
+    console.log(`  ✓ /og/${slug}.png (${(size / 1024).toFixed(0)}kb)`);
+    generated++;
+  }
+
+  saveManifest(newManifest);
+
+  console.log(`\n✅ Done — ${generated} generated, ${skipped} skipped.\n`);
 }
 
 main().catch((err) => {
