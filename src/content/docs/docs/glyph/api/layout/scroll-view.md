@@ -100,3 +100,93 @@ Contains the start/end indices and viewport metadata.
 | <a id="scrolloffset"></a> `scrollOffset` | `number` | Current scroll offset |
 | <a id="start"></a> `start` | `number` | First visible line index (0-based) |
 | <a id="viewportheight"></a> `viewportHeight` | `number` | Viewport height in lines |
+
+---
+
+## LinkHandle
+
+Handle for Link
+
+## Extends
+
+- [`FocusableHandle`](../../core/focusable-handle)
+
+## Methods
+
+### blur()
+
+```ts
+blur(): void;
+```
+
+Programmatically blur (unfocus) this element
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FocusableHandle`](../../core/focusable-handle).[`blur`](../../core/focusable-handle#blur)
+
+***
+
+### focus()
+
+```ts
+focus(): void;
+```
+
+Programmatically focus this element
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FocusableHandle`](../../core/focusable-handle).[`focus`](../../core/focusable-handle#focus)
+
+***
+
+### scrollIntoView()
+
+```ts
+scrollIntoView(options?): void;
+```
+
+Scroll the nearest parent ScrollView to make this element visible.
+Behaves like the DOM `Element.scrollIntoView()` method.
+No-op if the element is not inside a ScrollView.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `options?` | [`ScrollIntoViewOptions`](../../navigation/scroll-into-view-options) | Alignment options (default: `{ block: "nearest" }`) |
+
+#### Returns
+
+`void`
+
+#### Example
+
+```tsx
+const inputRef = useRef<InputHandle>(null);
+
+// Minimal scroll — just enough to make it visible
+inputRef.current?.scrollIntoView();
+
+// Center the element in the viewport
+inputRef.current?.scrollIntoView({ block: "center" });
+```
+
+#### Inherited from
+
+[`FocusableHandle`](../../core/focusable-handle).[`scrollIntoView`](../../core/focusable-handle#scrollintoview)
+
+## Properties
+
+| Property | Modifier | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="isfocused"></a> `isFocused` | `readonly` | `boolean` | Whether this element is currently focused | [`FocusableHandle`](../../core/focusable-handle).[`isFocused`](../../core/focusable-handle#isfocused) |
