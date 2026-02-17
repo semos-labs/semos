@@ -13,6 +13,7 @@ Base handle shared by all focusable elements
 - [`RadioHandle`](../../form/radio#radio-handle)
 - [`ListHandle`](../../navigation/list#list-handle)
 - [`ImageHandle`](../../layout/image#image-handle)
+- [`LinkHandle`](../../layout/scroll-view#link-handle)
 - [`TextHandle`](../../layout/text#text-handle)
 
 ## Methods
