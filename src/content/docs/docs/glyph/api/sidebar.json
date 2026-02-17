@@ -130,6 +130,10 @@
     "label": "Keybindings",
     "items": [
       {
+        "label": "HelpDialog",
+        "link": "/glyph/api/keybindings/help-dialog/"
+      },
+      {
         "label": "Keybind",
         "link": "/glyph/api/keybindings/keybind/"
       },
