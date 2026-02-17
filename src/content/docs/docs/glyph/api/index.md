@@ -33,6 +33,7 @@ Complete API reference for `@semos-labs/glyph`.
 
 - [FocusScope](navigation/focus-scope/)
 - [JumpNav](navigation/jump-nav/)
+- [Link](navigation/link/)
 - [List](navigation/list/)
 - [Menu](navigation/menu/)
 - [useFocus](navigation/use-focus/)

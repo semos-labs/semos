@@ -97,6 +97,10 @@
         "link": "/glyph/api/navigation/jump-nav/"
       },
       {
+        "label": "Link",
+        "link": "/glyph/api/navigation/link/"
+      },
+      {
         "label": "List",
         "link": "/glyph/api/navigation/list/"
       },
