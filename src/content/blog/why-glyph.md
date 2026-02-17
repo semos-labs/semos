@@ -3,7 +3,7 @@ title: "Why I Built a React Renderer for the Terminal"
 description: "The story behind Glyph — how a dumb experiment with React's reconciler turned into a terminal UI framework that actually works."
 date: 2026-02-15
 tags: ["glyph", "react", "terminal", "semos"]
-cover: "/images/epist.jpg"
+cover: "/images/epist.webp"
 ---
 
 I live in my terminal. Neovim, git, SSH, scripts — that's my whole day. And honestly, I love it. The terminal is fast, composable, and doesn't get in your way.
