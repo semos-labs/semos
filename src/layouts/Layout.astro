@@ -88,7 +88,7 @@ const pageUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
     <PostHog/>
     <script data-goatcounter="https://semos.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <!-- Nav -->
     <nav class="fixed top-0 inset-x-0 z-[100] px-4 md:px-8 py-3 md:py-4 bg-black/85 backdrop-blur-md border-b border-gray-800">
       <div class="max-w-content mx-auto flex items-center justify-between">
@@ -112,7 +112,7 @@ const pageUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
     </nav>
 
     <!-- Page content -->
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
 
