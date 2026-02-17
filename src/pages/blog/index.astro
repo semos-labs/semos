@@ -17,7 +17,7 @@ function formatDate(date: Date) {
 
 <Layout title="Blog — Semos Labs" description="Thoughts on terminal UIs, developer tools, and building open-source software." image="/og/blog.png">
   <section class="pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-8">
-    <div class="max-w-[720px] mx-auto">
+    <div class="max-w-[840px] mx-auto">
       <p class="text-body-lg text-gray-500 mb-6">
         <span class="text-gray-400">$</span> cat /var/log/blog
       </p>
@@ -30,49 +30,59 @@ function formatDate(date: Date) {
         <p class="text-gray-500 italic">No posts yet. Check back soon.</p>
       )}
 
-      <div class="space-y-10">
+      <div class="space-y-6">
         {posts.map((post) => (
           <a
             href={`/blog/${post.id}`}
-            class="group block py-6 -mx-4 px-4 rounded-xl transition-colors hover:bg-gray-900/60"
+            class="group block bg-gray-900 border border-gray-700/60 rounded-xl overflow-hidden transition-colors hover:border-gray-600 shadow-[0_2px_20px_rgba(0,0,0,0.4)]"
           >
+            <!-- Terminal header -->
+            <div class="flex items-center gap-2 px-5 py-3 bg-gray-800/80 border-b border-gray-700/60">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              </div>
+              <span class="ml-2 text-fine text-gray-400 font-mono">$ cat blog/{post.id}</span>
+              <div class="ml-auto flex items-center gap-3">
+                <time class="text-fine text-gray-500 font-mono">
+                  {formatDate(post.data.date)}
+                </time>
+                <span class="text-fine text-gray-500 font-mono">
+                  <ViewCount path={`/blog/${post.id}`} />
+                </span>
+              </div>
+            </div>
+
+            {/* Cover image */}
             {post.data.cover && (
-              <div class="relative mb-6">
-                <div class="absolute -inset-6 bg-gradient-to-b from-white/[0.03] via-white/[0.06] to-transparent rounded-2xl blur-2xl pointer-events-none"></div>
-                <div class="relative bg-gray-900 rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] ring-1 ring-white/[0.08] ring-inset">
-                  <div class="absolute inset-0 rounded-xl border border-white/[0.06] pointer-events-none z-10"></div>
-                  <img
-                    src={post.data.cover}
-                    alt=""
-                    class="w-full block max-h-[280px] object-cover"
-                  />
-                </div>
+              <div class="border-b border-gray-700/60">
+                <img
+                  src={post.data.cover}
+                  alt=""
+                  class="w-full block max-h-[260px] object-cover"
+                />
               </div>
             )}
-            <div class="flex items-center gap-4 mb-3">
-              <time class="text-small text-gray-500 font-mono shrink-0">
-                {formatDate(post.data.date)}
-              </time>
-              <span class="text-small text-gray-600 font-mono shrink-0">·</span>
-              <span class="text-small text-gray-500 font-mono shrink-0">
-                <ViewCount path={`/blog/${post.id}`} />
-              </span>
+
+            <!-- Content -->
+            <div class="px-6 md:px-8 py-6 md:py-8">
               {post.data.tags && (
-                <div class="flex gap-2 flex-wrap">
+                <div class="flex gap-2 flex-wrap mb-4">
                   {post.data.tags.map((tag: string) => (
-                    <span class="text-fine text-gray-500 bg-gray-800 px-2 py-0.5 rounded">
+                    <span class="text-fine text-gray-500 bg-gray-800/80 px-2 py-0.5 rounded font-mono">
                       {tag}
                     </span>
                   ))}
                 </div>
               )}
+              <h2 class="font-hand text-title-lg mb-2 group-hover:text-gray-200 transition-colors">
+                {post.data.title}
+              </h2>
+              <p class="font-prose text-body-sm text-gray-400 leading-copy">
+                {post.data.description}
+              </p>
             </div>
-            <h2 class="font-hand text-title-lg mb-2 group-hover:text-gray-200 transition-colors">
-              {post.data.title}
-            </h2>
-            <p class="font-prose text-body-sm text-gray-400 leading-copy">
-              {post.data.description}
-            </p>
           </a>
         ))}
       </div>

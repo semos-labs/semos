@@ -1,0 +1,84 @@
+name: Send Newsletter
+
+on:
+  workflow_dispatch:
+    inputs:
+      newsletter:
+        description: "Newsletter filename (e.g. 2026-02-17.md)"
+        required: true
+        type: string
+      mode:
+        description: "Mode"
+        required: true
+        type: choice
+        options:
+          - preview
+          - test
+          - send
+        default: preview
+      test_email:
+        description: "Test email (required when mode = test)"
+        required: false
+        type: string
+      confirm:
+        description: "Type SEND to confirm (required when mode = send)"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate confirmation
+        if: ${{ inputs.mode == 'send' && inputs.confirm != 'SEND' }}
+        run: |
+          echo "::error::You must type SEND in the confirm field to send to all subscribers."
+          echo ""
+          echo "  You entered: '${{ inputs.confirm }}'"
+          echo "  Expected:    'SEND'"
+          echo ""
+          echo "  This is a safety check. Newsletters go to ALL subscribers."
+          exit 1
+
+      - name: Validate test email
+        if: ${{ inputs.mode == 'test' && inputs.test_email == '' }}
+        run: |
+          echo "::error::Test mode requires a test_email input."
+          exit 1
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Validate newsletter exists
+        run: |
+          if [ ! -f "newsletters/${{ inputs.newsletter }}" ]; then
+            echo "::error::Newsletter file not found: newsletters/${{ inputs.newsletter }}"
+            exit 1
+          fi
+
+      - name: Preview newsletter
+        if: ${{ inputs.mode == 'preview' }}
+        run: bun run scripts/send-newsletter.ts "newsletters/${{ inputs.newsletter }}" --preview
+
+      - name: Send test email
+        if: ${{ inputs.mode == 'test' }}
+        env:
+          KIT_API_SECRET: ${{ secrets.KIT_API_SECRET }}
+          KIT_EMAIL_TEMPLATE_ID: ${{ secrets.KIT_EMAIL_TEMPLATE_ID }}
+        run: bun run scripts/send-newsletter.ts "newsletters/${{ inputs.newsletter }}" --test "${{ inputs.test_email }}"
+
+      - name: Send to all subscribers
+        if: ${{ inputs.mode == 'send' }}
+        env:
+          KIT_API_SECRET: ${{ secrets.KIT_API_SECRET }}
+          KIT_EMAIL_TEMPLATE_ID: ${{ secrets.KIT_EMAIL_TEMPLATE_ID }}
+        run: bun run scripts/send-newsletter.ts "newsletters/${{ inputs.newsletter }}"

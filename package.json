@@ -7,7 +7,10 @@
     "generate:og": "bun run scripts/generate-og.ts",
     "generate:og:force": "bun run scripts/generate-og.ts --force",
     "build": "bun run generate:og && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "newsletter:preview": "bun run scripts/send-newsletter.ts --preview",
+    "newsletter:test": "bun run scripts/send-newsletter.ts --test",
+    "newsletter:send": "bun run scripts/send-newsletter.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
