@@ -43,6 +43,7 @@ Complete API reference for `@semos-labs/glyph`.
 
 ## Keybindings
 
+- [HelpDialog](keybindings/help-dialog/)
 - [Keybind](keybindings/keybind/)
 - [ScopedKeybinds](keybindings/scoped-keybinds/)
 - [useInput](keybindings/use-input/)
