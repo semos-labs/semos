@@ -42,7 +42,7 @@ const slug = name.toLowerCase();
       <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
       <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
     </div>
-    <span class="ml-2 text-fine text-gray-500 font-mono">$ semos info {slug}</span>
+    <span class="ml-2 text-fine text-gray-400 font-mono">$ semos info {slug}</span>
     <div class="ml-auto flex items-center gap-2">
       <a
         class="stars-badge hidden data-[loaded]:inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-gray-800 border border-gray-600 rounded-full text-small text-gray-300 hover:border-gray-400 hover:text-white transition-colors"
@@ -100,9 +100,9 @@ const slug = name.toLowerCase();
 
     <!-- Metadata grid -->
     <div class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 text-body-sm">
-      <span class="text-gray-500">stack</span>
+      <span class="text-gray-400">stack</span>
       <span class="text-gray-300">{tags.join(" · ")}</span>
-      <span class="text-gray-500">links</span>
+      <span class="text-gray-400">links</span>
       <div class="flex items-center gap-5 flex-wrap">
         {links.map((link) => (
           <a
