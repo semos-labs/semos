@@ -3,7 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import ViewCount from "../../components/ViewCount.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft))
+const isDev = import.meta.env.DEV;
+const posts = (await getCollection("blog", ({ data }) => isDev || !data.draft))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 function formatDate(date: Date) {
@@ -44,6 +45,11 @@ function formatDate(date: Date) {
                 <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
               </div>
               <span class="ml-2 text-fine text-gray-400 font-mono">$ cat blog/{post.id}</span>
+              {post.data.draft && (
+                <span class="ml-2 text-[11px] font-mono font-medium uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded-full">
+                  draft
+                </span>
+              )}
               <div class="ml-auto flex items-center gap-3">
                 <time class="text-fine text-gray-500 font-mono">
                   {formatDate(post.data.date)}

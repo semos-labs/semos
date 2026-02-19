@@ -3,7 +3,7 @@ title: "How Glyph Works Under the Hood"
 description: "A look inside Glyph's render pipeline — how a React reconciler, Yoga flexbox, a double-buffered framebuffer, and character-level diffing come together to draw UIs in your terminal."
 date: 2026-02-17
 tags: ["glyph", "react", "terminal", "internals", "rendering"]
-cover: "/images/showcase.webp"
+cover: "/images/how-glyph-works.webp"
 ---
 
 I wrote a [whole post](/blog/why-glyph) about *why* I built Glyph. This one's about *how*.

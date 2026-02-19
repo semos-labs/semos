@@ -4,7 +4,8 @@ import ViewCount from "../../components/ViewCount.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const isDev = import.meta.env.DEV;
+  const posts = await getCollection("blog", ({ data }) => isDev || !data.draft);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -59,6 +60,14 @@ function formatDate(date: Date) {
     },
     ...(post.data.tags ? { "keywords": post.data.tags.join(", ") } : {})
   })} />
+
+  {post.data.draft && (
+    <div class="fixed top-0 left-0 right-0 z-50 bg-amber-400/10 border-b border-amber-400/30 backdrop-blur-sm">
+      <p class="text-center text-amber-400 text-sm font-mono py-2">
+        ⚠ Draft — this post is not published yet
+      </p>
+    </div>
+  )}
 
   <article class="pt-28 md:pt-36 pb-20 md:pb-28 px-6 md:px-8">
     <div class="max-w-[840px] mx-auto">

@@ -1,9 +1,9 @@
 ---
-title: "Making Glyph 9× Faster"
-description: "How I took Glyph's render loop from 25ms/frame down to 2.8ms — persistent Yoga nodes, dirty subtree tracking, clip culling, text caching, and a lot of profiling."
+title: "Making Glyph 20× Faster"
+description: "How I took Glyph's render loop from 50ms/frame down to 2.8ms — persistent Yoga nodes, dirty subtree tracking, clip culling, text caching, and a lot of profiling."
 date: 2026-02-18
 tags: ["glyph", "performance", "rendering", "optimization"]
-cover: "/images/showcase.webp"
+cover: "/images/glyph-perf.webp"
 draft: true
 ---
 
