@@ -1,6 +1,6 @@
 ---
 title: "Making Glyph 20× Faster"
-description: "How I took Glyph's render loop from 50ms/frame down to 2.8ms — persistent Yoga nodes, dirty subtree tracking, clip culling, text caching, and a lot of profiling."
+description: "How I took Glyph's render loop from 50ms/frame down to 2.4ms — persistent Yoga nodes, dirty subtree tracking, clip culling, text caching, and a lot of profiling."
 date: 2026-02-18
 tags: ["glyph", "performance", "rendering", "optimization"]
 cover: "/images/glyph-perf.webp"
@@ -17,7 +17,7 @@ I'd been building [Aion](/aion) and [Epist](/epist) on top of Glyph for months a
 
 So I built a benchmark. A simulated system dashboard: 80 processes in a scrollable table with live CPU/memory stats, 4 sparkline metrics, a 200-entry scrollable activity log that adds and removes entries every tick, and a search bar for filtering. About 215 GlyphNodes in the tree. Structural changes every single frame. 30fps state updates.
 
-I fired it up and immediately felt sick. 25ms per frame. You could *see* the lag. The sparklines stuttered. Text felt like it was being painted through molasses.
+I fired it up and immediately felt sick. 50ms per frame. Fifty. You could *see* the lag. The sparklines stuttered. Text felt like it was being painted through molasses.
 
 For a framework that's supposed to make terminal UIs feel native, this was unacceptable.
 
@@ -27,7 +27,7 @@ My first instinct was "the diff is slow." Character-by-character comparison acro
 
 Wrong. I added `performance.now()` instrumentation around every phase of the render pipeline and wrote the results to a CSV. The first thing I saw:
 
-**Yoga layout was 70% of frame time.**
+**Yoga layout was eating 70% of frame time.**
 
 Not the diff. Not painting. Not text processing. The flexbox engine. Specifically, I was creating the entire Yoga tree from scratch every frame — `Yoga.Node.create()` for every node, apply all styles, attach all children, calculate, extract positions, then `freeRecursive()`. Every frame. For 215 nodes.
 
@@ -45,7 +45,7 @@ Before tackling the Yoga problem, I knocked out a few quick things that showed u
 
 The framebuffer itself was allocating new cell objects in `clear()` and `copyFrom()`. Restructured to pre-allocate all cells once in the constructor and mutate in place. Zero allocations per frame. The GC barely notices we exist.
 
-These were small wins individually. Maybe 3-4ms combined. But they're the kind of thing you do first because they're easy, they're correct, and they clear the noise from the profile so you can see what actually matters.
+These were small wins individually. Maybe 5-6ms combined. But they're the kind of thing you do first because they're easy, they're correct, and they clear the noise from the profile so you can see what actually matters.
 
 ## Rearchitecting Yoga (The Hard Part)
 
@@ -78,11 +78,11 @@ yogaNode.setPadding(Edge.All, style.padding);
 
 Every single property setter needed an explicit `!== undefined` guard. I went through them one by one, muttering obscenities. Yoga's WASM bindings are great until they aren't.
 
-But once that was sorted out — damn. Layout time dropped from ~17ms to ~3ms. The Yoga `calculateLayout` call itself takes under 1ms. All that overhead was allocation and tree construction.
+But once that was sorted out — damn. Layout time dropped from ~35ms to ~3ms. The Yoga `calculateLayout` call itself takes under 1ms. All that overhead was allocation and tree construction.
 
 ## Everything Flickered
 
-So I had a 5ms frame time. Great! Except the screen flickered like a broken fluorescent light.
+So I had frame time under 20ms. Great progress! Except the screen flickered like a broken fluorescent light.
 
 Here's what was happening: I had a `fullRedraw` flag that cleared the terminal screen (`\x1b[2J`). It was supposed to fire only on resize and init. But structural changes — which happened every frame because the activity log was adding and removing entries — were also triggering it. 30 full screen clears per second. Of course it flickered.
 
@@ -145,13 +145,40 @@ Paint entries dropped from ~600 to ~45. For any app with scroll views — which 
 
 I added the same idea to `extractLayout`. Even with Yoga's `hasNewLayout()` flag telling me which nodes were recalculated, all 600 nodes under the activity log had new layout every frame (structural changes from log add/remove). But only ~45 were visible. Added clip rect propagation through `extractLayout` — off-screen nodes get one cheap position check, then their entire subtree is skipped. ~3,700 WASM calls avoided per frame.
 
-## The Cursor Dance
+## Atomic Renders (DEC 2026)
 
-This wasn't a performance problem, but it drove me crazy enough to mention. The native terminal cursor — the blinking block in the search input — was flickering and jumping between renders. Especially visible in Ghostty, which has a smooth cursor shader that makes any jitter painfully obvious.
+This one changed how I think about terminal rendering entirely.
 
-I tried hiding and showing the cursor around the diff. Visible toggling. Tried batching everything into a single `write()`. Still flickered — the terminal processes the bytes serially.
+Up to this point, every optimization was about reducing how much work the renderer does. But there was a whole other class of problem I'd been ignoring: the terminal itself. When you write a frame's worth of escape sequences to stdout, the terminal processes them *serially*. Character by character. Move cursor, set color, write cell, move cursor, set color, write cell. For a complex frame that's thousands of operations — and the terminal is drawing intermediate states the whole time.
 
-The real fix was DEC mode 2026 — synchronized output. The terminal buffers everything between `\x1b[?2026h` and `\x1b[?2026l` and paints it atomically. Hide cursor at the start, do all the work, position cursor at its final location, show cursor, end sync. Zero intermediate positions visible. Ghostty, Kitty, WezTerm, iTerm2, and foot all support it. Terminals that don't just silently ignore the sequences.
+The result? Tearing. Flicker. The cursor — especially in Ghostty with its smooth cursor shader — was visibly jumping between positions mid-frame. Even with the diff engine only writing changed cells, you could see partial frames. For a framework that's supposed to feel native, this was awful.
+
+I tried hiding and showing the cursor around each frame. Tried batching everything into a single `write()` call. Still flickered — one `write()` doesn't mean one paint. The terminal reads and processes the byte stream incrementally.
+
+The real fix was DEC mode 2026 — synchronized output. It's an escape sequence protocol: send `\x1b[?2026h` to begin a sync block, write all your frame data, then send `\x1b[?2026l` to end it. The terminal buffers *everything* between those markers and paints it as a single atomic operation. No intermediate states. No tearing. No cursor dancing across the screen mid-frame.
+
+```typescript
+// Begin synchronized update — terminal buffers everything
+writeAscii(`${CSI}?2026h`);
+
+// Hide cursor so it's not visible at intermediate positions
+writeAscii(`${CSI}?25l`);
+
+// ... write all cell changes, SGR sequences, cursor moves ...
+
+// Position cursor at its final location, show it
+writeAscii(`${CSI}${cursorY + 1};${cursorX + 1}H`);
+writeAscii(`${CSI}?25h`);
+
+// End synchronized update — terminal paints everything at once
+writeAscii(`${CSI}?2026l`);
+```
+
+The impact was dramatic. It didn't change frame *computation* time, but it eliminated all visual artifacts. Frames went from "you can see it painting" to "it just appears." The perceived performance improvement was massive — apps felt twice as fast even though the actual frame time didn't change.
+
+Ghostty, Kitty, WezTerm, iTerm2, foot, and Contour all support it. Terminals that don't simply ignore the sequences — zero compatibility cost. I also had to disable auto-wrap (`\x1b[?7l`) inside the sync block because some terminals (Kitty, Ghostty) have edge cases where the pending-wrap state from writing the last column corrupts cursor positioning when combined with DEC 2026. Subtle bug, took a while to track down.
+
+This is the kind of optimization that doesn't show up in benchmarks but completely transforms the user experience.
 
 ## The Reference Identity Cascade
 
@@ -173,19 +200,20 @@ These three changes — stable style references, smart `commitUpdate`, and `hasN
 
 | Metric | Before | After |
 |--------|--------|-------|
-| Frame time | ~25ms | ~2.8ms |
+| Frame time | ~50ms | ~2.4ms |
 | Dirty entries/frame | 215/215 | ~70/215 |
 | Pre-clear cells | 25,000 | 1,700 |
 | Text cache hit rate | 2% | 85%+ |
 | WASM calls (layout) | ~4,200 | ~500 |
+| Visual tearing | constant | zero (DEC 2026) |
 
-9× faster. The benchmark runs at 30fps with ~2.8ms frame time and ~27ms of headroom per frame.
+20× faster. The benchmark runs at 30fps with ~2.4ms frame time and ~30ms of headroom per frame.
 
 ## What's Left
 
 `yogaCalculate` still takes ~0.86ms — that's Yoga's internal WASM cost for 600 nodes. The benchmark forces structural changes every tick, so Yoga must recalculate. The renderer itself — everything minus Yoga — runs under 2ms.
 
-The only way past this ceiling is reducing the Yoga node count (virtual scrolling) or using a lighter layout engine. For now, 2.8ms is plenty.
+The only way past this ceiling is reducing the Yoga node count (virtual scrolling) or using a lighter layout engine. For now, ~2.4ms is plenty.
 
 ## The Real Lesson
 
@@ -193,6 +221,6 @@ Almost every optimization here was about *not doing something*. Not resolving un
 
 The actual algorithms — the diff, the paint, the layout extraction — barely changed. They're not faster. They just run on fewer things. And that's the trick, isn't it? The fastest code is the code that doesn't run.
 
-Also: profile first. My gut said "the diff is slow." My gut was completely wrong. If I'd optimized the diff I would've shaved maybe 0.3ms off a 25ms frame. Instead I found the actual bottleneck and got a 9× speedup. Profilers don't lie. Intuition does.
+Also: profile first. My gut said "the diff is slow." My gut was completely wrong. If I'd optimized the diff I would've shaved maybe 0.3ms off a 50ms frame. Instead I found the actual bottleneck and got a 20× speedup. Profilers don't lie. Intuition does.
 
 The full code is at [github.com/semos-labs/glyph](https://github.com/semos-labs/glyph). The benchmark is in `examples/benchmark` if you want to run it yourself.
