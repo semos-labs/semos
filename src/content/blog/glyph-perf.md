@@ -4,7 +4,7 @@ description: "How I took Glyph's render loop from 50ms/frame down to 2.4ms — p
 date: 2026-02-18
 tags: ["glyph", "performance", "rendering", "optimization"]
 cover: "/images/glyph-perf.webp"
-draft: true
+draft: false
 ---
 
 I wrote about [how Glyph works](/blog/how-glyph-works) a couple days ago. That post describes the architecture — reconciler, Yoga layout, framebuffer, diff. Clean, elegant pipeline.
@@ -27,7 +27,7 @@ My first instinct was "the diff is slow." Character-by-character comparison acro
 
 Wrong. I added `performance.now()` instrumentation around every phase of the render pipeline and wrote the results to a CSV. The first thing I saw:
 
-**Yoga layout was eating 70% of frame time.**
+**Yoga layout was eating most of the frame time.**
 
 Not the diff. Not painting. Not text processing. The flexbox engine. Specifically, I was creating the entire Yoga tree from scratch every frame — `Yoga.Node.create()` for every node, apply all styles, attach all children, calculate, extract positions, then `freeRecursive()`. Every frame. For 215 nodes.
 
@@ -49,7 +49,7 @@ These were small wins individually. Maybe 5-6ms combined. But they're the kind o
 
 ## Rearchitecting Yoga (The Hard Part)
 
-OK. The real problem. 70% of frame time was rebuilding the Yoga tree.
+OK. The real problem. Most of the frame time was rebuilding the Yoga tree.
 
 The solution was obvious in retrospect: don't rebuild it. Create each Yoga node once when the `GlyphNode` is created, keep it alive for the node's entire lifetime, and only free it when React permanently detaches the node.
 
@@ -82,7 +82,7 @@ But once that was sorted out — damn. Layout time dropped from ~35ms to ~3ms. T
 
 ## Everything Flickered
 
-So I had frame time under 20ms. Great progress! Except the screen flickered like a broken fluorescent light.
+Frame time was way down. Great progress! Except the screen flickered like a broken fluorescent light.
 
 Here's what was happening: I had a `fullRedraw` flag that cleared the terminal screen (`\x1b[2J`). It was supposed to fire only on resize and init. But structural changes — which happened every frame because the activity log was adding and removing entries — were also triggering it. 30 full screen clears per second. Of course it flickered.
 
@@ -125,7 +125,7 @@ On frames where only non-layout state changes — cursor blink, selection highli
 
 ## The ScrollView Problem
 
-At this point I was around 3.6ms, and I noticed something weird in the profile. The activity log — 200 entries, but only ~15 visible in the ScrollView viewport — was still dominating paint time. All 200 entries were in the paint list. Each one was getting processed, styled, and written to the framebuffer. The clip rect correctly prevented visible output, but the *work* was still happening.
+I noticed something weird in the profile. The activity log — 200 entries, but only ~15 visible in the ScrollView viewport — was still dominating paint time. All 200 entries were in the paint list. Each one was getting processed, styled, and written to the framebuffer. The clip rect correctly prevented visible output, but the *work* was still happening.
 
 Added clip rect culling in `collectPaintEntries`. Before adding a node to the paint list, check if it's entirely outside its parent's visible area. If it is, skip it *and all its descendants*:
 
@@ -145,17 +145,31 @@ Paint entries dropped from ~600 to ~45. For any app with scroll views — which 
 
 I added the same idea to `extractLayout`. Even with Yoga's `hasNewLayout()` flag telling me which nodes were recalculated, all 600 nodes under the activity log had new layout every frame (structural changes from log add/remove). But only ~45 were visible. Added clip rect propagation through `extractLayout` — off-screen nodes get one cheap position check, then their entire subtree is skipped. ~3,700 WASM calls avoided per frame.
 
+## The Reference Identity Cascade
+
+The next batch of optimizations was the most satisfying because they were all connected.
+
+React re-renders create new style objects even when values are identical. `<Box style={{ bg: "red" }}>` — every render, new object. My `resolveNodeStyles` saw a new reference, resolved a new style, produced a new `resolvedStyle` — which cascaded through everything. `syncYogaStyles` applied WASM calls (different style reference), text cache invalidated (different style reference), nodes marked dirty (different style reference).
+
+One three-line fix: shallow-compare the resolved style values before replacing the reference. Same values? Keep the old object. This single change cascaded *upward* through every caching layer.
+
+But that wasn't enough. React's reconciler calls `commitUpdate` on every node it touches during a render — and the original implementation unconditionally set `_paintDirty = true`. React re-renders the whole tree on state changes, so *all 215 nodes* were dirty every frame. All the incremental paint work from the dirty flag system? Completely nullified.
+
+Added `shallowStyleEqual` in `commitUpdate`. Only mark `_paintDirty` when style values actually differ. Dirty entries dropped from 215/215 → ~70/215. All the infrastructure I'd built for dirty tracking finally got to do its job.
+
+The last piece: Yoga's `hasNewLayout()` API. Instead of calling `getComputedLayout()` + `getComputedPadding()` × 4 on every node (5 WASM calls each), check `hasNewLayout()` first. If Yoga didn't recalculate the node *and* its parent didn't move, skip the entire subtree — zero work. If the parent moved but the node's relative position is unchanged, just apply an arithmetic delta — zero WASM calls.
+
+These three changes — stable style references, smart `commitUpdate`, and `hasNewLayout()` — were individually small. Together they reduced WASM calls from ~4,200 to ~500 per frame.
+
 ## Atomic Renders (DEC 2026)
 
-This one changed how I think about terminal rendering entirely.
+At this point I was sitting at about 12ms per frame. Way better than 50ms, but still not where I wanted to be. The profiler was pointing at something I hadn't considered: the diff phase was fast, but the terminal *write* was slow. Not the `write()` syscall itself — the terminal processing the output on the other end.
 
-Up to this point, every optimization was about reducing how much work the renderer does. But there was a whole other class of problem I'd been ignoring: the terminal itself. When you write a frame's worth of escape sequences to stdout, the terminal processes them *serially*. Character by character. Move cursor, set color, write cell, move cursor, set color, write cell. For a complex frame that's thousands of operations — and the terminal is drawing intermediate states the whole time.
+Here's the problem. When you push a frame's worth of escape sequences to stdout, the terminal processes them incrementally. Move cursor, set color, write cell, move cursor, set color, write cell — thousands of operations, and the terminal is rendering intermediate states the entire time. Each intermediate render creates backpressure on stdout. The process writing bytes has to wait for the terminal to consume them, and the terminal is busy painting half-finished frames it's going to immediately overwrite.
 
-The result? Tearing. Flicker. The cursor — especially in Ghostty with its smooth cursor shader — was visibly jumping between positions mid-frame. Even with the diff engine only writing changed cells, you could see partial frames. For a framework that's supposed to feel native, this was awful.
+The cursor made it especially visible. In Ghostty, which has a smooth cursor shader, you could see it dancing between positions mid-frame. Tearing across the whole screen. I tried hiding/showing the cursor around each frame. Tried batching everything into a single `write()`. Still slow, still tearing — one `write()` doesn't mean one paint.
 
-I tried hiding and showing the cursor around each frame. Tried batching everything into a single `write()` call. Still flickered — one `write()` doesn't mean one paint. The terminal reads and processes the byte stream incrementally.
-
-The real fix was DEC mode 2026 — synchronized output. It's an escape sequence protocol: send `\x1b[?2026h` to begin a sync block, write all your frame data, then send `\x1b[?2026l` to end it. The terminal buffers *everything* between those markers and paints it as a single atomic operation. No intermediate states. No tearing. No cursor dancing across the screen mid-frame.
+The fix was DEC mode 2026 — synchronized output. Send `\x1b[?2026h` to begin a sync block, write all your frame data, then `\x1b[?2026l` to end it. The terminal buffers *everything* between those markers and paints it as a single atomic operation.
 
 ```typescript
 // Begin synchronized update — terminal buffers everything
@@ -174,27 +188,11 @@ writeAscii(`${CSI}?25h`);
 writeAscii(`${CSI}?2026l`);
 ```
 
-The impact was dramatic. It didn't change frame *computation* time, but it eliminated all visual artifacts. Frames went from "you can see it painting" to "it just appears." The perceived performance improvement was massive — apps felt twice as fast even though the actual frame time didn't change.
+The impact was way bigger than I expected. Frame time dropped from ~12ms to ~2.4ms. Not a typo — 5× faster from a single protocol change. The terminal was no longer doing intermediate rendering work during the write. No backpressure. No wasted paints. Just buffer, buffer, buffer, then one atomic flush. The tearing and cursor flicker disappeared as a bonus.
 
 Ghostty, Kitty, WezTerm, iTerm2, foot, and Contour all support it. Terminals that don't simply ignore the sequences — zero compatibility cost. I also had to disable auto-wrap (`\x1b[?7l`) inside the sync block because some terminals (Kitty, Ghostty) have edge cases where the pending-wrap state from writing the last column corrupts cursor positioning when combined with DEC 2026. Subtle bug, took a while to track down.
 
-This is the kind of optimization that doesn't show up in benchmarks but completely transforms the user experience.
-
-## The Reference Identity Cascade
-
-The last batch of optimizations was the most satisfying because they were all connected.
-
-React re-renders create new style objects even when values are identical. `<Box style={{ bg: "red" }}>` — every render, new object. My `resolveNodeStyles` saw a new reference, resolved a new style, produced a new `resolvedStyle` — which cascaded through everything. `syncYogaStyles` applied WASM calls (different style reference), text cache invalidated (different style reference), nodes marked dirty (different style reference).
-
-One three-line fix: shallow-compare the resolved style values before replacing the reference. Same values? Keep the old object. This single change cascaded *upward* through every caching layer.
-
-But that wasn't enough. React's reconciler calls `commitUpdate` on every node it touches during a render — and the original implementation unconditionally set `_paintDirty = true`. React re-renders the whole tree on state changes, so *all 215 nodes* were dirty every frame. All the incremental paint work from the dirty flag system? Completely nullified.
-
-Added `shallowStyleEqual` in `commitUpdate`. Only mark `_paintDirty` when style values actually differ. Dirty entries dropped from 215/215 → ~70/215. All the infrastructure I'd built for dirty tracking finally got to do its job.
-
-The last piece: Yoga's `hasNewLayout()` API. Instead of calling `getComputedLayout()` + `getComputedPadding()` × 4 on every node (5 WASM calls each), check `hasNewLayout()` first. If Yoga didn't recalculate the node *and* its parent didn't move, skip the entire subtree — zero work. If the parent moved but the node's relative position is unchanged, just apply an arithmetic delta — zero WASM calls.
-
-These three changes — stable style references, smart `commitUpdate`, and `hasNewLayout()` — were individually small. Together they reduced WASM calls from ~4,200 to ~500 per frame.
+This was the single biggest performance win in the entire optimization. All the other changes were about reducing the renderer's work. This one was about not fighting the terminal.
 
 ## The Numbers
 
@@ -205,7 +203,6 @@ These three changes — stable style references, smart `commitUpdate`, and `hasN
 | Pre-clear cells | 25,000 | 1,700 |
 | Text cache hit rate | 2% | 85%+ |
 | WASM calls (layout) | ~4,200 | ~500 |
-| Visual tearing | constant | zero (DEC 2026) |
 
 20× faster. The benchmark runs at 30fps with ~2.4ms frame time and ~30ms of headroom per frame.
 

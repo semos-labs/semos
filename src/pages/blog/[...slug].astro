@@ -180,4 +180,26 @@ function formatDate(date: Date) {
   .prose strong {
     @apply text-white font-medium;
   }
+
+  /* ── Tables ── */
+  .prose table {
+    @apply w-full my-8 text-body-sm font-mono border-collapse;
+  }
+  .prose thead th {
+    @apply text-left text-gray-400 font-medium text-fine uppercase tracking-wider
+           pb-3 border-b border-gray-700;
+  }
+  .prose tbody td {
+    @apply py-2.5 pr-6 text-gray-300 border-b border-gray-800/60;
+  }
+  .prose tbody tr:last-child td {
+    @apply border-b-0;
+  }
+  .prose tbody tr:hover td {
+    @apply text-white;
+  }
+  .prose thead th:first-child,
+  .prose tbody td:first-child {
+    @apply text-gray-400;
+  }
 </style>
