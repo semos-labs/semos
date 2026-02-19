@@ -34,6 +34,7 @@ terminal width:
 | <a id="clip"></a> `clip?` | [`Responsive`](#responsive)\<`boolean`\> | Clip overflowing children (used internally by ScrollView). |
 | <a id="color"></a> `color?` | [`Responsive`](#responsive)\<[`Color`](../color)\> | Text (foreground) color. Inherited by children. |
 | <a id="dim"></a> `dim?` | [`Responsive`](#responsive)\<`boolean`\> | Render text in dim/faint. |
+| <a id="flexbasis"></a> `flexBasis?` | [`Responsive`](#responsive)\<[`DimensionValue`](#dimension-value)\> | Initial main-axis size before flex grow/shrink. Overrides `width`/`height` for flex calculations. |
 | <a id="flexdirection"></a> `flexDirection?` | [`Responsive`](#responsive)\<`"row"` \| `"column"`\> | Direction of the main axis. Default `"column"`. |
 | <a id="flexgrow"></a> `flexGrow?` | [`Responsive`](#responsive)\<`number`\> | How much this element grows to fill available space (default `0`). |
 | <a id="flexshrink"></a> `flexShrink?` | [`Responsive`](#responsive)\<`number`\> | How much this element shrinks when space is tight (default `1`). |

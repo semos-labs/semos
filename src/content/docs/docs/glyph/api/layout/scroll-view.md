@@ -3,17 +3,21 @@ title: 'ScrollView'
 ---
 
 ```ts
-function ScrollView(__namedParameters): Element;
+const ScrollView: ForwardRefExoticComponent<ScrollViewProps & RefAttributes<ScrollViewHandle>>;
 ```
 
-Scrollable container with optional built-in virtualization.
+Scrollable container.
 
 Supports three modes:
-1. **Basic** — wraps arbitrary content and scrolls via keyboard.
-2. **Array virtualization** — set `virtualize` to only render visible children.
-3. **Line virtualization** — pass a render function + `totalLines` for giant lists.
+1. **Array children** (default) — all children rendered, overflow clipped.
+   Yoga has every layout position, so follow-focus is pixel-perfect.
+2. **Virtualized array** (`virtualize` prop) — only visible items mounted
+   (sliding window).  Good for huge lists where rendering everything would
+   be too expensive.
+3. **Line virtualization** — pass a render function + `totalLines`.
 
-Auto-scrolls to keep the focused child visible when `scrollToFocus` is `true` (default).
+Auto-scrolls to keep the focused child visible when `scrollToFocus` is
+`true` (default).
 
 **Keyboard shortcuts** (when the ScrollView or a child has focus):
 | Key | Action |
@@ -22,20 +26,10 @@ Auto-scrolls to keep the focused child visible when `scrollToFocus` is `true` (d
 | Ctrl+D / Ctrl+U | Half-page down / up |
 | Ctrl+F / Ctrl+B | Full-page down / up |
 
-## Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `__namedParameters` | [`ScrollViewProps`](#properties) |
-
-## Returns
-
-`Element`
-
 ## Examples
 
 ```tsx
-// Basic scrollable content
+// Basic scrollable list — all children rendered, overflow clipped
 <ScrollView style={{ height: 10, border: "round" }}>
   {items.map((item) => (
     <Text key={item.id}>{item.name}</Text>
@@ -44,9 +38,9 @@ Auto-scrolls to keep the focused child visible when `scrollToFocus` is `true` (d
 ```
 
 ```tsx
-// Virtualized — only visible children are mounted
-<ScrollView virtualize style={{ height: 20 }}>
-  {thousandsOfItems.map((item) => (
+// Virtualized list — only visible items mounted
+<ScrollView virtualize style={{ height: 10, border: "round" }}>
+  {items.map((item) => (
     <Text key={item.id}>{item.name}</Text>
   ))}
 </ScrollView>
@@ -69,10 +63,10 @@ Auto-scrolls to keep the focused child visible when `scrollToFocus` is `true` (d
 
 | Property | Type | Description |
 | ------ | ------ | ------ |
-| <a id="children"></a> `children?` | `ReactNode` \| (`range`) => `ReactNode` | Children to render. When `virtualize` is true, only visible children are rendered. Can also be a render function `(range: VisibleRange) => ReactNode` for line-based virtualization. |
+| <a id="children"></a> `children?` | `ReactNode` \| (`range`) => `ReactNode` | Children to render. Can also be a render function `(range: VisibleRange) => ReactNode` for line-based virtualization. |
 | <a id="defaultscrolloffset"></a> `defaultScrollOffset?` | `number` | Initial offset for uncontrolled mode |
 | <a id="disablekeyboard"></a> `disableKeyboard?` | `boolean` | Disable keyboard scrolling |
-| <a id="estimateditemheight"></a> `estimatedItemHeight?` | `number` | Estimated height per child in lines (default: 1). Used for initial scroll calculations before actual heights are measured. |
+| <a id="estimateditemheight"></a> `estimatedItemHeight?` | `number` | Estimated height per child in lines (default: 1). Only used in virtualized mode for initial scroll calculations before actual heights are measured. |
 | <a id="focusable"></a> `focusable?` | `boolean` | Make ScrollView itself focusable. Default: true. Set to false if you want scroll to follow child focus only. |
 | <a id="focusedstyle"></a> `focusedStyle?` | [`Style`](../../core/style) | Style applied when ScrollView is focused |
 | <a id="onscroll"></a> `onScroll?` | (`offset`) => `void` | Callback when scroll offset should change (controlled mode) |
@@ -83,7 +77,7 @@ Auto-scrolls to keep the focused child visible when `scrollToFocus` is `true` (d
 | <a id="showscrollbar"></a> `showScrollbar?` | `boolean` | Show scrollbar when content is scrollable (default: true) |
 | <a id="style"></a> `style?` | [`Style`](../../core/style) | - |
 | <a id="totallines"></a> `totalLines?` | `number` | Total content height in lines (for render function mode). When set with a render function, enables line-based virtualization. |
-| <a id="virtualize"></a> `virtualize?` | `boolean` | Enable virtualization. When true, only visible children are rendered. Heights are auto-measured - no need to specify them! |
+| <a id="virtualize"></a> `virtualize?` | `boolean` | Enable sliding-window virtualization for array children. When true, only visible items (+ overscan) are mounted. When false (default), all children are rendered and clipped — like browser overflow scrolling. This gives Yoga full layout info so `scrollIntoView` / follow-focus positions are always accurate. |
 
 ---
 

@@ -12,6 +12,10 @@ to make the referenced node visible.
 This is the non-focusable counterpart to `handle.scrollIntoView()` —
 use it with plain `Box` refs or any `GlyphNode`.
 
+Works both when the calling component is **inside** the ScrollView
+(via React context) and when it is **outside** (by walking up the
+target node's parent chain).
+
 ## Parameters
 
 | Parameter | Type | Description |
