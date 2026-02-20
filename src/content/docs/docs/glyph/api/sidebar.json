@@ -68,8 +68,20 @@
         "link": "/glyph/api/tables/table-cell/"
       },
       {
+        "label": "TableHeaderRow",
+        "link": "/glyph/api/tables/table-header-row/"
+      },
+      {
         "label": "TableRow",
         "link": "/glyph/api/tables/table-row/"
+      },
+      {
+        "label": "CellAlign",
+        "link": "/glyph/api/tables/cell-align/"
+      },
+      {
+        "label": "CellVerticalAlign",
+        "link": "/glyph/api/tables/cell-vertical-align/"
       },
       {
         "label": "TableVariant",
