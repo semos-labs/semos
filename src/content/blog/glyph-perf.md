@@ -19,7 +19,7 @@ For the impatient ones, this is what it looks like after all the improvements. S
 
 ## The Problem
 
-I'd been building [Aion](/aion) and [Epist](/epist) on top of Glyph for months and they felt fine. Responsive, snappy. But I had a nagging feeling I was getting lucky — those apps update on user input, not continuously. What happens when the renderer is under real pressure?
+I'd been building [Aion](/aion) and [Epist](/epist) on top of Glyph and they felt fine. Responsive, snappy. But I had a nagging feeling I was getting lucky — those apps update on user input, not continuously. What happens when the renderer is under real pressure?
 
 So I built a benchmark. A simulated system dashboard: 80 processes in a scrollable table with live CPU/memory stats, 4 sparkline metrics, a 200-entry scrollable activity log that adds and removes entries every tick, and a search bar for filtering. About 215 GlyphNodes in the tree. Structural changes every single frame. 30fps state updates.
 
