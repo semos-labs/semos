@@ -8,8 +8,10 @@ Complete API reference for `@semos-labs/glyph`.
 
 - [Box](layout/box/)
 - [Image](layout/image/)
+- [MediaQueryInput](layout/media-query-input/)
 - [Portal](layout/portal/)
 - [ScrollView](layout/scroll-view/)
+- [ScrollViewHandle](layout/scroll-view-handle/)
 - [Spacer](layout/spacer/)
 - [Text](layout/text/)
 - [useLayout](layout/use-layout/)
@@ -17,17 +19,15 @@ Complete API reference for `@semos-labs/glyph`.
 - [defaultBreakpoints](layout/default-breakpoints/)
 - [resolveResponsiveValue](layout/resolve-responsive-value/)
 - [resolveStyle](layout/resolve-style/)
-- [MediaQueryInput](layout/media-query-input/)
-- [ScrollViewHandle](layout/scroll-view-handle/)
 
 ## Tables
 
+- [CellAlign](tables/cell-align/)
+- [CellVerticalAlign](tables/cell-vertical-align/)
 - [Table](tables/table/)
 - [TableCell](tables/table-cell/)
 - [TableHeaderRow](tables/table-header-row/)
 - [TableRow](tables/table-row/)
-- [CellAlign](tables/cell-align/)
-- [CellVerticalAlign](tables/cell-vertical-align/)
 - [TableVariant](tables/table-variant/)
 
 ## Form
@@ -47,11 +47,11 @@ Complete API reference for `@semos-labs/glyph`.
 - [Link](navigation/link/)
 - [List](navigation/list/)
 - [Menu](navigation/menu/)
+- [ScrollIntoViewOptions](navigation/scroll-into-view-options/)
 - [useFocus](navigation/use-focus/)
 - [useFocusable](navigation/use-focusable/)
 - [useFocusRegistry](navigation/use-focus-registry/)
 - [useScrollIntoView](navigation/use-scroll-into-view/)
-- [ScrollIntoViewOptions](navigation/scroll-into-view-options/)
 
 ## Keybindings
 
@@ -72,10 +72,21 @@ Complete API reference for `@semos-labs/glyph`.
 - [useStatusBar](feedback/use-status-bar/)
 - [useToast](feedback/use-toast/)
 
+## Markdown
+
+- [Markdown](markdown/markdown/)
+- [createHighlighter](markdown/create-highlighter/)
+- [parseMarkdown](markdown/parse-markdown/)
+
 ## Core
 
+- [Color](core/color/)
 - [DebugOverlay](core/debug-overlay/)
+- [FocusableHandle](core/focusable-handle/)
+- [Key](core/key/)
+- [LayoutRect](core/layout-rect/)
 - [Match](core/match/)
+- [Style](core/style/)
 - [useApp](core/use-app/)
 - [detectTerminalCapabilities](core/detect-terminal-capabilities/)
 - [parseAnsi](core/parse-ansi/)
@@ -84,8 +95,3 @@ Complete API reference for `@semos-labs/glyph`.
 - [supportsInlineImages](core/supports-inline-images/)
 - [ttyCharWidth](core/tty-char-width/)
 - [ttyStringWidth](core/tty-string-width/)
-- [Color](core/color/)
-- [FocusableHandle](core/focusable-handle/)
-- [Key](core/key/)
-- [LayoutRect](core/layout-rect/)
-- [Style](core/style/)
