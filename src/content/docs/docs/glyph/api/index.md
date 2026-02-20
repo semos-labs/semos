@@ -18,6 +18,7 @@ Complete API reference for `@semos-labs/glyph`.
 - [resolveResponsiveValue](layout/resolve-responsive-value/)
 - [resolveStyle](layout/resolve-style/)
 - [MediaQueryInput](layout/media-query-input/)
+- [ScrollViewHandle](layout/scroll-view-handle/)
 
 ## Form
 
