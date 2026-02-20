@@ -11,6 +11,12 @@ I wrote about [how Glyph works](/blog/how-glyph-works) a couple days ago. That p
 
 What it doesn't mention is that it was slow as hell.
 
+## The result
+
+For the impatient ones, this is what it looks like after all the improvements. See the numbers? That's it, sub-3ms render time per frame. Pretty neat, huh?
+
+![Semos Performance Test](/images/glyph-bench.gif)
+
 ## The Problem
 
 I'd been building [Aion](/aion) and [Epist](/epist) on top of Glyph for months and they felt fine. Responsive, snappy. But I had a nagging feeling I was getting lucky — those apps update on user input, not continuously. What happens when the renderer is under real pressure?
