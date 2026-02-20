@@ -57,6 +57,27 @@
     ]
   },
   {
+    "label": "Tables",
+    "items": [
+      {
+        "label": "Table",
+        "link": "/glyph/api/tables/table/"
+      },
+      {
+        "label": "TableCell",
+        "link": "/glyph/api/tables/table-cell/"
+      },
+      {
+        "label": "TableRow",
+        "link": "/glyph/api/tables/table-row/"
+      },
+      {
+        "label": "TableVariant",
+        "link": "/glyph/api/tables/table-variant/"
+      }
+    ]
+  },
+  {
     "label": "Form",
     "items": [
       {
@@ -200,6 +221,10 @@
     "label": "Core",
     "items": [
       {
+        "label": "DebugOverlay",
+        "link": "/glyph/api/core/debug-overlay/"
+      },
+      {
         "label": "Match",
         "link": "/glyph/api/core/match/"
       },
@@ -226,6 +251,14 @@
       {
         "label": "supportsInlineImages",
         "link": "/glyph/api/core/supports-inline-images/"
+      },
+      {
+        "label": "ttyCharWidth",
+        "link": "/glyph/api/core/tty-char-width/"
+      },
+      {
+        "label": "ttyStringWidth",
+        "link": "/glyph/api/core/tty-string-width/"
       },
       {
         "label": "Color",

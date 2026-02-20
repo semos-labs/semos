@@ -20,6 +20,13 @@ Complete API reference for `@semos-labs/glyph`.
 - [MediaQueryInput](layout/media-query-input/)
 - [ScrollViewHandle](layout/scroll-view-handle/)
 
+## Tables
+
+- [Table](tables/table/)
+- [TableCell](tables/table-cell/)
+- [TableRow](tables/table-row/)
+- [TableVariant](tables/table-variant/)
+
 ## Form
 
 - [Button](form/button/)
@@ -64,6 +71,7 @@ Complete API reference for `@semos-labs/glyph`.
 
 ## Core
 
+- [DebugOverlay](core/debug-overlay/)
 - [Match](core/match/)
 - [useApp](core/use-app/)
 - [detectTerminalCapabilities](core/detect-terminal-capabilities/)
@@ -71,6 +79,8 @@ Complete API reference for `@semos-labs/glyph`.
 - [render](core/render/)
 - [stripAnsi](core/strip-ansi/)
 - [supportsInlineImages](core/supports-inline-images/)
+- [ttyCharWidth](core/tty-char-width/)
+- [ttyStringWidth](core/tty-string-width/)
 - [Color](core/color/)
 - [FocusableHandle](core/focusable-handle/)
 - [Key](core/key/)
