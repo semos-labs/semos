@@ -24,7 +24,10 @@ Complete API reference for `@semos-labs/glyph`.
 
 - [Table](tables/table/)
 - [TableCell](tables/table-cell/)
+- [TableHeaderRow](tables/table-header-row/)
 - [TableRow](tables/table-row/)
+- [CellAlign](tables/cell-align/)
+- [CellVerticalAlign](tables/cell-vertical-align/)
 - [TableVariant](tables/table-variant/)
 
 ## Form
