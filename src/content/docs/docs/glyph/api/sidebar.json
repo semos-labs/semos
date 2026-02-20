@@ -11,12 +11,20 @@
         "link": "/glyph/api/layout/image/"
       },
       {
+        "label": "MediaQueryInput",
+        "link": "/glyph/api/layout/media-query-input/"
+      },
+      {
         "label": "Portal",
         "link": "/glyph/api/layout/portal/"
       },
       {
         "label": "ScrollView",
         "link": "/glyph/api/layout/scroll-view/"
+      },
+      {
+        "label": "ScrollViewHandle",
+        "link": "/glyph/api/layout/scroll-view-handle/"
       },
       {
         "label": "Spacer",
@@ -45,20 +53,20 @@
       {
         "label": "resolveStyle",
         "link": "/glyph/api/layout/resolve-style/"
-      },
-      {
-        "label": "MediaQueryInput",
-        "link": "/glyph/api/layout/media-query-input/"
-      },
-      {
-        "label": "ScrollViewHandle",
-        "link": "/glyph/api/layout/scroll-view-handle/"
       }
     ]
   },
   {
     "label": "Tables",
     "items": [
+      {
+        "label": "CellAlign",
+        "link": "/glyph/api/tables/cell-align/"
+      },
+      {
+        "label": "CellVerticalAlign",
+        "link": "/glyph/api/tables/cell-vertical-align/"
+      },
       {
         "label": "Table",
         "link": "/glyph/api/tables/table/"
@@ -74,14 +82,6 @@
       {
         "label": "TableRow",
         "link": "/glyph/api/tables/table-row/"
-      },
-      {
-        "label": "CellAlign",
-        "link": "/glyph/api/tables/cell-align/"
-      },
-      {
-        "label": "CellVerticalAlign",
-        "link": "/glyph/api/tables/cell-vertical-align/"
       },
       {
         "label": "TableVariant",
@@ -146,6 +146,10 @@
         "link": "/glyph/api/navigation/menu/"
       },
       {
+        "label": "ScrollIntoViewOptions",
+        "link": "/glyph/api/navigation/scroll-into-view-options/"
+      },
+      {
         "label": "useFocus",
         "link": "/glyph/api/navigation/use-focus/"
       },
@@ -160,10 +164,6 @@
       {
         "label": "useScrollIntoView",
         "link": "/glyph/api/navigation/use-scroll-into-view/"
-      },
-      {
-        "label": "ScrollIntoViewOptions",
-        "link": "/glyph/api/navigation/scroll-into-view-options/"
       }
     ]
   },
@@ -230,15 +230,52 @@
     ]
   },
   {
+    "label": "Markdown",
+    "items": [
+      {
+        "label": "Markdown",
+        "link": "/glyph/api/markdown/markdown/"
+      },
+      {
+        "label": "createHighlighter",
+        "link": "/glyph/api/markdown/create-highlighter/"
+      },
+      {
+        "label": "parseMarkdown",
+        "link": "/glyph/api/markdown/parse-markdown/"
+      }
+    ]
+  },
+  {
     "label": "Core",
     "items": [
+      {
+        "label": "Color",
+        "link": "/glyph/api/core/color/"
+      },
       {
         "label": "DebugOverlay",
         "link": "/glyph/api/core/debug-overlay/"
       },
       {
+        "label": "FocusableHandle",
+        "link": "/glyph/api/core/focusable-handle/"
+      },
+      {
+        "label": "Key",
+        "link": "/glyph/api/core/key/"
+      },
+      {
+        "label": "LayoutRect",
+        "link": "/glyph/api/core/layout-rect/"
+      },
+      {
         "label": "Match",
         "link": "/glyph/api/core/match/"
+      },
+      {
+        "label": "Style",
+        "link": "/glyph/api/core/style/"
       },
       {
         "label": "useApp",
@@ -271,26 +308,6 @@
       {
         "label": "ttyStringWidth",
         "link": "/glyph/api/core/tty-string-width/"
-      },
-      {
-        "label": "Color",
-        "link": "/glyph/api/core/color/"
-      },
-      {
-        "label": "FocusableHandle",
-        "link": "/glyph/api/core/focusable-handle/"
-      },
-      {
-        "label": "Key",
-        "link": "/glyph/api/core/key/"
-      },
-      {
-        "label": "LayoutRect",
-        "link": "/glyph/api/core/layout-rect/"
-      },
-      {
-        "label": "Style",
-        "link": "/glyph/api/core/style/"
       }
     ]
   }

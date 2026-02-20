@@ -37,6 +37,7 @@ Array of segments with text and associated style
 | <a id="dim"></a> `dim?` | `boolean` |
 | <a id="fg"></a> `fg?` | [`Color`](../color) |
 | <a id="italic"></a> `italic?` | `boolean` |
+| <a id="strikethrough"></a> `strikethrough?` | `boolean` |
 | <a id="underline"></a> `underline?` | `boolean` |
 
 ---

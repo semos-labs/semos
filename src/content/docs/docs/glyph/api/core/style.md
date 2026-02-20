@@ -59,6 +59,7 @@ terminal width:
 | <a id="pointerevents"></a> `pointerEvents?` | [`Responsive`](#responsive)\<`"none"` \| `"auto"`\> | Controls whether this element blocks mouse/focus events. |
 | <a id="position"></a> `position?` | [`Responsive`](#responsive)\<`"relative"` \| `"absolute"`\> | Positioning mode. `"absolute"` elements are taken out of flow. |
 | <a id="right"></a> `right?` | [`Responsive`](#responsive)\<[`DimensionValue`](#dimension-value)\> | Right offset for absolute positioning. |
+| <a id="strikethrough"></a> `strikethrough?` | [`Responsive`](#responsive)\<`boolean`\> | Render text with strikethrough (ANSI SGR 9). Supported by most modern terminals. |
 | <a id="textalign"></a> `textAlign?` | [`Responsive`](#responsive)\<[`TextAlign`](#text-align)\> | Horizontal text alignment within the container. |
 | <a id="top"></a> `top?` | [`Responsive`](#responsive)\<[`DimensionValue`](#dimension-value)\> | Top offset for absolute positioning. |
 | <a id="underline"></a> `underline?` | [`Responsive`](#responsive)\<`boolean`\> | Render text with underline. |
