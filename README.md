@@ -1,4 +1,4 @@
-# sema
+# Semos Website
 
 To install dependencies:
 
