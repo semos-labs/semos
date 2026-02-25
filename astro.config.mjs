@@ -107,6 +107,10 @@ export default defineConfig({
                   collapsed: true,
                   items: [
                       { label: "Overview", link: "/docs/attyx/" },
+                      { label: "Configuration", link: "/docs/attyx/configuration/" },
+                      { label: "CLI", link: "/docs/attyx/cli/" },
+                      { label: "VT Compatibility", link: "/docs/attyx/vt-compatibility/" },
+                      { label: "Building from Source", link: "/docs/attyx/building/" },
                   ],
               },
           ],
