@@ -1,0 +1,217 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Attyx",
+  description: "A deterministic, VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal on macOS and OpenGL on Linux.",
+  url: "https://semos.sh/attyx",
+  operatingSystem: ["macOS", "Linux"],
+  applicationCategory: "DeveloperApplication",
+  screenshot: "https://semos.sh/images/attyx.webp",
+  author: {
+    "@type": "Organization",
+    name: "Semos Labs",
+    url: "https://semos.sh",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+---
+
+<Layout title="Attyx — Deterministic Terminal Emulator" description="A VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal and OpenGL. Deterministic engine, full color support, and TOML configuration." image="/images/attyx.webp" jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="min-h-dvh flex flex-col md:flex-row items-center justify-center pt-20 md:pt-32 pb-6 md:pb-16 px-6 md:px-8 gap-2 md:gap-16 max-w-content mx-auto text-center md:text-left">
+    <div class="flex-1 max-w-full md:max-w-[520px]">
+      <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-8 justify-center md:justify-start">
+        <img src="/logos/Attyx.png" alt="Attyx" class="w-10 h-10 md:w-12 md:h-12 rounded-xl" />
+        <span class="font-hand text-title-xl">Attyx</span>
+        <span class="text-[0.7rem] uppercase tracking-wider text-gray-400 border border-gray-600 rounded-full px-3 py-1">Alpha</span>
+      </div>
+      <h1 class="font-hand heading-page mb-3 md:mb-6">
+        A terminal emulator,<br />
+        <span class="text-gray-200 italic">built from scratch</span>
+      </h1>
+      <p class="text-body-lg text-gray-300 leading-copy mb-6 md:mb-10 max-w-full md:max-w-[460px]">
+        A deterministic, VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal on macOS and OpenGL on Linux. Fast, correct, and configurable.
+      </p>
+      <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+        <a href="/docs/attyx/" class="btn-primary" data-ph-cta="attyx_hero_docs">Documentation</a>
+        <a href="https://github.com/semos-labs/attyx" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="attyx_hero_github">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="flex-1 max-w-full md:max-w-[400px] w-full md:w-auto">
+      <div class="install-block bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-label">
+        <div class="flex items-center px-4 py-2.5 bg-gray-800 border-b border-gray-700 gap-3">
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+          </div>
+          <div class="flex gap-1 ml-2">
+            <button class="install-tab active text-[0.7rem] px-2.5 py-1 rounded bg-gray-700 text-gray-200 border-none cursor-pointer transition-all hover:text-white" data-tab="brew">Homebrew</button>
+            <button class="install-tab text-[0.7rem] px-2.5 py-1 rounded bg-transparent text-gray-400 border-none cursor-pointer transition-all hover:text-gray-300" data-tab="curl">curl</button>
+          </div>
+          <button
+            class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-small transition-all hover:text-white hover:border-gray-500"
+            aria-label="Copy to clipboard"
+            data-ph-cta="attyx_copy_install"
+          >
+            <span class="group-[.copied]:hidden">⧉</span>
+            <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
+          </button>
+        </div>
+        <div class="install-panel px-6 py-5 leading-prose text-left" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install attyx">
+          <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
+          <p><span class="text-gray-400">$</span> <span class="text-white">brew install attyx</span></p>
+        </div>
+        <div class="install-panel px-6 py-5 leading-prose text-left hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/attyx/releases/latest/download/attyx-darwin-arm64 -o attyx&#10;chmod +x attyx && sudo mv attyx /usr/local/bin/">
+          <p><span class="text-gray-400">$</span> <span class="text-white">curl -L https://github.com/semos-labs/attyx/</span></p>
+          <p><span class="text-white pl-4">releases/latest/download/attyx-darwin-arm64 -o attyx</span></p>
+          <p><span class="text-gray-400">$</span> <span class="text-white">chmod +x attyx && sudo mv attyx /usr/local/bin/</span></p>
+        </div>
+      </div>
+      <p class="text-center mt-3 text-[0.7rem] text-gray-400">macOS (Apple Silicon & Intel) · Linux (x64 & ARM64)</p>
+    </div>
+  </section>
+
+  <!-- Screenshot -->
+  <section class="px-4 md:px-8 pb-0 md:pb-24 -mt-28 md:-mt-40">
+    <div class="relative max-w-[960px] mx-auto max-h-[200px] md:max-h-none overflow-hidden md:overflow-visible rounded-xl">
+      <div class="absolute -inset-8 bg-gradient-to-b from-white/[0.03] via-white/[0.06] to-transparent rounded-3xl blur-2xl pointer-events-none"></div>
+      <div class="relative bg-gray-900 border border-gray-700/60 rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]">
+        <div class="flex items-center gap-2 px-4 py-3 bg-gray-800/80 border-b border-gray-700/60">
+          <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+          <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+          <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+          <span class="ml-3 text-[0.7rem] text-gray-400 font-mono">attyx</span>
+        </div>
+        <img src="/images/attyx.webp" alt="Attyx — Terminal emulator" class="w-full block" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-24 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="heading-section-lg text-center mb-14">Features</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#9881;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">Deterministic Engine</h3>
+          <p class="text-small text-gray-400 leading-body">Predictable, reproducible terminal behavior. Every input produces the same output, every time.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#9889;</span>
+          <h3 class="font-hand text-title mb-2">GPU Rendering</h3>
+          <p class="text-small text-gray-400 leading-body">Hardware-accelerated rendering with Metal on macOS and OpenGL on Linux. Smooth and fast.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128396;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">VT Compatible</h3>
+          <p class="text-small text-gray-400 leading-body">Full VT sequence support. Works with every CLI tool, shell, and TUI application you already use.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#127912;</span>
+          <h3 class="font-hand text-title mb-2">Full Color</h3>
+          <p class="text-small text-gray-400 leading-body">Complete SGR support — 16, 256, and 24-bit true color. Your terminal, in full color.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128433;</span>
+          <h3 class="font-hand text-title mb-2">Scrollback Buffer</h3>
+          <p class="text-small text-gray-400 leading-body">Configurable scrollback with efficient memory usage. Scroll through your terminal history.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128433;</span>
+          <h3 class="font-hand text-title mb-2">Mouse Support</h3>
+          <p class="text-small text-gray-400 leading-body">X10 and SGR mouse encoding. Click, scroll, and select text with full mouse input support.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128269;</span>
+          <h3 class="font-hand text-title mb-2">In-Terminal Search</h3>
+          <p class="text-small text-gray-400 leading-body">Search through terminal output without leaving the terminal. Find what you need instantly.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#9881;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">TOML Config</h3>
+          <p class="text-small text-gray-400 leading-body">TOML and CLI configuration with hot reload. Change settings without restarting.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#127760;</span>
+          <h3 class="font-hand text-title mb-2">Cross-Platform</h3>
+          <p class="text-small text-gray-400 leading-body">Native support for macOS and Linux. Same experience across platforms.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128172;</span>
+          <h3 class="font-hand text-title mb-2">Unicode & IME</h3>
+          <p class="text-small text-gray-400 leading-body">Full Unicode support with proper wide-character handling. IME input for CJK and other languages.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128279;</span>
+          <h3 class="font-hand text-title mb-2">Hyperlinks</h3>
+          <p class="text-small text-gray-400 leading-body">OSC 8 hyperlink support. Clickable URLs right in your terminal output.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128203;</span>
+          <h3 class="font-hand text-title mb-2">Bracketed Paste</h3>
+          <p class="text-small text-gray-400 leading-body">Bracketed paste mode for safe pasting. Your shell knows when you're pasting, not typing.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#128444;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">Kitty Graphics</h3>
+          <p class="text-small text-gray-400 leading-body">Kitty graphics protocol support. Display images, plots, and rich visual content directly in the terminal.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <span class="block text-title-md mb-3">&#9000;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">Kitty Keyboard</h3>
+          <p class="text-small text-gray-400 leading-body">Kitty keyboard protocol for unambiguous key reporting. Modifier keys, key release events, and full disambiguation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="py-16 px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto flex flex-col items-center gap-3">
+      <p class="text-center text-body-sm text-gray-400">
+        Written in <span class="text-gray-200">Zig</span> — fast, safe, and portable
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.install-block').forEach((block) => {
+    const tabs = block.querySelectorAll('.install-tab');
+    const panels = block.querySelectorAll('.install-panel');
+    const copyBtn = block.querySelector('.copy-btn');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        tabs.forEach((t) => {
+          t.classList.toggle('active', t === tab);
+          t.classList.toggle('bg-gray-700', t === tab);
+          t.classList.toggle('text-gray-200', t === tab);
+          t.classList.toggle('bg-transparent', t !== tab);
+          t.classList.toggle('text-gray-400', t !== tab);
+        });
+        panels.forEach((p) => {
+          p.classList.toggle('hidden', p.getAttribute('data-panel') !== target);
+        });
+      });
+    });
+
+    copyBtn?.addEventListener('click', async () => {
+      const active = block.querySelector('.install-panel:not(.hidden)');
+      const text = active?.getAttribute('data-copy') || '';
+      await navigator.clipboard.writeText(text);
+      copyBtn.classList.add('copied');
+      setTimeout(() => copyBtn.classList.remove('copied'), 2000);
+    });
+  });
+</script>

@@ -102,6 +102,13 @@ export default defineConfig({
                       { label: "Getting Started", link: "/docs/epist/getting-started/" },
                   ],
               },
+              {
+                  label: "Attyx",
+                  collapsed: true,
+                  items: [
+                      { label: "Overview", link: "/docs/attyx/" },
+                  ],
+              },
           ],
       }),
   ],

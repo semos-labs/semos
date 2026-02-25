@@ -21,7 +21,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title="Semos Labs — Terminal, Reimagined" description="Open-source terminal apps and libraries. Glyph (React terminal renderer), Aion (terminal calendar), and Epist (terminal email client). Built for developers who think in keystrokes." jsonLd={jsonLd}>
+<Layout title="Semos Labs — Terminal, Reimagined" description="Open-source terminal apps and libraries. Glyph (React terminal renderer), Aion (terminal calendar), Epist (terminal email client), and Attyx (terminal emulator). Built for developers who think in keystrokes." jsonLd={jsonLd}>
   <script is:inline>
     (function(){
       var k='semos_hero_seen',t=7*24*60*60*1e3;
@@ -67,6 +67,9 @@ const jsonLd = {
               <a href="/epist" class="text-white hover:text-gray-200 transition-colors">epist</a>
               <span class="text-gray-400">—</span>
               <span class="text-gray-400">Email with vim-style keybindings</span>
+              <a href="/attyx" class="text-white/60 hover:text-gray-200 transition-colors">attyx</a>
+              <span class="text-gray-400">—</span>
+              <span class="text-gray-400">Terminal emulator <span class="text-[0.65rem] uppercase tracking-wider text-gray-500 border border-gray-600 rounded px-1.5 py-0.5 ml-1">alpha</span></span>
             </div>
           </div>
 
@@ -251,6 +254,18 @@ const jsonLd = {
           { href: "/epist", label: "Learn more →", cta: "epist_learn_more" },
           { href: "https://github.com/semos-labs/epist", label: "GitHub ↗", cta: "epist_github", external: true },
           { href: "/epist/privacy", label: "Privacy", cta: "epist_privacy" },
+        ]}
+      />
+
+      <ProductCard
+        name="Attyx"
+        logo="/logos/Attyx.png"
+        repo="semos-labs/attyx"
+        tagline="Deterministic terminal emulator — alpha"
+        description="A VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal on macOS and OpenGL on Linux. Deterministic engine, full SGR color support, configurable scrollback, mouse input, and TOML-based configuration with hot reload."
+        tags={["Terminal Emulator", "Zig", "GPU", "Metal", "OpenGL"]}
+        links={[
+          { href: "/attyx", label: "Learn more →", cta: "attyx_learn_more" },
         ]}
       />
     </div>

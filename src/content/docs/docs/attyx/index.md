@@ -1,0 +1,31 @@
+---
+title: Attyx
+description: A deterministic, VT-compatible terminal emulator written in Zig.
+sidebar:
+  label: Overview
+  order: 1
+---
+
+Attyx is a deterministic, VT-compatible terminal emulator written in **Zig**. It features GPU-accelerated rendering with Metal on macOS and OpenGL on Linux — fast, correct, and configurable.
+
+## Features
+
+- **Deterministic VT-compatible engine** — predictable, reproducible terminal behavior
+- **GPU-accelerated rendering** — Metal on macOS, OpenGL on Linux
+- **Full SGR support** — 16, 256, and 24-bit true color
+- **Scrollback buffer** — configurable size with efficient memory usage
+- **Mouse support** — X10 and SGR mouse encoding, text selection
+- **In-terminal search** — search through terminal output without leaving the terminal
+- **TOML + CLI configuration** — human-readable config with hot reload
+- **Cross-platform** — macOS and Linux
+- **Unicode support** — proper wide-character handling
+- **Alternate screen buffer** — full support for TUI applications
+- **Hyperlinks** — OSC 8 clickable URLs in terminal output
+- **IME support** — input method editor for CJK and other languages
+- **Bracketed paste mode** — safe pasting with shell awareness
+- **Kitty graphics protocol** — display images and rich visual content in the terminal
+- **Kitty keyboard protocol** — unambiguous key reporting with modifier keys, key release events, and full disambiguation
+
+## Alpha
+
+Attyx is currently in alpha. Expect breaking changes as we iterate toward a stable release.
