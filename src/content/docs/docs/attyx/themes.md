@@ -2,7 +2,7 @@
 title: Themes
 description: Built-in themes and custom color schemes in Attyx.
 sidebar:
-  order: 9
+  order: 6
 ---
 
 Attyx ships with built-in themes and supports custom TOML theme files.

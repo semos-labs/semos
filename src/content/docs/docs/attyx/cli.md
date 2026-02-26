@@ -2,7 +2,7 @@
 title: CLI
 description: Attyx command-line flags.
 sidebar:
-  order: 3
+  order: 7
 ---
 
 All [configuration options](/docs/attyx/configuration/) can also be set via CLI flags. Flags override the config file.

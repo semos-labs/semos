@@ -2,7 +2,7 @@
 title: VT Compatibility
 description: Supported VT/ANSI escape sequences in Attyx.
 sidebar:
-  order: 4
+  order: 8
 ---
 
 Attyx implements a comprehensive set of VT/ANSI escape sequences.

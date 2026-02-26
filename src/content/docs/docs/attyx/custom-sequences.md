@@ -2,7 +2,7 @@
 title: Custom Sequences
 description: Bind key combos to raw escape sequences in Attyx.
 sidebar:
-  order: 7
+  order: 4
 ---
 
 Attyx lets you bind any key combo to send a raw escape sequence to the terminal via the `[sequences]` table.

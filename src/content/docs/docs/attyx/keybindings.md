@@ -2,7 +2,7 @@
 title: Keybindings
 description: Rebind hotkeys and configure keyboard shortcuts in Attyx.
 sidebar:
-  order: 6
+  order: 3
 ---
 
 All hotkeys in Attyx can be rebound via the `[keybindings]` table in your config file. Changes apply immediately on [hot reload](/docs/attyx/configuration/#hot-reload).

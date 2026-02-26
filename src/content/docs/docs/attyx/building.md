@@ -2,7 +2,7 @@
 title: Building from Source
 description: Build, run, and test Attyx.
 sidebar:
-  order: 5
+  order: 9
 ---
 
 ## Build
