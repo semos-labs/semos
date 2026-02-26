@@ -60,6 +60,14 @@ The terminal engine is fully deterministic — given the same byte stream, it al
 
 > [Building from Source](/docs/attyx/building/) — build, run, and test
 
+> [Keybindings](/docs/attyx/keybindings/) — rebind hotkeys and keyboard shortcuts
+
+> [Custom Sequences](/docs/attyx/custom-sequences/) — bind keys to raw escape sequences
+
+> [Popups](/docs/attyx/popups/) — floating terminal overlays
+
+> [Themes](/docs/attyx/themes/) — built-in and custom color schemes
+
 ## Alpha
 
 Attyx is currently in alpha. Expect breaking changes as we iterate toward a stable release.

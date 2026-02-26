@@ -108,6 +108,10 @@ export default defineConfig({
                   items: [
                       { label: "Overview", link: "/docs/attyx/" },
                       { label: "Configuration", link: "/docs/attyx/configuration/" },
+                      { label: "Keybindings", link: "/docs/attyx/keybindings/" },
+                      { label: "Custom Sequences", link: "/docs/attyx/custom-sequences/" },
+                      { label: "Popups", link: "/docs/attyx/popups/" },
+                      { label: "Themes", link: "/docs/attyx/themes/" },
                       { label: "CLI", link: "/docs/attyx/cli/" },
                       { label: "VT Compatibility", link: "/docs/attyx/vt-compatibility/" },
                       { label: "Building from Source", link: "/docs/attyx/building/" },
