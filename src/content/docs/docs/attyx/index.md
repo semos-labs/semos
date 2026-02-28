@@ -50,6 +50,34 @@ Attyx is built in layers:
 
 The terminal engine is fully deterministic — given the same byte stream, it always produces the same grid state. This makes it testable and reproducible.
 
+## Install
+
+### Homebrew (macOS)
+
+```bash
+brew install semos-labs/tap/attyx --cask
+```
+
+### Homebrew (Linux x86_64)
+
+```bash
+brew install semos-labs/tap/attyx
+```
+
+On Linux, Attyx installs as a desktop application. It should appear in your app launcher automatically. If it doesn't, log out and back in to refresh the desktop entry cache.
+
+### Build from source
+
+Requires **Zig 0.15.2+**.
+
+```bash
+zig build run
+```
+
+## Configuration
+
+Attyx is configured via `~/.config/attyx/attyx.toml`. See the [configuration docs](/docs/attyx/configuration/) for all options, or check the included [`attyx.toml.example`](https://github.com/semos-labs/attyx/blob/main/config/attyx.toml.example) for a quick-start template.
+
 ## Next Steps
 
 > [Configuration](/docs/attyx/configuration/) — TOML config file and hot reload
