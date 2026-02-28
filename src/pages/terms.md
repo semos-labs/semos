@@ -47,7 +47,7 @@ You agree not to:
 - Terminal context (commands, output) sent to the API is forwarded to LLM providers for processing and is not stored by us after the request completes
 - Usage metrics (request counts, token usage) are tracked for quota enforcement
 - We do not sell your data to third parties
-- See individual product privacy policies for product-specific details: [Aion](/aion/privacy), [Epist](/epist/privacy)
+- See individual product privacy policies for product-specific details: [Attyx](/attyx/privacy), [Aion](/aion/privacy), [Epist](/epist/privacy)
 
 ## Availability and Liability
 
