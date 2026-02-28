@@ -61,6 +61,10 @@ What analytics **never** collect:
 
 You can opt out at any time. Analytics are disabled by default and require explicit opt-in.
 
+## Payments
+
+Attyx Pro subscriptions are processed by **Paddle**, our merchant of record. When you subscribe, Paddle collects your payment information (e.g. card details, billing address, email) directly — we never see or store your payment details. Paddle's handling of your data is subject to [Paddle's Privacy Policy](https://www.paddle.com/legal/privacy).
+
 ## Open Source
 
 Attyx is open source and MIT licensed. You can audit the entire codebase to verify these claims: [github.com/semos-labs/attyx](https://github.com/semos-labs/attyx).
