@@ -6,15 +6,15 @@
     <description>Attyx auto-update feed for Intel</description>
     <language>en</language>
     <item>
-      <title>Attyx v0.1.26</title>
-      <pubDate>Sat, 28 Feb 2026 03:03:51 +0000</pubDate>
+      <title>Attyx v0.1.27</title>
+      <pubDate>Sat, 28 Feb 2026 03:17:01 +0000</pubDate>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
       <enclosure
-        url="https://github.com/semos-labs/attyx/releases/download/v0.1.26/attyx-darwin-x64.zip"
-        sparkle:version="0.1.26"
-        sparkle:shortVersionString="0.1.26"
-        sparkle:edSignature="vnqcPfWNDxya+MiJGnM5E5UfnoBXoTG+8jiIM3HAA0sBl6dk7n/w9hDAFI8kHOdlluVsvveW3MRIzuBSNag4BA=="
-        length="2104487"
+        url="https://github.com/semos-labs/attyx/releases/download/v0.1.27/attyx-darwin-x64.zip"
+        sparkle:version="0.1.27"
+        sparkle:shortVersionString="0.1.27"
+        sparkle:edSignature="woK6sJlONuA+VV369L3G79MtxnCU4Hg0m1E/hnysKiQRQ8nf4ilPa3CZbJ38YhoGe6DeuJa65CYZIv/PA2CnAg=="
+        length="2104294"
         type="application/octet-stream" />
     </item>
   </channel>
