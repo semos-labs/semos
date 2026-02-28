@@ -67,4 +67,4 @@ We may suspend or terminate your access to the Service at any time, with or with
 
 ## Contact
 
-Questions about these terms? Email us at [hello@semos.sh](mailto:hello@semos.sh) or reach out on [X (@nick_skriabin)](https://x.com/nick_skriabin).
+Questions about these terms? Email us at [hello@semos.sh](mailto:hello@semos.sh).
