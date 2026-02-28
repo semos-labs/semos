@@ -85,10 +85,12 @@ const pageUrl = `${siteUrl}${Astro.url.pathname}`;
     <main class="flex-1">
       <section class="pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-8">
         <div class="max-w-[720px] mx-auto">
-          <div class="flex items-center gap-3 md:gap-4 mb-8 md:mb-12">
-            <img src={logo} alt={product} class="w-10 h-10 md:w-12 md:h-12 rounded-xl" />
-            <span class="font-hand text-title-xl">{product}</span>
-          </div>
+          {logo && product && (
+            <div class="flex items-center gap-3 md:gap-4 mb-8 md:mb-12">
+              <img src={logo} alt={product} class="w-10 h-10 md:w-12 md:h-12 rounded-xl" />
+              <span class="font-hand text-title-xl">{product}</span>
+            </div>
+          )}
 
           <h1 class="heading-page mb-6">{heading}</h1>
           <p class="text-small text-gray-500 mb-12">Last updated: {lastUpdated}</p>

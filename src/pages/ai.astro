@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Semos AI",
+  description: "AI-powered terminal assistant. Error analysis, command generation, and output summarization — right in your terminal.",
+  url: "https://semos.sh/ai",
+  applicationCategory: "DeveloperApplication",
+  author: {
+    "@type": "Organization",
+    name: "Semos Labs",
+    url: "https://semos.sh",
+  },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Free",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    {
+      "@type": "Offer",
+      name: "Pro",
+      price: "9.99",
+      priceCurrency: "USD",
+    },
+  ],
+};
+---
+
+<Layout title="Semos AI — Terminal Intelligence" description="AI-powered terminal assistant. Error analysis, command generation, and output summarization — right in your terminal." jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="min-h-dvh flex items-center justify-center pt-20 md:pt-32 pb-12 md:pb-20 px-6 md:px-8">
+    <div class="max-w-[720px] text-center">
+      <div class="flex items-center gap-3 justify-center mb-6 md:mb-8">
+        <img src="/logos/Sema.png" alt="Semos AI" class="w-10 h-10 md:w-12 md:h-12 rounded-xl" />
+        <span class="font-hand text-title-xl">Semos AI</span>
+      </div>
+      <h1 class="heading-page mb-4 md:mb-6">
+        Your terminal,<br />
+        <span class="text-gray-300 italic">a little smarter</span>
+      </h1>
+      <p class="text-body-lg text-gray-400 leading-copy mb-8 md:mb-10 max-w-[520px] mx-auto">
+        AI-powered assistance built into your terminal workflow. Understand errors, generate commands, and make sense of output — without leaving the command line.
+      </p>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href="https://app.semos.sh/login" class="btn-primary" data-ph-cta="ai_hero_get_started">Get Started</a>
+        <a href="#pricing" class="btn-secondary" data-ph-cta="ai_hero_pricing">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-24 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-[720px] mx-auto">
+      <h2 class="heading-section text-center mb-14">How It Works</h2>
+      <div class="space-y-12">
+        <div class="flex gap-6 items-start">
+          <span class="text-body-sm text-gray-500 font-mono shrink-0 mt-1">01</span>
+          <div>
+            <h3 class="font-hand text-title-sm mb-2">Something breaks</h3>
+            <p class="text-body-sm text-gray-400 leading-copy">A command fails, output is confusing, or you need a command you can't remember. The usual.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-body-sm text-gray-500 font-mono shrink-0 mt-1">02</span>
+          <div>
+            <h3 class="font-hand text-title-sm mb-2">Ask from your terminal</h3>
+            <p class="text-body-sm text-gray-400 leading-copy">Select text, trigger a shortcut, or let the integration catch the error automatically. No context switching.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-body-sm text-gray-500 font-mono shrink-0 mt-1">03</span>
+          <div>
+            <h3 class="font-hand text-title-sm mb-2">Get an answer</h3>
+            <p class="text-body-sm text-gray-400 leading-copy">A concise explanation, a suggested fix, or the exact command you need — right there in the terminal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-24 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-content mx-auto">
+      <h2 class="heading-section text-center mb-14">What It Can Do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <h3 class="font-hand text-title mb-3">Explain Errors</h3>
+          <p class="text-body-sm text-gray-400 leading-copy">Analyzes failed commands and returns the root cause, what went wrong, and how to fix it. No more guessing.</p>
+          <div class="mt-4 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-small font-mono">
+            <p class="text-gray-500">$ npm install</p>
+            <p class="text-red-400">ERR! ERESOLVE unable to resolve dependency tree</p>
+            <p class="text-gray-500 mt-2">→ <span class="text-gray-300">Conflicting peer dependencies between react@18 and react@19. Use --legacy-peer-deps or align versions.</span></p>
+          </div>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <h3 class="font-hand text-title mb-3">Generate Commands</h3>
+          <p class="text-body-sm text-gray-400 leading-copy">Describe what you want in plain English. Get the exact command with the right flags and arguments.</p>
+          <div class="mt-4 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-small font-mono">
+            <p class="text-gray-500">"find all .log files larger than 100MB modified in the last week"</p>
+            <p class="text-gray-500 mt-2">→ <span class="text-gray-300">find . -name "*.log" -size +100M -mtime -7</span></p>
+          </div>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <h3 class="font-hand text-title mb-3">Summarize Output</h3>
+          <p class="text-body-sm text-gray-400 leading-copy">Long build logs, test results, or verbose output — condensed into what actually matters. Errors and warnings highlighted.</p>
+          <div class="mt-4 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-small font-mono">
+            <p class="text-gray-500">238 lines of build output</p>
+            <p class="text-gray-500 mt-2">→ <span class="text-gray-300">Build succeeded. 2 warnings: unused import (line 42), deprecated API call (line 118).</span></p>
+          </div>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
+          <h3 class="font-hand text-title mb-3">Explain Selections</h3>
+          <p class="text-body-sm text-gray-400 leading-copy">Select any text in your terminal and get an instant explanation. Config snippets, error traces, unfamiliar output.</p>
+          <div class="mt-4 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-small font-mono">
+            <p class="text-gray-500">selected: "SIGTERM (signal 15)"</p>
+            <p class="text-gray-500 mt-2">→ <span class="text-gray-300">Process was asked to terminate gracefully. Usually sent by kill, systemd, or a container runtime during shutdown.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-24 px-6 md:px-8 border-t border-gray-800" id="pricing">
+    <div class="max-w-[820px] mx-auto">
+      <h2 class="heading-section text-center mb-4">Pricing</h2>
+      <p class="text-body-sm text-gray-400 text-center mb-14">Start free. Upgrade when you need more.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Free -->
+        <div class="p-8 border border-gray-800 rounded-xl">
+          <h3 class="font-hand text-title-lg mb-1">Free</h3>
+          <p class="text-body-sm text-gray-400 mb-6">For trying things out</p>
+          <p class="text-heading font-hand mb-6">$0<span class="text-body-sm text-gray-500 font-mono">/mo</span></p>
+          <ul class="space-y-3 text-body-sm text-gray-300 mb-8">
+            <li class="flex gap-2"><span class="text-gray-500">—</span> Limited monthly requests</li>
+            <li class="flex gap-2"><span class="text-gray-500">—</span> Standard models</li>
+            <li class="flex gap-2"><span class="text-gray-500">—</span> All four AI actions</li>
+            <li class="flex gap-2"><span class="text-gray-500">—</span> Rate limited</li>
+          </ul>
+          <a href="https://app.semos.sh/login" class="btn-secondary w-full text-center block" data-ph-cta="ai_pricing_free">Get Started</a>
+        </div>
+        <!-- Pro -->
+        <div class="p-8 border border-gray-400 rounded-xl">
+          <h3 class="font-hand text-title-lg mb-1">Pro</h3>
+          <p class="text-body-sm text-gray-400 mb-6">For daily use</p>
+          <p class="text-heading font-hand mb-6">$9.99<span class="text-body-sm text-gray-500 font-mono">/mo</span></p>
+          <ul class="space-y-3 text-body-sm text-gray-300 mb-8">
+            <li class="flex gap-2"><span class="text-gray-500">—</span> Higher monthly limits</li>
+            <li class="flex gap-2"><span class="text-gray-500">—</span> More capable models</li>
+            <li class="flex gap-2"><span class="text-gray-500">—</span> All four AI actions</li>
+            <li class="flex gap-2"><span class="text-gray-500">—</span> Higher rate limits</li>
+          </ul>
+          <a href="https://app.semos.sh/login" class="btn-primary w-full text-center block" data-ph-cta="ai_pricing_pro">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy & Trust -->
+  <section class="py-24 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-[720px] mx-auto text-center">
+      <h2 class="heading-section mb-10">Privacy First</h2>
+      <div class="text-body-sm text-gray-400 leading-copy space-y-4 max-w-[560px] mx-auto">
+        <p>
+          Terminal context is sent to LLM providers for processing and is not stored after the request completes. We keep only what's needed for auth and billing — your email and usage counts.
+        </p>
+        <p>
+          No command history is logged. No terminal data is retained. No data is sold.
+        </p>
+      </div>
+      <div class="mt-10">
+        <a href="/terms" class="text-body-sm text-gray-500 hover:text-gray-300 transition-colors" data-ph-cta="ai_terms">Terms of Service</a>
+      </div>
+    </div>
+  </section>
+</Layout>

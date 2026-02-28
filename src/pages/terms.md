@@ -2,8 +2,8 @@
 layout: ../layouts/PrivacyLayout.astro
 title: "Semos Labs — Terms of Service"
 description: "Terms of service for Semos AI and related services."
-product: "Semos"
-logo: "/logos/Sema.png"
+product: ""
+logo: ""
 lastUpdated: "February 28, 2026"
 heading: "Terms of Service"
 ---
@@ -28,7 +28,7 @@ Semos AI provides AI-powered terminal assistance — error analysis, command gen
 - Plan limits (requests, tokens, rate limits) are enforced server-side
 - You can upgrade, downgrade, or cancel your subscription at any time through the dashboard
 - Cancellation takes effect at the end of the current billing period
-- We do not provide refunds for partial billing periods
+- All payments are non-refundable. We do not provide refunds or credits for any reason, including partial billing periods, unused time, or unused quota
 
 ## Acceptable Use
 
