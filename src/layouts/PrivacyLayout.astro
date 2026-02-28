@@ -9,11 +9,12 @@ interface Props {
     product: string;
     logo: string;
     lastUpdated: string;
+    heading?: string;
   };
 }
 
 const { frontmatter } = Astro.props;
-const { title, description, product, logo, lastUpdated } = frontmatter;
+const { title, description, product, logo, lastUpdated, heading = "Privacy Policy" } = frontmatter;
 
 const siteUrl = "https://semos.sh";
 const pageUrl = `${siteUrl}${Astro.url.pathname}`;
@@ -89,7 +90,7 @@ const pageUrl = `${siteUrl}${Astro.url.pathname}`;
             <span class="font-hand text-title-xl">{product}</span>
           </div>
 
-          <h1 class="heading-page mb-6">Privacy Policy</h1>
+          <h1 class="heading-page mb-6">{heading}</h1>
           <p class="text-small text-gray-500 mb-12">Last updated: {lastUpdated}</p>
 
           <div class="privacy-content">
