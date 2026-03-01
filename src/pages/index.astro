@@ -422,7 +422,7 @@ const jsonLd = {
       const repo = badge.getAttribute('data-repo');
       if (!repo) continue;
       try {
-        const res = await fetch(`https://api.github.com/repos/${repo}/releases`);
+        const res = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=100`);
         if (!res.ok) continue;
         const releases = await res.json();
         const total = releases.reduce((sum: number, r: any) =>
