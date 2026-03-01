@@ -27,6 +27,8 @@ width = "60%"
 height = "60%"
 border = "heavy"
 border_color = "#ff6600"
+background_opacity = 0.9
+padding = 1
 ```
 
 ## Options
@@ -39,6 +41,18 @@ border_color = "#ff6600"
 | `height` | `"80%"` | Popup height as percentage of terminal |
 | `border` | `"single"` | Border style: `single`, `double`, `rounded`, `heavy`, or `none` |
 | `border_color` | `"#78829a"` | Border foreground color (`#RRGGBB`) |
+| `on_return_cmd` | *(none)* | Command to run with the popup's captured stdout when it exits successfully (exit code 0) |
+| `background_opacity` | *(none)* | Background opacity from `0.0` (transparent) to `1.0` (opaque) |
+| `background` | *(theme)* | Background color override (`#RRGGBB`). Empty or omitted = use theme background |
+| `padding` | *(none)* | Inner padding on all sides (cells) |
+| `padding_x` | *(none)* | Horizontal padding — left and right (cells) |
+| `padding_y` | *(none)* | Vertical padding — top and bottom (cells) |
+| `padding_top` | *(none)* | Top padding (cells) |
+| `padding_bottom` | *(none)* | Bottom padding (cells) |
+| `padding_left` | *(none)* | Left padding (cells) |
+| `padding_right` | *(none)* | Right padding (cells) |
+
+Padding follows CSS-like specificity: `padding_left` overrides `padding_x`, which overrides `padding`.
 
 ## Border styles
 
@@ -73,4 +87,31 @@ width = "60%"
 height = "60%"
 border = "heavy"
 border_color = "#ff6600"
+```
+
+Session picker with [sesh](https://github.com/joshmedeski/sesh) — the selected session name is passed to `on_return_cmd`:
+
+```toml
+[[popup]]
+hotkey = "ctrl+shift+s"
+command = "sesh list | fzf"
+width = "40%"
+height = "50%"
+border = "rounded"
+on_return_cmd = "sesh connect"
+```
+
+Styled popup with custom background and padding:
+
+```toml
+[[popup]]
+hotkey = "ctrl+shift+n"
+command = "nvim"
+width = "90%"
+height = "90%"
+border = "rounded"
+background = "#1a1a2e"
+background_opacity = 0.95
+padding_x = 2
+padding_y = 1
 ```
