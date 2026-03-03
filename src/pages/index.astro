@@ -29,38 +29,6 @@ const jsonLd = {
     })();
   </script>
 
-  <!-- Attyx Banner -->
-  <div id="attyx-banner" class="mt-12 md:mt-0 md:absolute top-13 md:top-21.5 inset-x-0 z-99 border-b border-gray-800 bg-gray-900/95 backdrop-blur-sm">
-    <a href="/attyx" class="flex items-center justify-center gap-3 px-10 py-2 text-center group" data-ph-cta="banner_attyx">
-      <span class="inline-flex items-center gap-2">
-        <img src="/logos/Attyx.png" alt="" class="w-4 h-4 rounded-sm" />
-        <span class="text-body-sm text-gray-300 font-mono">
-          <span class="text-white font-bold">Attyx</span> — a new GPU-accelerated terminal emulator is here
-        </span>
-      </span>
-      <span class="text-body-sm text-gray-400 group-hover:text-white transition-colors font-mono hidden sm:inline">Learn more →</span>
-    </a>
-    <button id="attyx-banner-close" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors p-1" aria-label="Dismiss banner">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <path d="M3 3l8 8M11 3l-8 8"/>
-      </svg>
-    </button>
-  </div>
-  <script is:inline>
-    (function(){
-      var btn = document.getElementById('attyx-banner-close');
-      var banner = document.getElementById('attyx-banner');
-      if (!btn || !banner) return;
-      try { if (localStorage.getItem('attyx_banner_dismissed')) { banner.style.display = 'none'; return; } } catch(e) {}
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        banner.style.display = 'none';
-        try { localStorage.setItem('attyx_banner_dismissed', '1'); } catch(e) {}
-      });
-    })();
-  </script>
-
   <!-- Hero -->
   <section class="lg:min-h-screen flex items-center justify-center pt-20 pb-12 md:pt-24 md:pb-20 px-6 md:px-8">
     <div class="w-full max-w-[1280px] flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
@@ -91,6 +59,9 @@ const jsonLd = {
               <span class="text-gray-400">$</span> ls ./tools
             </p>
             <div class="grid grid-cols-[auto_auto_1fr] gap-x-3 gap-y-2 text-body-lg pl-2">
+              <a href="/attyx" class="text-white hover:text-gray-200 transition-colors">attyx</a>
+              <span class="text-gray-400">—</span>
+              <span class="text-gray-400">GPU-accelerated terminal emulator <span class="text-[0.65rem] uppercase tracking-wider text-gray-500 border border-gray-600 rounded px-1.5 py-0.5 ml-1">alpha</span></span>
               <a href="/glyph" class="text-white hover:text-gray-200 transition-colors">glyph</a>
               <span class="text-gray-400">—</span>
               <span class="text-gray-400">React renderer for terminal UIs</span>
@@ -100,9 +71,6 @@ const jsonLd = {
               <a href="/epist" class="text-white hover:text-gray-200 transition-colors">epist</a>
               <span class="text-gray-400">—</span>
               <span class="text-gray-400">Email with vim-style keybindings</span>
-              <a href="/attyx" class="text-white/60 hover:text-gray-200 transition-colors">attyx</a>
-              <span class="text-gray-400">—</span>
-              <span class="text-gray-400">Terminal emulator <span class="text-[0.65rem] uppercase tracking-wider text-gray-500 border border-gray-600 rounded px-1.5 py-0.5 ml-1">alpha</span></span>
             </div>
           </div>
 
@@ -120,15 +88,122 @@ const jsonLd = {
           <!-- Window chrome -->
           <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-800/80 border-b border-gray-700/60">
             <div class="flex gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
             </div>
-            <span class="ml-2 text-[0.7rem] text-gray-400 font-mono">awesome-dashboard</span>
+            <span class="ml-2 text-[0.7rem] text-gray-400 font-mono">attyx</span>
           </div>
-          <img src="/images/showcase.webp" alt="Epist — Terminal email client" class="w-full block" fetchpriority="high" />
+          <img src="/images/attyx.webp" alt="Attyx — GPU-accelerated terminal emulator" class="w-full block" fetchpriority="high" />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Attyx Spotlight -->
+  <section class="py-24 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-[1280px] mx-auto">
+      <!-- Header -->
+      <div class="flex items-center gap-3 md:gap-4 mb-3 justify-center">
+        <img src="/logos/Attyx.png" alt="Attyx" class="w-10 h-10 md:w-12 md:h-12 rounded-xl" />
+        <span class="font-hand text-title-xl">Attyx</span>
+        <span class="text-[0.7rem] uppercase tracking-wider text-gray-400 border border-gray-600 rounded-full px-3 py-1">Alpha</span>
+      </div>
+      <h2 class="font-hand heading-section-lg text-center mb-4">
+        Less terminal, <span class="text-gray-200 italic">more terminal</span>
+      </h2>
+      <p class="text-body-lg text-gray-400 leading-copy text-center mb-14 max-w-[560px] mx-auto">
+        A deterministic, VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal on macOS and OpenGL on Linux.
+      </p>
+
+      <!-- Two-column: Screenshot + Install -->
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-14">
+        <!-- Screenshot -->
+        <div class="flex-1 min-w-0">
+          <div class="relative">
+            <div class="absolute -inset-8 bg-gradient-to-b from-white/[0.03] via-white/[0.06] to-transparent rounded-3xl blur-2xl pointer-events-none"></div>
+            <div class="relative bg-gray-900 border border-gray-700/60 rounded-xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]">
+              <div class="flex items-center gap-2 px-4 py-3 bg-gray-800/80 border-b border-gray-700/60">
+                <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+                <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+                <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+                <span class="ml-3 text-[0.7rem] text-gray-400 font-mono">attyx</span>
+              </div>
+              <img src="/images/attyx.webp" alt="Attyx — Terminal emulator" class="w-full block" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Install block -->
+        <div class="lg:w-[400px] shrink-0 flex flex-col justify-center">
+          <div class="install-block bg-gray-900 border border-gray-700 rounded-xl overflow-hidden text-label">
+            <div class="flex items-center px-4 py-2.5 bg-gray-800 border-b border-gray-700 gap-3">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
+              </div>
+              <div class="flex gap-1 ml-2">
+                <button class="install-tab active text-[0.7rem] px-2.5 py-1 rounded bg-gray-700 text-gray-200 border-none cursor-pointer transition-all hover:text-white" data-tab="brew">Homebrew</button>
+                <button class="install-tab text-[0.7rem] px-2.5 py-1 rounded bg-transparent text-gray-400 border-none cursor-pointer transition-all hover:text-gray-300" data-tab="curl">curl</button>
+              </div>
+              <button
+                class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-small transition-all hover:text-white hover:border-gray-500"
+                aria-label="Copy to clipboard"
+                data-ph-cta="spotlight_attyx_copy_install"
+              >
+                <span class="group-[.copied]:hidden">&#10697;</span>
+                <span class="hidden group-[.copied]:inline text-gray-200">&#10003;</span>
+              </button>
+            </div>
+            <div class="install-panel px-6 py-5 leading-prose text-left" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install attyx">
+              <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
+              <p><span class="text-gray-400">$</span> <span class="text-white">brew install attyx</span></p>
+            </div>
+            <div class="install-panel px-6 py-5 leading-prose text-left hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/attyx/releases/latest/download/attyx-darwin-arm64 -o attyx&#10;chmod +x attyx && sudo mv attyx /usr/local/bin/">
+              <p><span class="text-gray-400">$</span> <span class="text-white">curl -L https://github.com/semos-labs/attyx/</span></p>
+              <p><span class="text-white pl-4">releases/latest/download/attyx-darwin-arm64 -o attyx</span></p>
+              <p><span class="text-gray-400">$</span> <span class="text-white">chmod +x attyx && sudo mv attyx /usr/local/bin/</span></p>
+            </div>
+          </div>
+          <p class="text-center mt-3 text-[0.7rem] text-gray-400">macOS (Apple Silicon & Intel) · Linux (x64 & ARM64)</p>
+        </div>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600 shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+          <span class="block text-title-md mb-3">&#9889;</span>
+          <h3 class="font-hand text-title mb-2">GPU Rendering</h3>
+          <p class="text-small text-gray-400 leading-body">Hardware-accelerated rendering with Metal on macOS and OpenGL on Linux. Smooth and fast.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600 shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+          <span class="block text-title-md mb-3">&#9881;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">Deterministic Engine</h3>
+          <p class="text-small text-gray-400 leading-body">Predictable, reproducible terminal behavior. Every input produces the same output, every time.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600 shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+          <span class="block text-title-md mb-3">&#128396;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">VT Compatible</h3>
+          <p class="text-small text-gray-400 leading-body">Full VT sequence support. Works with every CLI tool, shell, and TUI application you already use.</p>
+        </div>
+        <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600 shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+          <span class="block text-title-md mb-3">&#9881;&#65039;</span>
+          <h3 class="font-hand text-title mb-2">TOML Config</h3>
+          <p class="text-small text-gray-400 leading-body">TOML and CLI configuration with hot reload. Change settings without restarting.</p>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex gap-4 items-center justify-center flex-wrap">
+        <a href="/attyx" class="btn-primary" data-ph-cta="spotlight_attyx_learn_more">Learn More</a>
+        <a href="https://github.com/semos-labs/attyx" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="spotlight_attyx_github">GitHub ↗</a>
+      </div>
+
+      <!-- Footer note -->
+      <p class="text-center mt-8 text-body-sm text-gray-400">
+        Written in <span class="text-gray-200">Zig</span> — fast, safe, and portable
+      </p>
     </div>
   </section>
 
@@ -245,6 +320,21 @@ const jsonLd = {
       </p>
 
       <ProductCard
+        name="Attyx"
+        logo="/logos/Attyx.png"
+        repo="semos-labs/attyx"
+        tagline="GPU-accelerated terminal emulator"
+        description="A VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal on macOS and OpenGL on Linux. Deterministic engine, full SGR color support, configurable scrollback, mouse input, and TOML-based configuration with hot reload."
+        tags={["Terminal Emulator", "Zig", "GPU", "Metal", "OpenGL"]}
+        showDownloads
+        downloadsHref="https://github.com/semos-labs/attyx/releases"
+        links={[
+          { href: "/attyx", label: "Learn more →", cta: "attyx_learn_more" },
+          { href: "https://github.com/semos-labs/attyx", label: "GitHub ↗", cta: "attyx_github", external: true },
+        ]}
+      />
+
+      <ProductCard
         name="Glyph"
         logo="/logos/Glyph.png"
         repo="semos-labs/glyph"
@@ -287,20 +377,6 @@ const jsonLd = {
           { href: "/epist", label: "Learn more →", cta: "epist_learn_more" },
           { href: "https://github.com/semos-labs/epist", label: "GitHub ↗", cta: "epist_github", external: true },
           { href: "/epist/privacy", label: "Privacy", cta: "epist_privacy" },
-        ]}
-      />
-
-      <ProductCard
-        name="Attyx"
-        logo="/logos/Attyx.png"
-        repo="semos-labs/attyx"
-        tagline="Deterministic terminal emulator — alpha"
-        description="A VT-compatible terminal emulator written in Zig. GPU-accelerated rendering with Metal on macOS and OpenGL on Linux. Deterministic engine, full SGR color support, configurable scrollback, mouse input, and TOML-based configuration with hot reload."
-        tags={["Terminal Emulator", "Zig", "GPU", "Metal", "OpenGL"]}
-        showDownloads
-        downloadsHref="https://github.com/semos-labs/attyx/releases"
-        links={[
-          { href: "/attyx", label: "Learn more →", cta: "attyx_learn_more" },
         ]}
       />
     </div>
@@ -482,6 +558,37 @@ const jsonLd = {
     } catch {
       form.submit();
     }
+  });
+
+  // === Install Block Tabs & Copy ===
+  document.querySelectorAll('.install-block').forEach((block) => {
+    const tabs = block.querySelectorAll('.install-tab');
+    const panels = block.querySelectorAll('.install-panel');
+    const copyBtn = block.querySelector('.copy-btn');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        tabs.forEach((t) => {
+          t.classList.toggle('active', t === tab);
+          t.classList.toggle('bg-gray-700', t === tab);
+          t.classList.toggle('text-gray-200', t === tab);
+          t.classList.toggle('bg-transparent', t !== tab);
+          t.classList.toggle('text-gray-400', t !== tab);
+        });
+        panels.forEach((p) => {
+          p.classList.toggle('hidden', p.getAttribute('data-panel') !== target);
+        });
+      });
+    });
+
+    copyBtn?.addEventListener('click', async () => {
+      const active = block.querySelector('.install-panel:not(.hidden)');
+      const text = active?.getAttribute('data-copy') || '';
+      await navigator.clipboard.writeText(text);
+      copyBtn.classList.add('copied');
+      setTimeout(() => copyBtn.classList.remove('copied'), 2000);
+    });
   });
 
   if (document.documentElement.classList.contains('hero-animate')) {
