@@ -82,6 +82,7 @@ const jsonLd = {
           <a href="https://github.com/semos-labs/attyx/releases/latest" target="_blank" rel="noopener" class="btn-secondary" data-ph-cta="attyx_hero_other_platforms">Other Platforms ↗</a>
         </div>
         <span id="attyx-download-caption" class="text-[0.7rem] text-gray-400 mt-1.5"></span>
+        <a id="attyx-release-notes" href="/releases/attyx" class="text-[0.7rem] text-gray-500 hover:text-gray-300 transition-colors" data-ph-cta="attyx_hero_releases">release notes</a>
       </div>
     </div>
   </section>
@@ -277,6 +278,9 @@ const jsonLd = {
       .then(data => {
         if (data?.tag_name) {
           caption.textContent = `${meta.label} · ${data.tag_name}`;
+          const version = data.tag_name.replace(/^v/, '');
+          const rnLink = document.getElementById('attyx-release-notes');
+          if (rnLink) rnLink.href = `/releases/attyx/${version}`;
         }
       })
       .catch(() => {});
