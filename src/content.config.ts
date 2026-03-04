@@ -17,7 +17,7 @@ export const collections = {
     }),
   }),
   releases: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/releases" }),
+    loader: glob({ pattern: "**/*.md", base: "./src/content/releases/attyx" }),
     schema: z.object({
       version: z.string(),
       title: z.string(),
