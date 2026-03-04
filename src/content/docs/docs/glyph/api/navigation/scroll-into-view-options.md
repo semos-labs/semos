@@ -32,3 +32,54 @@ Per-phase timing breakdown of a single `performRender` call (ms).
 | <a id="paint"></a> `paint` | `number` | Rasterise GlyphNode tree into the framebuffer. |
 | <a id="swap"></a> `swap` | `number` | Copy currentFb → prevFb. |
 | <a id="total"></a> `total` | `number` | Total frame time (layout + paint + diff + swap). |
+
+---
+
+## MouseContextValue
+
+## Methods
+
+### subscribe()
+
+```ts
+subscribe(handler): () => void;
+```
+
+Subscribe to all mouse events. Returns an unsubscribe function.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `handler` | [`GlobalMouseHandler`](#global-mouse-handler) |
+
+#### Returns
+
+```ts
+(): void;
+```
+
+##### Returns
+
+`void`
+
+---
+
+## GlobalMouseHandler
+
+```ts
+type GlobalMouseHandler = (event, node) => void;
+```
+
+Global mouse event handler. Receives the event and the hit-tested node (or null).
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `event` | [`MouseEvent`](../../core/style#mouse-event) |
+| `node` | [`GlyphNode`](#) \| `null` |
+
+## Returns
+
+`void`
