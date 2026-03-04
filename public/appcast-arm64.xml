@@ -9,6 +9,7 @@
       <title>Attyx v0.1.45</title>
       <pubDate>Wed, 04 Mar 2026 15:36:17 +0000</pubDate>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.1.42/sparkle</sparkle:releaseNotesLink>
       <enclosure
         url="https://github.com/semos-labs/attyx/releases/download/v0.1.45/attyx-darwin-arm64.zip"
         sparkle:version="0.1.45"
