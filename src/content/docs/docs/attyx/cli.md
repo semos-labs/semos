@@ -8,8 +8,20 @@ sidebar:
 All [configuration options](/docs/attyx/configuration/) can also be set via CLI flags. Flags override the config file.
 
 ```
-attyx [flags]
+attyx [command | flags]
 ```
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `daemon` | Run the session daemon in the foreground |
+| `kill-daemon` | Kill the session daemon and remove its socket |
+| `login` | Authenticate with Attyx AI services |
+| `device` | Show device and account info |
+| `uninstall` | Remove config, auth tokens, and desktop entry |
+
+Commands are used without `--`. For example: `attyx kill-daemon`.
 
 ## Terminal
 
@@ -82,3 +94,11 @@ attyx [flags]
 |----------|--------|
 | **Ctrl+Shift+R** | Reload config |
 | **Ctrl+F** | Open in-terminal search |
+| **Cmd+Shift+P** / **Ctrl+Shift+P** | Command palette |
+| **Ctrl+Shift+Space** | Visual mode (copy mode) |
+| **Ctrl+Shift+N** | New session |
+| **Ctrl+Shift+S** | Session picker |
+| **Cmd+T** / **Ctrl+Shift+T** | New tab |
+| **Cmd+W** / **Ctrl+Shift+W** | Close tab |
+| **Ctrl+Tab** | Next tab |
+| **Ctrl+Shift+Tab** | Previous tab |

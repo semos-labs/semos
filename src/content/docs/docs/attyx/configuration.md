@@ -143,10 +143,53 @@ padding_bottom = 0
 | `padding_top` | integer | `0` | Top padding |
 | `padding_bottom` | integer | `0` | Bottom padding |
 
+## Status Bar
+
+```toml
+[statusbar]
+enabled = true
+position = "bottom"
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `enabled` | boolean | `false` | Show the status bar |
+| `position` | string | `"bottom"` | `"top"` or `"bottom"` |
+| `background` | string | — | Background color (`#RRGGBB`) |
+| `background_opacity` | integer | `0` | Background opacity, `0`–`255` |
+
+Widgets are configured as sub-tables. See the [Status Bar docs](/docs/attyx/status-bar/) for full details.
+
+## Tabs
+
+```toml
+[tabs]
+appearance = "builtin"
+always_show = false
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `appearance` | string | `"builtin"` | `"builtin"` (overlay tab bar) or `"native"` (macOS native window tabs) |
+| `always_show` | boolean | `false` | Show the tab bar even with a single tab |
+
+## Sessions
+
+```toml
+[sessions]
+enabled = true
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `enabled` | boolean | `false` | Enable session support |
+
+See the [Sessions docs](/docs/attyx/sessions/) for session picker icon customization.
+
 ## Hot Reload
 
 Send `SIGUSR1` or press **Ctrl+Shift+R** to reload the config at runtime.
 
-**Reloads immediately:** cursor shape, cursor blink, scrollback lines, font family, font size, cell width, cell height
+**Reloads immediately:** cursor shape, cursor blink, scrollback lines, font family, font size, cell width, cell height, status bar settings, tab appearance
 
 **Requires restart:** background opacity, background blur, logging level, logging file

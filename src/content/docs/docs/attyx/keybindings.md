@@ -50,17 +50,53 @@ alt+enter
 
 ## Default keybindings
 
+### General
+
+| Action | macOS | Linux |
+|---|---|---|
+| `config_reload` | `ctrl+shift+r` | `ctrl+shift+r` |
+| `command_palette` | `super+shift+p` | `ctrl+shift+p` |
+| `new_window` | `ctrl+shift+n` | `ctrl+shift+n` |
+| `close_window` | `ctrl+shift+w` | `ctrl+shift+w` |
+
+### Search
+
 | Action | macOS | Linux |
 |---|---|---|
 | `search_toggle` | `super+f` | `ctrl+f` |
 | `search_next` | `super+g` | `ctrl+g` |
 | `search_prev` | `super+shift+g` | `ctrl+shift+g` |
+
+### Copy / Paste
+
+| Action | macOS | Linux |
+|---|---|---|
 | `copy` | *(system menu)* | `ctrl+shift+c` |
 | `paste` | *(system menu)* | `ctrl+shift+v` |
+| `copy_mode` | `ctrl+shift+space` | `ctrl+shift+space` |
+
+### Scrolling
+
+| Action | macOS | Linux |
+|---|---|---|
 | `scroll_page_up` | `shift+page_up` | `shift+page_up` |
 | `scroll_page_down` | `shift+page_down` | `shift+page_down` |
 | `scroll_to_top` | `shift+home` | `shift+home` |
 | `scroll_to_bottom` | `shift+end` | `shift+end` |
-| `config_reload` | `ctrl+shift+r` | `ctrl+shift+r` |
-| `new_window` | `ctrl+shift+n` | `ctrl+shift+n` |
-| `close_window` | `ctrl+shift+w` | `ctrl+shift+w` |
+
+### Tabs
+
+| Action | macOS | Linux |
+|---|---|---|
+| `new_tab` | `super+t` | `ctrl+shift+t` |
+| `close_tab` | `super+w` | `ctrl+shift+w` |
+| `next_tab` | `ctrl+tab` | `ctrl+tab` |
+| `prev_tab` | `ctrl+shift+tab` | `ctrl+shift+tab` |
+| `tab_1`–`tab_9` | `super+1`–`super+9` | `alt+1`–`alt+9` |
+
+### Sessions
+
+| Action | macOS | Linux |
+|---|---|---|
+| `session_new` | `super+shift+n` | `ctrl+shift+n` |
+| `session_picker` | `super+shift+s` | `ctrl+shift+s` |

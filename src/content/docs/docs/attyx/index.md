@@ -40,6 +40,11 @@ Attyx is configured via `~/.config/attyx/attyx.toml`. See the [configuration doc
 
 - **Deterministic VT-compatible engine** — predictable, reproducible terminal behavior
 - **GPU-accelerated rendering** — Metal on macOS, OpenGL on Linux
+- **Status bar** — configurable widgets for cwd, git branch, time, and custom scripts
+- **Sessions** — tmux-style workspace management with a background daemon
+- **Visual mode** — Vim-inspired keyboard-driven text selection with character, line, and block modes
+- **Command palette** — searchable list of all actions with `Cmd+Shift+P` / `Ctrl+Shift+P`
+- **Native macOS tabs** — system window tabs alongside the built-in overlay tab bar
 - **Full SGR support** — 16, 256, and 24-bit true color
 - **Scrollback buffer** — configurable size with efficient memory usage
 - **Mouse support** — X10 and SGR mouse encoding, text selection
@@ -79,6 +84,14 @@ Attyx is configured via `~/.config/attyx/attyx.toml`. See the [configuration doc
 > [Popups](/docs/attyx/popups/) — floating terminal overlays
 
 > [Themes](/docs/attyx/themes/) — built-in and custom color schemes
+
+> [Status Bar](/docs/attyx/status-bar/) — configurable widgets and custom scripts
+
+> [Sessions](/docs/attyx/sessions/) — tmux-style workspace management
+
+> [Visual Mode](/docs/attyx/visual-mode/) — keyboard-driven text selection
+
+> [Command Palette](/docs/attyx/command-palette/) — searchable action list
 
 ## Alpha
 
