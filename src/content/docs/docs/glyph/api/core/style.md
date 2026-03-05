@@ -240,3 +240,45 @@ type TextAlign = "left" | "center" | "right";
 ```
 
 Horizontal text alignment.
+
+---
+
+## MouseEvent
+
+Mouse event from the terminal.
+
+Dispatched for mouse clicks, movement, and wheel scrolling when
+the terminal has SGR mouse tracking enabled.
+
+## Properties
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="alt"></a> `alt` | `boolean` | `true` when Alt / Option is held. |
+| <a id="button"></a> `button` | `number` | 0 = left, 1 = middle, 2 = right, -1 = none (motion without button). |
+| <a id="ctrl"></a> `ctrl` | `boolean` | `true` when Ctrl is held. |
+| <a id="shift"></a> `shift` | `boolean` | `true` when Shift is held. |
+| <a id="type"></a> `type` | `"mousedown"` \| `"mouseup"` \| `"mousemove"` \| `"wheel"` | Event type. |
+| <a id="wheeldelta"></a> `wheelDelta?` | `number` | Wheel direction: 1 = down, -1 = up. Only present for `type: "wheel"`. |
+| <a id="x"></a> `x` | `number` | 0-indexed column. |
+| <a id="y"></a> `y` | `number` | 0-indexed row. |
+
+---
+
+## MouseEventHandler
+
+```ts
+type MouseEventHandler = (event) => void;
+```
+
+Mouse event handler attached to a box element via props.
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `event` | [`MouseEvent`](#mouse-event) |
+
+## Returns
+
+`void`

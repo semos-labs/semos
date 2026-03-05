@@ -46,4 +46,11 @@ out of the box.
 | ------ | ------ | ------ |
 | <a id="children"></a> `children?` | `ReactNode` | Child elements to render inside the box. |
 | <a id="focusable"></a> `focusable?` | `boolean` | When `true`, the box participates in the focus (Tab) order. |
+| <a id="onclick"></a> `onClick?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called on mouse click (mouseup). |
+| <a id="onmousedown"></a> `onMouseDown?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called on mouse button press. |
+| <a id="onmouseenter"></a> `onMouseEnter?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called when the mouse cursor enters the box. |
+| <a id="onmouseleave"></a> `onMouseLeave?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called when the mouse cursor leaves the box. |
+| <a id="onmousemove"></a> `onMouseMove?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called on mouse movement over the box. |
+| <a id="onmouseup"></a> `onMouseUp?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called on mouse button release. |
+| <a id="onwheel"></a> `onWheel?` | [`MouseEventHandler`](../../core/style#mouse-event-handler) | Called on mouse wheel scroll. |
 | <a id="style"></a> `style?` | [`Style`](../../core/style) | Flexbox style object controlling layout, colors, borders, and more. |
