@@ -6,16 +6,16 @@
     <description>Attyx auto-update feed for Intel</description>
     <language>en</language>
     <item>
-      <title>Attyx v0.2.3</title>
-      <pubDate>Thu, 05 Mar 2026 02:26:59 +0000</pubDate>
-      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.2.3/sparkle</sparkle:releaseNotesLink>
+      <title>Attyx v0.2.4</title>
+      <pubDate>Thu, 05 Mar 2026 14:26:46 +0000</pubDate>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.2.4/sparkle</sparkle:releaseNotesLink>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
       <enclosure
-        url="https://github.com/semos-labs/attyx/releases/download/v0.2.3/attyx-darwin-x64.zip"
-        sparkle:version="0.2.3"
-        sparkle:shortVersionString="0.2.3"
-        sparkle:edSignature="xRlpIOaXb7QnYALd0uF9sfqhg6uk5iLsaWF/M6Blj4EEipNp0RyWTrEVZx72dlQrp5Smi8pjcMfhiYVTO/4aCA=="
-        length="2269074"
+        url="https://github.com/semos-labs/attyx/releases/download/v0.2.4/attyx-darwin-x64.zip"
+        sparkle:version="0.2.4"
+        sparkle:shortVersionString="0.2.4"
+        sparkle:edSignature="JxLeahbDnZKsYqZIQbC4CLa7m4DSOPpgGTR5Hpdr0VT2Os9fkiavqOlmbMm/sJixyU+IKanZgfaDaCGgFrtsCQ=="
+        length="2267721"
         type="application/octet-stream" />
     </item>
   </channel>
