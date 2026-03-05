@@ -6,16 +6,16 @@
     <description>Attyx auto-update feed for Apple Silicon</description>
     <language>en</language>
     <item>
-      <title>Attyx v0.2.1</title>
-      <pubDate>Wed, 04 Mar 2026 21:25:05 +0000</pubDate>
-      <sparkle:releaseNotesLink>https://semos.sh/attyx/release-notes?version=0.2.1&amp;mode=sparkle</sparkle:releaseNotesLink>
+      <title>Attyx v0.2.2</title>
+      <pubDate>Thu, 05 Mar 2026 01:11:21 +0000</pubDate>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.2.2/sparkle</sparkle:releaseNotesLink>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
       <enclosure
-        url="https://github.com/semos-labs/attyx/releases/download/v0.2.1/attyx-darwin-arm64.zip"
-        sparkle:version="0.2.1"
-        sparkle:shortVersionString="0.2.1"
-        sparkle:edSignature="SyDvGDoXKD4eKyimXSjRxgCCBetCDkZIespSdbzOD5e/dyknBzEpbIilPlpXh8XcX5sR5BtN+bCiwX7QDsuZAg=="
-        length="2167779"
+        url="https://github.com/semos-labs/attyx/releases/download/v0.2.2/attyx-darwin-arm64.zip"
+        sparkle:version="0.2.2"
+        sparkle:shortVersionString="0.2.2"
+        sparkle:edSignature="BEFAFG9zLWzXmPSc2N31KV+27ARRcHaOfa59Q5rPALbsduhoT/rdbDgpMpuZZF3J7nWq6mMrkUpTuhQJxj7UAQ=="
+        length="2180297"
         type="application/octet-stream" />
     </item>
   </channel>
