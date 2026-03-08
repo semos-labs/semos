@@ -69,19 +69,38 @@ Attyx implements a comprehensive set of VT/ANSI escape sequences.
 
 | Sequence | Description |
 |----------|-------------|
-| ESC[?1049h/l | Alternate screen buffer |
-| ESC[?2004h/l | Bracketed paste mode |
-| ESC[?1000h/l | Mouse tracking (X10) |
-| ESC[?1006h/l | SGR mouse encoding |
-| ESC[?2026h/l | Synchronized output |
+| ESC[?1h/l | DECCKM — application/normal cursor keys |
+| ESC[?7h/l | Auto-wrap mode |
 | ESC[?25h/l | Cursor visibility |
+| ESC[?47h/l | Alternate screen buffer (47) |
+| ESC[?1000h/l | Mouse tracking (X10) |
+| ESC[?1002h/l | Mouse tracking (button-event) |
+| ESC[?1003h/l | Mouse tracking (any-event) |
+| ESC[?1006h/l | SGR mouse encoding |
+| ESC[?1047h/l | Alternate screen buffer (1047) |
+| ESC[?1049h/l | Alternate screen buffer (1049) |
+| ESC[?2004h/l | Bracketed paste mode |
+| ESC[?2026h/l | Synchronized output |
 
 ## OSC Sequences
 
 | Sequence | Description |
 |----------|-------------|
 | OSC 0/2 | Set terminal title |
+| OSC 4 | Query palette color |
+| OSC 7 | Set working directory |
 | OSC 8 | Hyperlinks (clickable URLs) |
+| OSC 9 | Desktop notification (iTerm2 style) |
+| OSC 10 | Query/set foreground color |
+| OSC 11 | Query/set background color |
+| OSC 12 | Query/set cursor color |
+| OSC 777 | Desktop notification (rxvt/Kitty style) |
+
+## DCS Sequences
+
+| Sequence | Description |
+|----------|-------------|
+| DCS ... ST | DCS passthrough |
 
 ## Kitty Protocols
 

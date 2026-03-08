@@ -30,6 +30,7 @@ Commands are used without `--`. For example: `attyx kill-daemon`.
 | `--rows <N>` | Terminal rows (default: 24) |
 | `--cols <N>` | Terminal columns (default: 80) |
 | `--cmd <command...>` | Override shell command |
+| `-d`, `--working-directory <path>` | Set initial working directory |
 
 ## Config
 
@@ -93,12 +94,19 @@ Commands are used without `--`. For example: `attyx kill-daemon`.
 | Shortcut | Action |
 |----------|--------|
 | **Ctrl+Shift+R** | Reload config |
-| **Ctrl+F** | Open in-terminal search |
+| **Cmd+,** / **Ctrl+,** | Open config file |
+| **Cmd+F** / **Ctrl+F** | Open in-terminal search |
 | **Cmd+Shift+P** / **Ctrl+Shift+P** | Command palette |
 | **Ctrl+Shift+Space** | Visual mode (copy mode) |
+| **Cmd+K** / **Ctrl+Shift+K** | Clear screen and scrollback |
 | **Ctrl+Shift+N** | New session |
 | **Ctrl+Shift+S** | Session picker |
 | **Cmd+T** / **Ctrl+Shift+T** | New tab |
 | **Cmd+W** / **Ctrl+Shift+W** | Close tab |
 | **Ctrl+Tab** | Next tab |
 | **Ctrl+Shift+Tab** | Previous tab |
+| **Cmd+D** / **Ctrl+Shift+D** | Split vertically |
+| **Cmd+Shift+D** / **Ctrl+Shift+E** | Split horizontally |
+| **Cmd+=** / **Ctrl+=** | Increase font size |
+| **Cmd+-** / **Ctrl+-** | Decrease font size |
+| **Cmd+0** / **Ctrl+0** | Reset font size |

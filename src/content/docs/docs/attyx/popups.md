@@ -42,6 +42,7 @@ padding = 1
 | `border` | `"single"` | Border style: `single`, `double`, `rounded`, `heavy`, or `none` |
 | `border_color` | `"#78829a"` | Border foreground color (`#RRGGBB`) |
 | `on_return_cmd` | *(none)* | Command to run with the popup's captured stdout when it exits successfully (exit code 0) |
+| `inject_alt` | `false` | When true, `on_return_cmd` is injected into the PTY even when an alt screen is active. When false, it runs as a detached process instead. |
 | `background_opacity` | *(none)* | Background opacity from `0.0` (transparent) to `1.0` (opaque) |
 | `background` | *(theme)* | Background color override (`#RRGGBB`). Empty or omitted = use theme background |
 | `padding` | *(none)* | Inner padding on all sides (cells) |

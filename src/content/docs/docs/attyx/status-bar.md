@@ -40,7 +40,7 @@ truncate = 2          # show only the last 2 path components
 
 ### Git
 
-Shows the current branch name and working tree status.
+Shows the current branch name and working tree status — staged, modified, untracked, conflicts, stash count, and line statistics.
 
 ```toml
 [statusbar.git]
@@ -48,6 +48,53 @@ side = "left"
 ```
 
 The git widget reacts to directory changes automatically — when you `cd` into a different repo, it updates immediately.
+
+#### Customizing icons
+
+Every field in the git widget has a configurable icon:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `icon_branch` | `"⎇ "` | Branch name prefix |
+| `icon_hashprefix` | `"#"` | Detached HEAD commit hash prefix |
+| `icon_ahead` | `"↑·"` | Commits ahead of remote |
+| `icon_behind` | `"↓·"` | Commits behind remote |
+| `icon_staged` | `"● "` | Staged changes |
+| `icon_modified` | `"✚ "` | Modified files |
+| `icon_untracked` | `"… "` | Untracked files |
+| `icon_conflict` | `"✖ "` | Merge conflicts |
+| `icon_stashed` | `"⚑ "` | Stashed items |
+| `icon_clean` | `" ✔"` | Clean working tree |
+| `icon_insertions` | `"+"` | Line insertions |
+| `icon_deletions` | `"-"` | Line deletions |
+
+#### Customizing colors
+
+Each field can also have a custom color (`#RRGGBB`). When omitted, the theme's ANSI palette is used.
+
+| Option | Description |
+|--------|-------------|
+| `color_staged` | Staged changes color |
+| `color_modified` | Modified files color |
+| `color_untracked` | Untracked files color |
+| `color_conflict` | Conflicts color |
+| `color_stashed` | Stash count color |
+| `color_ahead` | Ahead count color |
+| `color_behind` | Behind count color |
+| `color_clean` | Clean indicator color |
+| `color_insertions` | Insertions count color |
+| `color_deletions` | Deletions count color |
+
+#### Example
+
+```toml
+[statusbar.git]
+side = "left"
+icon_branch = " "
+icon_clean = " ✓"
+color_staged = "#a6e3a1"
+color_conflict = "#f38ba8"
+```
 
 ### Time
 

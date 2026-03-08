@@ -27,6 +27,12 @@ Sessions are sorted with the current session first, then other active sessions, 
 | `Enter` | Switch to the selected session (or restore a recent one) |
 | `Ctrl+R` | Rename the selected session |
 | `Ctrl+X` | Kill the selected session (with confirmation) |
+| `Ctrl+D` | Switch to default session |
+| `Ctrl+U` | Clear filter |
+| `Ctrl+W` | Delete word backward |
+| `Ctrl+A` | Jump to start of filter |
+| `Ctrl+E` | Jump to end of filter |
+| `Ctrl+K` | Kill to end of line |
 | `Escape` | Close the picker |
 
 ## Configuration

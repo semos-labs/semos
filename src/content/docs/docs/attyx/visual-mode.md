@@ -21,7 +21,9 @@ Press `Ctrl+Shift+Space` to enter copy mode. You'll see a cursor you can move ar
 | `l` / `Right` | Move right |
 | `w` | Jump forward one word |
 | `b` | Jump backward one word |
+| `e` | Jump to end of word |
 | `0` | Jump to start of line |
+| `^` | Jump to first non-blank character |
 | `$` | Jump to end of line |
 | `g` | Jump to top of scrollback |
 | `G` | Jump to bottom |
@@ -39,6 +41,15 @@ From copy mode, press one of these to start selecting:
 | `Ctrl+V` | Block (rectangular) selection |
 
 Move the cursor to extend your selection, then press `y` to copy it to the clipboard.
+
+## Text objects
+
+While in a selection mode, you can use text object modifiers:
+
+| Key | Action |
+|-----|--------|
+| `i` + object | Select inner text object (e.g. `iw` for inner word, `i"` for inner quotes) |
+| `a` + object | Select around text object (e.g. `aw` for word + surrounding space) |
 
 ## In-terminal search
 

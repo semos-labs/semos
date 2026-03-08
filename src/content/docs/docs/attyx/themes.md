@@ -9,8 +9,30 @@ Attyx ships with built-in themes and supports custom TOML theme files.
 
 ## Built-in themes
 
-- `default`
+Attyx ships with 22 built-in themes:
+
+- `catppuccin-latte`
 - `catppuccin-mocha`
+- `default`
+- `dracula`
+- `everforest-dark`
+- `github-dark`
+- `gruvbox-dark`
+- `gruvbox-light`
+- `iceberg`
+- `kanagawa`
+- `material`
+- `monokai`
+- `nord`
+- `one-dark`
+- `palenight`
+- `rose-pine`
+- `rose-pine-moon`
+- `snazzy`
+- `solarized-dark`
+- `solarized-light`
+- `tokyo-night`
+- `tokyo-night-storm`
 
 Set the theme in your config:
 

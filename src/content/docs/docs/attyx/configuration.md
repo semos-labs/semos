@@ -91,6 +91,7 @@ args = ["-l"]
 |--------|------|---------|-------------|
 | `shell` | string | `$SHELL` or `/bin/sh` | Shell program to run |
 | `args` | string[] | `[]` | Extra arguments passed to the shell |
+| `working_directory` | string | — | Initial working directory |
 
 ## Logging
 
@@ -186,10 +187,32 @@ enabled = true
 
 See the [Sessions docs](/docs/attyx/sessions/) for session picker icon customization.
 
+## Splits
+
+```toml
+[splits]
+resize_step = 4
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `resize_step` | integer | `4` | Number of cells to resize panes by (1–50) |
+
+## Updates
+
+```toml
+[updates]
+check_updates = true
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `check_updates` | boolean | `true` | Enable automatic update checking |
+
 ## Hot Reload
 
 Send `SIGUSR1` or press **Ctrl+Shift+R** to reload the config at runtime.
 
-**Reloads immediately:** cursor shape, cursor blink, scrollback lines, font family, font size, cell width, cell height, status bar settings, tab appearance
+**Reloads immediately:** cursor shape, cursor blink, cursor trail, scrollback lines, font family, font size, cell width, cell height, status bar settings, tab appearance, theme, keybindings, splits, popups
 
-**Requires restart:** background opacity, background blur, logging level, logging file
+**Requires restart:** background opacity, background blur, logging level, logging file, program settings, updates
