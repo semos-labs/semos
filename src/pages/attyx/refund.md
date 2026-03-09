@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PrivacyLayout.astro
 title: "Attyx — Refund Policy"
-description: "Refund policy for Attyx, the GPU-accelerated terminal emulator."
+description: "Refund policy for Attyx, the GPU-accelerated terminal environment."
 product: "Attyx"
 logo: "/logos/Attyx.png"
 lastUpdated: "February 28, 2026"

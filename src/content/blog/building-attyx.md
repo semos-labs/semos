@@ -1,6 +1,6 @@
 ---
 title: "Building Attyx: A GPU-Accelerated Terminal in Zig, from Scratch"
-description: "How a weekend experiment turned into a sub-1MB terminal emulator with Metal and OpenGL rendering, a zero-allocation VT parser, and a deterministic architecture that's fully testable without a GPU."
+description: "How a weekend experiment turned into a sub-1MB terminal environment with Metal and OpenGL rendering, a zero-allocation VT parser, and a deterministic architecture that's fully testable without a GPU."
 date: 2026-02-27
 tags: ["attyx", "zig", "terminal", "gpu", "semos"]
 cover: "/images/building-attyx.webp"
@@ -14,7 +14,7 @@ Only way I know how to learn something is to build it.
 
 I'd been wanting to pick up Zig for a while. No hidden allocations, comptime magic, compiles to tiny binaries — my kind of language. But I needed a real project, not another "let me read the docs and nod" situation.
 
-A terminal emulator hit everything. Systems programming, parsing, GPU rendering, fonts, Unicode, threading. The full stack.
+A terminal environment hit everything. Systems programming, parsing, GPU rendering, fonts, Unicode, threading. The full stack.
 
 Started writing code on a Saturday evening. Five days later I was daily-driving it. That's Attyx.
 
@@ -213,7 +213,7 @@ A big chunk of the code was written by Claude under my direction and review. I d
 
 This is what AI-assisted dev looks like in 2026. Not "AI wrote my project." Not "I typed every character." It's a collaboration. I brought the domain knowledge, the architecture, and the taste. Claude brought speed — generating Zig code, implementing VT sequences from spec descriptions, cranking out stuff that would've taken me days to type. Every line went through my review. I caught bugs, rejected bad approaches, rewrote things that felt off. But claiming the speed was purely human would be bullshit.
 
-I say this because I don't want false expectations. If you see the commit history and think "this guy shipped a terminal emulator in five days, I should be able to do X in Y days" — no. The timeline reflects a specific workflow with AI tooling. Your mileage will vary.
+I say this because I don't want false expectations. If you see the commit history and think "this guy shipped a terminal environment in five days, I should be able to do X in Y days" — no. The timeline reflects a specific workflow with AI tooling. Your mileage will vary.
 
 I'm daily-driving Attyx now. tmux, neovim, SSH, everything I throw at it. Perfect? No. As mature as Ghostty or Kitty? Not yet. But I understand every line, and it's under a megabyte.
 

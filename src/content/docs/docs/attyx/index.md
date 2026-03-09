@@ -1,12 +1,12 @@
 ---
 title: Attyx
-description: A deterministic, VT-compatible terminal emulator written in Zig.
+description: A deterministic, VT-compatible terminal environment written in Zig.
 sidebar:
   label: Overview
   order: 1
 ---
 
-Attyx is a deterministic, VT-compatible terminal emulator written in **Zig**. It features GPU-accelerated rendering with Metal on macOS and OpenGL on Linux — fast, correct, and configurable.
+Attyx is a deterministic, VT-compatible terminal environment written in **Zig**. It features GPU-accelerated rendering with Metal on macOS and OpenGL on Linux — fast, correct, and configurable.
 
 ## Install
 

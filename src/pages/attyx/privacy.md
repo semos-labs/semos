@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PrivacyLayout.astro
 title: "Attyx — Privacy Policy"
-description: "Privacy policy for Attyx, the GPU-accelerated terminal emulator."
+description: "Privacy policy for Attyx, the GPU-accelerated terminal environment."
 product: "Attyx"
 logo: "/logos/Attyx.png"
 lastUpdated: "February 28, 2026"
@@ -34,7 +34,7 @@ What is **never** sent to AI providers:
 - Environment variables, credentials, passwords, or SSH keys
 - Data from terminal sessions where AI features are not actively used
 
-AI features are optional. You can use Attyx as a standard terminal emulator without enabling any AI functionality. When AI features are enabled, data is transmitted only when you explicitly invoke them.
+AI features are optional. You can use Attyx as a standard terminal environment without enabling any AI functionality. When AI features are enabled, data is transmitted only when you explicitly invoke them.
 
 Third-party AI providers process data according to their own privacy policies:
 

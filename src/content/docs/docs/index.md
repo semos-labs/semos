@@ -7,14 +7,14 @@ Semos Labs builds modern terminal applications and libraries. We believe the com
 
 ## The Ecosystem
 
-Our ecosystem includes a React-based terminal renderer, TUI apps built on it, and a standalone terminal emulator:
+Our ecosystem includes a React-based terminal renderer, TUI apps built on it, and a standalone terminal environment:
 
 | Project | What it does |
 |---------|-------------|
 | **Glyph** | React renderer for terminal UIs |
 | **Aion** | Calendar TUI client (Google Calendar & CalDAV) |
 | **Epist** | Email TUI client (Gmail & IMAP/SMTP) |
-| **Attyx** | Deterministic terminal emulator (alpha) |
+| **Attyx** | Deterministic terminal environment (alpha) |
 
 ## Philosophy
 
@@ -29,4 +29,4 @@ Pick a product to dive in:
 - [Glyph](/docs/glyph/) — if you want to build your own TUI apps
 - [Aion](/docs/aion/) — if you want your calendar in the terminal (Google Calendar & CalDAV)
 - [Epist](/docs/epist/) — if you want email in the terminal (Gmail & IMAP/SMTP)
-- [Attyx](/docs/attyx/) — a deterministic terminal emulator (alpha)
+- [Attyx](/docs/attyx/) — a deterministic terminal environment (alpha)
