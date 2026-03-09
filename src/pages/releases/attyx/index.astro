@@ -2,8 +2,19 @@
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
+function compareVersions(a: string, b: string) {
+  const pa = a.split(".").map(Number);
+  const pb = b.split(".").map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const na = pa[i] ?? 0;
+    const nb = pb[i] ?? 0;
+    if (na !== nb) return nb - na;
+  }
+  return 0;
+}
+
 const releases = (await getCollection("releases")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  (a, b) => b.data.date.getTime() - a.data.date.getTime() || compareVersions(a.data.version, b.data.version)
 );
 
 function formatDate(date: Date) {
@@ -30,15 +41,25 @@ function formatDate(date: Date) {
       </header>
 
       <ul class="space-y-6">
-        {releases.map((release) => (
+        {releases.map((release, index) => (
           <li>
             <a
               href={`/releases/attyx/${release.data.version}`}
-              class="block group p-5 -mx-5 rounded-xl hover:bg-white/[0.03] transition-colors"
+              class:list={[
+                "block group p-5 -mx-5 rounded-xl transition-colors",
+                index === 0
+                  ? "bg-white/[0.04] ring-1 ring-white/10 hover:bg-white/[0.06]"
+                  : "hover:bg-white/[0.03]",
+              ]}
             >
               <div class="flex items-baseline justify-between gap-4 mb-1">
                 <span class="font-hand text-[1.2rem] text-white group-hover:text-white transition-colors">
                   {release.data.title}
+                  {index === 0 && (
+                    <span class="ml-3 text-xs font-mono font-normal text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full align-middle">
+                      Latest
+                    </span>
+                  )}
                 </span>
                 <time class="text-small text-gray-500 font-mono shrink-0">
                   {formatDate(release.data.date)}
