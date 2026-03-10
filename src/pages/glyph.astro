@@ -5,7 +5,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   name: "Glyph",
-  description: "A React renderer for building terminal user interfaces. Full flexbox layout, focus management, keyboard input, and efficient diff-based rendering.",
+  description: "React renderer for terminal UIs. Flexbox layout, focus management, keyboard input, and diff-based rendering.",
   url: "https://semos.sh/glyph",
   codeRepository: "https://github.com/semos-labs/glyph",
   programmingLanguage: ["TypeScript", "React"],
@@ -24,7 +24,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title="Glyph — React Renderer for Terminal UIs" description="Build real terminal applications with React. Flexbox layout, focus management, keyboard input, and efficient diff-based rendering." image="/logos/Glyph.png" jsonLd={jsonLd}>
+<Layout title="Glyph — React Renderer for Terminal UIs" description="React renderer for terminal UIs. Flexbox, focus, keyboard input, diff-based rendering. If you know React, you can build TUI apps." image="/logos/Glyph.png" jsonLd={jsonLd}>
   <!-- Hero -->
   <section class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-28 md:pt-32 pb-16 px-8 gap-12 md:gap-16 max-w-content mx-auto text-center md:text-left">
     <div class="flex-1 max-w-full md:max-w-[520px]">
@@ -37,9 +37,8 @@ const jsonLd = {
         <span class="text-gray-200 italic">for terminal UIs</span>
       </h1>
       <p class="text-body-lg text-gray-300 leading-copy mb-10 max-w-full md:max-w-[460px]">
-        Build real terminal applications with React. Full component model with flexbox layout,
-        focus management, keyboard input, and efficient diff-based rendering.
-        Write TUIs the same way you write web apps.
+        React renderer for the terminal. Components, flexbox, focus management, keyboard input,
+        diff-based rendering. If you've built a React app, you already know how this works.
       </p>
       <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a href="/docs/glyph/" class="btn-primary" data-ph-cta="glyph_hero_docs">Documentation</a>
@@ -99,7 +98,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3 text-gray-300">⊞</span>
           <h3 class="font-hand text-title mb-2">Flexbox Layout</h3>
-          <p class="text-small text-gray-400 leading-body">Full CSS-like flexbox via Yoga — rows, columns, wrapping, alignment, gaps, padding.</p>
+          <p class="text-small text-gray-400 leading-body">CSS-like flexbox via Yoga. Rows, columns, wrapping, alignment, gaps, padding — it all works.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3 text-gray-300">◧</span>
@@ -119,7 +118,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3 text-gray-300">▦</span>
           <h3 class="font-hand text-title mb-2">Smart Rendering</h3>
-          <p class="text-small text-gray-400 leading-body">Double-buffered framebuffer with character-level diffing — only changed cells are written.</p>
+          <p class="text-small text-gray-400 leading-body">Double-buffered with character-level diffing. Only changed cells get written to the terminal.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3 text-gray-300">◉</span>
@@ -134,7 +133,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3 text-gray-300">◇</span>
           <h3 class="font-hand text-title mb-2">TypeScript First</h3>
-          <p class="text-small text-gray-400 leading-body">Full type coverage. Every prop, style, and hook is typed.</p>
+          <p class="text-small text-gray-400 leading-body">Every prop, style, and hook is typed. No guessing.</p>
         </div>
       </div>
     </div>

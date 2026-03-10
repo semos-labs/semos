@@ -1,6 +1,6 @@
 ---
 title: "Building Attyx: A GPU-Accelerated Terminal in Zig, from Scratch"
-description: "How a weekend experiment turned into a sub-1MB terminal environment with Metal and OpenGL rendering, a zero-allocation VT parser, and a deterministic architecture that's fully testable without a GPU."
+description: "How a weekend experiment turned into a sub-1MB terminal with Metal and OpenGL rendering, a zero-allocation VT parser, and a deterministic architecture that's fully testable without a GPU."
 date: 2026-02-27
 tags: ["attyx", "zig", "terminal", "gpu", "semos"]
 cover: "/images/building-attyx.webp"

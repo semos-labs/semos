@@ -5,7 +5,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Aion",
-  description: "A terminal calendar client with Google Calendar and CalDAV support. Vim-style keybindings, visual timeline, recurring events, and natural language input.",
+  description: "Terminal calendar client. Google Calendar and CalDAV, vim keybindings, visual timeline, recurring events, natural language input.",
   url: "https://semos.sh/aion",
   downloadUrl: "https://github.com/semos-labs/aion/releases",
   operatingSystem: ["macOS", "Linux"],
@@ -24,7 +24,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title="Aion — Terminal Calendar with Vim-Style Keybindings" description="A terminal calendar client with Google Calendar and CalDAV support. Beautiful, fast, keyboard-driven. Vim keybindings, visual timeline, and natural language event creation." image="/images/aion.webp" jsonLd={jsonLd}>
+<Layout title="Aion — Terminal Calendar with Vim-Style Keybindings" description="Terminal calendar client. Google Calendar and CalDAV with vim keybindings, visual timeline, and natural language event creation." image="/images/aion.webp" jsonLd={jsonLd}>
   <!-- Hero -->
   <section class="min-h-dvh flex flex-col md:flex-row items-center justify-center pt-20 md:pt-32 pb-6 md:pb-16 px-6 md:px-8 gap-2 md:gap-16 max-w-content mx-auto text-center md:text-left">
     <div class="flex-1 max-w-full md:max-w-[520px]">
@@ -37,7 +37,7 @@ const jsonLd = {
         <span class="text-gray-200 italic">in your terminal</span>
       </h1>
       <p class="text-body-lg text-gray-300 leading-copy mb-6 md:mb-10 max-w-full md:max-w-[460px]">
-        A full-featured calendar client with vim-style keybindings. Google Calendar and CalDAV — view, create, and manage events without leaving the command line.
+        Google Calendar and CalDAV in your terminal. View, create, edit events — all with vim keybindings. Syncs in the background, works offline.
       </p>
       <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a href="/docs/aion/" class="btn-primary" data-ph-cta="aion_hero_docs">Documentation</a>
@@ -103,7 +103,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">⌨️</span>
           <h3 class="font-hand text-title mb-2">Vim Keybindings</h3>
-          <p class="text-small text-gray-400 leading-body">Navigate with j/k, gg/G, h/l — feels like home for terminal users.</p>
+          <p class="text-small text-gray-400 leading-body">j/k, gg/G, h/l — the usual. If you use vim, you already know the drill.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">📅</span>
@@ -113,12 +113,12 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">🔗</span>
           <h3 class="font-hand text-title mb-2">Calendar Sync</h3>
-          <p class="text-small text-gray-400 leading-body">Google Calendar (OAuth) and CalDAV (iCloud, Fastmail, Nextcloud, and more). Background sync every 30 seconds.</p>
+          <p class="text-small text-gray-400 leading-body">Google Calendar via OAuth, CalDAV for iCloud, Fastmail, Nextcloud, etc. Syncs every 30s in the background.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">👥</span>
           <h3 class="font-hand text-title mb-2">Meet With</h3>
-          <p class="text-small text-gray-400 leading-body">Find free slots across multiple people's calendars instantly.</p>
+          <p class="text-small text-gray-400 leading-body">Overlay multiple calendars and find free slots. No more back-and-forth.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">📹</span>

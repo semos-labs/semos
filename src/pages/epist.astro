@@ -5,7 +5,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Epist",
-  description: "A terminal email client with Gmail and IMAP/SMTP support. Two-column layout, thread view, search, attachments, and calendar invites — all with vim-style keybindings.",
+  description: "Terminal email client. Gmail and IMAP/SMTP, two-column layout, threads, search, attachments, calendar invites — vim keybindings throughout.",
   url: "https://semos.sh/epist",
   downloadUrl: "https://github.com/semos-labs/epist/releases",
   operatingSystem: ["macOS", "Linux"],
@@ -24,7 +24,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title="Epist — Terminal Email Client with Vim Keybindings" description="A terminal email client with Gmail and IMAP/SMTP support. Two-column layout, thread view, search, attachments, and calendar invites — all with vim-style navigation." image="/images/epist.webp" jsonLd={jsonLd}>
+<Layout title="Epist — Terminal Email Client with Vim Keybindings" description="Terminal email client. Gmail and IMAP/SMTP, threads, search, attachments, calendar invites — vim keybindings throughout." image="/images/epist.webp" jsonLd={jsonLd}>
   <!-- Hero -->
   <section class="min-h-dvh flex flex-col md:flex-row items-center justify-center pt-20 md:pt-32 pb-6 md:pb-16 px-6 md:px-8 gap-2 md:gap-16 max-w-content mx-auto text-center md:text-left">
     <div class="flex-1 max-w-full md:max-w-[520px]">
@@ -37,7 +37,7 @@ const jsonLd = {
         <span class="text-gray-200 italic">vim-style</span>
       </h1>
       <p class="text-body-lg text-gray-300 leading-copy mb-6 md:mb-10 max-w-full md:max-w-[460px]">
-        A full-featured email client with Gmail and IMAP/SMTP support. Two-column layout, thread view, search, attachments, and calendar invites. Navigate everything with vim keybindings.
+        Gmail and IMAP/SMTP in your terminal. Two-column layout, threads, search, attachments, calendar invites. Everything navigated with vim keybindings.
       </p>
       <div class="flex gap-4 flex-wrap justify-center md:justify-start">
         <a href="/docs/epist/" class="btn-primary" data-ph-cta="epist_hero_docs">Documentation</a>
@@ -103,7 +103,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">⌨️</span>
           <h3 class="font-hand text-title mb-2">Vim Keybindings</h3>
-          <p class="text-small text-gray-400 leading-body">Navigate with j/k, gg/G, h/l — feels like home for terminal users.</p>
+          <p class="text-small text-gray-400 leading-body">j/k, gg/G, h/l — the usual. If you use vim, you already know the drill.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">📬</span>
@@ -113,7 +113,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">🔗</span>
           <h3 class="font-hand text-title mb-2">Gmail + IMAP/SMTP</h3>
-          <p class="text-small text-gray-400 leading-body">Gmail OAuth with PKCE and IMAP/SMTP for any email provider. Mix both in one client. Background sync every 10 seconds.</p>
+          <p class="text-small text-gray-400 leading-body">Gmail via OAuth, IMAP/SMTP for everything else. Mix both in one client. Syncs every 10s in the background.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">🧵</span>
@@ -123,7 +123,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">🔍</span>
           <h3 class="font-hand text-title mb-2">Two-Step Search</h3>
-          <p class="text-small text-gray-400 leading-body">Instant local filtering + remote server search with debouncing.</p>
+          <p class="text-small text-gray-400 leading-body">Local filtering first, then hits the server. Fast enough that you don't notice the switch.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">📎</span>
@@ -153,7 +153,7 @@ const jsonLd = {
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">💾</span>
           <h3 class="font-hand text-title mb-2">Local-First</h3>
-          <p class="text-small text-gray-400 leading-body">SQLite cache — your data stays yours. Instant startup.</p>
+          <p class="text-small text-gray-400 leading-body">SQLite cache on disk. Your data stays on your machine. Starts instantly.</p>
         </div>
         <div class="p-7 border border-gray-800 rounded-xl transition-colors hover:border-gray-600">
           <span class="block text-title-md mb-3">🎨</span>
