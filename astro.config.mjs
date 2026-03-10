@@ -27,6 +27,10 @@ export default defineConfig({
   integrations: [
       starlight({
           title: "Semos",
+          components: {
+              Head: './src/components/Head.astro',
+              Search: './src/components/Search.astro',
+          },
           customCss: ["./src/styles/docs.css"],
           head: [
               {

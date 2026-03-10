@@ -1,0 +1,21 @@
+---
+import DefaultHead from '@astrojs/starlight/components/Head.astro';
+
+// Derive section name from the URL path: /docs/attyx/... → "Attyx"
+const slug = Astro.locals.starlightRoute?.entry?.slug ?? '';
+const segments = slug.split('/').filter(Boolean);
+// Slug format is "docs/attyx/..." — skip the "docs" prefix
+const sectionSlug = (segments[0] === 'docs' ? segments[1] : segments[0]) ?? '';
+
+const sectionNames: Record<string, string> = {
+  attyx: 'Attyx',
+  glyph: 'Glyph',
+  aion: 'Aion',
+  epist: 'Epist',
+};
+
+const section = sectionNames[sectionSlug] ?? '';
+---
+
+<DefaultHead {...Astro.props}><slot /></DefaultHead>
+{section && <meta data-pagefind-filter={`section[content]`} content={section} />}
