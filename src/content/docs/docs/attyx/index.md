@@ -69,21 +69,25 @@ Attyx is configured via `~/.config/attyx/attyx.toml`. See the [configuration doc
 
 > [Configuration](/docs/attyx/configuration/) — TOML config file and hot reload
 
-> [Architecture](/docs/attyx/architecture/) — layers, data flow, and design decisions
+> [Font](/docs/attyx/font/) — font family, size, cell dimensions, and ligatures
 
-> [CLI](/docs/attyx/cli/) — command-line flags
+> [Cursor](/docs/attyx/cursor/) — cursor shape, blinking, and trail effect
 
-> [VT Compatibility](/docs/attyx/vt-compatibility/) — supported escape sequences
+> [Window](/docs/attyx/window/) — decorations, padding, and background transparency
 
-> [Building from Source](/docs/attyx/building/) — build, run, and test
+> [Shell](/docs/attyx/shell/) — shell program, arguments, and working directory
+
+> [Scrollback](/docs/attyx/scrollback/) — scrollback buffer and text reflow
+
+> [Themes](/docs/attyx/themes/) — built-in and custom color schemes
 
 > [Keybindings](/docs/attyx/keybindings/) — rebind hotkeys and keyboard shortcuts
 
 > [Custom Sequences](/docs/attyx/custom-sequences/) — bind keys to raw escape sequences
 
-> [Popups](/docs/attyx/popups/) — floating terminal overlays
+> [Tabs & Splits](/docs/attyx/tabs-and-splits/) — multiple tabs and split panes
 
-> [Themes](/docs/attyx/themes/) — built-in and custom color schemes
+> [Popups](/docs/attyx/popups/) — floating terminal overlays
 
 > [Status Bar](/docs/attyx/status-bar/) — configurable widgets and custom scripts
 
@@ -92,6 +96,16 @@ Attyx is configured via `~/.config/attyx/attyx.toml`. See the [configuration doc
 > [Visual Mode](/docs/attyx/visual-mode/) — keyboard-driven text selection
 
 > [Command Palette](/docs/attyx/command-palette/) — searchable action list
+
+> [CLI](/docs/attyx/cli/) — command-line flags
+
+> [Integration](/docs/attyx/integration/) — control Attyx from scripts and AI agents via IPC
+
+> [Architecture](/docs/attyx/architecture/) — layers, data flow, and design decisions
+
+> [VT Compatibility](/docs/attyx/vt-compatibility/) — supported escape sequences
+
+> [Building from Source](/docs/attyx/building/) — build, run, and test
 
 ## Alpha
 

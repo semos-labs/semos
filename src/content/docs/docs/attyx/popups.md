@@ -2,7 +2,7 @@
 title: Popups
 description: Floating terminal overlays in Attyx.
 sidebar:
-  order: 5
+  order: 12
 ---
 
 Popups are floating terminal windows that run a command inside the main Attyx window. Each popup is bound to a hotkey — press it to open, press it again to close. Up to 32 popups can be configured.

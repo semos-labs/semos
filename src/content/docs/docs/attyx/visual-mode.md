@@ -2,7 +2,7 @@
 title: Visual Mode
 description: Vim-inspired keyboard-driven text selection and search.
 sidebar:
-  order: 10
+  order: 15
 ---
 
 Visual mode gives you keyboard-driven text selection, inspired by Vim. Select text, search the scrollback, and copy — all without touching the mouse.

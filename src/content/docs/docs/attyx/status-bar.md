@@ -2,7 +2,7 @@
 title: Status Bar
 description: Configurable status bar with built-in and custom widgets.
 sidebar:
-  order: 8
+  order: 13
 ---
 
 The status bar sits at the top or bottom of your terminal window, showing useful context at a glance — your working directory, git branch, the time — without leaving the terminal.

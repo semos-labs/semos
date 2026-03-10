@@ -2,7 +2,7 @@
 title: Command Palette
 description: Searchable list of all available actions.
 sidebar:
-  order: 11
+  order: 16
 ---
 
 The command palette is a searchable overlay that lists every available action in Attyx.

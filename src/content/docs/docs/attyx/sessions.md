@@ -2,7 +2,7 @@
 title: Sessions
 description: tmux-style workspace management with a background daemon.
 sidebar:
-  order: 9
+  order: 14
 ---
 
 Sessions bring tmux-style workspace management to Attyx. Each session is a self-contained workspace with its own tabs, panes, and layout — managed by a lightweight background daemon.
