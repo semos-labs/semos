@@ -52,10 +52,7 @@ const jsonLd = {
             <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-gray-600"></span>
           </div>
-          <div class="flex gap-1 ml-2">
-            <button class="install-tab active text-[0.7rem] px-2.5 py-1 rounded bg-gray-700 text-gray-200 border-none cursor-pointer transition-all hover:text-white" data-tab="brew">Homebrew</button>
-            <button class="install-tab text-[0.7rem] px-2.5 py-1 rounded bg-transparent text-gray-400 border-none cursor-pointer transition-all hover:text-gray-300" data-tab="curl">curl</button>
-          </div>
+          <span class="ml-2 text-[0.7rem] text-gray-400">Homebrew</span>
           <button
             class="copy-btn group ml-auto flex items-center bg-transparent border border-gray-700 rounded px-1.5 py-0.5 cursor-pointer text-gray-400 text-small transition-all hover:text-white hover:border-gray-500"
             aria-label="Copy to clipboard"
@@ -65,14 +62,9 @@ const jsonLd = {
             <span class="hidden group-[.copied]:inline text-gray-200">✓</span>
           </button>
         </div>
-        <div class="install-panel px-6 py-5 leading-prose text-left" data-panel="brew" data-copy="brew tap semos-labs/tap&#10;brew install epist">
+        <div class="install-panel px-6 py-5 leading-prose text-left" data-copy="brew tap semos-labs/tap&#10;brew install epist">
           <p><span class="text-gray-400">$</span> <span class="text-white">brew tap semos-labs/tap</span></p>
           <p><span class="text-gray-400">$</span> <span class="text-white">brew install epist</span></p>
-        </div>
-        <div class="install-panel px-6 py-5 leading-prose text-left hidden" data-panel="curl" data-copy="curl -L https://github.com/semos-labs/epist/releases/latest/download/epist-darwin-arm64 -o epist&#10;chmod +x epist && sudo mv epist /usr/local/bin/">
-          <p><span class="text-gray-400">$</span> <span class="text-white">curl -L https://github.com/semos-labs/epist/</span></p>
-          <p><span class="text-white pl-4">releases/latest/download/epist-darwin-arm64 -o epist</span></p>
-          <p><span class="text-gray-400">$</span> <span class="text-white">chmod +x epist && sudo mv epist /usr/local/bin/</span></p>
         </div>
       </div>
       <p class="text-center mt-3 text-[0.7rem] text-gray-400">macOS (Apple Silicon & Intel) · Linux (x64 & ARM64)</p>
@@ -216,29 +208,10 @@ const jsonLd = {
 
 <script>
   document.querySelectorAll('.install-block').forEach((block) => {
-    const tabs = block.querySelectorAll('.install-tab');
-    const panels = block.querySelectorAll('.install-panel');
     const copyBtn = block.querySelector('.copy-btn');
-
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-tab');
-        tabs.forEach((t) => {
-          t.classList.toggle('active', t === tab);
-          t.classList.toggle('bg-gray-700', t === tab);
-          t.classList.toggle('text-gray-200', t === tab);
-          t.classList.toggle('bg-transparent', t !== tab);
-          t.classList.toggle('text-gray-400', t !== tab);
-        });
-        panels.forEach((p) => {
-          p.classList.toggle('hidden', p.getAttribute('data-panel') !== target);
-        });
-      });
-    });
-
     copyBtn?.addEventListener('click', async () => {
-      const active = block.querySelector('.install-panel:not(.hidden)');
-      const text = active?.getAttribute('data-copy') || '';
+      const panel = block.querySelector('.install-panel');
+      const text = panel?.getAttribute('data-copy') || '';
       await navigator.clipboard.writeText(text);
       copyBtn.classList.add('copied');
       setTimeout(() => copyBtn.classList.remove('copied'), 2000);
