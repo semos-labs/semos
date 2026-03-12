@@ -21,17 +21,9 @@ The skill gives Claude the full `attyx` CLI vocabulary with awareness of pane ta
 
 ## Installation
 
-The skill lives in the Attyx repo at `skills/claude/attyx/`. To install it, symlink (or copy) it into your Claude Code skills directory:
-
 ```bash
-# Create the skills directory if it doesn't exist
-mkdir -p ~/.claude/skills
-
-# Symlink the Attyx skill
-ln -s /Applications/Attyx.app/Contents/Resources/skills/claude/attyx ~/.claude/skills/attyx
+attyx skill install
 ```
-
-If you installed Attyx via Homebrew or built from source, adjust the path to wherever the `skills/claude/attyx` directory is located.
 
 After installing, restart Claude Code. The skill will appear in the `/` menu.
 
