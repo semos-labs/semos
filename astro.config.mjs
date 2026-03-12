@@ -128,6 +128,7 @@ export default defineConfig({
                       { label: "Command Palette", link: "/docs/attyx/command-palette/" },
                       { label: "CLI", link: "/docs/attyx/cli/" },
                       { label: "Integration", link: "/docs/attyx/integration/" },
+                      { label: "Claude Code Skill", link: "/docs/attyx/claude-code/" },
                       { label: "VT Compatibility", link: "/docs/attyx/vt-compatibility/" },
                       { label: "Building from Source", link: "/docs/attyx/building/" },
                   ],

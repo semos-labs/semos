@@ -24,8 +24,61 @@ All IPC commands accept these flags:
 | Flag | Description |
 |------|-------------|
 | `--target <pid>` | Send to a specific Attyx instance by PID |
+| `-s`, `--session <id>` | Route the command to a specific session |
 | `--json` | Output in JSON format for programmatic use |
 | `--help`, `-h` | Show help for any command |
+
+## Pane targeting
+
+Every pane has a **stable numeric ID** that never changes once assigned. IDs are monotonically increasing integers (1, 2, 3, ...) — they don't get reused when other panes close. Use `attyx list` to see them.
+
+Almost all commands accept `--pane` (`-p`) to target a specific pane without changing focus:
+
+```bash
+attyx send-keys -p 3 "ls -la\n"      # send to pane 3
+attyx get-text -p 3                   # read from pane 3
+attyx split close -p 5               # close pane 5
+attyx split zoom -p 5                # toggle zoom on pane 5
+attyx split rotate -p 3              # rotate splits in pane 3's tab
+```
+
+Tab commands accept a positional tab number instead:
+
+```bash
+attyx tab close 3                     # close tab 3
+attyx tab rename 2 "build logs"       # rename tab 2
+```
+
+### Tracking new pane IDs
+
+When you create a tab or split, the command returns the new pane's ID:
+
+```bash
+id=$(attyx tab create)              # returns e.g. "4"
+id=$(attyx split v --cmd htop)      # returns e.g. "5"
+```
+
+Capture this output to target the pane later without guessing:
+
+```bash
+id=$(attyx split v --cmd python3)
+attyx send-keys -p "$id" "print('hello')\r"
+attyx get-text -p "$id"
+attyx split close -p "$id"
+```
+
+### Session-targeted commands
+
+Use `-s`/`--session <id>` to route any command to a specific session:
+
+```bash
+attyx -s 2 tab create                # create tab in session 2
+attyx -s 2 send-keys -p 3 "ls\n"    # send to pane 3 in session 2
+attyx -s 2 get-text -p 5            # read from pane 5 in session 2
+attyx -s 2 list                     # list tabs/panes in session 2
+```
+
+When `-s` is omitted, commands target the currently attached session.
 
 ## Tabs
 
@@ -34,12 +87,14 @@ attyx tab create                         # new shell tab
 attyx tab create --cmd htop              # new tab running htop
 attyx tab create --cmd "make test" --wait # wait for exit code
 attyx tab close                          # close active tab
+attyx tab close 3                        # close tab 3
 attyx tab next                           # switch to next tab
 attyx tab prev                           # switch to previous tab
 attyx tab select 3                       # jump to tab 3 (1-indexed)
 attyx tab move left                      # reorder tab left
 attyx tab move right                     # reorder tab right
-attyx tab rename "build logs"            # set tab title
+attyx tab rename "build logs"            # set active tab title
+attyx tab rename 2 "build logs"          # set tab 2 title
 ```
 
 ### Options for `tab create`
@@ -56,9 +111,12 @@ attyx split vertical                     # new pane to the right
 attyx split horizontal                   # new pane below
 attyx split v --cmd claude               # vertical split running claude
 attyx split h --cmd htop --wait          # horizontal split, wait for exit
-attyx split close                        # close active pane
-attyx split rotate                       # rotate split layout
-attyx split zoom                         # toggle pane zoom
+attyx split close                        # close focused pane
+attyx split close -p 3                   # close pane 3 (no focus change)
+attyx split rotate                       # rotate layout in active tab
+attyx split rotate -p 3                  # rotate layout in pane 3's tab
+attyx split zoom                         # toggle zoom on focused pane
+attyx split zoom -p 5                    # toggle zoom on pane 5
 ```
 
 `v` and `h` are aliases for `vertical` and `horizontal`. The `--cmd` and `--wait` options work the same as `tab create`.
@@ -78,11 +136,13 @@ attyx focus right
 
 ### send-keys
 
-Send keystrokes to the active pane with C-style escape sequence support.
+Send keystrokes to a pane with C-style escape sequence support. Targets the focused pane by default, or use `-p` to target a specific pane.
 
 ```bash
 attyx send-keys "ls -la\n"              # type ls -la and press Enter
+attyx send-keys -p 3 "ls\n"            # send to pane 3 (no focus change)
 attyx send-keys "\x03"                  # Ctrl-C (interrupt)
+attyx send-keys -p 5 "\x03"            # Ctrl-C to pane 5
 attyx send-keys "\x04"                  # Ctrl-D (EOF)
 attyx send-keys "\x1b"                  # Escape
 attyx send-keys "\x1b[A\n"             # Arrow up then Enter
@@ -108,20 +168,23 @@ attyx send-keys "y\n"                   # confirm a prompt
 
 ### send-text
 
-Send raw text to the active pane. Supports the same escape sequences as `send-keys`.
+Send raw text to a pane. Supports the same escape sequences as `send-keys`.
 
 ```bash
 attyx send-text "hello"                  # write "hello" (no newline)
+attyx send-text -p 3 "hello"            # write to pane 3
 attyx send-text "echo hello\n"           # write "echo hello" + Enter
 ```
 
 ## Reading screen content
 
-Read the visible text from the active pane.
+Read the visible text from a pane (focused pane by default).
 
 ```bash
 attyx get-text                           # plain text, one line per row
+attyx get-text -p 3                     # read from pane 3
 attyx get-text --json                    # { "lines": ["row1", "row2", ...] }
+attyx get-text -p 5 --json             # pane 5 as JSON
 ```
 
 Trailing whitespace is trimmed per row. Empty trailing rows are omitted.
@@ -229,43 +292,63 @@ This is useful for scripting workflows where you need to know if a command succe
 
 ## Agent workflow
 
-A typical AI agent or automation script interacts with Attyx like this:
+A typical AI agent or automation script interacts with Attyx using pane targeting — capture the ID on creation, then use `-p` for all subsequent commands. This avoids focus juggling entirely.
 
 ```bash
-# 1. Open a pane for the task
-attyx split vertical --cmd "your-tool"
+# 1. Open a pane and capture its stable ID
+id=$(attyx split v --cmd "your-tool")
 
-# 2. Read the output
-attyx get-text
+# 2. Read the output (by pane ID, no focus change)
+attyx get-text -p "$id"
 
 # 3. Send input
-attyx send-keys "some input\n"
+attyx send-keys -p "$id" "some input\n"
 
 # 4. Read the result
-attyx get-text
+attyx get-text -p "$id"
 
 # 5. Clean up
-attyx split close
+attyx split close -p "$id"
 ```
+
+For commands that take time to produce output, poll instead of guessing with `sleep`:
+
+```bash
+# Wait for output to stabilize (poll every 2s, 2 stable reads = done)
+stable=0; prev=""; for i in $(seq 1 15); do
+  sleep 2
+  curr=$(attyx get-text -p "$id" 2>/dev/null)
+  if [ "$curr" = "$prev" ] && [ -n "$curr" ]; then
+    stable=$((stable + 1))
+    [ $stable -ge 2 ] && break
+  else
+    stable=0
+  fi
+  prev="$curr"
+done
+echo "$curr"
+```
+
+For quick commands (`ls`, `cat`, etc.) a simple `sleep 1` is fine. Use polling for anything interactive or slow (builds, installs, AI responses).
 
 ## All commands
 
 | Command | Description |
 |---------|-------------|
-| `tab create [--cmd] [--wait]` | Create a new tab |
-| `tab close` | Close active tab |
+| `tab create [--cmd] [--wait]` | Create a new tab (returns pane ID) |
+| `tab close [N]` | Close tab N (default: active tab) |
 | `tab next` / `tab prev` | Switch tabs |
 | `tab select <N>` | Jump to tab N |
 | `tab move left\|right` | Reorder tab |
-| `tab rename <name>` | Set tab title |
-| `split vertical\|horizontal [--cmd] [--wait]` | Split pane |
-| `split close` | Close active pane |
-| `split rotate` | Rotate layout |
-| `split zoom` | Toggle pane zoom |
+| `tab rename [N] <name>` | Set tab title (default: active tab) |
+| `split vertical\|horizontal [--cmd] [--wait]` | Split pane (returns pane ID) |
+| `split close [-p <id>]` | Close pane (default: focused) |
+| `split rotate [-p <id>]` | Rotate layout |
+| `split zoom [-p <id>]` | Toggle pane zoom |
 | `focus up\|down\|left\|right` | Move focus |
-| `send-keys <keys>` | Send keystrokes (with escapes) |
-| `send-text <text>` | Send raw text |
-| `get-text` | Read screen content |
+| `send-keys [-p <id>] <keys>` | Send keystrokes (with escapes) |
+| `send-text [-p <id>] <text>` | Send raw text |
+| `get-text [-p <id>]` | Read screen content |
 | `list [tabs\|splits\|sessions]` | Query state |
 | `reload` | Hot-reload config |
 | `theme <name>` | Switch theme |
@@ -354,6 +437,15 @@ A message with no payload has `payload_len = 0` and consists of the 5-byte heade
 | `tab_create_wait` | `0x43` | Command string (required) |
 | `split_vertical_wait` | `0x44` | Command string (required) |
 | `split_horizontal_wait` | `0x45` | Command string (required) |
+| `send_keys_pane` | `0x46` | `u32` LE pane ID + key bytes |
+| `send_text_pane` | `0x47` | `u32` LE pane ID + text bytes |
+| `get_text_pane` | `0x48` | `u32` LE pane ID |
+| `pane_close_targeted` | `0x49` | `u32` LE pane ID |
+| `pane_zoom_targeted` | `0x4A` | `u32` LE pane ID |
+| `pane_rotate_targeted` | `0x4B` | `u32` LE pane ID |
+| `tab_close_targeted` | `0x4C` | `u8` tab index (0-based) |
+| `tab_rename_targeted` | `0x4D` | `u8` tab index (0-based) + name string |
+| `session_envelope` | `0x50` | `u32` LE session ID + `u8` inner msg type + inner payload |
 
 **Responses** (instance → client):
 
@@ -368,28 +460,27 @@ A message with no payload has `payload_len = 0` and consists of the 5-byte heade
 **`list` response** — tab/pane tree, tab-separated:
 
 ```
-1	zsh	*
-2	node	2 panes
-  2.0	node	*	80x24
-  2.1	htop		80x24
-3	vim
+1	bash	*
+  1	bash	*	80x24
+  3	python		40x24
+2	vim
+  2	vim		80x24
 ```
 
-Active tab/pane marked with `*`. Panes indented with two spaces, format: `<tab>.<pane>\t<title>[\t*]\t<cols>x<rows>`.
+Active tab/pane marked with `*`. Panes indented with two spaces, format: `<pane_id>\t<title>[\t*]\t<cols>x<rows>`. Pane IDs are stable integers that never change.
 
 **`list_tabs` response** — tabs only:
 
 ```
-1	zsh	*
-2	node	2 panes
-3	vim
+1	bash	*
+2	vim
 ```
 
 **`list_splits` response** — panes in the active tab:
 
 ```
-0	node	*	80x24
-1	htop		80x24
+1	bash	*	80x24
+3	python		40x24
 ```
 
 **`get_text` response** — visible screen content, one line per row. Trailing whitespace trimmed. Empty trailing rows omitted.
@@ -410,9 +501,9 @@ The popup command encodes the border style as a single byte:
 
 | Value | Style |
 |-------|-------|
-| `0` | `rounded` (default) |
-| `1` | `single` |
-| `2` | `double` |
+| `0` | `single` |
+| `1` | `double` |
+| `2` | `rounded` (default) |
 | `3` | `heavy` |
 | `4` | `none` |
 
@@ -683,3 +774,23 @@ func main() {
 4. **Close** — close the socket
 
 Each connection handles exactly one request-response pair. Open a new connection for each command. The `_wait` variants (`0x43`–`0x45`) hold the connection open until the spawned process exits, then respond with an `exit_code` (`0xA2`) message.
+
+### Pane-targeted messages
+
+The `_pane` variants (`0x46`–`0x48`) and targeted operations (`0x49`–`0x4D`) allow you to address specific panes and tabs by their stable ID without changing focus. Their payloads start with the target ID followed by the normal payload data.
+
+For example, to send keys to pane 3:
+
+```
+[header: type=0x46] [u32 LE: 3] [key bytes]
+```
+
+### Session envelope
+
+The `session_envelope` message (`0x50`) wraps any other command and routes it to a specific session. The payload format is:
+
+```
+[u32 LE: session_id] [u8: inner_msg_type] [inner_payload...]
+```
+
+This is how the `-s`/`--session` CLI flag works under the hood. When the flag is omitted, commands target the currently attached session.
