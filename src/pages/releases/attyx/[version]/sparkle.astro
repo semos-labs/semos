@@ -1,0 +1,133 @@
+---
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const releases = await getCollection("releases");
+  return releases.map((release) => ({
+    params: { version: release.data.version },
+    props: { release },
+  }));
+}
+
+const { release } = Astro.props;
+const { Content } = await render(release);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{release.data.title}</title>
+    <style is:inline>
+      :root {
+        color-scheme: light dark;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 1.5;
+        color: -apple-system-label;
+        background: transparent;
+        padding: 16px 20px;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .date {
+        font-size: 12px;
+        color: -apple-system-secondary-label;
+        margin-bottom: 16px;
+      }
+      .summary {
+        font-size: 13px;
+        color: -apple-system-secondary-label;
+        margin-bottom: 16px;
+      }
+      h2 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 8px;
+      }
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 16px;
+        margin-bottom: 6px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      ul, ol {
+        margin-bottom: 10px;
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 4px;
+      }
+      code {
+        font-family: "SF Mono", Menlo, Monaco, monospace;
+        font-size: 12px;
+        background: rgba(128, 128, 128, 0.15);
+        padding: 1px 5px;
+        border-radius: 3px;
+      }
+      pre {
+        background: rgba(0, 0, 0, 0.25) !important;
+        padding: 12px 14px;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin-bottom: 10px;
+      }
+      pre code {
+        background: none;
+        padding: 0;
+        color: inherit;
+      }
+      /* Force Expressive Code to use its dark palette (--0) */
+      .expressive-code span {
+        color: var(--0) !important;
+      }
+      .expressive-code pre {
+        background: rgba(0, 0, 0, 0.25) !important;
+      }
+      .expressive-code .copy,
+      .expressive-code .header {
+        display: none !important;
+      }
+      a {
+        color: -apple-system-blue;
+      }
+      strong {
+        font-weight: 600;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid -apple-system-separator;
+        margin: 16px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{release.data.title}</h1>
+    <div class="date">{formatDate(release.data.date)}</div>
+    {release.data.summary && <p class="summary">{release.data.summary}</p>}
+    <Content />
+  </body>
+</html>
