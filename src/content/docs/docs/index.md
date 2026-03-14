@@ -14,7 +14,7 @@ The ecosystem includes a React-based terminal renderer, TUI apps built on it, an
 | **Glyph** | React renderer for terminal UIs |
 | **Aion** | Calendar TUI client (Google Calendar & CalDAV) |
 | **Epist** | Email TUI client (Gmail & IMAP/SMTP) |
-| **Attyx** | GPU-accelerated terminal environment (alpha) |
+| **[Attyx](https://attyx.sh/docs)** | GPU-accelerated terminal environment (alpha) |
 
 ## Philosophy
 
