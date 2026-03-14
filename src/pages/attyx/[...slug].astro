@@ -1,0 +1,11 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { slug: "privacy" } },
+    { params: { slug: "refund" } },
+  ];
+}
+const { slug } = Astro.params;
+const target = `https://attyx.sh/${slug}`;
+---
+<html><head><script is:inline define:vars={{ target }}>window.location.replace(target);</script></head><body></body></html>

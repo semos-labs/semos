@@ -1,0 +1,14 @@
+---
+export function getStaticPaths() {
+  return [
+    "configuration", "font", "cursor", "window", "shell", "scrollback",
+    "themes", "keybindings", "custom-sequences", "tabs-and-splits",
+    "popups", "status-bar", "sessions", "visual-mode", "command-palette",
+    "cli", "integration", "claude-code", "vt-compatibility", "building",
+    "architecture",
+  ].map((s) => ({ params: { slug: s } }));
+}
+const { slug } = Astro.params;
+const target = slug ? `https://attyx.sh/docs/${slug}` : "https://attyx.sh/docs";
+---
+<html><head><script is:inline define:vars={{ target }}>window.location.replace(target);</script></head><body></body></html>
