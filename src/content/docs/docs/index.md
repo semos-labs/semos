@@ -29,4 +29,4 @@ Pick a product to dive in:
 - [Glyph](/docs/glyph/) — if you want to build your own TUI apps
 - [Aion](/docs/aion/) — if you want your calendar in the terminal (Google Calendar & CalDAV)
 - [Epist](/docs/epist/) — if you want email in the terminal (Gmail & IMAP/SMTP)
-- [Attyx](/docs/attyx/) — GPU-accelerated terminal with sessions, splits, and more (alpha)
+- [Attyx](https://attyx.sh/docs) — GPU-accelerated terminal with sessions, splits, and more (alpha)

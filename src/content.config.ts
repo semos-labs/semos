@@ -16,13 +16,4 @@ export const collections = {
       draft: z.boolean().optional().default(false),
     }),
   }),
-  releases: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/releases/attyx" }),
-    schema: z.object({
-      version: z.string(),
-      title: z.string(),
-      date: z.coerce.date(),
-      summary: z.string().optional(),
-    }),
-  }),
 };
