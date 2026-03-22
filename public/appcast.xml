@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Attyx</title>
+    <link>https://semos.sh</link>
+    <description>Attyx auto-update feed</description>
+    <language>en</language>
+    <item>
+      <title>Attyx v0.3.0</title>
+      <pubDate>Sun, 22 Mar 2026 15:16:24 +0000</pubDate>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.3.0/sparkle</sparkle:releaseNotesLink>
+      <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.0/attyx-darwin-arm64.zip" os="macos" arch="arm64" sha256="188fb3229d666efb6c883e22a6de2d15ca4eb3f46302f0d3ebb842f1654bb3e5" sparkle:version="0.3.0" sparkle:shortVersionString="0.3.0" length="1845136" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.0/attyx-darwin-x64.zip" os="macos" arch="x86_64" sha256="aa410945b12f0aa296313e3b13727192e3d5ed13100e7dcc09735c2d91289037" sparkle:version="0.3.0" sparkle:shortVersionString="0.3.0" length="1939776" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.0/attyx-windows-x64.exe" os="windows" arch="x86_64" sha256="d3f38695a46ef54ef32f8cfb2a21492dc817194b4fe80e30d0be15b7a73c26a8" setup-url="https://github.com/semos-labs/attyx/releases/download/v0.3.0/attyx-windows-x64-setup.exe" setup-sha256="5eeb0772e5a35af390371436b337ae0234a4d29e80987b283143e30c464806ba" sparkle:version="0.3.0" length="7898112" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>
