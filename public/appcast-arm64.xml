@@ -3,11 +3,11 @@
   <channel>
     <title>Attyx (Apple Silicon)</title>
     <item>
-      <title>Attyx v0.3.0</title>
-      <pubDate>Sun, 22 Mar 2026 15:16:24 +0000</pubDate>
-      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.3.0/sparkle</sparkle:releaseNotesLink>
+      <title>Attyx v0.3.1</title>
+      <pubDate>Sun, 22 Mar 2026 15:53:00 +0000</pubDate>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.3.1/sparkle</sparkle:releaseNotesLink>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.0/attyx-darwin-arm64.zip" sparkle:version="0.3.0" sparkle:shortVersionString="0.3.0" length="1845136" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.1/attyx-darwin-arm64.zip" sparkle:version="0.3.1" sparkle:shortVersionString="0.3.1" length="1845334" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
