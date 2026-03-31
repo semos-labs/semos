@@ -3,11 +3,11 @@
   <channel>
     <title>Attyx (Intel)</title>
     <item>
-      <title>Attyx v0.3.5</title>
-      <pubDate>Sat, 28 Mar 2026 23:31:01 +0000</pubDate>
-      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.3.5/sparkle</sparkle:releaseNotesLink>
+      <title>Attyx v0.3.6</title>
+      <pubDate>Tue, 31 Mar 2026 08:09:05 +0000</pubDate>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.3.6/sparkle</sparkle:releaseNotesLink>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.5/attyx-darwin-x64.zip" sparkle:version="0.3.5" sparkle:shortVersionString="0.3.5" length="1949440" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.3.6/attyx-darwin-x64.zip" sparkle:version="0.3.6" sparkle:shortVersionString="0.3.6" length="1949363" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
