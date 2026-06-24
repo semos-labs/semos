@@ -6,15 +6,15 @@
     <description>Attyx auto-update feed</description>
     <language>en</language>
     <item>
-      <title>Attyx v0.4.10</title>
-      <pubDate>Tue, 23 Jun 2026 22:48:13 +0000</pubDate>
-      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.4.10/sparkle</sparkle:releaseNotesLink>
+      <title>Attyx v0.4.11</title>
+      <pubDate>Wed, 24 Jun 2026 05:16:51 +0000</pubDate>
+      <sparkle:releaseNotesLink>https://semos.sh/releases/attyx/0.4.11/sparkle</sparkle:releaseNotesLink>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
 
-      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.10/attyx-darwin-arm64.zip" os="macos" arch="arm64" sha256="7f094cd3de60571b4638e8180645ea69856492ce1f7ab34c769c024e7dfd5e4c" sparkle:version="0.4.10" sparkle:shortVersionString="0.4.10" length="1997779" type="application/octet-stream" />
-      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.10/attyx-darwin-x64.zip" os="macos" arch="x86_64" sha256="7e950dcae610185314b88440307860e605cb2de117491d34d001e9ebf9da6ed3" sparkle:version="0.4.10" sparkle:shortVersionString="0.4.10" length="2095152" type="application/octet-stream" />
-      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.10/attyx-windows-arm64.exe" os="windows" arch="arm64" sha256="836b213130ed1bf4dbcf8d257b903c877700b4f1bfeea364fc2da1b0157769ab" setup-url="https://github.com/semos-labs/attyx/releases/download/v0.4.10/attyx-windows-arm64-setup.exe" setup-sha256="fff2156e7ba9d5eedf4a09b20f5ff997a7e1ef00317f1f7a201b996baac75752" sparkle:version="0.4.10" length="7859712" type="application/octet-stream" />
-      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.10/attyx-windows-x64.exe" os="windows" arch="x86_64" sha256="66118ca37f9cc6d86dd965c0c36c4d2aef67179c8a941e06853579724bf704d4" setup-url="https://github.com/semos-labs/attyx/releases/download/v0.4.10/attyx-windows-x64-setup.exe" setup-sha256="9b82df568edb30b3e4d4da1804f7c958e06d11cd6d5dadc4ef25c9a09bb1518e" sparkle:version="0.4.10" length="8172032" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.11/attyx-darwin-arm64.zip" os="macos" arch="arm64" sha256="831fb0c81768d6649de854882b8f522f3c605e660a43a4e71d4d5c520598609b" sparkle:version="0.4.11" sparkle:shortVersionString="0.4.11" length="1999402" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.11/attyx-darwin-x64.zip" os="macos" arch="x86_64" sha256="10101770038bf5f5cc2c9290fe7746810e3aeee2a3940da21f576b2ffa4e008b" sparkle:version="0.4.11" sparkle:shortVersionString="0.4.11" length="2096219" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.11/attyx-windows-arm64.exe" os="windows" arch="arm64" sha256="0cf9d82e1df4438a37f11fad414b9878400279798cf800a278c60bed2629ba5e" setup-url="https://github.com/semos-labs/attyx/releases/download/v0.4.11/attyx-windows-arm64-setup.exe" setup-sha256="31a589f112abbbe1e135ca96c605180405752f2fa721b65e95c32430889ea79b" sparkle:version="0.4.11" length="7861760" type="application/octet-stream" />
+      <enclosure url="https://github.com/semos-labs/attyx/releases/download/v0.4.11/attyx-windows-x64.exe" os="windows" arch="x86_64" sha256="bce22c64fa54539b014af2f17821955da3bc98b272919580dc5b3ccb7f56bba5" setup-url="https://github.com/semos-labs/attyx/releases/download/v0.4.11/attyx-windows-x64-setup.exe" setup-sha256="25e3bbc4141c7f37646aa6f904c226b62795d9f7e1a7efc02a738912311349db" sparkle:version="0.4.11" length="8175104" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
